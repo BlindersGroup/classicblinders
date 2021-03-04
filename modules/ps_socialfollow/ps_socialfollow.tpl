@@ -28,7 +28,7 @@
       <p class="blocksocial_title">{l s='Follow us on rrss!' d='Shop.Theme.Global'}</p>
       <ul>
           {foreach from=$social_links item='social_link'}
-            <li class="{$social_link.class}"><a href="{$social_link.url}" target="_blank">{$social_link.label}</a></li>
+            <li class="{$social_link.class}"><a href="{$social_link.url}" target="_blank" rel="noopener noreferrer">{$social_link.label}</a></li>
           {/foreach}
       </ul>
   </div>
