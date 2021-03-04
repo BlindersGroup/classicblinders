@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="f1cefec9e2196c672a622347f1fbc325">
+        <source>Resume</source>
+        <target>Resumen</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3111382b0f345f39639de6e580a94933">
+        <source>Have a promo code?</source>
+        <target>Tengo un cupón</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f1d3b424cd68795ecaa552883759aceb">
+        <source>Order summary</source>
+        <target>Resumen de pedido</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="cda41aa4ca1cb30ed3b21e09aff274ce">
+        <source>Your cart has %products_count% item(s)</source>
+        <target>Tu cesta tiene %products_count% artículo(s)</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0ab608f7e0d1501be457f7646c1e57c0">
+        <source>Promo code</source>
+        <target>Introduce un cupón</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3e34bdebd9bd5edda27e8728904a2552">
+        <source>unit</source>
+        <target>ud.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

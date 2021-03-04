@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="8269faf8d2f6e517e1dadc9855145863">
+        <source>By %1$s the</source>
+        <target>por %1$s el</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e16d68660fd4cb4137bc754becfcb5e9">
+        <source>verified opinion</source>
+        <target>Opinión verificada</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7966126831926ad29c528b239d69f855">
+        <source>Write your review</source>
+        <target>Opina sobre este producto</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

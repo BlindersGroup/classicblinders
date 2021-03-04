@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="5672875456b6feb4c3939df264347b10">
+        <source>%copyright% %year% - %shop% - All rights reserved</source>
+        <target>%copyright% %year% - %shop% - Todos los derechos reservados</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5d12b6dc1420a869cb0c8de6e89cabf1">
+        <source>Subscribe to the best offers</source>
+        <target>Suscríbete a las mejores ofertas</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2e7e07aa9719ac4efae230b00d158b6e">
+        <source>Follow us on rrss!</source>
+        <target>¡Síguenos en redes sociales!</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

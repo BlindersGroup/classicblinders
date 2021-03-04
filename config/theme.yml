@@ -1,0 +1,213 @@
+name: classicblinders
+display_name: ClassicBlinders
+version: 1.5.4
+author:
+  name: "DevBlinders"
+  email: "info@devblinders.com"
+  url: "https://devblinders.com"
+
+meta:
+  compatibility:
+      from: 1.7.0.0
+      to: ~
+
+  available_layouts:
+    layout-full-width:
+      name: Full Width
+      description: No side columns, ideal for distraction-free pages such as product pages.
+    layout-both-columns:
+      name: Three Columns
+      description: One large central column and 2 side columns.
+    layout-left-column:
+      name: Two Columns, small left column
+      description: Two columns with a small left column
+    layout-right-column:
+      name: Two Columns, small right column
+      description: Two columns with a small right column
+
+assets:
+  # If you're using this theme as child and you want to load
+  # the parent theme assets, uncomment this line.
+#  use_parent_assets: true
+
+  # The following lines are showing how to load assets in your page
+  # Uncomment and change value to start loading css or js files
+  css:
+    all:
+      - id: carousel-splide
+        path: assets/css/splide/splide.min.css
+      - id: carousel-splide-theme
+        path: assets/css/splide/themes/splide-default.min.css
+  js:
+    all:
+      - id: carousel-splide
+        path: assets/js/splide.min.js
+
+global_settings:
+  configuration:
+    PS_IMAGE_QUALITY: jpg
+    PS_LABEL_IN_STOCK_PRODUCTS: En stock
+    PS_LABEL_OOS_PRODUCTS_BOA: Fuera de stock
+    PS_LABEL_OOS_PRODUCTS_BOD: Fuera de stock
+    PS_LABEL_DELIVERY_TIME_AVAILABLE: 24 - 48 H
+    BLOCKSOCIAL_FACEBOOK: https://www.facebook.com/
+    BLOCKSOCIAL_TWITTER: https://twitter.com/
+    BLOCKSOCIAL_RSS: index.php
+    BLOCKSOCIAL_YOUTUBE: https://www.youtube.com/
+    BLOCKSOCIAL_GOOGLE_PLUS: https://plus.google.com/
+    BLOCKSOCIAL_PINTEREST: https://pinterest.com
+    BLOCKSOCIAL_INSTAGRAM: https://www.instagram.com/
+  modules:
+    to_enable:
+      - dbcontactinfo
+      - dbhomecategories
+      - dbfreeshipping
+      - dbbrandslider
+      - dbproductcomments
+      - dbcategorydesc
+      - dbrichsnippets
+      - dbdatatext
+      - ps_linklist
+      - ps_bestsellers
+      - ps_newproducts
+      - ps_bestsellers
+    to_disable:
+      - ps_banner
+      - ps_specials
+      - ps_sharebuttons
+      - ps_themecusto
+      - gamification
+  hooks:
+    custom_hooks:
+      - name: displayNavCenter
+        title: displayNavCenter
+        description: Nav Center
+      - name: displayTopCenter
+        title: displayTopCenter
+        description: Top Center
+      - name: displayBeforeProductList
+        title: displayBeforeProductList
+        description: Before Product List
+      - name: displayBannerProductList
+        title: displayBannerProductList
+        description: Banner Product List
+      - name: displayProductCenterColumn
+        title: displayProductCenterColumn
+        description: Product Center Column
+      - name: displayProductCenterColumnBottom
+        title: displayProductCenterColumnBottom
+        description: Product Center Column Bottom
+      - name: displayMenuInside
+        title: displayMenuInside
+        description: Menu Inside
+      - name: displayTopCheckout
+        title: displayMenuInside
+        description: Top Checkout
+      - name: displayFooterCategory
+        title: displayFooterCategory
+        description: Footer category
+    modules_to_hook:
+      displayAfterBodyOpeningTag:
+      displayNavFullWidth:
+        - ps_mainmenu
+      displayNav1:
+        - dbcontactinfo
+      displayNavCenter:
+        - dbproductcomments
+      displayNav2:
+        - dbfreeshipping
+      displayTop:
+        - dbcontactinfo
+        - ps_customersignin
+        - ps_shoppingcart
+      displayTopCenter:
+        - ps_searchbar
+      displayHome:
+        - ps_imageslider
+        - dbhomecategories
+        - ps_bestsellers
+        - dbbrandslider
+        - ps_newproducts
+        - ps_featuredproducts
+        - ps_customtext
+      displayFooterBefore:
+        - ps_emailsubscription
+      displayFooter:
+        - ps_linklist
+        - ps_customeraccountlinks
+        - ps_contactinfo
+        - ps_socialfollow
+      displayFooterAfter:
+      displayLeftColumn:
+        - ps_categorytree
+        - ps_facetedsearch
+      displaySearch:
+        - ps_searchbar
+      displayProductAdditionalInfo:
+        - ps_sharebuttons
+        - dbfreeshipping
+      displayReassurance:
+        - blockreassurance
+      displayOrderConfirmation2:
+        - ps_featuredproducts
+      displayCrossSellingShoppingCart:
+        - ps_featuredproducts
+      displayBannerProductList:
+      displayProductCenterColumn:
+        - dbproductcomments
+      displayMenuInside:
+        - dbproductcomments
+      displayTopCheckout:
+        - dbcontactinfo
+      displayFooterCategory:
+        - dbcategorydesc
+
+  image_types:
+    cart_default:
+      width: 125
+      height: 125
+      scope: [products]
+    small_default:
+      width: 98
+      height: 98
+      scope: [products, categories, manufacturers, suppliers]
+    medium_default:
+      width: 393
+      height: 393
+      scope: [products, manufacturers, suppliers]
+    home_default:
+      width: 222
+      height: 222
+      scope: [products]
+    large_default:
+      width: 800
+      height: 800
+      scope: [products, manufacturers, suppliers]
+    category_default:
+      width: 141
+      height: 180
+      scope: [categories]
+    stores_default:
+      width: 170
+      height: 115
+      scope: [stores]
+
+theme_settings:
+  default_layout: layout-full-width
+  layouts:
+    category: layout-left-column
+    best-sales: layout-left-column
+    new-products: layout-left-column
+    prices-drop: layout-left-column
+    contact: layout-left-column
+
+dependencies:
+  modules:
+    - dbcontactinfo
+    - dbhomecategories
+    - dbfreeshipping
+    - dbbrandslider
+    - dbproductcomments
+    - dbcategorydesc
+    - dbrichsnippets
+    - dbdatatext

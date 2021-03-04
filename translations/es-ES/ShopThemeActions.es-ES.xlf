@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="a0bfb8e59e6c13fc8d990781f77694fe">
+        <source>Continue</source>
+        <target>Continuar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5298e744134c8a32acca75f6f6fb502d">
+        <source>I am already a customer</source>
+        <target>Ya soy cliente</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1ed94d36d645c22f77807b47707e309b">
+        <source>Order detail</source>
+        <target>Detalles del pedido</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f21369b767ee4ec07862050783c33c7c">
+        <source>Download invoice</source>
+        <target>Descargar factura</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fbea857431ef9a3b3164302204588d77">
+        <source>Report incident</source>
+        <target>Comunicar incidencia</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="63059bd7ead52adb8df8109e587ee519">
+        <source>Make a refund</source>
+        <target>Hacer devolución</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b24344b6a2c4a94c9b0d0ebd4602aeca">
+        <source>View more</source>
+        <target>Ver más</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f73cc399b5ce12735a57f03414f09ef9">
+        <source>Subcategories</source>
+        <target>Subcategorías</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="12a7a93d72ded50311b52c7d0a853e3c">
+        <source>Take advantage of our exclusive offers:</source>
+        <target>Cupones disponibles:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="cbe55e77ffa67d13322eb1ce7d22f1ba">
+        <source>Choose file</source>
+        <target>Archivo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bffe9a3c9a7e00ba00a11749e022d911">
+        <source>Log in</source>
+        <target>Iniciar sesión</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6ff063fbc860a79759a7369ac32cee22">
+        <source>Checkout</source>
+        <target>Finalizar pedido</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="57c1fee9db05c07a96c99d9260d38d6d">
+        <source>View cart</source>
+        <target>Ver cesta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b26917587d98330d93f87808fc9d7267">
+        <source>Subscribe</source>
+        <target>Suscríbete</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="733ae3eecadd5777cea5ce9a32379d7a">
+        <source>Send reset link</source>
+        <target>Restablecer contraseña</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,180 @@
+/**
+* 2007-2021 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2021 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+#category .dbproductcomments {
+    display: table;
+    width: 100%;
+}
+
+.dbcomments_category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.dbcomments_category > div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.dbcomments_category .info_total {
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem;
+}
+
+.dbcomments_category .info_total .num_comments {
+    font-weight: 600;
+}
+
+.dbcomments_category .info_total .category {
+    text-transform: lowercase;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.dbcomments_category .info_total .media_comments {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 1rem auto 10px;
+}
+
+.dbcomments_category .info_comment {
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem;
+    text-align: center;
+}
+
+.dbcomments_category .info_comment:last-child {
+    border: none;
+}
+
+.dbcomments_category .info_comment .date_comment {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.dbcomments_category .info_comment a {
+    font-size: 0.95rem;
+    color: #232323;
+}
+
+.dbcomments_category .info_comment a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+    .dbcomments_category > div {
+        width: 100%;
+    }
+    .dbcomments_category .info_comment {
+        width: 33%;
+    }
+    .dbcomments_category .info_comment,
+    .dbcomments_category .info_total {
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
+
+@media (max-width: 480px) {
+    .dbcomments_category > div {
+        width: 100%;
+    }
+    .dbcomments_category .info_comment {
+        width: 100%;
+    }
+    .dbcomments_category .info_comment,
+    .dbcomments_category .info_total {
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+}
+
+.dbproductcomments_nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.dbproductcomments_nav span {
+    color: #202020;
+}
+
+.dbproductcomments_nav .grade-stars {
+    margin-top: -5px;
+}
+
+.dbproductcomments_product_centercolumn {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.dbproductcomments_product_centercolumn .num_comments {
+    font-size: 0.9rem;
+}
+
+.dbproductcomments_product_centercolumn .grade-stars .star-content {
+    top: 6px;
+    margin-left: 0;
+}
+
+/* Menu */
+.dbproductcomments_menu .title {
+    text-align: left;
+    font-weight: 600;
+    background-color: #efeff0;
+    padding: 0.5rem 1rem;
+    display: block;
+    color: #232323;
+}
+
+.dbproductcomments_menu .comment_stars {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.dbproductcomments_menu .comment_stars .grade {
+    font-size: 2rem;
+    color: #232323;
+    font-weight: 600;
+}
+
+.dbproductcomments_menu .comment_stars .grade-stars {
+    margin: 0.5rem 0;
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="dce4a5276650c3e207c66b1563cbf420">
+        <source>I'm new</source>
+        <target>Soy nuevo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2cee26bf4b753a37448a1e75845d7f1c">
+        <source>Hi %firstname% %lastname% [1]you can now complete your purchase[/1]</source>
+        <target>Hola %firstname% %lastname% [1]Ya puedes completar tu compra[/1]</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="53a608c3345b93ec60b98296524a902a">
+        <source>Hi %firstname% [1]you can now complete your purchase[/1]</source>
+        <target>Hola %firstname% [1]Ya puedes completar tu compra[/1]</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="079ab838731026a514c62f5e26e35a89">
+        <source>Hi %customerName%</source>
+        <target>Hola %customerName%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="045b8fe756752091b610a07cb1653355">
+        <source>Account summary</source>
+        <target>Resumen de la cuenta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d95cf4ab2cbf1dfb63f066b50558b07d">
+        <source>My account</source>
+        <target>Mi cuenta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="74ecd9234b2a42ca13e775193f391833">
+        <source>My orders</source>
+        <target>Mis pedidos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c1ea83c2856f4a2d3fe73d321a50743d">
+        <source>Discount coupons</source>
+        <target>Cupones descuento</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2433db5a329ea473271a3cd8c013362e">
+        <source>Personal information</source>
+        <target>Datos personales</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="01aa312e8a4fe57af295b8405462fa00">
+        <source>My Addresses</source>
+        <target>Mis direcciones</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="72cfc3d14068c6b9a2450a17dcb1bfe7">
+        <source>Sign off</source>
+        <target>Cerrar sesión</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bbaff12800505b22a853e8b7f4eb6a22">
+        <source>Contact</source>
+        <target>Contacto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3f65d6e17a11466983fd177702cf6a71">
+        <source>Contact Form</source>
+        <target>Formulario de contacto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fef1f6770f018b3c270aa261b687976b">
+        <source>In the "My account" section you can edit your personal data, addresses and review your latest orders.</source>
+        <target>En el apartado "Mi cuenta" puedes editar tus datos personales, direcciones y revisar tus últimos pedidos.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7442e29d7d53e549b78d93c46b8cdcfc">
+        <source>Orders</source>
+        <target>Pedidos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="26b595a297397c5214f6ea2023bad3fb">
+        <source>Track, return products, repeat orders or request invoices.</source>
+        <target>Realizar seguimiento, devolución de productos, repetir pedidos o solicitar facturas.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="81262b4327872f91ebebe7d6ac5894a1">
+        <source>Discover the discounted vouchers we have for you.</source>
+        <target>Descubre los vales descuneto que tenemos para tí.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3e3fe603a5294489a9c1804cde00f68b">
+        <source>Edit your personal data such as name, password, email ...</source>
+        <target>Edita tus datos personales como nombre, contraseña, correo...</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7817a41c2c7a74a6d98fd6d0029a47ac">
+        <source>Edit, create or delete your shipping and billing addresses.</source>
+        <target>Edita, crea o elimina tus direcciones de envío y facturación.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="52ef9633d88a7480b3a938ff9eaa2a25">
+        <source>Others</source>
+        <target>Otros</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ea99ea42b98faa4de7b2d679a9ff1915">
+        <source>For any questions, contact our customer service team</source>
+        <target>Para cualquier duda, contacta con nuestro equipo de atención al cliente</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7717f60c9aae6cab1b71db948e8c0c79">
+        <source>Purchased on %date% | Order reference</source>
+        <target>Comprado el %date% | Referencia del pedido</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="48974cc3df177e6b565c39aa155458cd">
+        <source>Shipping Address</source>
+        <target>Dirección de envío</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="28a59051cd90053f87bacd5f1ffbc0b8">
+        <source>Billing Address</source>
+        <target>Dirección de facturación</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5afc7117ae36b12764215946d4deef7c">
+        <source>Secure connection</source>
+        <target>Conexión segura</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f61c763564f22110217424779386075b">
+        <source>Purchased on %date%</source>
+        <target>Comprado el %date%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5d4710f9a8250b13164a82c94d5b00d1">
+        <source>Order reference</source>
+        <target>Referencia del pedido</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
