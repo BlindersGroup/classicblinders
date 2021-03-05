@@ -37,6 +37,8 @@
   {/if}
   {if $page.page_name == 'index'}
     <link rel="canonical" href="{$urls.pages.index}">
+  {elseif $page.page_name == 'category'}
+    <link rel="canonical" href="{$clear_all_link}">
   {elseif $page.canonical}
     <link rel="canonical" href="{$page.canonical}">
   {/if}
