@@ -10785,6 +10785,8 @@ body#checkout #hook-display-after-carrier > [class^="col"].links .row > [class^=
 }
 #wrapper #full-column:last-child {
     margin-bottom: 0;
+    display: flex;
+    width: 100%;
 }
 #main .page-content,
 #main .page-header {
@@ -12592,6 +12594,10 @@ body#checkout #conditions-to-approve .custom-checkbox {
     height: auto;
 }
 
+#product .product_topview .product-description {
+    max-width: calc(100% - 50px);
+}
+
 @media (max-width: 991px) {
     #history .order_history {
         display: flex;
@@ -12822,6 +12828,10 @@ body#checkout #conditions-to-approve .custom-checkbox {
     }
     body#checkout #header {
         border: 0;
+    }
+    .dbcategorydesc {
+        margin-left: -15px;
+        margin-right: -15px;
     }
 }
 
