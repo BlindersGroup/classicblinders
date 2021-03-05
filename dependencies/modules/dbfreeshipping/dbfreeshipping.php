@@ -240,7 +240,7 @@ class Dbfreeshipping extends Module
 
         $remains = Tools::displayPrice(round((float)$free - (float)$total_cart, 2));
         $porcent = round((float)$total_cart * 100 / (float)$free, 0);
-        if ($total_cart > $free) {
+        if ((float)$total_cart > (float)$free) {
             $is_free = true;
             $porcent = 100;
         }
