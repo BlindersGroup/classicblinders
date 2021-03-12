@@ -12117,8 +12117,12 @@ body#checkout section.checkout-step .step-title .step-number {
 }
 
 .product-manufacturer .brand_centercolumn {
-    position: absolute;
+    position: static;
     right: 1rem;
+}
+
+.product-manufacturer {
+    text-align: right;
 }
 
 .product-manufacturer .brand_centercolumn img {
