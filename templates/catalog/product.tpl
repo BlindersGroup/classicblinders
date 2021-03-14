@@ -114,6 +114,19 @@
                         {include file='catalog/_partials/product-discounts.tpl'}
                     {/block}
 
+                    {block name='product_pack'}
+                        {if $packItems}
+                            <section class="product-pack">
+                                <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
+                                {foreach from=$packItems item="product_pack"}
+                                    {block name='product_miniature'}
+                                        {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
+                                    {/block}
+                                {/foreach}
+                            </section>
+                        {/if}
+                    {/block}
+
                     {block name='product_attachments'}
                         {if $product.attachments}
                             <div class="attachment_top">
@@ -144,19 +157,6 @@
 
                                     {block name='product_variants'}
                                         {include file='catalog/_partials/product-variants.tpl'}
-                                    {/block}
-
-                                    {block name='product_pack'}
-                                        {if $packItems}
-                                            <section class="product-pack">
-                                                <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
-                                                {foreach from=$packItems item="product_pack"}
-                                                    {block name='product_miniature'}
-                                                        {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
-                                                    {/block}
-                                                {/foreach}
-                                            </section>
-                                        {/if}
                                     {/block}
 
                                     {block name='product_add_to_cart'}

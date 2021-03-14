@@ -25,41 +25,61 @@
 <div class="images-container">
 
     {block name='product_cover'}
-        <div id="splide_images_product" class="splide">
-            <div class="splide__track">
-                <div class="splide__list">
-                    {foreach from=$product.images item=image}
-                        <div class="splide__slide product-cover">
-                            <img
-                                class="js-qv-product-cover"
-                                src="{$image.bySize.medium_default.url}"
-                                alt="{$image.legend}"
-                                title="{$image.legend}"
-                                itemprop="image"
-                                loading="lazy"
-                                width="{$image.bySize.medium_default.width}"
-                                height="{$image.bySize.medium_default.height}"
-                            >
-                            <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                <i class="material-icons zoom-in">search</i>
+
+        {if count($product.images) > 1}
+            <div id="splide_images_product" class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        {foreach from=$product.images item=image}
+                            <div class="splide__slide product-cover">
+                                <img
+                                    class="js-qv-product-cover"
+                                    src="{$image.bySize.medium_default.url}"
+                                    alt="{$image.legend}"
+                                    title="{$image.legend}"
+                                    itemprop="image"
+                                    loading="lazy"
+                                    width="{$image.bySize.medium_default.width}"
+                                    height="{$image.bySize.medium_default.height}"
+                                >
+                                <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                    <i class="material-icons zoom-in">search</i>
+                                </div>
                             </div>
-                        </div>
-                    {/foreach}
+                        {/foreach}
+                    </div>
                 </div>
             </div>
-        </div>
-    {/block}
+            <script>
+                document.addEventListener( 'DOMContentLoaded', function () {
+                    new Splide( '#splide_images_product', {
+                        perPage     : 1,
+                        pagination: false,
+                        arrows: true,
+                    } ).mount();
+                } );
+            </script>
 
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function () {
-            new Splide( '#splide_images_product', {
-                perPage     : 1,
-                pagination: false,
-                lazyLoad: 'sequential',
-                arrows: true,
-            } ).mount();
-        } );
-    </script>
+        {else}
+            {foreach from=$product.images item=image}
+                <div class="product-cover">
+                    <img
+                            class="js-qv-product-cover"
+                            src="{$image.bySize.medium_default.url}"
+                            alt="{$image.legend}"
+                            title="{$image.legend}"
+                            itemprop="image"
+                            loading="lazy"
+                            width="{$image.bySize.medium_default.width}"
+                            height="{$image.bySize.medium_default.height}"
+                    >
+                    <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                        <i class="material-icons zoom-in">search</i>
+                    </div>
+                </div>
+            {/foreach}
+        {/if}
+    {/block}
 
 </div>
 {hook h='displayAfterProductThumbs'}
