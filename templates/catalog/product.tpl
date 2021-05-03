@@ -54,7 +54,7 @@
     <div class="product_topview">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12 col-xl-4">
                     {if Context::getContext()->isMobile() == 1}
                         {block name='page_header_container'}
                             {block name='page_header'}
@@ -79,7 +79,7 @@
                         </section>
                     {/block}
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-12 col-xl-5">
                     {if Context::getContext()->isMobile() == 0}
                         {block name='page_header_container'}
                             {block name='page_header'}
@@ -141,7 +141,7 @@
                         {/if}
                     {/block}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-12 col-xl-3">
                     <div class="product-information">
                         <div class="product-actions price_outstanding">
 

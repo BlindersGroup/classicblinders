@@ -90,9 +90,7 @@
                                         {/if}
 
                                         <span
-                                                href="{$filter.nextEncodedFacetsURL}"
                                                 class="_gray-darker search-link js-search-link"
-                                                rel="nofollow"
                                         >
                                             {$filter.label}
                                             {if $filter.magnitude and $show_quantities}
@@ -132,8 +130,6 @@
                                         {foreach from=$facet.filters item="filter"}
                                             {if !$filter.active}
                                                 <span
-                                                        rel="nofollow"
-                                                        href="{$filter.nextEncodedFacetsURL}"
                                                         class="select-list js-search-link"
                                                 >
                                                     {$filter.label}

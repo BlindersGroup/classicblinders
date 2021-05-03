@@ -46,16 +46,35 @@
             </div>
         </div>
 
-        {if Context::getContext()->isMobile() == 1 || Context::getContext()->isTablet() == 1}
+        {if $db_subcategories == 1}
+
             <div id="subcategories">
                 <ul class="clearfix">
                     {foreach from=$subcategories item=subcategory}
                         <li>
-                            <a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a>
+                            <a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">
+                                {if $subcategory.image.bySize.category_default.url}
+                                    <img src="{$subcategory.image.bySize.small_default.url}" alt="{$subcategory.name}" width="{$subcategory.image.bySize.category_default.width}" height="{$subcategory.image.bySize.category_default.height}" loading="lazy">
+                                {/if}
+                                {$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}
+                            </a>
                         </li>
                     {/foreach}
                 </ul>
             </div>
+
+        {else}
+            {if Context::getContext()->isMobile() == 1 || Context::getContext()->isTablet() == 1}
+                <div id="subcategories">
+                    <ul class="clearfix">
+                        {foreach from=$subcategories item=subcategory}
+                            <li>
+                                <a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a>
+                            </li>
+                        {/foreach}
+                    </ul>
+                </div>
+            {/if}
         {/if}
     {/if}
 

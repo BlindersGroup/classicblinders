@@ -33,29 +33,29 @@
     <div class="container">
       <div class="row">
         <div>
-          <div class="col-md-3 col-xs-12 hidden-sm-down">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-xs-12 hidden-sm-down">
             {hook h='displayNav1'}
           </div>
-          <div class="col-md-6 col-xs-12 hidden-sm-down">
+          <div class="col-lg-6 col-md-6 col-xs-12 hidden-lg-down">
             {hook h='displayNavCenter'}
           </div>
-          <div class="col-md-3 right-nav nav_in_mobile">
+          <div class="col-xl-3 col-lg-6 col-md-6 right-nav nav_in_mobile">
               {hook h='displayNav2'}
           </div>
         </div>
         {* Cabecera en Mobile *}
         <div class="hidden-md-up text-sm-center mobile">
-          <div class="float-xs-left" id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
+          <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
             <i class="material-icons d-inline">&#xE5D2;</i>
           </div>
-          <div class="float-xs-right" id="_mobile_cart"></div>
-          <div class="float-xs-right" id="_mobile_user_info"></div>
-          <div class="dbcontactinfo_top float-xs-right" id="_mobile_contact_info">
+          <div class="top-logo" id="_mobile_logo"></div>
+          <div class="dbcontactinfo_top" id="_mobile_contact_info">
             <span class="link_contact datatext" datatext="{$urls.pages.contact|base64_encode}">
               <i class="material-icons">contact_support</i>
             </span>
           </div>
-          <div class="top-logo" id="_mobile_logo"></div>
+          <div id="_mobile_user_info"></div>
+          <div id="_mobile_cart"></div>
           <div class="clearfix"></div>
         </div>
       </div>
@@ -66,8 +66,8 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container">
-       <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+       <div class="header__flex">
+        <div class="displayLogo hidden-sm-down" id="_desktop_logo">
             {if $page.page_name == 'index'}
               <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
             {else}
@@ -76,11 +76,11 @@
                 </a>
             {/if}
         </div>
-         <div class="col-md-8 col-sm-12">
+         <div class="displayTopCenter">
            {hook h='displayTopCenter'}
            <div class="clearfix"></div>
          </div>
-        <div class="col-md-2 col-sm-12 position-static displayTop">
+        <div class="position-static displayTop">
           {hook h='displayTop'}
           <div class="clearfix"></div>
         </div>
