@@ -7284,12 +7284,16 @@ $(document).on('click', '.btn_inifinitescroll', function(e) {
 // Packs productos
 $(document).on('click', '.pack_dto', function(e) {
     var qty = $(this).attr('data-qty');
+
     $('#quantity_wanted').val(qty);
 
     $( ".pack_dto" ).each(function() {
         $(this).removeClass("checked");
     });
     $(this).addClass("checked");
+
+    // Actualizamos los precios con los descuentos
+    prestashop.emit("updateProduct", { eventType: "updatedProductQuantity"});
 });
 
 // Inputs news
