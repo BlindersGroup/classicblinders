@@ -7366,7 +7366,7 @@ if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
                     pagination: false,
                     arrows: false,
                     breakpoints: {
-                        '600': {
+                        '991': {
                             fixedWidth: 50,
                             height: 50,
                         }
@@ -7398,6 +7398,13 @@ if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
                     cover       : true,
                     isNavigation: true,
                     fixedWidth  : 70,
+                    breakpoints : {
+                        '991': {
+                            fixedWidth: 50,
+                            height    : 50,
+                            height   : '245px',
+                        }
+                    },
                 } ).mount();
 
                 var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {

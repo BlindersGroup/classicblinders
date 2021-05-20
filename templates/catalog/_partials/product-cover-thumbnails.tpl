@@ -89,7 +89,7 @@
                             pagination: false,
                             arrows: false,
                             breakpoints : {
-                                '600': {
+                                '991': {
                                     fixedWidth: 50,
                                     height    : 50,
                                 }
@@ -170,6 +170,13 @@
                             cover       : true,
                             isNavigation: true,
                             fixedWidth  : 70,
+                            breakpoints : {
+                                '991': {
+                                    fixedWidth: 50,
+                                    height    : 50,
+                                    height   : '245px',
+                                }
+                            },
                         } ).mount();
 
                         var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {

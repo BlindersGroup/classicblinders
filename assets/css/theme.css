@@ -13040,6 +13040,9 @@ body#checkout #conditions-to-approve .custom-checkbox {
         padding: 0 0.75rem;
         height: auto;
     }
+    #splide_images_product_miniature_lateral {
+        width: calc(100% - 60px);
+    }
 }
 
 @media (max-width: 1200px) {
