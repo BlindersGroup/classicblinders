@@ -7414,6 +7414,12 @@ if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
                 } ).mount();
 
                 primarySlider.sync( secondarySlider ).mount();
+
+                new Splide( '#splide_images_product', {
+                    perPage     : 1,
+                    pagination: false,
+                    arrows: true,
+                } ).mount();
             }
         );
     });

@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="images-container {if $show_product_imgs == 2}images_lateral{/if}">
+<div class="images-container {if $show_product_imgs == 2 && Context::getContext()->isMobile() != 1}images_lateral{/if}">
 
     {block name='product_cover'}
 
@@ -107,87 +107,123 @@
                 </script>
 
             {elseif $show_product_imgs == 2}
-                {* Con miniaturas lateral *}
-                <div id="splide_images_product_secundary_lateral" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            {foreach from=$product.images item=image}
-                                <li class="splide__slide">
-                                    <img
-                                            class="thumb js-thumb {if $image.id_image == $product.cover.id_image} selected {/if}"
-                                            data-image-medium-src="{$image.bySize.medium_default.url}"
-                                            data-image-large-src="{$image.bySize.large_default.url}"
-                                            src="{$image.bySize.home_default.url}"
-                                            alt="{$image.legend}"
-                                            title="{$image.legend}"
-                                            itemprop="image"
-                                            loading="lazy"
-                                            width="{$image.bySize.small_default.width}"
-                                            height="{$image.bySize.small_default.height}"
-                                    >
-                                </li>
-                            {/foreach}
-                        </ul>
-                    </div>
-                    <div class="hook_thumbnail">
-                        {hook h='displayThumbnailProduct' product=$product category=$category}
-                    </div>
-                </div>
-
-                <div id="splide_images_product_miniature_lateral" class="splide">
-                    <div class="splide__track">
-                        <div class="splide__list">
-                            {foreach from=$product.images item=image}
-                                <div class="splide__slide product-cover">
-                                    <img
-                                            class="js-qv-product-cover"
-                                            src="{$image.bySize.medium_default.url}"
-                                            alt="{$image.legend}"
-                                            title="{$image.legend}"
-                                            itemprop="image"
-                                            loading="lazy"
-                                            width="{$image.bySize.medium_default.width}"
-                                            height="{$image.bySize.medium_default.height}"
-                                    >
-                                    <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                        <i class="material-icons zoom-in">search</i>
+                {if Context::getContext()->isMobile() == 1}
+                    {* En mobile por defecto sin miniaturas *}
+                    <div id="splide_images_product" class="splide">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                {foreach from=$product.images item=image}
+                                    <div class="splide__slide product-cover">
+                                        <img
+                                                class="js-qv-product-cover"
+                                                src="{$image.bySize.medium_default.url}"
+                                                alt="{$image.legend}"
+                                                title="{$image.legend}"
+                                                itemprop="image"
+                                                loading="lazy"
+                                                width="{$image.bySize.medium_default.width}"
+                                                height="{$image.bySize.medium_default.height}"
+                                        >
+                                        <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                            <i class="material-icons zoom-in">search</i>
+                                        </div>
                                     </div>
-                                </div>
-                            {/foreach}
+                                {/foreach}
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <script>
+                        document.addEventListener( 'DOMContentLoaded', function () {
+                            new Splide( '#splide_images_product', {
+                                perPage     : 1,
+                                pagination: false,
+                                arrows: true,
+                            } ).mount();
+                        } );
+                    </script>
+                {else}
+                    {* Con miniaturas lateral *}
+                    <div id="splide_images_product_secundary_lateral" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {foreach from=$product.images item=image}
+                                    <li class="splide__slide">
+                                        <img
+                                                class="thumb js-thumb {if $image.id_image == $product.cover.id_image} selected {/if}"
+                                                data-image-medium-src="{$image.bySize.medium_default.url}"
+                                                data-image-large-src="{$image.bySize.large_default.url}"
+                                                src="{$image.bySize.home_default.url}"
+                                                alt="{$image.legend}"
+                                                title="{$image.legend}"
+                                                itemprop="image"
+                                                loading="lazy"
+                                                width="{$image.bySize.small_default.width}"
+                                                height="{$image.bySize.small_default.height}"
+                                        >
+                                    </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                        <div class="hook_thumbnail">
+                            {hook h='displayThumbnailProduct' product=$product category=$category}
+                        </div>
+                    </div>
 
-                <script>
-                    document.addEventListener( 'DOMContentLoaded', function () {
-                        var secondarySlider = new Splide( '#splide_images_product_secundary_lateral', {
-                            direction: 'ttb',
-                            height   : '310px',
-                            perPage     : 4,
-                            pagination: false,
-                            arrows: false,
-                            gap         : 10,
-                            cover       : true,
-                            isNavigation: true,
-                            fixedWidth  : 70,
-                            breakpoints : {
-                                '991': {
-                                    fixedWidth: 50,
-                                    height    : 50,
-                                    height   : '245px',
-                                }
-                            },
-                        } ).mount();
+                    <div id="splide_images_product_miniature_lateral" class="splide">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                {foreach from=$product.images item=image}
+                                    <div class="splide__slide product-cover">
+                                        <img
+                                                class="js-qv-product-cover"
+                                                src="{$image.bySize.medium_default.url}"
+                                                alt="{$image.legend}"
+                                                title="{$image.legend}"
+                                                itemprop="image"
+                                                loading="lazy"
+                                                width="{$image.bySize.medium_default.width}"
+                                                height="{$image.bySize.medium_default.height}"
+                                        >
+                                        <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                            <i class="material-icons zoom-in">search</i>
+                                        </div>
+                                    </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
 
-                        var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {
-                            perPage     : 1,
-                            pagination: false,
-                            arrows: true,
-                        } ).mount();
+                    <script>
+                        document.addEventListener( 'DOMContentLoaded', function () {
+                            var secondarySlider = new Splide( '#splide_images_product_secundary_lateral', {
+                                direction: 'ttb',
+                                height   : '310px',
+                                perPage     : 4,
+                                pagination: false,
+                                arrows: false,
+                                gap         : 10,
+                                cover       : true,
+                                isNavigation: true,
+                                fixedWidth  : 70,
+                                breakpoints : {
+                                    '991': {
+                                        fixedWidth: 50,
+                                        height    : 50,
+                                        height   : '245px',
+                                    }
+                                },
+                            } ).mount();
 
-                        primarySlider.sync( secondarySlider ).mount();
-                    } );
-                </script>
+                            var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {
+                                perPage     : 1,
+                                pagination: false,
+                                arrows: true,
+                            } ).mount();
+
+                            primarySlider.sync( secondarySlider ).mount();
+                        } );
+                    </script>
+                {/if}
 
             {else}
                 {* Por defecto sin miniaturas *}
