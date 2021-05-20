@@ -5,13 +5,12 @@ class FrontController extends FrontControllerCore
 
     protected function getBreadcrumbLinks()
     {
+        $shop_name = Configuration::get('PS_SHOP_NAME');
         $breadcrumb = [];
-
         $breadcrumb['links'][] = [
-            'title' => $this->getTranslator()->trans('Expertos en PrestaShop', [], 'Shop.Theme.Global'),
+            'title' => $shop_name,
             'url' => $this->context->link->getPageLink('index', true),
         ];
-
         return $breadcrumb;
     }
 }
