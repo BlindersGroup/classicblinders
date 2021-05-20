@@ -12628,13 +12628,25 @@ body#checkout #conditions-to-approve .custom-checkbox {
 }
 
 #splide_images_product .splide__slide img,
-#splide_images_product_miniature .splide__slide img{
+#splide_images_product_miniature .splide__slide img,
+#splide_images_product_miniature_lateral .splide__slide img {
     max-width: 100%;
     height: auto;
 }
 
 #splide_images_product_secundary{
     margin: 10px 0;
+}
+
+.images-container.images_lateral {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#splide_images_product_miniature_lateral {
+    width: calc(100% - 85px);
 }
 
 #product .product_topview .product-description {

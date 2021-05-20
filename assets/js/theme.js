@@ -7351,33 +7351,60 @@ $(document).ready(function(){
 });
 
 // imagenes productos
-if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1){
+if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
     $(document).ready(function () {
         prestashop.on(
             'updatedProduct',
             function (event) {
-                var secondarySlider = new Splide( '#splide_images_product_secundary', {
-                    fixedWidth  : 70,
-                    height      : 70,
+                var secondarySlider = new Splide('#splide_images_product_secundary', {
+                    fixedWidth: 70,
+                    height: 70,
+                    gap: 10,
+                    cover: true,
+                    isNavigation: true,
+                    focus: 'left',
+                    pagination: false,
+                    arrows: false,
+                    breakpoints: {
+                        '600': {
+                            fixedWidth: 50,
+                            height: 50,
+                        }
+                    },
+                }).mount();
+
+                var primarySlider = new Splide('#splide_images_product_miniature', {
+                    perPage: 1,
+                    pagination: false,
+                    arrows: true,
+                });
+
+                primarySlider.sync(secondarySlider).mount();
+            }
+        );
+    });
+} else if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 2) {
+    $(document).ready(function () {
+        prestashop.on(
+            'updatedProduct',
+            function (event) {
+                var secondarySlider = new Splide( '#splide_images_product_secundary_lateral', {
+                    direction: 'ttb',
+                    height   : '310px',
+                    perPage     : 4,
+                    pagination: false,
+                    arrows: false,
                     gap         : 10,
                     cover       : true,
                     isNavigation: true,
-                    focus       : 'left',
-                    pagination: false,
-                    arrows: false,
-                    breakpoints : {
-                        '600': {
-                            fixedWidth: 50,
-                            height    : 50,
-                        }
-                    },
+                    fixedWidth  : 70,
                 } ).mount();
 
-                var primarySlider = new Splide( '#splide_images_product_miniature', {
+                var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {
                     perPage     : 1,
                     pagination: false,
                     arrows: true,
-                } );
+                } ).mount();
 
                 primarySlider.sync( secondarySlider ).mount();
             }
