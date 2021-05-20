@@ -27,38 +27,120 @@
     {block name='product_cover'}
 
         {if count($product.images) > 1}
-            <div id="splide_images_product" class="splide">
-                <div class="splide__track">
-                    <div class="splide__list">
-                        {foreach from=$product.images item=image}
-                            <div class="splide__slide product-cover">
-                                <img
-                                    class="js-qv-product-cover"
-                                    src="{$image.bySize.medium_default.url}"
-                                    alt="{$image.legend}"
-                                    title="{$image.legend}"
-                                    itemprop="image"
-                                    loading="lazy"
-                                    width="{$image.bySize.medium_default.width}"
-                                    height="{$image.bySize.medium_default.height}"
-                                >
-                                <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                    <i class="material-icons zoom-in">search</i>
+
+            {if $show_product_imgs == 1}
+                {* Con miniaturas *}
+                <div id="splide_images_product_miniature" class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            {foreach from=$product.images item=image}
+                                <div class="splide__slide product-cover">
+                                    <img
+                                            class="js-qv-product-cover"
+                                            src="{$image.bySize.medium_default.url}"
+                                            alt="{$image.legend}"
+                                            title="{$image.legend}"
+                                            itemprop="image"
+                                            loading="lazy"
+                                            width="{$image.bySize.medium_default.width}"
+                                            height="{$image.bySize.medium_default.height}"
+                                    >
+                                    <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                        <i class="material-icons zoom-in">search</i>
+                                    </div>
                                 </div>
-                            </div>
-                        {/foreach}
+                            {/foreach}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                document.addEventListener( 'DOMContentLoaded', function () {
-                    new Splide( '#splide_images_product', {
-                        perPage     : 1,
-                        pagination: false,
-                        arrows: true,
-                    } ).mount();
-                } );
-            </script>
+
+                <div id="splide_images_product_secundary" class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            {foreach from=$product.images item=image}
+                                <div class="splide__slide">
+                                    <img
+                                            class="thumb js-thumb {if $image.id_image == $product.cover.id_image} selected {/if}"
+                                            data-image-medium-src="{$image.bySize.medium_default.url}"
+                                            data-image-large-src="{$image.bySize.large_default.url}"
+                                            src="{$image.bySize.home_default.url}"
+                                            alt="{$image.legend}"
+                                            title="{$image.legend}"
+                                            itemprop="image"
+                                            loading="lazy"
+                                            width="{$image.bySize.small_default.width}"
+                                            height="{$image.bySize.small_default.height}"
+                                    >
+                                </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener( 'DOMContentLoaded', function () {
+                        var secondarySlider = new Splide( '#splide_images_product_secundary', {
+                            fixedWidth  : 70,
+                            height      : 70,
+                            gap         : 10,
+                            cover       : true,
+                            isNavigation: true,
+                            focus       : 'left',
+                            pagination: false,
+                            arrows: false,
+                            breakpoints : {
+                                '600': {
+                                    fixedWidth: 50,
+                                    height    : 50,
+                                }
+                            },
+                        } ).mount();
+
+                        var primarySlider = new Splide( '#splide_images_product_miniature', {
+                            perPage     : 1,
+                            pagination: false,
+                            arrows: true,
+                        } );
+
+                        primarySlider.sync( secondarySlider ).mount();
+                    } );
+                </script>
+
+            {else}
+                {* Por defecto sin miniaturas *}
+                <div id="splide_images_product" class="splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            {foreach from=$product.images item=image}
+                                <div class="splide__slide product-cover">
+                                    <img
+                                        class="js-qv-product-cover"
+                                        src="{$image.bySize.medium_default.url}"
+                                        alt="{$image.legend}"
+                                        title="{$image.legend}"
+                                        itemprop="image"
+                                        loading="lazy"
+                                        width="{$image.bySize.medium_default.width}"
+                                        height="{$image.bySize.medium_default.height}"
+                                    >
+                                    <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                        <i class="material-icons zoom-in">search</i>
+                                    </div>
+                                </div>
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener( 'DOMContentLoaded', function () {
+                        new Splide( '#splide_images_product', {
+                            perPage     : 1,
+                            pagination: false,
+                            arrows: true,
+                        } ).mount();
+                    } );
+                </script>
+            {/if}
 
         {else}
             {foreach from=$product.images item=image}
@@ -79,6 +161,7 @@
                 </div>
             {/foreach}
         {/if}
+
     {/block}
 
 </div>

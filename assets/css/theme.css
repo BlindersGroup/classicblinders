@@ -12627,9 +12627,14 @@ body#checkout #conditions-to-approve .custom-checkbox {
     line-height: 50px;
 }
 
-#splide_images_product .splide__slide img {
+#splide_images_product .splide__slide img,
+#splide_images_product_miniature .splide__slide img{
     max-width: 100%;
     height: auto;
+}
+
+#splide_images_product_secundary{
+    margin: 10px 0;
 }
 
 #product .product_topview .product-description {
