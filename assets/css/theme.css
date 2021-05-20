@@ -11555,7 +11555,7 @@ input[type="number"]::-webkit-outer-spin-button {
     color: #232323;
     background-color: transparent !important;
     position: relative;
-    z-index: 99999;
+    z-index: 999;
 }
 
 textarea.form-control {
@@ -12615,6 +12615,7 @@ body#checkout #conditions-to-approve .custom-checkbox {
     float: right;
     height: auto !important;
     font-size: 1rem;
+    z-index: 999;
 }
 
 #header .header-nav #mobile__menu {
