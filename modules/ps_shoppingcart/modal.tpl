@@ -44,7 +44,15 @@
                   <img class="product-image" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 modal_products_info">
-                  <p class="product-name">{$product.name}</p>
+                  <div class="product-name">
+                    <span class="product-name-value">{$product.name}</span>
+                    {foreach from=$product.attributes key="attribute" item="value"}
+                      <div class="product-attributes">
+                        <span class="label">{$attribute}:</span>
+                        <span class="value">{$value}</span>
+                      </div>
+                    {/foreach}
+                  </div>
                   <div class="delete_product" data-idproduct="{$product.id}" data-idattribute="{$product.id_product_attribute}"><i class="material-icons">delete</i></div>
                   <div class="product_action">
                     <div class="input-group bootstrap-touchspin">

@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 1.5.5
+version: 1.5.6
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -32,20 +32,10 @@ assets:
 
   # The following lines are showing how to load assets in your page
   # Uncomment and change value to start loading css or js files
-  css:
-    all:
-      - id: carousel-splide
-        path: assets/css/splide/splide.min.css
-      - id: carousel-splide-theme
-        path: assets/css/splide/themes/splide-default.min.css
-  js:
-    all:
-      - id: carousel-splide
-        path: assets/js/splide.min.js
 
 global_settings:
   configuration:
-    PS_IMAGE_QUALITY: jpg
+    PS_IMAGE_QUALITY: png
     PS_LABEL_IN_STOCK_PRODUCTS: En stock
     PS_LABEL_OOS_PRODUCTS_BOA: Fuera de stock
     PS_LABEL_OOS_PRODUCTS_BOD: Fuera de stock
@@ -67,10 +57,12 @@ global_settings:
       - dbcategorydesc
       - dbrichsnippets
       - dbdatatext
+      - dbthemecustom
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
       - ps_bestsellers
+      - productcomments
     to_disable:
       - ps_banner
       - ps_specials

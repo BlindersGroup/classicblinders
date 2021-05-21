@@ -28,16 +28,16 @@
       <div class="modal-body">
         {assign var=imagesCount value=$product.images|count}
         <figure>
-          <img
-            class="js-modal-product-cover product-cover-modal"
-            width="{$product.default_image.bySize.large_default.width}"
-            height="{$product.default_image.bySize.large_default.height}"
-            src="{$product.default_image.bySize.large_default.url}"
-            alt="{$product.default_image.legend}"
-            title="{$product.default_image.legend}"
-            itemprop="image"
-            loading="lazy"
-          >
+            <img
+                class="js-modal-product-cover product-cover-modal"
+                src="{$product.images[0].bySize.large_default.url}"
+                alt="{$product.images[0].legend}"
+                title="{$product.images[0].legend}"
+                itemprop="image"
+                loading="lazy"
+                width="{$product.images[0].bySize.large_default.width}"
+                height="{$product.images[0].bySize.large_default.height}"
+            >
         </figure>
         <aside id="thumbnails" class="thumbnails js-thumbnails text-sm-center">
           {block name='product_images'}

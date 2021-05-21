@@ -54,7 +54,7 @@ class Dbcategorydesc extends Module
         $this->displayName = $this->l('DB Category Large Description');
         $this->description = $this->l('Descripción larga en la sección de categorias');
 
-        $this->ps_versions_compliancy = array('min' => '1.7.6', 'max' => _PS_VERSION_);
+        $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
     }
 
     /**

@@ -69,9 +69,9 @@
 }
 
 @media (max-width: 991px) {
-    .dbhomecategories ul li:nth-child(2n+1) {
+    /*.dbhomecategories ul li:nth-child(2n+1) {
         clear: both;
-    }
+    }*/
     .dbhomecategories {
         padding: 15px;
     }

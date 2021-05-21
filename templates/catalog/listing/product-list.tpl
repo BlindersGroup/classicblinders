@@ -46,6 +46,12 @@
           </div>
         {/block}*}
 
+          {if $smarty.get.page > 1}
+              <div class="prev_pagination">
+                <a class="btn btn-primary btn_volver" href="?page={$smarty.get.page - 1}">{l s='Cargar lo anterior' d='Shop.Theme.Catalog'}</a>
+              </div>
+          {/if}
+
         <div>
           {block name='product_list'}
             {include file='catalog/_partials/products.tpl' listing=$listing}
