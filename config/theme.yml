@@ -32,7 +32,17 @@ assets:
 
   # The following lines are showing how to load assets in your page
   # Uncomment and change value to start loading css or js files
-
+dependencies:
+  modules:
+    - dbcontactinfo
+    - dbhomecategories
+    - dbfreeshipping
+    - dbbrandslider
+    - dbproductcomments
+    - dbcategorydesc
+    - dbrichsnippets
+    - dbdatatext
+    - dbthemecustom
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
@@ -62,7 +72,6 @@ global_settings:
       - ps_bestsellers
       - ps_newproducts
       - ps_bestsellers
-      - productcomments
     to_disable:
       - ps_banner
       - ps_specials
@@ -192,14 +201,3 @@ theme_settings:
     new-products: layout-left-column
     prices-drop: layout-left-column
     contact: layout-left-column
-
-dependencies:
-  modules:
-    - dbcontactinfo
-    - dbhomecategories
-    - dbfreeshipping
-    - dbbrandslider
-    - dbproductcomments
-    - dbcategorydesc
-    - dbrichsnippets
-    - dbdatatext
