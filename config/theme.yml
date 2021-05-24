@@ -203,3 +203,4 @@ dependencies:
     - dbcategorydesc
     - dbrichsnippets
     - dbdatatext
+    - dbthemecustom
