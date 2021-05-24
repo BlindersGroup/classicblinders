@@ -70,9 +70,11 @@ class Dbcategorydesc extends Module
      */
     public function install()
     {
-        if(!Module::isEnabled('dbaboutus')){
-            $this->_errors[] = $this->l('Debe de tener instalado y activo el módulo dbaboutus');
-            return false;
+        if($this->premium == 1) {
+            if (!Module::isEnabled('dbaboutus')) {
+                $this->_errors[] = $this->l('Debe de tener instalado y activo el módulo dbaboutus');
+                return false;
+            }
         }
 
         include(dirname(__FILE__).'/sql/install.php');
