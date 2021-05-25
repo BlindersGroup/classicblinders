@@ -60,6 +60,7 @@ class Dbthemecustom extends Module
     public function install()
     {
         Configuration::updateValue('DBTHEMECUSTOM_SUBCATEGORIES', false);
+        Configuration::updateValue('DBTHEMECUSTOM_PRODUCTIMG', 0);
 
         return parent::install() &&
             $this->registerHook('displayHeader');
@@ -68,6 +69,7 @@ class Dbthemecustom extends Module
     public function uninstall()
     {
         Configuration::deleteByName('DBTHEMECUSTOM_SUBCATEGORIES');
+        Configuration::deleteByName('DBTHEMECUSTOM_PRODUCTIMG');
 
         return parent::uninstall();
     }
@@ -120,6 +122,21 @@ class Dbthemecustom extends Module
      */
     protected function getConfigForm()
     {
+        $options = array(
+            array(
+                'id_option' => 0,
+                'name' => $this->l('Sin miniaturas')
+            ),
+            array(
+                'id_option' => 1,
+                'name' => $this->l('Abajo')
+            ),
+            array(
+                'id_option' => 2,
+                'name' => $this->l('Lateral')
+            ),
+        );
+
         return array(
             'form' => array(
                 'legend' => array(
@@ -146,6 +163,18 @@ class Dbthemecustom extends Module
                             )
                         ),
                     ),
+                    array(
+                        'type' => 'select',
+                        'lang' => true,
+                        'label' => $this->l('Miniaturas productos'),
+                        'name' => 'DBTHEMECUSTOM_PRODUCTIMG',
+                        'desc' => $this->l('Mostrar las miniaturas de las imágenes de productos en la ficha de producto'),
+                        'options' => array(
+                            'query' => $options,
+                            'id' => 'id_option',
+                            'name' => 'name'
+                        ),
+                    ),
                 ),
                 'submit' => array(
                     'title' => $this->l('Save'),
@@ -161,6 +190,7 @@ class Dbthemecustom extends Module
     {
         return array(
             'DBTHEMECUSTOM_SUBCATEGORIES' => Configuration::get('DBTHEMECUSTOM_SUBCATEGORIES'),
+            'DBTHEMECUSTOM_PRODUCTIMG' => Configuration::get('DBTHEMECUSTOM_PRODUCTIMG'),
         );
     }
 
@@ -187,6 +217,16 @@ class Dbthemecustom extends Module
             $this->context->smarty->assign(array(
                 'db_subcategories' => $db_subcategories,
             ));
+        }
+
+        if($controller == 'product') {
+            $show_product_imgs = Configuration::get('DBTHEMECUSTOM_PRODUCTIMG');
+            $this->context->smarty->assign(array(
+                'show_product_imgs' => $show_product_imgs,
+            ));
+            Media::addJsDef([
+                'show_product_imgs' => $show_product_imgs,
+            ]);
         }
     }
 }
