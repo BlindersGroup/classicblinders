@@ -13044,6 +13044,10 @@ body#checkout #conditions-to-approve .custom-checkbox {
     #splide_images_product_miniature_lateral {
         width: calc(100% - 60px);
     }
+    #subcategories a,
+    #subcategories>ul>li {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 1200px) {
