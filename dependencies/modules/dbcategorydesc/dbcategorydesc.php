@@ -38,16 +38,9 @@ class Dbcategorydesc extends Module
 
     public function __construct()
     {
-        if(file_exists(dirname(__FILE__).'/premium/DbPremium.php')){
-            require_once(dirname(__FILE__).'/premium/DbPremium.php');
-            $this->premium = 1;
-        } else {
-            $this->premium = 0;
-        }
-
         $this->name = 'dbcategorydesc';
         $this->tab = 'seo';
-        $this->version = '1.1.1';
+        $this->version = '1.1.0';
         $this->author = 'DevBlinders';
         $this->need_instance = 0;
 
@@ -61,7 +54,7 @@ class Dbcategorydesc extends Module
         $this->displayName = $this->l('DB Category Large Description');
         $this->description = $this->l('Descripción larga en la sección de categorias');
 
-        $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
+        $this->ps_versions_compliancy = array('min' => '1.7.6', 'max' => _PS_VERSION_);
     }
 
     /**
@@ -70,21 +63,12 @@ class Dbcategorydesc extends Module
      */
     public function install()
     {
-        if($this->premium == 1) {
-            if (!Module::isEnabled('dbaboutus')) {
-                $this->_errors[] = $this->l('Debe de tener instalado y activo el módulo dbaboutus');
-                return false;
-            }
-        }
-
         include(dirname(__FILE__).'/sql/install.php');
         return parent::install() &&
             $this->registerHook('actionCategoryFormBuilderModifier') &&
             $this->registerHook('actionAfterUpdateCategoryFormHandler') &&
-            $this->registerHook('actionAfterCreateCategoryFormHandler') &&
             $this->registerHook('afterCreateCategoryFormHandler') &&
-            $this->registerHook('displayFooterCategory') &&
-            $this->registerHook('displayHeader');
+            $this->registerHook('displayFooterCategory');
     }
 
     public function uninstall()
@@ -128,42 +112,40 @@ class Dbcategorydesc extends Module
             'required' => false,
         ]);
 
-        if($this->premium == 1) {
-            if (Module::isEnabled('dbaboutus')) {
+        if(Module::isEnabled('dbaboutus')){
 
-                require_once(dirname(__FILE__) . '/../dbaboutus/classes/DbAboutUsAuthor.php');
-                require_once(dirname(__FILE__) . '/../dbaboutus/classes/DbAboutUsTag.php');
-                // Authors
-                $authors = DbAboutUsAuthor::getAuthors();
-                $choiceAuthors = [];
-                foreach ($authors as $author) {
-                    $choiceAuthors[$author['name']] = $author['id_dbaboutus_author'];
-                }
-                // Tags
-                $tags = DbAboutUsTag::getTags();
-                $choiceTags = [];
-                foreach ($tags as $tag) {
-                    $choiceTags[$tag['name']] = $tag['id_dbaboutus_tag'];
-                }
-
-                $formBuilder
-                    ->add('id_editor', ChoiceType::class, [
-                        'choices' => $choiceAuthors,
-                        'label' => $this->getTranslator()->trans('Editor', [], 'Modules.dbcategorydesc.Admin'),
-                        'required' => false,
-                    ])
-                    ->add('id_review', ChoiceType::class, [
-                        'choices' => $choiceAuthors,
-                        'label' => $this->getTranslator()->trans('Revisor', [], 'Modules.dbcategorydesc.Admin'),
-                        'required' => false,
-                    ])
-                    ->add('id_tag', ChoiceType::class, [
-                        'choices' => $choiceTags,
-                        'label' => $this->getTranslator()->trans('Etiqueta', [], 'Modules.dbcategorydesc.Admin'),
-                        'required' => false,
-                    ]);
-
+            require_once(dirname(__FILE__).'/../dbaboutus/classes/DbAboutUsAuthor.php');
+            require_once(dirname(__FILE__).'/../dbaboutus/classes/DbAboutUsTag.php');
+            // Authors
+            $authors = DbAboutUsAuthor::getAuthors();
+            $choiceAuthors = [];
+            foreach($authors as $author){
+                $choiceAuthors[$author['name']] = $author['id_dbaboutus_author'];
             }
+            // Tags
+            $tags = DbAboutUsTag::getTags();
+            $choiceTags = [];
+            foreach($tags as $tag){
+                $choiceTags[$tag['name']] = $tag['id_dbaboutus_tag'];
+            }
+
+            $formBuilder
+                ->add('id_editor', ChoiceType::class, [
+                    'choices' => $choiceAuthors,
+                    'label' => $this->getTranslator()->trans('Editor', [], 'Modules.dbcategorydesc.Admin'),
+                    'required' => false,
+                ])
+                ->add('id_review', ChoiceType::class, [
+                    'choices' => $choiceAuthors,
+                    'label' => $this->getTranslator()->trans('Revisor', [], 'Modules.dbcategorydesc.Admin'),
+                    'required' => false,
+                ])
+                ->add('id_tag', ChoiceType::class, [
+                    'choices' => $choiceTags,
+                    'label' => $this->getTranslator()->trans('Etiqueta', [], 'Modules.dbcategorydesc.Admin'),
+                    'required' => false,
+                ]);
+
         }
 
         foreach ($locales as $locale) {
@@ -255,11 +237,7 @@ class Dbcategorydesc extends Module
                 'review' => $review,
                 'tag' => $tag,
             ));
-            if($this->premium == 1){
-                return $this->display(__FILE__, 'premium/footer_category.tpl');
-            } else {
-                return $this->display(__FILE__, 'views/templates/hook/footer_category.tpl');
-            }
+            return $this->display(__FILE__, 'views/templates/hook/footer_category.tpl');
         }
     }
 
