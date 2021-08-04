@@ -22,8 +22,14 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
+{*Preload Material Icons*}
+<link rel="preload" href="{$urls.theme_assets}fonts/material-icons.woff2" as="font" type="font/woff2" crossorigin>
 {foreach $stylesheets.external as $stylesheet}
   <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}">
+
+  {*<link rel="preload" href="{$stylesheet.uri}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{$stylesheet.uri}"></noscript>*}
 {/foreach}
 
 {foreach $stylesheets.inline as $stylesheet}

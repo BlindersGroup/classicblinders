@@ -26,14 +26,15 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family={$custom_css.google_font}:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family={$custom_css.google_font_url}:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={$custom_css.google_font_url}:wght@400;700&display=swap"></noscript>
 {/if}
 
 <style>
     :root {
         {if !empty($custom_css.google_font)}
-        --font_primary: {$custom_css.google_font}, sans-serif;
-        --font_second: {$custom_css.google_font}, sans-serif;
+        --font_primary: "{$custom_css.google_font}", sans-serif;
+        --font_second: "{$custom_css.google_font}", sans-serif;
         {else}
         --font_primary: sans-serif;
         --font_second: sans-serif;

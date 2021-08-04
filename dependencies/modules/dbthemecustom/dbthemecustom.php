@@ -77,7 +77,7 @@ class Dbthemecustom extends Module
 
     public function addValues()
     {
-        Configuration::updateValue('DBTHEMECUSTOM_GOOGLE_FONT', 'Roboto');
+        Configuration::updateValue('DBTHEMECUSTOM_GOOGLE_FONT', '');
         Configuration::updateValue('DBTHEMECUSTOM_PRIMARY_COLOR', '#2fb5d2');
         Configuration::updateValue('DBTHEMECUSTOM_SECOND_COLOR', '#f39d72');
         Configuration::updateValue('DBTHEMECUSTOM_BK', '#f6f6f6');
@@ -144,7 +144,10 @@ class Dbthemecustom extends Module
             $this->postProcess();
         }
 
-        return $this->renderForm();
+        $iframe = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe.tpl');
+        $iframe_bottom = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe_bottom.tpl');
+
+        return $iframe.$this->renderForm().$iframe_bottom;
     }
 
     /**
@@ -904,7 +907,8 @@ class Dbthemecustom extends Module
     public function getVarsCss()
     {
         return array(
-            'google_font' => urlencode(Configuration::get('DBTHEMECUSTOM_GOOGLE_FONT')),
+            'google_font_url' => urlencode(Configuration::get('DBTHEMECUSTOM_GOOGLE_FONT')),
+            'google_font' => Configuration::get('DBTHEMECUSTOM_GOOGLE_FONT'),
             'primary_color' => Configuration::get('DBTHEMECUSTOM_PRIMARY_COLOR'),
             'second_color' => Configuration::get('DBTHEMECUSTOM_SECOND_COLOR'),
             'background' => Configuration::get('DBTHEMECUSTOM_BK'),

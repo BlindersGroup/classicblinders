@@ -1,0 +1,110 @@
+/**
+ * 2007-2021 PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to http://www.prestashop.com for more information.
+ *
+ * @author    DevBlinders <soporte@devblinders.com>
+ * @copyright Copyright (c) DevBlinders
+ * @license   Commercial license
+ */
+
+.box_premium {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e7ebeea6;
+    z-index: 497;
+    left: 0;
+    top: 0px;
+    border: 1px solid #e7ebee;
+    border-radius: 5px;
+}
+.pro_tag {
+    background-color: #4faf50;
+    background: linear-gradient(90deg, rgba(79,175,80,1) 0%, rgba(134,175,76,1) 100%);
+    color: #FFF;
+    padding: 5px 10px;
+    position: relative;
+    display: table;
+    font-weight: 800;
+    border-radius: 5px;
+}
+.box_premium .pro_tag {
+    margin: 5px;
+    float: right;
+}
+.import_loading,
+.import_ok,
+.import_ko {
+    display: none;
+}
+.import_loading {
+    color: #EE7C1B;
+    font-weight: 600;
+    font-size: 16px;
+}
+.import_ok {
+    color: #7AD03A;
+    font-weight: 600;
+    font-size: 16px;
+}
+.import_ko {
+    color: #DC3232;
+    font-weight: 600;
+    font-size: 16px;
+}
+.blink_me {
+    animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.group_pro {
+    position: relative;
+    padding-top: 15px;
+}
+.group_pro:before  {
+    content: " " !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e7ebeea6;
+    z-index: 497;
+    top: 0;
+    border: 1px solid #e7ebee;
+    border-radius: 5px;
+}
+.group_pro .pro_tag {
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    z-index: 498;
+    top: 0;
+}
+.group_pro .group_pro {
+    padding: 0;
+}
+.group_pro .group_pro .pro_tag {
+    display: none;
+}
+.group_pro .group_pro:before {
+    background-color: transparent;
+    border: 0;
+}
