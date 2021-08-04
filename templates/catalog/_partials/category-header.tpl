@@ -32,7 +32,7 @@
                         <div id="category-description" class="text-muted">{$category.description nofilter}</div>
                     {/if}
                 </div>
-                {if $category.image.bySize.category_default.url}
+                {if $category.image.bySize.category_default.url && $category_img == 1}
                     <div class="category-cover">
                         <img
                             src="{$category.image.bySize.category_default.url}"

@@ -85,31 +85,33 @@
           {hook h='displayProductListReviews' product=$product}
         {/block}
 
-          {if !$product.add_to_cart_url}
-            <div class="add">
-              <button class="btn btn-primary add-to-cart-category datatext" datatext="{$product.url|base64_encode}">
-                  {l s='View more' d='Shop.Theme.Actions'}
-              </button>
-            </div>
-          {else}
-              <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
-                  <input type="hidden" name="token" value="{$static_token}">
-                  <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
-                  <input type="hidden" name="id_customization" value="0" id="product_customization_id">
-                  <div class="add">
-                      <button
-                              class="btn btn-primary add-to-cart-category"
-                              data-button-action="add-to-cart"
-                              type="submit"
-                              {if !$product.add_to_cart_url}
-                                  disabled
-                              {/if}
-                      >
-                          <i class="material-icons">add_shopping_cart</i>
-                          {l s='Add' d='Shop.Theme.Actions'}
-                      </button>
-                  </div>
-              </form>
+          {if $custom_generic.button_buy == 1}
+              {if !$product.add_to_cart_url}
+                <div class="add">
+                  <button class="btn btn-primary add-to-cart-category datatext" datatext="{$product.url|base64_encode}">
+                      {l s='View more' d='Shop.Theme.Actions'}
+                  </button>
+                </div>
+              {else}
+                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
+                      <input type="hidden" name="token" value="{$static_token}">
+                      <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
+                      <input type="hidden" name="id_customization" value="0" id="product_customization_id">
+                      <div class="add">
+                          <button
+                                  class="btn btn-primary add-to-cart-category"
+                                  data-button-action="add-to-cart"
+                                  type="submit"
+                                  {if !$product.add_to_cart_url}
+                                      disabled
+                                  {/if}
+                          >
+                              <i class="material-icons">add_shopping_cart</i>
+                              {l s='Add' d='Shop.Theme.Actions'}
+                          </button>
+                      </div>
+                  </form>
+              {/if}
           {/if}
       </div>
 

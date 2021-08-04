@@ -34,14 +34,16 @@
       <h1>{l s='List of products by brand %brand_name%' sprintf=['%brand_name%' => $manufacturer.name] d='Shop.Theme.Catalog'}</h1>
       <div id="manufacturer-short_description">{$manufacturer.short_description nofilter}</div>
     </div>
-    <div class="manufacturer-cover">
-      <img
-        src="{$link->getManufacturerImageLink($manufacturer.id, 'small_default')}"
-        alt="{$manufacturer.name|escape:html:'UTF-8'}"
-        loading="lazy"
-        width="98"
-        height="98"
-      />
-    </div>
+    {if $category_img == 1}
+      <div class="manufacturer-cover">
+        <img
+          src="{$link->getManufacturerImageLink($manufacturer.id, 'small_default')}"
+          alt="{$manufacturer.name|escape:html:'UTF-8'}"
+          loading="lazy"
+          width="98"
+          height="98"
+        />
+      </div>
+    {/if}
   </div>
 {/block}

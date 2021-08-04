@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='footer'}
-<div class="text-sm-center">
+<div class="text-sm-center simple_footer">
     {l s='%copyright% %year% - %shop% - All rights reserved' sprintf=['%shop%' => $shop.name, '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
 </div>
 {/block}

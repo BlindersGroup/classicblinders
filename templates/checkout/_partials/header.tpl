@@ -24,7 +24,7 @@
  *}
 {block name='header'}
   {block name='header_nav'}
-    <nav class="header-nav">
+    <nav class="header-nav simple_header">
       <div class="container">
         <div class="header_checkout">
           <div class="_desktop_logo" id="_desktop_logo">

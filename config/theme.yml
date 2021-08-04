@@ -107,6 +107,10 @@ global_settings:
       - name: displayFooterCategory
         title: displayFooterCategory
         description: Footer category
+      - name: displayProductFullWidth
+        title: displayProductFullWidth
+      - name: displaySidebarContact
+        title: displaySidebarContact
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:

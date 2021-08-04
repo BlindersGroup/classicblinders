@@ -2,7 +2,7 @@
 <module>
     <name>dbfreeshipping</name>
     <displayName><![CDATA[DB Free Shipping]]></displayName>
-    <version><![CDATA[1.0.0]]></version>
+    <version><![CDATA[1.0.1]]></version>
     <description><![CDATA[Mostrar cuanto queda para envio gratuito]]></description>
     <author><![CDATA[DevBlinders]]></author>
     <tab><![CDATA[front_office_features]]></tab>

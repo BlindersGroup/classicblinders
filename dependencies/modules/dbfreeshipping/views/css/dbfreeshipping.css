@@ -47,6 +47,11 @@
     margin: 0;
 }
 
+#product .header-nav .displayNav2 .dbfreeshipping {
+    float: right;
+    width: auto;
+}
+
 .dbfreeshipping_cart .dbfreeshipping {
     text-align: center;
     color: #232323;

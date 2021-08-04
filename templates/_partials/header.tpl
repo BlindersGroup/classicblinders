@@ -29,25 +29,22 @@
 {/block}
 
 {block name='header_nav'}
-  <nav class="header-nav">
+  <nav class="header-nav {if $custom_generic.width_header == 1}full_width_generic{/if}">
     <div class="container">
-      <div class="row">
-        <div>
-          <div class="col-xl-3 col-lg-6 col-md-6 col-xs-12 hidden-sm-down">
+      <div class="headernav_flex">
+        {if Context::getContext()->getDevice() < 4}
+          <div class="displayNav1">
             {hook h='displayNav1'}
           </div>
-          <div class="col-lg-6 col-md-6 col-xs-12 hidden-lg-down">
+          <div class="displayNavCenter">
             {hook h='displayNavCenter'}
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 right-nav nav_in_mobile">
-              {hook h='displayNav2'}
+          <div class="displayNav2">
+            {hook h='displayNav2'}
           </div>
-        </div>
+        {/if}
         {* Cabecera en Mobile *}
         <div class="hidden-md-up text-sm-center mobile">
-          <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
-            <i class="material-icons d-inline">&#xE5D2;</i>
-          </div>
           <div class="top-logo" id="_mobile_logo"></div>
           <div class="dbcontactinfo_top" id="_mobile_contact_info">
             <span class="link_contact datatext" datatext="{$urls.pages.contact|base64_encode}">
@@ -64,22 +61,27 @@
 {/block}
 
 {block name='header_top'}
-  <div class="header-top">
+  <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if}">
     <div class="container">
-       <div class="header__flex">
+      <div class="header__flex">
+        {if Context::getContext()->getDevice() > 1}
+          <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
+            <i class="material-icons d-inline">&#xE5D2;</i>
+          </div>
+        {/if}
         <div class="displayLogo hidden-sm-down" id="_desktop_logo">
-            {if $page.page_name == 'index'}
+          {if $page.page_name == 'index'}
+            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
+          {else}
+            <a href="{$urls.pages.index}">
               <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
-            {else}
-                <a href="{$urls.pages.index}">
-                  <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
-                </a>
-            {/if}
+            </a>
+          {/if}
         </div>
-         <div class="displayTopCenter">
-           {hook h='displayTopCenter'}
-           <div class="clearfix"></div>
-         </div>
+        <div class="displayTopCenter">
+          {hook h='displayTopCenter'}
+          <div class="clearfix"></div>
+        </div>
         <div class="position-static displayTop">
           {hook h='displayTop'}
           <div class="clearfix"></div>

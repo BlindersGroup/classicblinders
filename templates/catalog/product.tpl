@@ -49,208 +49,26 @@
 
 {block name='content'}
 
-</div>
-</div>
-    <div class="product_topview">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-xl-4">
-                    {if Context::getContext()->isMobile() == 1}
-                        {block name='page_header_container'}
-                            {block name='page_header'}
-                                <h1 class="h1 product_name" >{block name='page_title'}{$product.name}{/block}</h1>
-                            {/block}
-                        {/block}
-                    {/if}
-                    {block name='page_content_container'}
-                        <section class="page-content" id="content">
-                            {block name='page_content'}
-                                {include file='catalog/_partials/product-flags.tpl'}
-
-                                {block name='product_cover_thumbnails'}
-                                    {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-                                {/block}
-                                <div class="scroll-box-arrows">
-                                    <i class="material-icons left">&#xE314;</i>
-                                    <i class="material-icons right">&#xE315;</i>
-                                </div>
-
-                            {/block}
-                        </section>
-                    {/block}
-                </div>
-                <div class="col-md-12 col-xl-5">
-                    {if Context::getContext()->isMobile() == 0}
-                        {block name='page_header_container'}
-                            {block name='page_header'}
-                                <h1 class="h1 product_name" >{block name='page_title'}{$product.name}{/block}</h1>
-                            {/block}
-                        {/block}
-                    {/if}
-                    {if isset($product_manufacturer->id)}
-                        <div class="product-manufacturer">
-                            {if isset($manufacturer_image_url)}
-                                <a href="{$product_brand_url}" class="brand_centercolumn">
-                                    <img src="{$manufacturer_image_url}" class="img img-thumbnail manufacturer-logo" alt="{$product_manufacturer->name}" loading="lazy" width="32" height="32">
-                                </a>
-                            {else}
-                                <a href="{$product_brand_url}" class="brand_centercolumn">{$product_manufacturer->name}</a>
-                            {/if}
-                        </div>
-                    {/if}
-                    {hook h='displayProductCenterColumn' product=$product}
-                    {block name='product_description_short'}
-                        <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
-                    {/block}
-                    {if $product.is_customizable && count($product.customizations.fields)}
-                        {block name='product_customization'}
-                            {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
-                        {/block}
-                    {/if}
-
-                    {hook h='displayProductCenterColumnBottom' product=$product}
-
-                    {block name='product_discounts'}
-                        {include file='catalog/_partials/product-discounts.tpl'}
-                    {/block}
-
-                    {block name='product_pack'}
-                        {if $packItems}
-                            <section class="product-pack">
-                                <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
-                                {foreach from=$packItems item="product_pack"}
-                                    {block name='product_miniature'}
-                                        {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
-                                    {/block}
-                                {/foreach}
-                            </section>
-                        {/if}
-                    {/block}
-
-                    {block name='product_attachments'}
-                        {if $product.attachments}
-                            <div class="attachment_top">
-                                {foreach from=$product.attachments item=attachment}
-                                    {assign var=url_attach value="/index.php?controller=attachment&id_attachment={$attachment.id_attachment}"}
-                                    <span class="attach datatext" datatext="{$url_attach|base64_encode}">
-                                        <i class="material-icons">file_download</i>
-                                        {$attachment.name}
-                                    </span>
-                                {/foreach}
-                            </div>
-                        {/if}
-                    {/block}
-                </div>
-                <div class="col-md-12 col-xl-3">
-                    <div class="product-information">
-                        <div class="product-actions price_outstanding">
-
-                            {block name='product_prices'}
-                                {include file='catalog/_partials/product-prices.tpl'}
-                            {/block}
-
-                            {block name='product_buy'}
-                                <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
-                                    <input type="hidden" name="token" value="{$static_token}">
-                                    <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
-                                    <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id">
-
-                                    {block name='product_variants'}
-                                        {include file='catalog/_partials/product-variants.tpl'}
-                                    {/block}
-
-                                    {block name='product_add_to_cart'}
-                                        {include file='catalog/_partials/product-add-to-cart.tpl'}
-                                    {/block}
-
-                                    {* Input to refresh product HTML removed, block kept for compatibility with themes *}
-                                    {block name='product_refresh'}{/block}
-                                </form>
-                            {/block}
-
-                            {block name='product_additional_info'}
-                                {include file='catalog/_partials/product-additional-info.tpl'}
-                            {/block}
-                        </div>
-
-                        {block name='hook_display_reassurance'}
-                            {hook h='displayReassurance'}
-                        {/block}
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="product_topview product_columns_{$product_columns}">
+        {if $product_columns == 2}
+            {include file='catalog/_partials/templates/two-columns.tpl'}
+        {else}
+            {include file='catalog/_partials/templates/three-columns.tpl'}
+        {/if}
     </div>
-
-<div class="container">
-<div id="content-wrapper">
-  <section id="main">
 
     <div class="row product-container">
 
-      <div class="col-md-12">
-
-      </div>
+        <div class="displayProductFullWidth">
+            {hook h='displayProductFullWidth' product=$product category=$category}
+        </div>
 
         {* Parte inferior del producto*}
-
-        {* ACORDEON *}
-        <div class="col-md-12">
-            <div class="product-information">
-                <div id="accordion">
-                    {block name='product_tabs'}
-                        {if $product.description}
-                            <div class="card">
-                                <div id="description-info">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#description" aria-expanded="true" aria-controls="description">
-                                        {l s='Description' d='Shop.Theme.Catalog'}
-                                        <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                                        <i class="material-icons collapse_up">keyboard_arrow_up</i>
-                                    </button>
-                                </div>
-
-                                <div id="description" class="info_content collapse {if $product.description}show in{/if}" aria-labelledby="description-info" data-parent="#accordion">
-                                    {block name='product_description'}
-                                        <div class="product-description">{$product.description nofilter}</div>
-                                    {/block}
-                                </div>
-                            </div>
-                        {/if}
-                        <div class="card">
-                            <div id="product-details-info">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#product-details" aria-expanded="false" aria-controls="product-details">
-                                    {l s='Product Details' d='Shop.Theme.Catalog'}
-                                    <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                                    <i class="material-icons collapse_up">keyboard_arrow_up</i>
-                                </button>
-                            </div>
-                            <div id="product-details" class="info_content collapse {if !$product.description}show in{/if}" aria-labelledby="product-details-info" data-parent="#accordion">
-                                {block name='product_details'}
-                                    {include file='catalog/_partials/product-details.tpl'}
-                                {/block}
-                            </div>
-                        </div>
-                        {foreach from=$product.extraContent item=extra key=extraKey}
-                            <div class="card">
-                                <div id="extra-info-{$extraKey}">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#extra-{$extraKey}" aria-expanded="false" aria-controls="extra-{$extraKey}">
-                                        {$extra.title}
-                                        <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                                        <i class="material-icons collapse_up">keyboard_arrow_up</i>
-                                    </button>
-                                </div>
-                                <div id="extra-{$extraKey}" class="info_content collapse" aria-labelledby="extra-info-{$extraKey}" data-parent="#accordion">
-                                    {$extra.content nofilter}
-                                </div>
-                            </div>
-                        {/foreach}
-
-                    {/block}
-                </div>
-            </div>
-        </div>
-        {* ACORDEON *}
-
+        {if $product_block_down == 1}
+            {include file='catalog/_partials/templates/product-down-open.tpl'}
+        {else}
+            {include file='catalog/_partials/templates/product-down-tab.tpl'}
+        {/if}
 
       </div>
     </div>

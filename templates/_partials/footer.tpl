@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="pre-footer">
+<div class="pre-footer {if $custom_generic.width_footer == 1}full_width_generic{/if}">
   <div class="container">
     <div class="row">
       {block name='hook_footer_before'}
@@ -31,7 +31,7 @@
     </div>
   </div>
 </div>
-<div class="footer-container">
+<div class="footer-container {if $custom_generic.width_footer == 1}full_width_generic{/if}">
   <div class="container">
     <div class="row">
       {block name='hook_footer'}
@@ -45,11 +45,28 @@
     </div>
     <div class="row">
       <div class="col-md-12 copyright">
-        <p class="text-sm-center text-xs-center">
+        <p class="text_copyright">
           {block name='copyright_link'}
             {l s='%copyright% %year% - %shop% - All rights reserved' sprintf=['%shop%' => $shop.name, '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
           {/block}
         </p>
+        <ul class="imgs_payment">
+          {if $custom_generic.visa == 1}
+            <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}img/icons/ico-visa.svg" width="75" height="50" loading="lazy"></li>
+          {/if}
+          {if $custom_generic.mastercard == 1}
+            <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}img/icons/ico-mastercard.svg" width="75" height="50" loading="lazy"></li>
+          {/if}
+          {if $custom_generic.maestro == 1}
+            <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}img/icons/ico-maestro.svg" width="75" height="50" loading="lazy"></li>
+          {/if}
+          {if $custom_generic.paypal == 1}
+            <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}img/icons/ico-paypal.svg" width="75" height="50" loading="lazy"></li>
+          {/if}
+          {if $custom_generic.bizum == 1}
+            <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}img/icons/ico-bizum.svg" width="75" height="50" loading="lazy"></li>
+          {/if}
+        </ul>
       </div>
     </div>
   </div>

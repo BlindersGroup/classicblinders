@@ -36,7 +36,7 @@ class Dbfreeshipping extends Module
     {
         $this->name = 'dbfreeshipping';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'DevBlinders';
         $this->need_instance = 0;
 
@@ -222,23 +222,35 @@ class Dbfreeshipping extends Module
 
     public function hookDisplayNav2()
     {
-        $free = Tools::displayPrice(Configuration::get('DBFREESHIPPING_VALUE'));
+        $free = $this->context->currentLocale->formatNumber(Configuration::get('DBFREESHIPPING_VALUE')).$this->context->currency->symbol;
 
         $this->context->smarty->assign('free', $free);
         return $this->display(__FILE__, 'views/templates/hook/nav.tpl');
+    }
+
+    public function hookDisplayNav1()
+    {
+        return $this->hookDisplayNav2();
+    }
+
+    public function hookDisplayNavCenter()
+    {
+        return $this->hookDisplayNav2();
     }
 
     public function getFreeShippingTotal()
     {
         $is_free = false;
         $free = Configuration::get('DBFREESHIPPING_VALUE');
+        $free_show = $this->context->currentLocale->formatNumber($free).$this->context->currency->symbol;
+
         $total_cart = 0;
         if($this->context->cart->id) {
-            $total_cart = Cart::getTotalCart($this->context->cart->id, true);
-            $total_cart = trim(str_replace('€', '', $total_cart));
+            $total_cart = $this->context->cart->getOrderTotal();
         }
 
-        $remains = Tools::displayPrice(round((float)$free - (float)$total_cart, 2));
+        $remains_calc = round((float)$free - (float)$total_cart, 2);
+        $remains = $this->context->currentLocale->formatNumber($remains_calc).$this->context->currency->symbol;
         $porcent = round((float)$total_cart * 100 / (float)$free, 0);
         if ((float)$total_cart > (float)$free) {
             $is_free = true;
@@ -249,7 +261,7 @@ class Dbfreeshipping extends Module
             'is_free' => $is_free,
             'porcent' => $porcent,
             'remains' => $remains,
-            'free' => Tools::displayPrice($free),
+            'free' => $free_show,
         );
     }
 

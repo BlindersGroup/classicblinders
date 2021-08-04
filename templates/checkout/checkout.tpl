@@ -39,7 +39,11 @@
 
     <header id="header">
       {block name='header'}
-        {include file='checkout/_partials/header.tpl'}
+        {if $delete_leakage == 0}
+          {include file='_partials/header.tpl'}
+        {else}
+          {include file='checkout/_partials/header.tpl'}
+        {/if}
       {/block}
     </header>
 
@@ -81,7 +85,11 @@
 
     <footer id="footer">
       {block name='footer'}
-        {include file='checkout/_partials/footer.tpl'}
+        {if $delete_leakage == 0}
+          {include file='_partials/footer.tpl'}
+        {else}
+          {include file='checkout/_partials/footer.tpl'}
+        {/if}
       {/block}
     </footer>
 
