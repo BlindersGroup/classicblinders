@@ -117,7 +117,7 @@ global_settings:
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:
-        - ps_mainmenu
+        - dbmenu
       displayNav1:
         - dbcontactinfo
       displayNavCenter:

@@ -118,8 +118,8 @@ class Dbthemecustom extends Module
         Configuration::updateValue('DBTHEMECUSTOM_PREFOOTER_COLOR_HOVER', '#2592a9');
         Configuration::updateValue('DBTHEMECUSTOM_FOOTER_BK', '#f6f6f6');
         Configuration::updateValue('DBTHEMECUSTOM_FOOTER_COLOR_FONT', '#232323');
-        Configuration::updateValue('DBTHEMECUSTOM_FOOTER_COLOR_LINK', '#2fb5d2');
-        Configuration::updateValue('DBTHEMECUSTOM_FOOTER_COLOR_HOVER', '#2592a9');
+        Configuration::updateValue('DBTHEMECUSTOM_FOOTER_COLOR_LINK', '#232323');
+        Configuration::updateValue('DBTHEMECUSTOM_FOOTER_COLOR_HOVER', '#2fb5d2');
 
         Configuration::updateValue('DBTHEMECUSTOM_CATEGORY_IMG', 1);
         Configuration::updateValue('DBTHEMECUSTOM_SUBCATEGORIES', false);
