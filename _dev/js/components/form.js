@@ -1,4 +1,4 @@
-{**
+/**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -21,19 +21,35 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- *}
+ */
+import $ from 'jquery';
 
-{* Javascript is used to display each product grade, this allows every rating to be udpated as soon as they change *}
+export default class Form {
+  init(){
+    this.parentFocus();
+    this.togglePasswordVisibility();
+  }
 
-<div class="product-list-reviews" data-id="{$product.id}" data-url="{$product_comment_grade_url nofilter}">
-    <div class="grade-stars small-stars">
-        <div class="stars_empty">
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-        </div>
-    </div>
-    <div class="comments-nb"></div>
-</div>
+  parentFocus() {
+    $('.js-child-focus').focus(function () {
+      $(this).closest('.js-parent-focus').addClass('focus');
+    });
+    $('.js-child-focus').focusout(function () {
+      $(this).closest('.js-parent-focus').removeClass('focus');
+    });
+  }
+
+  togglePasswordVisibility() {
+    $('button[data-action="show-password"]').on('click', function () {
+      var elm = $(this).closest('.input-group').children('input.js-visible-password');
+      if (elm.attr('type') === 'password') {
+        elm.attr('type', 'text');
+        $(this).text($(this).data('textHide'));
+      } else {
+        elm.attr('type', 'password');
+        $(this).text($(this).data('textShow'));
+      }
+
+    });
+  }
+}

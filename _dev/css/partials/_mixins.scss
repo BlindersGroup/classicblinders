@@ -1,0 +1,93 @@
+@mixin search-box {
+  form {
+    position: relative;
+
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      min-width: inherit;
+      color: var(--seach_color);
+      background-color: var(--search_bk);
+      border: 0;
+
+      &:focus {
+        outline: 1px solid var(--primary_color);
+        color: var(--color_font);
+        background-color: var(--search_bk);
+
+        + button .search {
+          color: var(--primary_color);
+        }
+      }
+    }
+
+    button[type="submit"] {
+      position: absolute;
+      background: none;
+      border: none;
+      bottom: 0.3125rem;
+      right: 0.125rem;
+      color: var(--seach_color);
+
+      .search:hover {
+        color: var(--primary_color);
+      }
+    }
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin box-shadow-light {
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin transition($value) {
+  transition: #{$value};
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin clearfix() {
+  clear: both;
+}

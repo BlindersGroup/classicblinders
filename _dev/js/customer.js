@@ -1,4 +1,4 @@
-{**
+/**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -21,19 +21,22 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- *}
+ */
+import $ from 'jquery';
 
-{* Javascript is used to display each product grade, this allows every rating to be udpated as soon as they change *}
+function initRmaItemSelector() {
+  $('#order-return-form table thead input[type=checkbox]').on('click', function() {
+    var checked = $(this).prop('checked');
+    $('#order-return-form table tbody input[type=checkbox]').each(function(_, checkbox) {
+      $(checkbox).prop('checked', checked);
+    });
+  });
+}
 
-<div class="product-list-reviews" data-id="{$product.id}" data-url="{$product_comment_grade_url nofilter}">
-    <div class="grade-stars small-stars">
-        <div class="stars_empty">
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-        </div>
-    </div>
-    <div class="comments-nb"></div>
-</div>
+function setupCustomerScripts() {
+  if ($('body#order-detail')) {
+    initRmaItemSelector();
+  }
+}
+
+$(document).ready(setupCustomerScripts);

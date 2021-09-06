@@ -1,4 +1,4 @@
-{**
+/**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -21,19 +21,30 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
- *}
+ */
+import prestashop from 'prestashop';
+import $ from 'jquery';
 
-{* Javascript is used to display each product grade, this allows every rating to be udpated as soon as they change *}
+prestashop.blockcart = prestashop.blockcart || {};
 
-<div class="product-list-reviews" data-id="{$product.id}" data-url="{$product_comment_grade_url nofilter}">
-    <div class="grade-stars small-stars">
-        <div class="stars_empty">
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-            <i class="material-icons">star</i>
-        </div>
-    </div>
-    <div class="comments-nb"></div>
-</div>
+prestashop.blockcart.showModal = (html) => {
+  function getBlockCartModal() {
+    return $('#blockcart-modal');
+  }
+
+  let $blockCartModal = getBlockCartModal();
+  if ($blockCartModal.length){
+    $blockCartModal.remove();
+  }
+
+  $('body').append(html);
+
+  $blockCartModal = getBlockCartModal();
+  $blockCartModal.modal('show').on('hidden.bs.modal', (event) => {
+    prestashop.emit('updateProduct', {
+      reason: event.currentTarget.dataset,
+      event: event
+    });
+  });
+};
+

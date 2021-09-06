@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 1.5.7
+version: 1.5.8
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -26,12 +26,138 @@ meta:
       description: Two columns with a small right column
 
 assets:
-  # If you're using this theme as child and you want to load
-  # the parent theme assets, uncomment this line.
-#  use_parent_assets: true
-
-  # The following lines are showing how to load assets in your page
-  # Uncomment and change value to start loading css or js files
+  css:
+    index:
+      - id: index-style
+        path: assets/css/home.css
+        media: all
+        priority: 50
+    product:
+      - id: product-style
+        path: assets/css/products.css
+        media: all
+        priority: 50
+    category:
+      - id: category-style
+        path: assets/css/category.css
+        media: all
+        priority: 50
+    manufacturer:
+      - id: manufacturer-style
+        path: assets/css/brands.css
+        media: all
+        priority: 50
+    cart:
+      - id: cart-style
+        path: assets/css/cart.css
+        media: all
+        priority: 50
+    order:
+      - id: checkout-style
+        path: assets/css/checkout.css
+        media: all
+        priority: 50
+    contact:
+      - id: contact-style
+        path: assets/css/contact.css
+        media: all
+        priority: 50
+    stores:
+      - id: stores-style
+        path: assets/css/stores.css
+        media: all
+        priority: 50
+    sitemap:
+      - id: sitemap-style
+        path: assets/css/sitemap.css
+        media: all
+        priority: 50
+    my-account:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    history:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    order-detail:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    order-slip:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    order-follow:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    order-return:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    identity:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    discount:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    addresses:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    address:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    authentication:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    registration:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    password-email:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    password-infos:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+    password-new:
+      - id: customer-style
+        path: assets/css/customer.css
+        media: all
+        priority: 50
+#  js:
+#    all:
+#      - id: this-cool-lib
+#        path: assets/js/external-lib.js
+#        priority: 30
+#        position: bottom
+#    product:
+#      - id: product-custom-lib
+#        path: assets/js/product.js
+#        priority: 200
+#        attribute: async
 dependencies:
   modules:
     - dbcontactinfo

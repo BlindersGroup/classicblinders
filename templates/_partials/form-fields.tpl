@@ -34,11 +34,9 @@
 
     <div class="col-md-12{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
 
+      {if $field.type !== 'checkbox'}
         <label class="form-control-label{if $field.required} required{/if} {if isset($field.availableValues.placeholder) || $field.type == 'select' || $field.type == 'countrySelect' || !empty($field.value)}has_value{/if}">
-            {if $field.type !== 'checkbox'}
-                {$field.label}
-            {/if}
-
+          {$field.label}
           {block name='form_field_comment'}
             {if ($field.required) && !in_array($field.type, ['radio-buttons', 'checkbox'])}
               <span class="form_required">*</span>
@@ -48,6 +46,7 @@
             {/if}*}
           {/block}
         </label>
+      {/if}
 
       {if $field.type === 'select'}
 

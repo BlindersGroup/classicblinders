@@ -1,0 +1,79 @@
+#header .open_account {
+  cursor: pointer;
+}
+
+#userinfo_modal .modal-dialog {
+  max-width: 380px;
+  width: 100%;
+  float: right;
+  margin: 0;
+  height: 100vh;
+
+  .modal-content {
+    height: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: #fafafa;
+    max-width: 320px;
+    min-width: 320px;
+    float: right;
+  }
+
+  .modal-header {
+    border: 0;
+
+    .modal-title {
+      font-weight: 600;
+      color: var(--color_font);
+    }
+  }
+
+  .modal-body {
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  .modal_item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+
+    > * {
+      padding: 0.5rem;
+    }
+
+    .title {
+      font-weight: 600;
+      color: var(--primary_color);
+      font-size: 0.9rem;
+    }
+
+    .item {
+      font-weight: 400;
+      color: var(--color_font);
+      font-size: 0.9rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .close_session {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--button_p_bk);
+    background-color: var(--button_p_bk);
+    color: var(--button_p_color);
+    display: table;
+    margin: 1rem auto;
+    font-weight: 600;
+
+    &:hover {
+      border: 1px solid var(--button_p_bk_hover);
+      background-color: var(--button_p_bk_hover);
+      color: var(--button_p_bk_hover);
+    }
+  }
+}
