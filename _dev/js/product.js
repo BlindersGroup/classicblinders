@@ -120,6 +120,17 @@ $(document).ready(function () {
   }
 });
 
+// Actualizar precios
+$(document).ready(function () {
+  prestashop.on(
+      'updatedProduct',
+      function (event) {
+        $('.product-information .price_outstanding .product_prices').html(event.product_prices);
+      }
+  );
+});
+
+
 // Packs productos
 $(document).on('click', '.pack_dto', function(e) {
   var qty = $(this).attr('data-qty');

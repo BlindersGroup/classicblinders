@@ -279,6 +279,9 @@
     .product-prices .tax-shipping-delivery-label .available_stock.unavailable > .delivery-information {
       display: none; }
 
+.product-prices .product-quantities label {
+  margin-bottom: 0; }
+
 .product-discount {
   color: #7a7a7a; }
   .product-discount .regular-price {
@@ -393,6 +396,7 @@
       margin-bottom: 0; }
       .price_outstanding .product-prices .product-price .current-price .price_with_tax {
         font-size: 1.8rem;
+        line-height: 1.8rem;
         font-weight: 600;
         margin-right: 10px; }
       .price_outstanding .product-prices .product-price .current-price .show_discount,

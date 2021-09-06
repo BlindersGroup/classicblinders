@@ -406,6 +406,10 @@
       }
     }
   }
+
+  .product-quantities label {
+    margin-bottom: 0;
+  }
 }
 
 .product-discount {
@@ -563,6 +567,7 @@
 
         .price_with_tax {
           font-size: 1.8rem;
+          line-height: 1.8rem;
           font-weight: 600;
           margin-right: 10px;
         }

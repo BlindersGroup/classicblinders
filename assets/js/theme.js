@@ -7456,9 +7456,20 @@ $(document).ready(function() {
 $(document).ready(function () {
     $('#search_filters').on('click', '.js-search-link', function(e) {
         $(this).parent('.facet-label').children('.custom-checkbox').children('input[type="checkbox"]').prop("checked", true).trigger("change");
-        console.log('entra');
     });
 } );
+
+
+// Actualizar precios
+$(document).ready(function () {
+    prestashop.on(
+        'updatedProduct',
+        function (event) {
+            $('.product-information .price_outstanding .product_prices').html(event.product_prices);
+        }
+    );
+});
+
 
 /*!
  * Splide.js
