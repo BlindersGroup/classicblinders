@@ -1732,6 +1732,8 @@ input[type="number"] {
   .links .navbar-toggler {
     display: inline-block;
     padding: 0; }
+  .links #footer_contactinfo {
+    padding: 0 0.625rem; }
   #footer .footer-container .copyright {
     justify-content: center; }
     #footer .footer-container .copyright .imgs_payment {

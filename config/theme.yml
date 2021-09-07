@@ -42,6 +42,21 @@ assets:
         path: assets/css/category.css
         media: all
         priority: 50
+    best-sales:
+      - id: category-style
+        path: assets/css/category.css
+        media: all
+        priority: 50
+    new-products:
+      - id: category-style
+        path: assets/css/category.css
+        media: all
+        priority: 50
+    prices-drop:
+      - id: category-style
+        path: assets/css/category.css
+        media: all
+        priority: 50
     manufacturer:
       - id: manufacturer-style
         path: assets/css/brands.css
@@ -53,6 +68,11 @@ assets:
         media: all
         priority: 50
     order:
+      - id: checkout-style
+        path: assets/css/checkout.css
+        media: all
+        priority: 50
+    order-confirmation:
       - id: checkout-style
         path: assets/css/checkout.css
         media: all
@@ -193,11 +213,11 @@ global_settings:
       - dbdatatext
       - dbthemecustom
       - dbmenu
+      - dbsearchbar
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
       - ps_bestsellers
-      - dbsearchbar
     to_disable:
       - ps_banner
       - ps_specials

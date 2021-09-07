@@ -91,7 +91,7 @@
               <span class="title">{l s='Carrier' d='Shop.Theme.Checkout'}</span>
               <span>{$order.carrier.name}</span>
             </div>
-            {if $line.tracking}
+            {if isset($line) && $line.tracking}
               <div class="item">
                 <span class="title">{l s='Tracking number' d='Shop.Theme.Checkout'}</span>
                 <span>{$line.tracking nofilter} {if $order.follow_up}<a href="{$order.follow_up}">{$order.follow_up}</a>{/if}</span>

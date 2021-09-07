@@ -436,28 +436,6 @@
   font-size: 1rem;
 }
 
-#subcategories>ul {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-left: -5px;
-
-  > li {
-    max-width: 16.6%;
-    text-align: center;
-    flex-grow: 1;
-    background-color: transparent;
-
-    .subcategory-name {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 1rem;
-    }
-  }
-}
-
 @include media-breakpoint-down(xs) {
   .products-selection {
     .filter-button {

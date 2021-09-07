@@ -19,6 +19,8 @@
       text-align: center;
       background-color: $white;
       padding: 0.5rem;
+      max-width: 16.6%;
+      flex-grow: 1;
 
 
       .subcategory-image {
@@ -43,6 +45,9 @@
         align-content: center;
         color: var(--color_font);
         font-size: $font-size-lg;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
 
         &:hover {
           color: var(--color_hover);

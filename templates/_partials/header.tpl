@@ -71,10 +71,10 @@
         {/if}
         <div class="displayLogo hidden-sm-down" id="_desktop_logo">
           {if $page.page_name == 'index'}
-            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
+            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
           {else}
             <a href="{$urls.pages.index}">
-              <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="34" width="128">
+              <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
             </a>
           {/if}
         </div>

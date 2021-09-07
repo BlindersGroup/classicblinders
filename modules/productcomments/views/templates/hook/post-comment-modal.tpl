@@ -60,16 +60,16 @@
                                                 style="width:100%;"
                                                 itemprop="image"
                                                 loading="lazy"
-                                                width="{$product.default_image.bySize.medium_default.width}"
-                                                height="{$product.default_image.bySize.medium_default.height}"
+                                                width="{$product.cover.bySize.medium_default.width}"
+                                                height="{$product.cover.bySize.medium_default.height}"
                                             >
                                         {else}
                                             <img
                                                 src="{$urls.no_picture_image.bySize.large_default.url nofilter}"
                                                 style="width:100%;"
                                                 loading="lazy"
-                                                width="{$urls.no_picture_image.bySize.large_default.width}"
-                                                height="{$urls.no_picture_image.bySize.large_default.height}"
+                                                width="{$urls.cover.bySize.large_default.width}"
+                                                height="{$urls.cover.bySize.large_default.height}"
                                             >
                                         {/if}
                                     </div>

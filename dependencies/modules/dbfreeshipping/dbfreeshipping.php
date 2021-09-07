@@ -64,7 +64,7 @@ class Dbfreeshipping extends Module
         Configuration::updateValue('DBFREESHIPPING_LIVE_CART', true);
 
         return parent::install() &&
-            $this->registerHook('header') &&
+            $this->registerHook('displayHeader') &&
             $this->registerHook('displayShoppingCart') &&
             $this->registerHook('displayProductAdditionalInfo') &&
             $this->registerHook('displayNav2');
@@ -215,7 +215,7 @@ class Dbfreeshipping extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addCSS($this->_path.'/views/css/dbfreeshipping.css');
     }

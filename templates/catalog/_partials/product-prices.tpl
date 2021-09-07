@@ -32,7 +32,7 @@
 
             <div class="current-price">
 
-                <span class="price_with_tax price_pvp" content="{$product.rounded_display_price}">{$product.price}</span>
+                <span class="price_with_tax price_pvp" content="{$product.price_tax_exc}">{$product.price}</span>
 
               {if $product.has_discount}
                   <span class="show_discount">

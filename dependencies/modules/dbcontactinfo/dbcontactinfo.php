@@ -68,7 +68,7 @@ class Dbcontactinfo extends Module
         Configuration::updateValue('DBCONTACTINFO_SHOW_WHATSAPP', 1);
 
         return parent::install() &&
-            $this->registerHook('header') &&
+            $this->registerHook('displayHeader') &&
             $this->registerHook('displayNav1') &&
             $this->registerHook('displayTop') &&
             $this->registerHook('displayTopCheckout') &&
@@ -405,7 +405,7 @@ class Dbcontactinfo extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addCSS($this->_path.'/views/css/dbcontactinfo.css');
     }

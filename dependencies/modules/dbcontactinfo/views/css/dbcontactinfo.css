@@ -100,7 +100,7 @@
     min-width: 380px;
     background-color: #FFF;
     position: absolute;
-    z-index: 9;
+    z-index: 10;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s linear,opacity 0.3s linear;

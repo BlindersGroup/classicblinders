@@ -60,7 +60,7 @@ class Dbproductcomments extends Module
     public function install()
     {
         return parent::install() &&
-            $this->registerHook('header') &&
+            $this->registerHook('displayHeader') &&
             $this->registerHook('displayFooterCategory') &&
             $this->registerHook('displayNavCenter');
     }
@@ -74,7 +74,7 @@ class Dbproductcomments extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addCSS($this->_path.'/views/css/dbproductcomments.css');
         $this->context->controller->addJS($this->_path.'/views/js/dbproductcomments.js');
@@ -128,9 +128,10 @@ class Dbproductcomments extends Module
         $sql = "SELECT count(*) as total, SUM(grade) as grade
                 FROM "._DB_PREFIX_."product_comment pc
                 LEFT JOIN "._DB_PREFIX_."product p ON pc.id_product = p.id_product
-                LEFT JOIN "._DB_PREFIX_."category_product cp ON p.id_product = cp.id_product";
+                LEFT JOIN "._DB_PREFIX_."category_product cp ON p.id_product = cp.id_product
+                WHERE pc.validate = 1";
         if($id_category > 0) {
-            $sql .= " WHERE cp.id_category = '$id_category'";
+            $sql .= " AND cp.id_category = '$id_category'";
         }
         $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow($sql);
         return $result;
@@ -141,9 +142,10 @@ class Dbproductcomments extends Module
 
         $sql = "SELECT count(*) as total, SUM(grade) as grade
                 FROM "._DB_PREFIX_."product_comment pc
-                LEFT JOIN "._DB_PREFIX_."product p ON pc.id_product = p.id_product";
+                LEFT JOIN "._DB_PREFIX_."product p ON pc.id_product = p.id_product
+                WHERE pc.validate = 1";
         if($id_manufacturer > 0) {
-            $sql .= " WHERE p.id_manufacturer = '$id_manufacturer'";
+            $sql .= " AND p.id_manufacturer = '$id_manufacturer'";
         }
         $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow($sql);
         return $result;
@@ -158,7 +160,7 @@ class Dbproductcomments extends Module
                     FROM "._DB_PREFIX_."product_comment pc
                     LEFT JOIN "._DB_PREFIX_."product p ON pc.id_product = p.id_product
                     LEFT JOIN "._DB_PREFIX_."category_product cp ON p.id_product = cp.id_product
-                    WHERE cp.id_category = '$id_category' AND grade >= 3
+                    WHERE cp.id_category = '$id_category' AND pc.grade >= 3 AND pc.validate = 1
                     ORDER BY date_add DESC
                     LIMIT $num";
             $comments = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
@@ -192,7 +194,7 @@ class Dbproductcomments extends Module
             $sql = "SELECT pc.title, pc.grade, pc.id_product, pc.date_add
                     FROM "._DB_PREFIX_."product_comment pc
                     LEFT JOIN "._DB_PREFIX_."product p ON pc.id_product = p.id_product
-                    WHERE p.id_manufacturer = '$id_manufacturer' AND grade >= 3
+                    WHERE p.id_manufacturer = '$id_manufacturer' AND pc.grade >= 3 AND pc.validate = 1
                     ORDER BY date_add DESC
                     LIMIT $num";
             $comments = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
@@ -223,7 +225,7 @@ class Dbproductcomments extends Module
         if($id_product > 0){
             $sql = "SELECT count(*) as total, SUM(grade) as grade
                     FROM "._DB_PREFIX_."product_comment
-                    WHERE id_product = '$id_product'";
+                    WHERE id_product = '$id_product' AND validate = 1";
             $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow($sql);
             return $result;
         }

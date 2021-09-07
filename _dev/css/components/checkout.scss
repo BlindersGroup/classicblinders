@@ -718,6 +718,10 @@ body#checkout {
   #footer {
     color: var(--color_font);
     background: var(--footer_bk);
+
+    .simple_footer {
+      padding: 1rem;
+    }
   }
 
   #delivery {
