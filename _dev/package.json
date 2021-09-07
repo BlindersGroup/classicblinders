@@ -1,0 +1,42 @@
+{
+  "name": "classicblinders",
+  "version": "1.0.0",
+  "description": "assets classicblinders",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress",
+    "watch": "webpack --progress --colors --debug --display-chunks --watch",
+    "scss-lint": "stylelint \"**/*.scss\" --formatter verbose",
+    "scss-fix": "stylelint \"**/*.scss\" --fix",
+    "lint": "eslint -c .eslintrc.js --ext .js,.vue ./js",
+    "lint-fix": "eslint -c .eslintrc.js --ext .js,.vue ./js --fix"
+  },
+  "author": "DevBlinders",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "autoprefixer": "^10.3.4",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-minify-dead-code-elimination": "^0.5.1",
+    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap-touchspin": "^3.1.1",
+    "css-loader": "^6.2.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^6.2.0",
+    "flexibility": "^2.0.1",
+    "jquery": "^3.5.1",
+    "jquery-touchswipe": "^1.6.19",
+    "jquery.browser": "^0.1.0",
+    "mini-css-extract-plugin": "^2.2.2",
+    "node-sass": "^6.0.1",
+    "postcss-loader": "^6.1.1",
+    "sass-loader": "^12.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "velocity-animate": "^1.5.2",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-sources": "^3.2.0"
+  }
+}

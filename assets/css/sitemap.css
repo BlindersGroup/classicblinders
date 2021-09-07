@@ -1,26 +1,2 @@
-.sitemap-title {
-  text-transform: capitalize; }
+.sitemap-title{text-transform:capitalize}.sitemap{margin-top:0.9375rem}.sitemap h2{width:100%;height:35px;margin-left:-15px;font-size:1.1rem;font-weight:600;color:var(--color_font);text-transform:uppercase;border-bottom:1px solid #7a7a7a}.sitemap ul{margin-top:20px;margin-left:-15px}.sitemap ul.nested{margin-left:20px}.sitemap ul li{margin-bottom:1rem;font-size:0.9rem}@media (max-width: 575px){.sitemap{margin-top:0}}
 
-.sitemap {
-  margin-top: 0.9375rem; }
-  .sitemap h2 {
-    width: 100%;
-    height: 35px;
-    margin-left: -15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color_font);
-    text-transform: uppercase;
-    border-bottom: 1px solid #7a7a7a; }
-  .sitemap ul {
-    margin-top: 20px;
-    margin-left: -15px; }
-    .sitemap ul.nested {
-      margin-left: 20px; }
-    .sitemap ul li {
-      margin-bottom: 1rem;
-      font-size: 0.9rem; }
-
-@media (max-width: 575px) {
-  .sitemap {
-    margin-top: 0; } }

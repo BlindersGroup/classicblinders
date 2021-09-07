@@ -1,5 +1,5 @@
 @mixin search-box {
-  form {
+  > form {
     position: relative;
 
     input[type="text"] {

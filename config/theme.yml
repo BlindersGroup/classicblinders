@@ -149,15 +149,11 @@ assets:
         priority: 50
 #  js:
 #    all:
-#      - id: this-cool-lib
-#        path: assets/js/external-lib.js
-#        priority: 30
-#        position: bottom
-#    product:
-#      - id: product-custom-lib
-#        path: assets/js/product.js
-#        priority: 200
-#        attribute: async
+#      - id: full-theme
+#        path: assets/js/theme_full.js
+#        priority: 50
+#        attribute: defer
+
 dependencies:
   modules:
     - dbcontactinfo
@@ -170,6 +166,7 @@ dependencies:
     - dbdatatext
     - dbthemecustom
     - dbmenu
+    - dbsearchbar
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
@@ -200,6 +197,7 @@ global_settings:
       - ps_bestsellers
       - ps_newproducts
       - ps_bestsellers
+      - dbsearchbar
     to_disable:
       - ps_banner
       - ps_specials
@@ -207,6 +205,7 @@ global_settings:
       - ps_themecusto
       - gamification
       - ps_mainmenu
+      - ps_searchbar
   hooks:
     custom_hooks:
       - name: displayNavCenter
@@ -255,7 +254,7 @@ global_settings:
         - ps_customersignin
         - ps_shoppingcart
       displayTopCenter:
-        - ps_searchbar
+        - dbsearchbar
       displayHome:
         - ps_imageslider
         - dbhomecategories
@@ -276,7 +275,6 @@ global_settings:
         - ps_categorytree
         - ps_facetedsearch
       displaySearch:
-        - ps_searchbar
       displayProductAdditionalInfo:
         - ps_sharebuttons
         - dbfreeshipping

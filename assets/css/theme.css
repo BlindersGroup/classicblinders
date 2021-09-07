@@ -1754,29 +1754,29 @@ input[type="number"] {
   margin-bottom: 0.625rem;
   font-size: 0.875rem;
   background: var(--prefooter_bk); }
-  .block_newsletter form {
+  .block_newsletter > form {
     position: relative; }
-    .block_newsletter form input[type="text"] {
+    .block_newsletter > form input[type="text"] {
       padding: 10px;
       width: 100%;
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
       border: 0; }
-      .block_newsletter form input[type="text"]:focus {
+      .block_newsletter > form input[type="text"]:focus {
         outline: 1px solid var(--primary_color);
         color: var(--color_font);
         background-color: var(--search_bk); }
-        .block_newsletter form input[type="text"]:focus + button .search {
+        .block_newsletter > form input[type="text"]:focus + button .search {
           color: var(--primary_color); }
-    .block_newsletter form button[type="submit"] {
+    .block_newsletter > form button[type="submit"] {
       position: absolute;
       background: none;
       border: none;
       bottom: 0.3125rem;
       right: 0.125rem;
       color: var(--seach_color); }
-      .block_newsletter form button[type="submit"] .search:hover {
+      .block_newsletter > form button[type="submit"] .search:hover {
         color: var(--primary_color); }
   .block_newsletter #block-newsletter-label {
     font-size: 1.3125rem;
@@ -1832,29 +1832,29 @@ input[type="number"] {
 
 .search-widget {
   display: inline-block; }
-  .search-widget form {
+  .search-widget > form {
     position: relative; }
-    .search-widget form input[type="text"] {
+    .search-widget > form input[type="text"] {
       padding: 10px;
       width: 100%;
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
       border: 0; }
-      .search-widget form input[type="text"]:focus {
+      .search-widget > form input[type="text"]:focus {
         outline: 1px solid var(--primary_color);
         color: var(--color_font);
         background-color: var(--search_bk); }
-        .search-widget form input[type="text"]:focus + button .search {
+        .search-widget > form input[type="text"]:focus + button .search {
           color: var(--primary_color); }
-    .search-widget form button[type="submit"] {
+    .search-widget > form button[type="submit"] {
       position: absolute;
       background: none;
       border: none;
       bottom: 0.3125rem;
       right: 0.125rem;
       color: var(--seach_color); }
-      .search-widget form button[type="submit"] .search:hover {
+      .search-widget > form button[type="submit"] .search:hover {
         color: var(--primary_color); }
 
 .header-top .search-widget {
