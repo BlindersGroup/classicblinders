@@ -68,7 +68,8 @@ class Dbcategorydesc extends Module
             $this->registerHook('actionCategoryFormBuilderModifier') &&
             $this->registerHook('actionAfterUpdateCategoryFormHandler') &&
             $this->registerHook('afterCreateCategoryFormHandler') &&
-            $this->registerHook('displayFooterCategory');
+            $this->registerHook('displayFooterCategory') &&
+            $this->registerHook('displayHeader');
     }
 
     public function uninstall()
@@ -86,7 +87,7 @@ class Dbcategorydesc extends Module
         return $output;
     }
 
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addCSS($this->_path.'/views/css/dbcategorydesc.css');
     }
@@ -215,6 +216,9 @@ class Dbcategorydesc extends Module
         $id_lang = (int)$this->context->language->id;
         $datas = $this->getLargeDesc($id_category, $id_shop, $id_lang);
         $category = new Category($id_category, $id_lang);
+        $editor = '';
+        $review = '';
+        $tag = '';
 
         if($datas['large_desc']){
 
@@ -223,9 +227,9 @@ class Dbcategorydesc extends Module
                 $review = DbAboutUsAuthor::getAuthorById($datas['id_review']);
 
                 $sql = "SELECT tl.name
-            FROM "._DB_PREFIX_."dbaboutus_tag t
-            LEFT JOIN "._DB_PREFIX_."dbaboutus_tag_lang tl ON t.id_dbaboutus_tag = tl.id_dbaboutus_tag AND tl.id_lang = '$id_lang'
-            WHERE t.active = 1 AND t.id_dbaboutus_tag = ".$datas['id_tag'];
+                        FROM "._DB_PREFIX_."dbaboutus_tag t
+                        LEFT JOIN "._DB_PREFIX_."dbaboutus_tag_lang tl ON t.id_dbaboutus_tag = tl.id_dbaboutus_tag AND tl.id_lang = '$id_lang'
+                        WHERE t.active = 1 AND t.id_dbaboutus_tag = ".$datas['id_tag'];
                 $tag = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($sql);
             }
 

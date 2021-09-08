@@ -62,7 +62,7 @@ class Dbrichsnippets extends Module
         Configuration::updateValue('DBRICHSNIPPETS_LIVE_MODE', false);
 
         return parent::install() &&
-            $this->registerHook('header');
+            $this->registerHook('displayHeader');
     }
 
     public function uninstall()
@@ -276,7 +276,7 @@ class Dbrichsnippets extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $sectionType = Tools::getValue('controller');
         $id_lang = $this->context->language->id;
@@ -404,6 +404,7 @@ class Dbrichsnippets extends Module
         } elseif ($sectionType == 'contact') {
 
             /* BreadcrumbList Contacto */
+            $json_breadcrumb = '';
             $json .= '
             <script type="application/ld+json">{
                 "@context":"http://schema.org",

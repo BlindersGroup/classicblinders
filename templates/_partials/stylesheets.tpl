@@ -26,10 +26,12 @@
 {*Preload Material Icons*}
 <link rel="preload" href="{$urls.theme_assets}fonts/material-icons.woff2" as="font" type="font/woff2" crossorigin>
 {foreach $stylesheets.external as $stylesheet}
-  <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}">
-
-  {*<link rel="preload" href="{$stylesheet.uri}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{$stylesheet.uri}"></noscript>*}
+  {if $preload_css == true}
+    <link rel="preload" href="{$stylesheet.uri}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{$stylesheet.uri}"></noscript>
+  {else}
+    <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}">
+  {/if}
 {/foreach}
 
 {foreach $stylesheets.inline as $stylesheet}

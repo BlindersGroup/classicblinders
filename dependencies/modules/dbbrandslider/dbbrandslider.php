@@ -63,7 +63,7 @@ class Dbbrandslider extends Module
         Configuration::updateValue('DBBRANDSLIDER_IDS', '1,2');
 
         return parent::install() &&
-            $this->registerHook('header') &&
+            $this->registerHook('displayHeader') &&
             $this->registerHook('displayHome');
     }
 
@@ -169,7 +169,7 @@ class Dbbrandslider extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addCSS($this->_path.'/views/css/dbbrandslider.css');
     }

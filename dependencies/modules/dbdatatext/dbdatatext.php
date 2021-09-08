@@ -62,7 +62,7 @@ class Dbdatatext extends Module
         Configuration::updateValue('DBDATATEXT_LIVE_MODE', false);
 
         return parent::install() &&
-            $this->registerHook('header');
+            $this->registerHook('displayHeader');
     }
 
     public function uninstall()
@@ -90,7 +90,7 @@ class Dbdatatext extends Module
 
         return $output;
     }
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         $this->context->controller->addJS($this->_path.'views/js/dbdatatext.js');
         $this->context->smarty->registerPlugin("modifier", 'base64_encode', 'base64_encode');

@@ -26,6 +26,14 @@
 {* Javascript is used to display each product grade, this allows every rating to be udpated as soon as they change *}
 
 <div class="product-list-reviews" data-id="{$product.id}" data-url="{$product_comment_grade_url nofilter}">
-    <div class="grade-stars small-stars"></div>
+    <div class="grade-stars small-stars">
+        <div class="stars_empty">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+        </div>
+    </div>
     <div class="comments-nb"></div>
 </div>

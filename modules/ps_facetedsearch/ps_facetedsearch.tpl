@@ -31,9 +31,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="modal-title" id="filters_category_Label">{l s='Filter' d='Shop.Theme.Actions'}</span>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        {*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </button>*}
                     </div>
                     <div class="modal-body">
                         {$listing.rendered_facets nofilter}

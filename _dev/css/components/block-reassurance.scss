@@ -1,0 +1,57 @@
+#block-reassurance {
+  margin-top: 2rem;
+  background-color: inherit !important;
+
+  img {
+    margin-right: 7px;
+    height: 35px;
+    width: auto;
+  }
+
+  li {
+    margin-bottom: 0.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li .block-reassurance-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > span {
+      width: calc(100% - 42px);
+    }
+  }
+
+  #product & {
+    background: $white;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.blockreassurance_product {
+  margin-top: 20px !important;
+
+  .block-title {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+
+    .title {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .price_outstanding,
+  #product .blockreassurance_product {
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+}

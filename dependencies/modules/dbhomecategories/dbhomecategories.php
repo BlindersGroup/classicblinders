@@ -63,7 +63,7 @@ class Dbhomecategories extends Module
         Configuration::updateValue('DBHOMECATEGORIES', '3,4,5,6,9');
 
         return parent::install() &&
-            $this->registerHook('header') &&
+            $this->registerHook('displayHeader') &&
             $this->registerHook('displayHome');
     }
 
@@ -179,7 +179,7 @@ class Dbhomecategories extends Module
     /**
      * Add the CSS & JavaScript files you want to be added on the FO.
      */
-    public function hookHeader()
+    public function hookDisplayHeader()
     {
         if(Tools::getValue('controller') == 'index') {
             $this->context->controller->addCSS($this->_path . '/views/css/dbhomecategories.css');
