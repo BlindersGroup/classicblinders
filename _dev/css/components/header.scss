@@ -55,6 +55,13 @@
       .displayNav1,
       .displayNav2 {
         width: 33%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .displayNav2 {
+        justify-content: flex-end;
       }
 
       .displayNavCenter {
@@ -83,13 +90,14 @@
     }
 
     .currency-selector {
-      margin-top: 0.9375rem;
+      /*margin-top: 0.9375rem;*/
       margin-left: 0.9375rem;
       white-space: nowrap;
     }
 
     .language-selector {
-      margin-top: 0.9375rem;
+     /* margin-top: 0.9375rem;*/
+      margin-left: 0.9375rem;
       white-space: nowrap;
     }
   }

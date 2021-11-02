@@ -1395,7 +1395,12 @@ input[type="number"] {
       align-items: center; }
       #header .header-nav .headernav_flex .displayNav1,
       #header .header-nav .headernav_flex .displayNav2 {
-        width: 33%; }
+        width: 33%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+      #header .header-nav .headernav_flex .displayNav2 {
+        justify-content: flex-end; }
       #header .header-nav .headernav_flex .displayNavCenter {
         width: 30%; }
       #header .header-nav .headernav_flex .mobile {
@@ -1411,11 +1416,12 @@ input[type="number"] {
       flex-wrap: nowrap;
       justify-content: flex-end; }
     #header .header-nav .currency-selector {
-      margin-top: 0.9375rem;
+      /*margin-top: 0.9375rem;*/
       margin-left: 0.9375rem;
       white-space: nowrap; }
     #header .header-nav .language-selector {
-      margin-top: 0.9375rem;
+      /* margin-top: 0.9375rem;*/
+      margin-left: 0.9375rem;
       white-space: nowrap; }
   #header .header-top {
     padding: 1.25rem 0; }
