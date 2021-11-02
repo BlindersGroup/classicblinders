@@ -23,12 +23,52 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 <section class="featured-products clearfix mt-3">
-  <h2>
+  <p class="h3 products-section-title">
     {if $products|@count == 1}
-      {l s='%s other product in the same category:' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
+      {l s='%s producto de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
     {else}
-      {l s='%s other products in the same category:' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
+      {l s='%s productos de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
     {/if}
-  </h2>
-  {include file="catalog/_partials/productlist.tpl" products=$products}
+  </p>
+  <div id="splide_categoryproducts" class="splide">
+    <div class="splide__track">
+      <div class="splide__list">
+        {foreach from=$products item="product" key="position"}
+          <div class="splide__slide">
+            {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+          </div>
+        {/foreach}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener( 'DOMContentLoaded', function () {
+      new Splide( '#splide_categoryproducts', {
+        perPage     : 5,
+        pagination: false,
+        lazyLoad: 'sequential',
+        arrows: true,
+        breakpoints: {
+          600: {
+            perPage: 2,
+            padding: {
+              right: '2rem',
+            },
+            arrows: false,
+          },
+          800: {
+            perPage: 2,
+            padding: {
+              right: '2rem',
+            },
+            arrows: false,
+          },
+          1200: {
+            perPage: 4,
+          }
+        },
+      } ).mount();
+    } );
+  </script>
 </section>
