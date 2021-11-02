@@ -44,7 +44,7 @@ class Dbmenu extends Module
 
         $this->name = 'dbmenu';
         $this->tab = 'front_office_features';
-        $this->version = '1.1.0';
+        $this->version = '1.1.1';
         $this->author = 'DevBlinders';
         $this->need_instance = 0;
 
@@ -232,12 +232,17 @@ class Dbmenu extends Module
      */
     public function hookDisplayBackOfficeHeader()
     {
-        $this->context->controller->addJquery();
-        $this->context->controller->addJS($this->_path.'/views/js/back.js');
-        $this->context->controller->addCSS($this->_path.'/views/css/back.css');
-        Media::addJsDef(array(
-            'dbmenu_ajax' => $this->context->link->getAdminLink('AdminDbMenuAjax'),
-        ));
+        $controller = Tools::getValue('controller');
+        if (Tools::getValue('module_name') == $this->name
+            || $controller == 'AdminDbMenuList'
+            || $controller == 'AdminDbMenuConfig' ) {
+            $this->context->controller->addJquery();
+            $this->context->controller->addJS($this->_path . '/views/js/back.js');
+            $this->context->controller->addCSS($this->_path . '/views/css/back.css');
+            Media::addJsDef(array(
+                'dbmenu_ajax' => $this->context->link->getAdminLink('AdminDbMenuAjax'),
+            ));
+        }
     }
 
     /**

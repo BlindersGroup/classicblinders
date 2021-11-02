@@ -40,7 +40,7 @@
     overflow:hidden;
     margin: 0;
 }
-.dbmenu .item_primary {
+#header .dbmenu .item_primary {
     color: var(--dbmenu_color);
 }
 .core-menu > li {
@@ -61,10 +61,6 @@
 }
 .dbmenu li span.toggle {
     padding-left:1em;
-}
-.dbmenu .toggle:before {
-    content:"\f107";
-    font:normal normal normal 16px/1 FontAwesome;
 }
 .dbmenu .dropdown {
     position:absolute;
@@ -108,10 +104,6 @@
     right:0;
     margin-right:20px;
 }
-.dbmenu .toggle2:before {
-    content:"\f105";
-    font:normal normal normal 16px/1 FontAwesome;
-}
 .hamburger-menu {
     padding:1em;
     display:none;
@@ -140,7 +132,7 @@
 
 .core-menu li.featured a:hover {
     background: transparent;
-    color: var(--dbmenu_color_hover) !important;
+    color: var(--dbmenu_color_hover);
 }
 
 /**** Mobile ****/
@@ -156,7 +148,7 @@
 }
 
 #header .dbmobile a:hover {
-    color: var(--dbmenu_color)
+    color: var(--dbmenu_color);
 }
 
 .dbmenu-complete {
@@ -296,7 +288,7 @@
 }
 
 .dbmobile li a.dbmenu_destacado {
-    color: var(--dbmenu_color_hover) !important;
+    color: var(--dbmenu_color_hover);
 }
 
 .dbmobile li a.promo,
@@ -310,7 +302,7 @@
 }
 
 .dbmobile li a.blog span {
-    color: var(--dbmenu_color_hover) !important;
+    color: var(--dbmenu_color_hover);
 }
 
 .dbmobile .top-menu li a:hover {
@@ -580,7 +572,7 @@ p.dbmobile__title_before {
 .dbmobile p.dbmobile__title_before>a {
     padding: 0 !important;
     font-weight: 600 !important;
-    color: var(--dbmenu_color_hover) !important;
+    color: var(--dbmenu_color_hover);
     margin: 0;
 }
 
@@ -834,11 +826,12 @@ p.dbmobile__title_before:hover {
 #dbmenu_burger .item span,
 #dbmenu_burger .item a {
     font-size: 0.9rem;
+    color: var(--dbmenu_color);
 }
 
-#dbmenu_burger .item:hover,
-#dbmenu_burger .item span:hover,
-#dbmenu_burger .item a:hover {
+#header #dbmenu_burger .item:hover,
+#header #dbmenu_burger .item span:hover,
+#header #dbmenu_burger .item a:hover {
     color: var(--dbmenu_color_hover) !important;
 }
 
@@ -850,8 +843,8 @@ p.dbmobile__title_before:hover {
     color: var(--dbmenu_color);
 }
 
-.dbmenu_category .item .item_primary,
-.dbmenu_personal .item {
+#header .dbmenu_category .item .item_primary,
+#header .dbmenu_personal .item {
     color: var(--dbmenu_color);
     display: block;
     padding: 0.5rem 0;
@@ -975,9 +968,9 @@ p.dbmobile__title_before:hover {
     font-size: 20px;
 }
 
-.subitems .subitem,
-.subitems .susubitem,
-.subitems .item_viewall {
+#header .subitems .subitem,
+#header .subitems .susubitem,
+#header .subitems .item_viewall {
     margin: 0 1rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid #f0f0f0;
@@ -985,12 +978,23 @@ p.dbmobile__title_before:hover {
     width: calc(100% - 2rem);
     font-weight: 400;
     font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--dbmenu_color);
 }
 
-.subitems .susubitem,
-.subitems .item_viewall {
+#header .subitems .susubitem,
+#header .subitems .item_viewall {
     font-weight: 400;
-    color: var(--dbmenu_color_hover) !important;
+    color: var(--dbmenu_color_hover);
+}
+
+#header .subitems .subitem:hover,
+#header .subitems .susubitem:hover {
+    color: var(--dbmenu_color_hover);
+}
+
+#header .subitems .item_viewall:hover {
+    text-decoration: underline;
 }
 
 .subitems .open_subitems {
@@ -1003,7 +1007,7 @@ p.dbmobile__title_before:hover {
     font-size: 0.9rem;
 }
 
-.subitems .open_subitems:hover {
+#header .subitems .open_subitems:hover {
     color: var(--dbmenu_color_hover);
 }
 
@@ -1190,9 +1194,10 @@ p.dbmobile__title_before:hover {
     padding: 0.5rem 0;
     border-bottom: 0;
 }
-.dbmenu_inside .links .collapse li a {
+#header .dbmenu_inside .links .collapse li a {
     width: 100%;
     display: table;
+    color: var(--dbmenu_color);
 }
 
 #header .dbmenu_inside .links .collapse li a:hover {

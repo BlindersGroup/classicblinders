@@ -29,9 +29,15 @@
             {$linkback}
         </p>
         {if !empty($menu.url) && $menu.url != '#'}
-            <a class="item_viewall" href="{$menu.url}" title="{$menu.alt}">
-                {l s='Ver todos' mod='dbmenu'} {$menu.title}
-            </a>
+            {if $menu.ofuscate == 1}
+                <span class="item_viewall datatext" datatext="{$menu.url|base64_encode}">
+                    {l s='Ver todos' mod='dbmenu'} {$menu.title}
+                </span>
+            {else}
+                <a class="item_viewall" href="{$menu.url}" title="{$menu.alt}">
+                    {l s='Ver todos' mod='dbmenu'} {$menu.title}
+                </a>
+            {/if}
         {/if}
         {foreach from=$menu.childrens key=$tipo item=dropdown}
             {if isset($dropdown.childrens)}

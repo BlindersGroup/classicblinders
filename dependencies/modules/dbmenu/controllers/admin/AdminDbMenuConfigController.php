@@ -49,7 +49,7 @@ class AdminDbMenuConfigController extends ModuleAdminController
     {
         $this->context->smarty->assign('name_module', $this->module->name);
         $this->context->smarty->assign('premium', $this->module->premium);
-        $iframe = $this->module->display(_PS_MODULE_DIR_.$this->module->name, '/views/templates/admin/iframe.tpl');
+        $iframe = $import = $this->module->display(_PS_MODULE_DIR_.$this->module->name, '/views/templates/admin/iframe.tpl');
         $list = parent::renderList();
         $import = $this->module->display(_PS_MODULE_DIR_.$this->module->name, '/views/templates/admin/configure.tpl');
         $iframe_bottom = $this->module->display(_PS_MODULE_DIR_.$this->module->name, '/views/templates/admin/iframe_bottom.tpl');
