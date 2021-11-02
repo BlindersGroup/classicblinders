@@ -47,13 +47,13 @@
            data-comment-item-prototype="{$comment_prototype|escape:'html_attr'}">
       </div>
       <div id="product-comments-list-pagination"></div>
-    {/if}
-    {if $post_allowed}
-      <button class="btn btn-comment-inverse btn-comment-big post-product-comment">
-        {l s='Write your review' d='Modules.Productcomments.Shop'}
-      </button>
-    {/if}
-  </div>
+  {/if}
+  {if $post_allowed}
+    <button class="btn btn-comment-inverse btn-comment-big post-product-comment">
+      {l s='Write your review' d='Modules.Productcomments.Shop'}
+    </button>
+  {/if}
+  {if $nb_comments != 0}</div>{/if}
 </div>
 
 {* Appreciation post error modal *}
