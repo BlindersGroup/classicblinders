@@ -1052,6 +1052,20 @@ input[type="number"] {
       line-height: 17px;
       height: auto;
       color: #d6d6d6; }
+  #products .product-list-reviews .grade-stars-empty .stars_empty,
+  .featured-products .product-list-reviews .grade-stars-empty .stars_empty,
+  .product-accessories .product-list-reviews .grade-stars-empty .stars_empty,
+  .product-miniature .product-list-reviews .grade-stars-empty .stars_empty {
+    margin-left: 7px; }
+    #products .product-list-reviews .grade-stars-empty .stars_empty i,
+    .featured-products .product-list-reviews .grade-stars-empty .stars_empty i,
+    .product-accessories .product-list-reviews .grade-stars-empty .stars_empty i,
+    .product-miniature .product-list-reviews .grade-stars-empty .stars_empty i {
+      font-size: 20px;
+      width: 13px;
+      line-height: 17px;
+      height: auto;
+      color: #d6d6d6; }
 
 #products .variant-links,
 .featured-products .variant-links,

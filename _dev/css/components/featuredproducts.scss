@@ -110,6 +110,20 @@ $product-description-height: 70px;
         }
       }
     }
+
+    .grade-stars-empty {
+      .stars_empty {
+        margin-left: 7px;
+
+        i {
+          font-size: 20px;
+          width: 13px;
+          line-height: 17px;
+          height: auto;
+          color: #d6d6d6;
+        }
+      }
+    }
   }
 
   .variant-links {
