@@ -75,15 +75,50 @@
 
     {block name='product_accessories'}
       {if $accessories}
-        <section class="product-accessories clearfix">
-          <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
-          <div class="products">
-            {foreach from=$accessories item="product_accessory" key="position"}
-              {block name='product_miniature'}
-                {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
-              {/block}
-            {/foreach}
+        <section class="product-accessories clearfix mt-3">
+            <p class="h3 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
+            <div id="splide_productaccessories" class="splide">
+              <div class="splide__track">
+                  <div class="splide__list products">
+                    {foreach from=$accessories item="product_accessory" key="position"}
+                      <div class="splide__slide">
+                          {block name='product_miniature'}
+                            {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position}
+                          {/block}
+                      </div>
+                    {/foreach}
+                  </div>
+              </div>
           </div>
+            <script>
+                document.addEventListener( 'DOMContentLoaded', function () {
+                    new Splide( '#splide_productaccessories', {
+                        perPage     : 5,
+                        pagination: false,
+                        lazyLoad: 'sequential',
+                        arrows: true,
+                        breakpoints: {
+                            600: {
+                                perPage: 2,
+                                padding: {
+                                    right: '2rem',
+                                },
+                                arrows: false,
+                            },
+                            800: {
+                                perPage: 2,
+                                padding: {
+                                    right: '2rem',
+                                },
+                                arrows: false,
+                            },
+                            1200: {
+                                perPage: 4,
+                            }
+                        },
+                    } ).mount();
+                } );
+            </script>
         </section>
       {/if}
     {/block}
