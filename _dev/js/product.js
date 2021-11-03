@@ -120,12 +120,16 @@ $(document).ready(function () {
   }
 });
 
-// Actualizar precios
+// Actualizar contenido producto por ajax
 $(document).ready(function () {
   prestashop.on(
       'updatedProduct',
       function (event) {
         $('.product-information .price_outstanding .product_prices').html(event.product_prices);
+        $('.product-information .price_outstanding .product_variants').html(event.product_variants);
+
+        $('.product_topview .page-content .product_cover_thumbnails').html(event.product_cover_thumbnails);
+        $('.product_topview .page-content .product_flags').html(event.product_flags);
       }
   );
 });
