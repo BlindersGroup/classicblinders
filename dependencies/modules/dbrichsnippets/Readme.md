@@ -1,1 +1,0 @@
-# DB Rich Snippets
