@@ -41,7 +41,7 @@
             <div class="modal_product modal_product_{$product.id}_{$product.id_product_attribute}">
               <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3 modal_products_image">
-                  <img class="product-image" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
+                  <img class="product-image" src="{$product.default_image.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 modal_products_info">
                   <div class="product-name">
