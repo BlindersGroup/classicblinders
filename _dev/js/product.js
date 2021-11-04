@@ -163,18 +163,16 @@ $(document).ready(() => {
       $(target.attr('href')).removeClass(prestashop.themeSelectors.product.activeTabClass);
     });
   }
-});
 
-
-/*** ADICIONAL BLINDERS ***/
-// Actualizar contenido producto por ajax
-$(document).ready(function () {
+  /*** ADICIONAL BLINDERS ***/
+  // Actualizar contenido producto por ajax
   prestashop.on(
       'updatedProduct',
       function (event) {
         $('.product-information .price_outstanding .product_prices').html(event.product_prices);
         $('.product-information .price_outstanding .product_variants').html(event.product_variants);
         $('.product-information .price_outstanding .product_add_to_cart').html(event.product_add_to_cart);
+        createProductSpin();
 
         $('.product_topview .page-content .product_cover_thumbnails').html(event.product_cover_thumbnails);
         $('.product_topview .page-content .product_flags').html(event.product_flags);
@@ -182,9 +180,12 @@ $(document).ready(function () {
         $('.product_topview .block_center .product_customization').html(event.product_customization);
       }
   );
+  /*** ADICIONAL BLINDERS ***/
+
 });
 
 
+/*** ADICIONAL BLINDERS ***/
 // Packs productos
 $(document).on('click', '.pack_dto', function(e) {
   var qty = $(this).attr('data-qty');

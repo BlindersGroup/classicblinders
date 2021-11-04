@@ -140,7 +140,7 @@
                         {/block}
                     </div>
 
-                    <div class="add_to_cart">
+                    <div class="product_add_to_cart">
                         {block name='product_add_to_cart'}
                             {include file='catalog/_partials/product-add-to-cart.tpl'}
                         {/block}
