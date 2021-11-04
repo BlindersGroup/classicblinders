@@ -41,7 +41,11 @@
             <div class="modal_product modal_product_{$product.id}_{$product.id_product_attribute}">
               <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3 modal_products_image">
-                  <img class="product-image" src="{$product.default_image.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
+                  {if $product.default_image}
+                    <img class="product-image" src="{$product.default_image.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
+                  {else}
+                    <img class="product-image" src="{$product.cover.medium.url}" alt="{$product.cover.legend}" title="{$product.cover.legend}" itemprop="image">
+                  {/if}
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 modal_products_info">
                   <div class="product-name">
@@ -66,12 +70,6 @@
                     </div>
                     <span class="product-price">{$product.price}</span>
                   </div>
-                  {*<p class="product-price">{$product.price}</p>
-                  {hook h='displayProductPriceBlock' product=$product type="unit_price"}
-                  {foreach from=$product.attributes item="property_value" key="property"}
-                    <span>{l s='%label%:' sprintf=['%label%' => $property] d='Shop.Theme.Global'}<strong> {$property_value}</strong></span><br>
-                  {/foreach}
-                  <span>{l s='Quantity:' d='Shop.Theme.Checkout'}&nbsp;<strong>{$product.cart_quantity}</strong></span>*}
                 </div>
               </div>
             </div>
@@ -96,8 +94,6 @@
             {/if}
 
             <div class="cart-content-btn">
-{*                <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
-              <a href="{$cart_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Checkout' d='Shop.Theme.Actions'}</a>*}
               <a href="{$urls.pages.order}" class="btn btn-primary">{l s='Checkout' d='Shop.Theme.Actions'}</a>
               <a href="{$cart_url}" class="btn btn-secundary btn-view-cart">{l s='View cart' d='Shop.Theme.Actions'}</a>
             </div>
