@@ -81,9 +81,11 @@
         <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
     {/block}
     {if $product.is_customizable && count($product.customizations.fields)}
-        {block name='product_customization'}
-            {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
-        {/block}
+        <div class="product_customization">
+            {block name='product_customization'}
+                {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
+            {/block}
+        </div>
     {/if}
 
     {hook h='displayProductCenterColumnBottom' product=$product}
@@ -138,9 +140,11 @@
                         {/block}
                     </div>
 
-                    {block name='product_add_to_cart'}
-                        {include file='catalog/_partials/product-add-to-cart.tpl'}
-                    {/block}
+                    <div class="add_to_cart">
+                        {block name='product_add_to_cart'}
+                            {include file='catalog/_partials/product-add-to-cart.tpl'}
+                        {/block}
+                    </div>
 
                     {* Input to refresh product HTML removed, block kept for compatibility with themes *}
                     {block name='product_refresh'}{/block}
