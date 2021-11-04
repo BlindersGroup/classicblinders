@@ -25,7 +25,13 @@
 {block name='cart_summary_product_line'}
   <div class="media-left">
     <a href="{$product.url}" title="{$product.name}">
-      <img class="media-object" src="{$product.cover.small.url}" alt="{$product.name}" loading="lazy">
+        {if $product.default_image}
+            <img class="media-object" src="{$product.default_image.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy">
+        {elseif $product.cover}
+            <img class="media-object" src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy">
+        {else}
+            <img class="media-object" src="{$urls.no_picture_image.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy" />
+        {/if}
     </a>
   </div>
   <div class="media-body">
