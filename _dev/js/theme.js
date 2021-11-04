@@ -22,11 +22,20 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  */
-import 'expose-loader?Tether!tether'; // 7.2KB
-import 'bootstrap/dist/js/bootstrap.min'; // 10.4KB
-import 'flexibility'; // 3.6
-import 'bootstrap-touchspin'; // 2.1
-import 'jquery-touchswipe'; // 3.5
+
+/*** ADICIONAL BLINDERS ***/
+// import 'tether';
+import './components/splidejs'; // 10.2
+import './components/generic';
+/*** ADICIONAL BLINDERS ***/
+
+/* eslint-disable */
+import 'expose-loader?exposes=Tether!tether';
+import 'bootstrap/dist/js/bootstrap.min';
+import 'flexibility';
+import 'bootstrap-touchspin';
+import 'jquery-touchswipe';
+import './selectors';
 
 import './responsive';
 import './checkout';
@@ -37,22 +46,21 @@ import './cart';
 
 import prestashop from 'prestashop';
 import EventEmitter from 'events';
-import DropDown from './components/drop-down'; // 0.1
-import Form from './components/form'; // 0.2
-import ProductMinitature from './components/product-miniature'; // 0.0
-import ProductSelect from './components/product-select'; // 0.0
-import TopMenu from './components/top-menu'; // 0.3
+import DropDown from './components/drop-down';
+import Form from './components/form';
+import ProductMinitature from './components/product-miniature';
+import ProductSelect from './components/product-select';
+import TopMenu from './components/top-menu';
 
-import './lib/bootstrap-filestyle.min'; // 1.4
-import './lib/jquery.scrollbox.min'; // 3.9
+import './lib/bootstrap-filestyle.min';
+import './lib/jquery.scrollbox.min';
 
-import './components/block-cart'; // 0.1
+import './components/block-cart';
 import $ from 'jquery';
-
-import './components/splidejs'; // 10.2
-import './components/generic';
+/* eslint-enable */
 
 // "inherit" EventEmitter
+// eslint-disable-next-line
 for (const i in EventEmitter.prototype) {
   prestashop[i] = EventEmitter.prototype[i];
 }
@@ -72,11 +80,11 @@ $(document).ready(() => {
   productSelect.init();
 
   $('.carousel[data-touch="true"]').swipe({
-    swipe(event, direction, distance, duration, fingerCount, fingerData) {
-      if (direction == 'left') {
+    swipe(event, direction) {
+      if (direction === 'left') {
         $(this).carousel('next');
       }
-      if (direction == 'right') {
+      if (direction === 'right') {
         $(this).carousel('prev');
       }
     },
