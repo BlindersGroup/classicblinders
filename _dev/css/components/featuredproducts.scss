@@ -109,6 +109,18 @@ $product-description-height: 70px;
           color: #d6d6d6;
         }
       }
+
+      &.small-stars {
+        margin-left: 7px;
+
+        >i {
+          font-size: 20px;
+          width: 13px;
+          line-height: 17px;
+          height: auto;
+          color: #d6d6d6;
+        }
+      }
     }
 
     .grade-stars-empty {
