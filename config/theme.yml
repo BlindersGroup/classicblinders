@@ -313,6 +313,8 @@ global_settings:
         - dbcontactinfo
       displayFooterCategory:
         - dbcategorydesc
+      displaySidebarContact:
+        - dbcontactinfo
 
   image_types:
     cart_default:
