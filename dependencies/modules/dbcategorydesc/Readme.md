@@ -1,1 +1,0 @@
-# DB Category Large Description

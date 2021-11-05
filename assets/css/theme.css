@@ -1052,6 +1052,29 @@ input[type="number"] {
       line-height: 17px;
       height: auto;
       color: #d6d6d6; }
+  #products .product-list-reviews .grade-stars.small-stars > i,
+  .featured-products .product-list-reviews .grade-stars.small-stars > i,
+  .product-accessories .product-list-reviews .grade-stars.small-stars > i,
+  .product-miniature .product-list-reviews .grade-stars.small-stars > i {
+    font-size: 20px;
+    width: 13px;
+    line-height: 17px;
+    height: auto;
+    color: #d6d6d6; }
+  #products .product-list-reviews .grade-stars-empty .stars_empty,
+  .featured-products .product-list-reviews .grade-stars-empty .stars_empty,
+  .product-accessories .product-list-reviews .grade-stars-empty .stars_empty,
+  .product-miniature .product-list-reviews .grade-stars-empty .stars_empty {
+    margin-left: 7px; }
+    #products .product-list-reviews .grade-stars-empty .stars_empty i,
+    .featured-products .product-list-reviews .grade-stars-empty .stars_empty i,
+    .product-accessories .product-list-reviews .grade-stars-empty .stars_empty i,
+    .product-miniature .product-list-reviews .grade-stars-empty .stars_empty i {
+      font-size: 20px;
+      width: 13px;
+      line-height: 17px;
+      height: auto;
+      color: #d6d6d6; }
 
 #products .variant-links,
 .featured-products .variant-links,
@@ -1381,7 +1404,12 @@ input[type="number"] {
       align-items: center; }
       #header .header-nav .headernav_flex .displayNav1,
       #header .header-nav .headernav_flex .displayNav2 {
-        width: 33%; }
+        width: 33%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+      #header .header-nav .headernav_flex .displayNav2 {
+        justify-content: flex-end; }
       #header .header-nav .headernav_flex .displayNavCenter {
         width: 30%; }
       #header .header-nav .headernav_flex .mobile {
@@ -1397,11 +1425,12 @@ input[type="number"] {
       flex-wrap: nowrap;
       justify-content: flex-end; }
     #header .header-nav .currency-selector {
-      margin-top: 0.9375rem;
+      /*margin-top: 0.9375rem;*/
       margin-left: 0.9375rem;
       white-space: nowrap; }
     #header .header-nav .language-selector {
-      margin-top: 0.9375rem;
+      /* margin-top: 0.9375rem;*/
+      margin-left: 0.9375rem;
       white-space: nowrap; }
   #header .header-top {
     padding: 1.25rem 0; }

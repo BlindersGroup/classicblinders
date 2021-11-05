@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 1.5.8
+version: 1.5.9
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -313,6 +313,8 @@ global_settings:
         - dbcontactinfo
       displayFooterCategory:
         - dbcategorydesc
+      displaySidebarContact:
+        - dbcontactinfo
 
   image_types:
     cart_default:

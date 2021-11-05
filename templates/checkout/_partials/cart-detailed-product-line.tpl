@@ -25,7 +25,9 @@
 
 
 <span class="product-image media-middle">
-    {if $product.cover}
+    {if $product.default_image}
+        <img src="{$product.default_image.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy">
+    {elseif $product.cover}
         <img src="{$product.cover.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy">
     {else}
         <img src="{$urls.no_picture_image.bySize.cart_default.url}" loading="lazy" />
