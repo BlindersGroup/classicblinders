@@ -27,9 +27,12 @@
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
       {block name='product_thumbnail'}
-        <a href="{$product.url}" class="thumbnail product-thumbnail">
+          <a href="{$product.url}" class="thumbnail product-thumbnail {if $product.images.1 && $custom_generic.second_img == true}multiple_img{/if}">
           {if $product.cover}
             <img
+                {if $product.images.1 && $custom_generic.second_img == true}
+                    class="first_img"
+                {/if}
               src="{$product.cover.bySize.home_default.url}"
               alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name}{/if}"
               data-full-size-image-url="{$product.cover.large.url}"
@@ -37,6 +40,18 @@
               width="{$product.cover.bySize.home_default.width}"
               height="{$product.cover.bySize.home_default.height}"
               />
+
+              {if $product.images.1 && $custom_generic.second_img == true}
+                  <img
+                          class="second_img"
+                          src="{$product.images.1.bySize.home_default.url}"
+                          alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name}{/if}"
+                          data-full-size-image-url="{$product.cover.large.url}"
+                          loading="lazy"
+                          width="{$product.images.1.bySize.home_default.width}"
+                          height="{$product.images.1.bySize.home_default.height}"
+                  />
+              {/if}
           {else}
             <img
                 src="{$urls.no_picture_image.bySize.home_default.url}"

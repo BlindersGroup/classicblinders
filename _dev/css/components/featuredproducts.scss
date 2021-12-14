@@ -57,6 +57,22 @@ $product-description-height: 70px;
         height: auto;
         margin: auto;
       }
+
+      &.multiple_img {
+        .second_img {
+          display: none;
+        }
+
+        &:hover {
+          .first_img {
+            display: none;
+          }
+          .second_img {
+            display: block;
+          }
+        }
+      }
+
     }
   }
 
