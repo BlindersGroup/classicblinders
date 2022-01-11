@@ -81,6 +81,9 @@
 {block name='content_after'}
     {hook h="displayFooterCategory"}
     {if $page.page_name == 'manufacturer' && !empty($manufacturer.description)}
-        <div id="manufacturer-description">{$manufacturer.description nofilter}</div>
+        <div id="manufacturer-description">
+            <p class="title">{l s='Más información sobre %brand_name%' sprintf=['%brand_name%' => $manufacturer.name] d='Shop.Theme.Catalog'}</p>
+            <div>{$manufacturer.description nofilter}</div>
+        </div>
     {/if}
 {/block}

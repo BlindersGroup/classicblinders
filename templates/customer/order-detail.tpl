@@ -35,19 +35,20 @@
 
     <div class="order_info">
       <span>
+{*        <span class="hidden-sm-down">|</span>*}
+        {l
+        s='Ref.'
+        d='Shop.Theme.Customeraccount'
+        sprintf=['%reference%' => $order.details.reference,'%date%' => $order.details.order_date]
+        } <span>{$order.details.reference}</span>
+      </span>
+      &nbsp;&nbsp;
+      <span>
         {l
         s='Purchased on %date%'
         d='Shop.Theme.Customeraccount'
         sprintf=['%date%' => $order.details.order_date]
         }
-      </span>
-      <span>
-        <span class="hidden-sm-down">|</span>
-        {l
-        s='Order reference'
-        d='Shop.Theme.Customeraccount'
-        sprintf=['%reference%' => $order.details.reference,'%date%' => $order.details.order_date]
-        } <strong>{$order.details.reference}</strong>
       </span>
       <span class="state">
         {l s='Status' d='Shop.Theme.Checkout'}: <span class="value" style="color:{$order.history.current.color}">{$order.history.current.ostate_name}</span>
@@ -62,7 +63,7 @@
             <div id="accordion">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseDelivery" aria-expanded="true" aria-controls="collapseDelivery">
                 {l s='Shipping Address' d='Shop.Theme.Customeraccount'}
-                <i class="material-icons">keyboard_arrow_down</i>
+                <i class="fa-solid fa-angle-down"></i>
               </button>
               <div id="collapseDelivery" class="collapse show in" aria-labelledby="headingDelivery" data-parent="#accordion" aria-expanded="true">
                 <div class="card-body">
@@ -72,7 +73,7 @@
 
               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseTwo">
                 {l s='Billing Address' d='Shop.Theme.Customeraccount'}
-                <i class="material-icons">keyboard_arrow_down</i>
+                <i class="fa-solid fa-angle-down"></i>
               </button>
               <div id="collapseInvoice" class="collapse" aria-labelledby="headingInvoice" data-parent="#accordion">
                 <div class="card-body">

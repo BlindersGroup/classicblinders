@@ -31,28 +31,34 @@
             {/block}
         {/block}
     {/if}
-    {block name='page_content_container'}
-        <section class="page-content" id="content">
-            {block name='page_content'}
-                <div class="product_flags">
-                    {include file='catalog/_partials/product-flags.tpl'}
-                </div>
+    <div class="sticky_product">
+        {block name='page_content_container'}
+            <section class="page-content" id="content">
+                {block name='page_content'}
+                    <div class="product_cover_thumbnails">
+                        {block name='product_cover_thumbnails'}
+                            {include file='catalog/_partials/product-cover-thumbnails.tpl'}
+                        {/block}
+                    </div>
+                    <div class="scroll-box-arrows">
+                        <i class="fa-solid fa-angle-left left"></i>
+                        <i class="fa-solid fa-angle-right right"></i>
+                    </div>
 
-                <div class="product_cover_thumbnails">
-                    {block name='product_cover_thumbnails'}
-                        {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-                    {/block}
-                </div>
-                <div class="scroll-box-arrows">
-                    <i class="material-icons left">&#xE314;</i>
-                    <i class="material-icons right">&#xE315;</i>
-                </div>
-
-            {/block}
-        </section>
-    {/block}
+                {/block}
+            </section>
+        {/block}
+        {if Context::getContext()->isMobile() == 0}
+            {hook h='displayBlockLeftFooter'}
+        {/if}
+    </div>
 </div>
 <div class="block_center">
+    {if isset($product_manufacturer->id)}
+        <div class="product-manufacturer">
+            <a href="{$product_brand_url}" class="brand_centercolumn">{$product_manufacturer->name}</a>
+        </div>
+    {/if}
     {if Context::getContext()->isMobile() == 0}
         {block name='page_header_container'}
             {block name='page_header'}
@@ -63,22 +69,15 @@
 
     <div class="displayProductCenterColumn">
         {hook h='displayProductCenterColumn' product=$product}
-        {if isset($product_manufacturer->id)}
-            <div class="product-manufacturer">
-                {if isset($manufacturer_image_url)}
-                    <a href="{$product_brand_url}" class="brand_centercolumn">
-                        <img src="{$manufacturer_image_url}" class="img img-thumbnail manufacturer-logo" alt="{$product_manufacturer->name}" loading="lazy" width="32" height="32">
-                    </a>
-                {else}
-                    <a href="{$product_brand_url}" class="brand_centercolumn">{$product_manufacturer->name}</a>
-                {/if}
-            </div>
-        {/if}
     </div>
 
     {block name='product_description_short'}
         <div id="product-description-short-{$product.id}" class="product-description" itemprop="description">{$product.description_short nofilter}</div>
     {/block}
+    {if Context::getContext()->isMobile() == 1}
+        {hook h='displayBlockLeftFooter'}
+    {/if}
+
     {if $product.is_customizable && count($product.customizations.fields)}
         <div class="product_customization">
             {block name='product_customization'}
@@ -112,7 +111,7 @@
                 {foreach from=$product.attachments item=attachment}
                     {assign var=url_attach value="/index.php?controller=attachment&id_attachment={$attachment.id_attachment}"}
                     <span class="attach datatext" datatext="{$url_attach|base64_encode}">
-                                        <i class="material-icons">file_download</i>
+                                        <i class="fa-solid fa-download"></i>
                                         {$attachment.name}
                                     </span>
                 {/foreach}
@@ -159,5 +158,27 @@
         {block name='hook_display_reassurance'}
             {hook h='displayReassurance'}
         {/block}
+
+        <div class="payment_products">
+            <span class="title">{l s='Somos de confianza:' d='Shop.Theme.Catalog'}</span>
+            <ul class="imgs_payment">
+                {if $custom_generic.visa == 1}
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-visa.svg" width="75" height="50" loading="lazy"></li>
+                {/if}
+                {if $custom_generic.mastercard == 1}
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-mastercard.svg" width="75" height="50" loading="lazy"></li>
+                {/if}
+                {if $custom_generic.maestro == 1}
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-maestro.svg" width="75" height="50" loading="lazy"></li>
+                {/if}
+                {if $custom_generic.paypal == 1}
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-paypal.svg" width="75" height="50" loading="lazy"></li>
+                {/if}
+                {if $custom_generic.bizum == 1}
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-bizum.svg" width="75" height="50" loading="lazy"></li>
+                {/if}
+            </ul>
+        </div>
+
     </div>
 </div>

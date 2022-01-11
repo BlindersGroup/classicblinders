@@ -33,8 +33,8 @@
               <a href="{$node.link}">{$node.name}</a>
               {if $node.children}
                 <div class="navbar-toggler collapse-icons" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons add">&#xE145;</i>
-                  <i class="material-icons remove">&#xE15B;</i>
+                  <i class="fa-solid fa-plus add"></i>
+                  <i class="fa-solid fa-minus remove"></i>
                 </div>
                 <div class="collapse" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
@@ -44,8 +44,8 @@
               <a class="category-sub-link" href="{$node.link}">{$node.name}</a>
               {if $node.children}
                 <span class="arrows" data-toggle="collapse" data-target="#exCollapsingNavbar{$node.id}">
-                  <i class="material-icons arrow-right">&#xE315;</i>
-                  <i class="material-icons arrow-down">&#xE313;</i>
+                  <i class="fa-solid fa-angle-right arrow-right"></i>
+                  <i class="fa-solid fa-angle-down arrow-down"></i>
                 </span>
                 <div class="collapse" id="exCollapsingNavbar{$node.id}">
                   {categories nodes=$node.children depth=$depth+1}
@@ -64,9 +64,10 @@
     <ul class="category-top-menu">
       <li><span class="h6">{l s='Subcategories' d='Shop.Theme.Actions'}</span></li>
       <li>{categories nodes=$categories.children}</li>
-      {if $categories.children|count > 5}
-        <p class="read-more"><span class="button">{l s='Ver más' d='Shop.Theme.Actions'} <i class="material-icons">keyboard_arrow_down</i></span></p>
-      {/if}
+      {*{if $categories.children|count > 5}
+        <p class="read-more"><span class="button">{l s='Ver más' d='Shop.Theme.Actions'} <i class="fa-solid fa-angle-down"></i></span></p>
+      {/if}*}
     </ul>
+    <hr>
   </div>
 {/if}

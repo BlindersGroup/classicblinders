@@ -32,7 +32,7 @@
     aria-haspopup="true"
     aria-expanded="false">
     {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
-    <i class="material-icons float-xs-right">&#xE5C5;</i>
+    <i class="fa-solid fa-angle-down float-xs-right"></i>
   </button>
   <div class="dropdown-menu">
     {foreach from=$listing.sort_orders item=sort_order}

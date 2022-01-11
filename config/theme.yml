@@ -259,6 +259,10 @@ global_settings:
         title: displayProductFullWidth
       - name: displaySidebarContact
         title: displaySidebarContact
+      - name: displayBlockLeftFooter
+        title: displayBlockLeftFooter
+      - name: displayFooterCopyright
+        title: displayFooterCopyright
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:
@@ -266,9 +270,9 @@ global_settings:
       displayNav1:
         - dbcontactinfo
       displayNavCenter:
-        - dbproductcomments
-      displayNav2:
         - dbfreeshipping
+      displayNav2:
+        - dbproductcomments
       displayTop:
         - dbcontactinfo
         - ps_customersignin
@@ -278,8 +282,8 @@ global_settings:
       displayHome:
         - ps_imageslider
         - dbhomecategories
-        - ps_bestsellers
         - dbbrandslider
+        - ps_bestsellers
         - ps_newproducts
         - ps_featuredproducts
         - ps_customtext
@@ -289,6 +293,7 @@ global_settings:
         - ps_linklist
         - ps_customeraccountlinks
         - ps_contactinfo
+      displayFooterCopyright:
         - ps_socialfollow
       displayFooterAfter:
       displayLeftColumn:
@@ -296,7 +301,6 @@ global_settings:
         - ps_facetedsearch
       displaySearch:
       displayProductAdditionalInfo:
-        - ps_sharebuttons
         - dbfreeshipping
       displayReassurance:
         - blockreassurance
@@ -315,6 +319,8 @@ global_settings:
         - dbcategorydesc
       displaySidebarContact:
         - dbcontactinfo
+      displayBlockLeftFooter:
+        - ps_sharebuttons
 
   image_types:
     cart_default:
@@ -345,6 +351,10 @@ global_settings:
       width: 170
       height: 115
       scope: [stores]
+    brand_home:
+      width: 180
+      height: 90
+      scope: [ manufacturers ]
 
 theme_settings:
   default_layout: layout-full-width

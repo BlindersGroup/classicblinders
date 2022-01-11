@@ -26,18 +26,20 @@
   <div class="user-info">
     {if $logged}
       <span
-        class="open_account"
+        class="open_account userinfo_header"
         data-toggle="modal"
         data-target="#userinfo_modal"
       >
-        <i class="material-icons">person</i>
+          <i class="fa-solid fa-user"></i>
+          <span class="icon_name">{l s='Hi %customerName%' sprintf=['%customerName%' => {$customerName}] d='Shop.Theme.Customeraccount'}</span>
       </span>
     {else}
       <span
         datatext="{$my_account_url|base64_encode}"
-        class="datatext"
+        class="datatext userinfo_header"
       >
-        <i class="material-icons">person</i>
+        <i class="fa-solid fa-user"></i>
+          <span class="icon_name">{l s='Iniciar sesión' mod='ps_customersignin'}</span>
       </span>
     {/if}
   </div>
@@ -59,29 +61,29 @@
                 <div class="modal_item">
                     <span class="title">{l s='Account summary' d='Shop.Theme.Customeraccount'}</span>
                     <a class="item" href="{$urls.pages.my_account}">
-                        <i class="material-icons">&#xE8B0;</i>
+                        <i class="fa-solid fa-user"></i>
                         {l s='My account' d='Shop.Theme.Customeraccount'}
                     </a>
                 </div>
                 <div class="modal_item">
                     <span class="title">{l s='My orders' d='Shop.Theme.Customeraccount'}</span>
                     <a class="item" href="{$urls.pages.history}">
-                        <i class="material-icons">widgets</i>
+                        <i class="fa-solid fa-list-ul"></i>
                         {l s='My orders' d='Shop.Theme.Customeraccount'}
                     </a>
                     <a class="item" href="{$urls.pages.discount}">
-                        <i class="material-icons">content_cut</i>
+                        <i class="fa-solid fa-tag"></i>
                         {l s='Discount coupons' d='Shop.Theme.Customeraccount'}
                     </a>
                 </div>
                 <div class="modal_item">
                     <span class="title">{l s='Personal information' d='Shop.Theme.Customeraccount'}</span>
                     <a class="item" href="{$urls.pages.identity}">
-                        <i class="material-icons">account_box</i>
+                        <i class="fa-solid fa-address-book"></i>
                         {l s='Personal information' d='Shop.Theme.Customeraccount'}
                     </a>
                     <a class="item" href="{$urls.pages.addresses}">
-                        <i class="material-icons">location_on</i>
+                        <i class="fa-solid fa-location-dot"></i>
                         {l s='My Addresses' d='Shop.Theme.Customeraccount'}
                     </a>
                 </div>

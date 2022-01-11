@@ -44,12 +44,13 @@
       margin-right: .5rem;
       width: 65%;
       max-width: 500px;
-      border: 1px solid $border-gray;
+      border: 1px solid #464545;
 
       &:focus {
-        outline: 1px solid var(--primary_color);
+        outline: 0;
         color: var(--color_font);
         background: #fff;
+        border-color: var(--primary_color);
       }
     }
 
@@ -64,6 +65,15 @@
     p, ul, span {
       margin-bottom: 0;
       font-size: .8rem;
+    }
+
+    .psgdpr_consent_icon {
+      color: #FFF !important;
+      font-size: 14px !important;
+    }
+
+    .psgdpr_consent_message {
+      text-align: center;
     }
   }
 }

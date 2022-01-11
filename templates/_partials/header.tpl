@@ -29,6 +29,7 @@
 {/block}
 
 {block name='header_nav'}
+  {if $custom_generic.show_displaynav == 1}
   <nav class="header-nav {if $custom_generic.width_header == 1}full_width_generic{/if}">
     <div class="container">
       <div class="headernav_flex">
@@ -46,11 +47,6 @@
         {* Cabecera en Mobile *}
         <div class="hidden-md-up text-sm-center mobile">
           <div class="top-logo" id="_mobile_logo"></div>
-          <div class="dbcontactinfo_top" id="_mobile_contact_info">
-            <span class="link_contact datatext" datatext="{$urls.pages.contact|base64_encode}">
-              <i class="material-icons">contact_support</i>
-            </span>
-          </div>
           <div id="_mobile_user_info"></div>
           <div id="_mobile_cart"></div>
           <div class="clearfix"></div>
@@ -58,15 +54,16 @@
       </div>
     </div>
   </nav>
+  {/if}
 {/block}
 
 {block name='header_top'}
-  <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if}">
+  <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if} {if $custom_generic.show_displaynav == 0}notdisplaynav{/if}">
     <div class="container">
       <div class="header__flex">
         {if Context::getContext()->getDevice() > 1}
           <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
-            <i class="material-icons d-inline">&#xE5D2;</i>
+            <i class="fa-solid fa-bars d-inline"></i>
           </div>
         {/if}
         <div class="displayLogo hidden-sm-down" id="_desktop_logo">

@@ -39,7 +39,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "velocity-animate": "^1.5.2",
     "webpack": "^5.52.0",
-    "webpack-cli": "^4.8.0",
+    "webpack-cli": "^4.9.1",
     "webpack-sources": "^3.2.0"
   }
 }

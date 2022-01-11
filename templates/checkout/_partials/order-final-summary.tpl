@@ -33,7 +33,7 @@
     <div class="col-md-12">
       <h4 class="h4">
       {l s='Addresses' d='Shop.Theme.Checkout'}
-        <span class="step-edit step-to-addresses js-edit-addresses"><i class="material-icons edit">mode_edit</i> {l s='edit' d='Shop.Theme.Actions'}</span>
+        <span class="step-edit step-to-addresses js-edit-addresses"><i class="fa-solid fa-pen"></i> {l s='edit' d='Shop.Theme.Actions'}</span>
       </h4>
     </div>
   </div>
@@ -60,7 +60,7 @@
     <div class="col-md-12">
       <h4 class="h4">
       {l s='Shipping Method' d='Shop.Theme.Checkout'}
-        <span class="step-edit step-to-delivery js-edit-delivery"><i class="material-icons edit">mode_edit</i> {l s='edit' d='Shop.Theme.Actions'}</span>
+        <span class="step-edit step-to-delivery js-edit-delivery"><i class="fa-solid fa-pen"></i> {l s='edit' d='Shop.Theme.Actions'}</span>
       </h4>
 
       <div class="col-md-12 summary-selected-carrier">

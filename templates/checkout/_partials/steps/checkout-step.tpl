@@ -33,9 +33,9 @@
                     ]|classnames}"
   >
     <h1 class="step-title h3">
-      <i class="material-icons rtl-no-flip done">&#xE876;</i>
+      <i class="fa-regular fa-circle-check rtl-no-flip done"></i>
       {if $position > 1}
-        <span class="step-number">{$position - 1}</span>
+        <span class="step-number">{$position - 1}.</span>
       {/if}
 
       {if $position == 1 && $customer.is_logged && !$customer.is_guest}
@@ -51,8 +51,15 @@
       {else}
         {if $position > 1}
           {$title}
-          <span class="step-edit text-muted"><i class="material-icons edit">mode_edit</i> {l s='Edit' d='Shop.Theme.Actions'}</span>
+          <span class="step-edit text-muted"><i class="fa-solid fa-pen"></i> {l s='Edit' d='Shop.Theme.Actions'}</span>
         {/if}
+      {/if}
+
+      {if $position == 4}
+        <span class="secure_payment">
+          <i class="fa-solid fa-lock"></i>
+          {l s='Pago online seguro' d='Shop.Theme.Actions'}
+        </span>
       {/if}
 
     </h1>

@@ -54,15 +54,37 @@
       flex-direction: row;
       -webkit-box-pack: justify;
       justify-content: space-between;
+      background-color: inherit;
+      padding: 0;
+
+      .manufacturer-cover {
+        margin-left: auto;
+      }
     }
+  }
+
+  #products .products > div {
+    //width: 20%;
+  }
+
+  .dbproductcomments {
+    display: table;
+    background-color: #FFF;
+    padding: 25px;
   }
 }
 
 #manufacturer-description {
   display: table;
-  background-color: #FFF;
-  padding: 1rem;
   width: 100%;
+  margin-top: 1.5rem;
+
+  .title {
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
 }
 
 #full-column {

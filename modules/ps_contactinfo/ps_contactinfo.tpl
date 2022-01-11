@@ -28,8 +28,8 @@
         <span class="h3">{l s='Store information' d='Shop.Theme.Global'}</span>
         <span class="float-xs-right">
           <span class="navbar-toggler collapse-icons">
-            <i class="material-icons add">&#xE313;</i>
-            <i class="material-icons remove">&#xE316;</i>
+              <i class="fa-solid fa-plus add"></i>
+              <i class="fa-solid fa-minus remove"></i>
           </span>
         </span>
     </div>
@@ -37,43 +37,35 @@
         <p class="h3 block-contact-title hidden-sm-down">{l s='Store information' d='Shop.Theme.Global'}</p>
 
         <div class="content_contactinfo">
-            <p>
-                <a href="{$urls.pages.contact}">
-                    <i class="material-icons">email</i>
-                    {l s='Contact Form' d='Shop.Theme.Customeraccount'}
-                </a>
-            </p>
+            <div class="data_contactinfo">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="data_contact">
+                    <span class="text_min">{l s='Enviar un email' d='Shop.Theme.Global'}</span>
+                    <a class="value" href="mailto:{$contact_infos.email}">
+                        {$contact_infos.email}
+                    </a>
+                </div>
+            </div>
             {if $contact_infos.phone}
-                <p>
-                    <i class="material-icons">phone</i>
-                    {$contact_infos.phone}
-                </p>
+                <div class="data_contactinfo">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="data_contact">
+                        <span class="text_min">{l s='Llámanos' d='Shop.Theme.Global'}</span>
+                        <span class="value phone">{$contact_infos.phone}</span>
+                    </div>
+                </div>
             {/if}
             {if $contact_infos.address.formatted}
-                <p class="contact_infos_address">
-                    <i class="material-icons">location_on</i>
-                    <span>{$contact_infos.address.formatted nofilter}</span>
-                </p>
+                <div class="data_contactinfo">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="data_contact">
+                        <span class="text_min">
+                            {$contact_infos.address.formatted nofilter}
+                        </span>
+                    </div>
+                </div>
+
             {/if}
-            {if $contact_infos.fax}
-                <p>
-                    {* [1][/1] is for a HTML tag. *}
-                    {l
-                    s='Fax: [1]%fax%[/1]'
-                    sprintf=[
-                    '[1]' => '<span>',
-                    '[/1]' => '</span>',
-                    '%fax%' => $contact_infos.fax
-                    ]
-                    d='Shop.Theme.Global'
-                    }
-                </p>
-            {/if}
-            {*{if $contact_infos.email && $display_email}
-                <p>
-                    {$contact_infos.email}
-                </p>
-            {/if}*}
         </div>
 
     </div>

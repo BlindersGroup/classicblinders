@@ -100,6 +100,7 @@ label .color,
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
+  line-height: 1;
 }
 
 .h1,
@@ -132,14 +133,15 @@ h1, h2, h3, h4, h5, h6 {
 .h3.products-section-title {
   text-transform: none;
   margin: 0 0 1rem;
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 40px;
+  text-align: center;
 }
 
 .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   text-align: center;
   white-space: nowrap;
@@ -267,7 +269,7 @@ small.value {
   padding: 0.5rem 1rem;
   color: var(--color_font);
   background: inherit;
-  border: 1px solid #d2d2d2;
+  border: 1px solid var(--color_font);
   width: 100%;
 
   &:focus {
@@ -293,12 +295,12 @@ small.value {
     height: 100%;
 
     > .btn {
-      padding: 7px;
+      padding: 11px;
       margin-left: 0;
-      font-size: 0.6875rem;
-      font-weight: 500;
+      font-size: 13px;
+      font-weight: 600;
       color: $white;
-      text-transform: uppercase;
+      text-transform: inherit;
       border: 0;
       box-shadow: none;
 
@@ -503,8 +505,8 @@ form {
   }
 
   .form-control-label {
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 600;
     color: var(--color_font);
   }
 }
@@ -528,11 +530,11 @@ form {
 
     &:checked + span {
       position: absolute;
-      top: 0.125rem;
-      left: 0.125rem;
+      top: 4px;
+      left: 4px;
       display: block;
-      width: 12px;
-      height: 12px;
+      width: 8px;
+      height: 8px;
       background-color: $brand-primary;
       border-radius: 50%;
     }
@@ -562,24 +564,30 @@ form {
       vertical-align: middle;
       pointer-events: none;
       cursor: pointer;
-      border: 1px $radio-border-color solid;
+      border: 2px solid var(--color_font);
+      border-radius: 3px;
 
       .checkbox-checked {
         display: none;
-        margin: -0.125rem;
-        font-size: 1.25rem;
+        margin: 0;
+        font-size: 16px;
         color: $gray-darker;
       }
     }
 
     &:checked + span {
+      background-color: var(--primary_color);
+      border-color: var(--primary_color);
+      color: #FFF;
+
       .checkbox-checked {
         display: block;
+        color: #FFF;
       }
     }
 
     &:focus + span {
-      border-color: $gray;
+      border-color: var(--primary_color);
     }
   }
 
@@ -779,6 +787,11 @@ input[type="number"] {
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+  padding-top: 25px;
+
+  > * {
+    width: 100%;
+  }
 }
 
 .datatext {
@@ -806,10 +819,29 @@ input[type="number"] {
 .mt-3 {
   margin-top: 3rem !important;
 }
+.mt-20 {
+  margin-top: 20px !important;
+}
+.mt-50 {
+  margin-top: 50px !important;
+}
 .splide {
   .splide__track {
     margin-left: -14px;
     margin-right: -14px;
+  }
+  .splide__pagination {
+    bottom: 0;
+
+    .splide__pagination__page {
+      background-color: #FFF;
+      border: 1px solid #939393;
+
+      &.is-active {
+        background-color: #939393;
+        border-color: #939393;
+      }
+    }
   }
 }
 .images-container .splide .splide__track {
@@ -830,6 +862,57 @@ input[type="number"] {
   padding: 1.25rem;
 }
 
+.grade-stars.small-stars .star-content {
+  div.star {
+    background: url(../img/icons/small_stars.png);
+  }
+
+  div.star-on {
+    background: url(../img/icons/small_stars.png);
+    background-position: -19px 0;
+  }
+
+  div.star-hover {
+    background: url(../img/icons/small_stars.png);
+    background-position: -19px 0;
+  }
+}
+.grade-stars .star-content {
+  div.star,
+  div.star-on,
+  div.star-hover {
+    background: url(../img/icons/stars.png);
+  }
+
+  div.star-on,
+  div.star-hover {
+    background: url(../img/icons/stars.png);
+    background-position: -24px 0;
+  }
+}
+
+.full_width {
+  width: calc(100vw - 8px) !important;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  margin-right: 0;
+}
+
+.splide__arrow {
+  top: -25px;
+  background-color: inherit;
+}
+
+.splide__arrow--next {
+  right: 0;
+}
+
+.splide__arrow--prev {
+  right: 2rem;
+  left: inherit;
+}
+
 @include media-breakpoint-down(md) {
   .card {
     background-color: $white !important;
@@ -837,4 +920,15 @@ input[type="number"] {
   .filestyle {
     max-width: 90%;
   }
+  .full_width {
+    width: 100vw !important;
+  }
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.5rem 0.5rem;
+  }
+  #full-column {
+    padding-top: 25px;
+  }
 }
+

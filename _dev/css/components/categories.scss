@@ -1,5 +1,6 @@
 .block-category {
   margin-bottom: 1.563rem;
+  padding: 0;
 
   h1 {
     margin-bottom: 1rem;
@@ -254,8 +255,8 @@
 }
 
 .block-categories {
-  padding: 1rem;
-  margin-bottom: 1.563rem;
+  padding: 1rem 1rem 0;
+  margin-bottom: 0;
   background: $white;
 
   .h6 {
@@ -325,6 +326,7 @@
       }
     }
 
+
     .add,
     .remove {
       &:hover {
@@ -362,6 +364,12 @@
         display: inline-block;
       }
     }
+  }
+
+  hr {
+    margin-bottom: 0;
+    border: 0;
+    border-bottom: 1px solid #E0E0E0;
   }
 }
 
@@ -411,7 +419,7 @@
     }
 
     .showing {
-      padding-top: 1rem;
+      padding-top: 1rem !important;
       margin-bottom: 1rem;
     }
   }
@@ -483,8 +491,8 @@
     }
 
     .block-category {
-      padding: 1.25rem;
-      background-color: #FFF;
+      //padding: 1.25rem;
+      //background-color: #FFF;
 
       p:last-child {
         margin-bottom: 0 !important;

@@ -3,14 +3,6 @@
      data-product="{$product.embedded_attributes|json_encode}"
      role="tabpanel"
   >
-  {block name='product_reference'}
-    {if isset($product.reference_to_display) && $product.reference_to_display neq ''}
-      <div class="product-reference">
-        <label class="label">{l s='Reference' d='Shop.Theme.Catalog'} </label>
-        <span itemprop="sku">{$product.reference_to_display}</span>
-      </div>
-    {/if}
-  {/block}
 
   {block name='product_availability_date'}
     {if $product.availability_date}
@@ -30,13 +22,12 @@
   {block name='product_features'}
     {if $product.grouped_features}
       <section class="product-features">
-        <p class="h6">{l s='Data sheet' d='Shop.Theme.Catalog'}</p>
-        <dl class="data-sheet">
-          {foreach from=$product.grouped_features item=feature}
-            <dt class="name">{$feature.name}</dt>
-            <dd class="value">{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
-          {/foreach}
-        </dl>
+        {foreach from=$product.grouped_features item=feature}
+          <div class="data-sheet">
+              <span class="name">{$feature.name}</span>
+              <span class="value">{$feature.value|escape:'htmlall'|nl2br nofilter}</span>
+          </div>
+        {/foreach}
       </section>
     {/if}
   {/block}
@@ -45,13 +36,12 @@
   {block name='product_specific_references'}
     {if !empty($product.specific_references)}
       <section class="product-features">
-        <p class="h6">{l s='Specific References' d='Shop.Theme.Catalog'}</p>
-          <dl class="data-sheet">
-            {foreach from=$product.specific_references item=reference key=key}
-              <dt class="name">{$key}</dt>
-              <dd class="value">{$reference}</dd>
-            {/foreach}
-          </dl>
+        {foreach from=$product.specific_references item=reference key=key}
+            <div class="data-sheet">
+              <span class="name">{$key}</span>
+              <span class="value">{$reference}</span>
+            </div>
+        {/foreach}
       </section>
     {/if}
   {/block}

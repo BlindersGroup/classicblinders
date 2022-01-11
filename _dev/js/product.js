@@ -133,8 +133,8 @@ $(document).ready(() => {
 
     $quantityInput.TouchSpin({
       verticalbuttons: true,
-      verticalupclass: 'material-icons touchspin-up',
-      verticaldownclass: 'material-icons touchspin-down',
+      verticalupclass: 'fa-solid fa-plus',
+      verticaldownclass: 'fa-solid fa-minus',
       buttondown_class: 'btn btn-touchspin js-touchspin',
       buttonup_class: 'btn btn-touchspin js-touchspin',
       min: parseInt($quantityInput.attr('min'), 10),
@@ -267,8 +267,8 @@ if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
 
           new Splide( '#splide_images_product', {
             perPage     : 1,
-            pagination: false,
-            arrows: true,
+            pagination: true,
+            arrows: false,
           } ).mount();
         }
     );

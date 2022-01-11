@@ -43,7 +43,7 @@
           {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
         </a>
         <span class="secure-connection">
-          <i class="material-icons">https</i>
+          <i class="fa-solid fa-lock"></i>
           {l s='Secure connection' d='Shop.Theme.Customeraccount'}
         </span>
       </div>

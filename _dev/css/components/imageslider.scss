@@ -68,7 +68,7 @@
       }
 
       i {
-        font-size: 3.125rem;
+        font-size: 2rem;
         color: $white;
       }
 
@@ -124,7 +124,7 @@
   .carousel {
     left: 50%;
     width: 100vw;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
     margin-left: -50vw;
     background-color: $gray-light;
     box-shadow: none;
@@ -170,9 +170,9 @@
           margin-right: 0.78rem;
         }
 
-        i {
+        /*i {
           background: rgba(122, 122, 122, 0.5);
-        }
+        }*/
       }
     }
   }

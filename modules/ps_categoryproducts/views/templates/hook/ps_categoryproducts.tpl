@@ -24,11 +24,12 @@
  *}
 <section class="featured-products clearfix mt-3">
   <p class="h3 products-section-title">
-    {if $products|@count == 1}
+    {*{if $products|@count == 1}
       {l s='%s producto de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
     {else}
       {l s='%s productos de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
-    {/if}
+    {/if}*}
+    {l s='Productos que quizás te interesen' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
   </p>
   <div id="splide_categoryproducts" class="splide">
     <div class="splide__track">

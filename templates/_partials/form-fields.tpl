@@ -100,7 +100,7 @@
           <span class="custom-checkbox">
             <label>
               <input name="{$field.name}" type="checkbox" value="1" {if $field.value}checked="checked"{/if} {if $field.required}required{/if}>
-              <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+              <span><i class="fa-solid fa-check rtl-no-flip checkbox-checked"></i></span>
               {$field.label nofilter} {if $field.required}<span class="form_required">*</span>{/if}
             </label>
           </span>
@@ -152,7 +152,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn">
+            {*<span class="input-group-btn">
               <button
                 class="btn"
                 type="button"
@@ -160,9 +160,9 @@
                 data-text-show="visibility"
                 data-text-hide="visibility_off"
               >
-                <i class="material-icons icon-show-password">visibility</i>&nbsp;
+                <i class="fa-regular fa-eye icon-show-password"></i>
               </button>
-            </span>
+            </span>*}
           </div>
         {/block}
 

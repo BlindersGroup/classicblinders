@@ -29,9 +29,9 @@
         <p class="text__infinitescroll">
             {l s='Has visto %to% de %total% productos' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items] d='Shop.Theme.Catalog'}
         </p>
-        <div class="progress">
+        {*<div class="progress">
             <div class="progress-bar" role="progressbar" style="width: {$pagination.items_shown_to * 100 / $pagination.total_items}%" aria-valuenow="{$pagination.items_shown_to * 100 / $pagination.total_items}" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
+        </div>*}
         {if ($pagination.items_shown_to * 100 / $pagination.total_items) < 100}
             <div id="btn_inifinitescroll" class="btn btn__primary btn_inifinitescroll" data-pag="2">
                 <span class="text">{l s='Cargar más' d='Shop.Theme.Catalog'}</span>

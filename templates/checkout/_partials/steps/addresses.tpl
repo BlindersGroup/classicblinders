@@ -73,7 +73,7 @@
         {/if}
 
         <p class="add-address">
-          <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+          <a href="{$new_address_delivery_url}"><i class="fa-solid fa-plus"></i>{l s='add new address' d='Shop.Theme.Actions'}</a>
         </p>
 
         {if $use_same_address && !$cart.is_virtual}
@@ -117,7 +117,7 @@
           {/if}
 
           <p class="add-address">
-            <a href="{$new_address_invoice_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+            <a href="{$new_address_invoice_url}"><i class="fa-solid fa-plus"></i>{l s='add new address' d='Shop.Theme.Actions'}</a>
           </p>
         {/if}
 
@@ -125,7 +125,7 @@
 
       {if !$form_has_continue_button}
         <div class="clearfix">
-          <button type="submit" class="btn btn-primary continue float-xs-right" name="confirm-addresses" value="1">
+          <button type="submit" class="btn btn-primary continue float-xs-center" name="confirm-addresses" value="1">
             {l s='Continue' d='Shop.Theme.Actions'}
           </button>
           <input type="hidden" id="not-valid-addresses" value="{$not_valid_addresses}">

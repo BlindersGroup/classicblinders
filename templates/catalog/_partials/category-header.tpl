@@ -24,12 +24,12 @@
  *}
 <div id="js-product-list-header">
     {if $listing.pagination.items_shown_from == 1}
-        <div class="block-category card card-block">
+        <div class="block-category card-block">
             <div class="block-category-inner">
                 <div>
                     <h1 class="h1">{$category.name}</h1>
                     {if $category.description}
-                        <div id="category-description" class="text-muted">{$category.description nofilter}</div>
+                        <div id="category-description">{$category.description nofilter}</div>
                     {/if}
                 </div>
                 {if $category.image.bySize.category_default.url && $category_img == 1}

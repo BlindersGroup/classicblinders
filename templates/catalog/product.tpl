@@ -57,7 +57,7 @@
         {/if}
     </div>
 
-    <div class="row product-container">
+    <div class="product-container">
 
         <div class="displayProductFullWidth">
             {hook h='displayProductFullWidth' product=$product category=$category}

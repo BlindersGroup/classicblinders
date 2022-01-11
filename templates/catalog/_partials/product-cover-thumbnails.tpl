@@ -46,11 +46,15 @@
                                             height="{$image.bySize.medium_default.height}"
                                     >
                                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                        <i class="material-icons zoom-in">search</i>
+                                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                     </div>
                                 </div>
                             {/foreach}
                         </div>
+                    </div>
+
+                    <div class="product_flags">
+                        {include file='catalog/_partials/product-flags.tpl'}
                     </div>
                 </div>
 
@@ -125,19 +129,23 @@
                                                 height="{$image.bySize.medium_default.height}"
                                         >
                                         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                            <i class="material-icons zoom-in">search</i>
+                                            <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                         </div>
                                     </div>
                                 {/foreach}
                             </div>
+                        </div>
+
+                        <div class="product_flags">
+                            {include file='catalog/_partials/product-flags.tpl'}
                         </div>
                     </div>
                     <script>
                         document.addEventListener( 'DOMContentLoaded', function () {
                             new Splide( '#splide_images_product', {
                                 perPage     : 1,
-                                pagination: false,
-                                arrows: true,
+                                pagination: true,
+                                arrows: false,
                             } ).mount();
                         } );
                     </script>
@@ -185,11 +193,15 @@
                                                 height="{$image.bySize.medium_default.height}"
                                         >
                                         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                            <i class="material-icons zoom-in">search</i>
+                                            <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                         </div>
                                     </div>
                                 {/foreach}
                             </div>
+                        </div>
+
+                        <div class="product_flags">
+                            {include file='catalog/_partials/product-flags.tpl'}
                         </div>
                     </div>
 
@@ -243,11 +255,15 @@
                                         height="{$image.bySize.medium_default.height}"
                                     >
                                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                        <i class="material-icons zoom-in">search</i>
+                                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                     </div>
                                 </div>
                             {/foreach}
                         </div>
+                    </div>
+
+                    <div class="product_flags">
+                        {include file='catalog/_partials/product-flags.tpl'}
                     </div>
                 </div>
                 <script>
@@ -275,7 +291,7 @@
                             height="{$image.bySize.medium_default.height}"
                     >
                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                        <i class="material-icons zoom-in">search</i>
+                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                     </div>
                 </div>
             {/foreach}

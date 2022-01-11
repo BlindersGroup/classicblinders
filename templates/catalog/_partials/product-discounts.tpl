@@ -24,7 +24,7 @@
  *}
 <section class="product-discounts">
   {if $product.quantity_discounts}
-    <p class="h6 product-discounts-title"><i class="material-icons">dashboard_customize</i> {l s='Packs descuento' d='Shop.Theme.Catalog'}</p>
+    <p class="h6 product-discounts-title"><i class="fa-solid fa-gift"></i> {l s='Packs descuento' d='Shop.Theme.Catalog'}</p>
     <div class="product_packs_dto">
       {foreach from=$product.quantity_discounts item='quantity_discount' name='quantity_discounts'}
         {*{if !$configuration.taxes_enabled}

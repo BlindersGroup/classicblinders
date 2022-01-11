@@ -69,22 +69,29 @@
 
       <div class="product-description">
 
+          {block name='product_reviews'}
+              {hook h='displayProductListReviews' product=$product}
+          {/block}
 
         {block name='product_price_and_shipping'}
           {if $product.show_price}
             <div class="product-price-and-shipping">
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-
               {if $product.has_discount}
                 {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
-                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                <div class="prices_flex">
+                  <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                </div>
                 {if $product.discount_type === 'percentage'}
                   <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
                 {elseif $product.discount_type === 'amount'}
                   <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
                 {/if}
+
+              {else}
+                  <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
               {/if}
 
               {hook h='displayProductPriceBlock' product=$product type="before_price"}
@@ -94,10 +101,6 @@
               {hook h='displayProductPriceBlock' product=$product type='weight'}
             </div>
           {/if}
-        {/block}
-
-        {block name='product_reviews'}
-          {hook h='displayProductListReviews' product=$product}
         {/block}
 
           {if $custom_generic.button_buy == 1}
@@ -121,8 +124,7 @@
                                       disabled
                                   {/if}
                           >
-                              <i class="material-icons">add_shopping_cart</i>
-                              {l s='Add' d='Shop.Theme.Actions'}
+                              {l s='Add to cart' d='Shop.Theme.Actions'}
                           </button>
                       </div>
                   </form>

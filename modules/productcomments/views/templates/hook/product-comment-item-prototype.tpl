@@ -33,7 +33,7 @@
       @COMMENT_DATE@
     </div>
     <div class="verificated">
-      <i class="material-icons">check_circle</i>
+      <i class="fa-solid fa-circle-check"></i>
       {l s='verified opinion' d='Modules.Productcomments.Shop'}
     </div>
   </div>
@@ -44,16 +44,16 @@
     <div class="comment-buttons btn-group">
       {if $usefulness_enabled}
         <a class="useful-review">
-          <i class="material-icons thumb_up">thumb_up</i>
+          <i class="fa-solid fa-thumbs-up"></i>
           <span class="useful-review-value">@COMMENT_USEFUL_ADVICES@</span>
         </a>
         <a class="not-useful-review">
-          <i class="material-icons thumb_down">thumb_down</i>
+          <i class="fa-solid fa-thumbs-down"></i>
           <span class="not-useful-review-value">@COMMENT_NOT_USEFUL_ADVICES@</span>
         </a>
       {/if}
       <a class="report-abuse" title="{l s='Report abuse' d='Modules.Productcomments.Shop'}">
-        <i class="material-icons outlined_flag">flag</i>
+        <i class="fa-solid fa-flag"></i>
       </a>
     </div>
   </div>

@@ -48,8 +48,7 @@
               disabled
             {/if}
           >
-            <i class="material-icons">add_shopping_cart</i>
-            {l s='Add' d='Shop.Theme.Actions'}
+            {l s='Add to cart' d='Shop.Theme.Actions'}
           </button>
         </div>
 

@@ -3,17 +3,19 @@
     position: relative;
 
     input[type="text"] {
-      padding: 10px;
+      padding: 9px 10px;
       width: 100%;
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
-      border: 0;
+      border: 1px solid var(--seach_color);
+      border-radius: 50px;
 
       &:focus {
-        outline: 1px solid var(--primary_color);
+        outline: 0;
         color: var(--color_font);
         background-color: var(--search_bk);
+        border-color: var(--primary_color);
 
         + button .search {
           color: var(--primary_color);
@@ -25,9 +27,12 @@
       position: absolute;
       background: none;
       border: none;
-      bottom: 0.3125rem;
-      right: 0.125rem;
-      color: var(--seach_color);
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 10px;
+      color: var(--color_font);
 
       .search:hover {
         color: var(--primary_color);

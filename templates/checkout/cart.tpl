@@ -33,7 +33,7 @@
       <div class="cart-grid-body col-xs-12 col-lg-8">
 
         <!-- cart products detailed -->
-        <div class="card cart-container">
+        <div class="cart-container">
           <div class="card-block">
 {*            <h1 class="h1">{l s='Your cart has %products_count% item(s)' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Checkout'}</h1>*}
             <h1 class="h1">{l s='Tu carrito' d='Shop.Theme.Checkout'}</h1>
@@ -45,7 +45,7 @@
 
         {*{block name='continue_shopping'}
           <a class="label" href="{$urls.pages.index}">
-            <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+            <i class="fa-solid fa-angle-left"></i>{l s='Continue shopping' d='Shop.Theme.Actions'}
           </a>
         {/block}*}
 

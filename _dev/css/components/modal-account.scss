@@ -53,10 +53,18 @@
     .item {
       font-weight: 400;
       color: var(--color_font);
-      font-size: 0.9rem;
+      font-size: 14px;
+
+      > i {
+        font-size: 14px;
+      }
 
       &:hover {
-        text-decoration: underline;
+        color: var(--primary_color);
+
+        > i {
+          color: var(--primary_color);
+        }
       }
     }
   }
@@ -73,7 +81,7 @@
     &:hover {
       border: 1px solid var(--button_p_bk_hover);
       background-color: var(--button_p_bk_hover);
-      color: var(--button_p_bk_hover);
+      color: var(--button_p_color_hover);
     }
   }
 }

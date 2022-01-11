@@ -59,8 +59,8 @@
   margin-bottom: 1rem;
 }
 .alert:before {
-  font-family: Material Icons;
-  font-weight: 400;
+  font-family: 'Font Awesome';
+  font-weight: 800;
   font-style: normal;
   font-size: 24px;
   font-size: 1.5rem;
@@ -124,7 +124,7 @@
   color: var(--color_font);
 }
 .alert-success:before {
-  content: "\E5CA";
+  content: "\f058";
   background-color: #d6f0d8;
   color: #70b580;
 }
@@ -139,7 +139,7 @@
   color: var(--color_font);
 }
 .alert-info:before {
-  content: "\E88F";
+  content: "\f05a";
   background-color: #dff5f9;
   color: #25b9d7;
 }
@@ -154,7 +154,7 @@
   color: var(--color_font);
 }
 .alert-warning:before {
-  content: "\E001";
+  content: "\f06a";
   background-color: #fde7bb;
   color: #cd9321;
 }
@@ -169,7 +169,7 @@
   color: var(--color_font);
 }
 .alert-danger:before {
-  content: "\E001";
+  content: "\f071";
   background-color: #fde1e1;
   color: #c05c67;
 }

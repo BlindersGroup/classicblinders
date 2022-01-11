@@ -33,9 +33,9 @@
       <div class="row">
         <p class="subtitle col-md-12 col-xs-12">{l s='Orders' d='Shop.Theme.Customeraccount'}</p>
         {if !$configuration.is_catalog}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="history-link" href="{$urls.pages.history}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="history-link" href="{$urls.pages.history}">
             <span class="link-item">
-              <i class="material-icons">&#xE916;</i>
+              <i class="fa-solid fa-list-ul"></i>
               <div class="history-content">
                 <p class="title">{l s='My orders' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Track, return products, repeat orders or request invoices.' d='Shop.Theme.Customeraccount'}</p>
@@ -45,9 +45,9 @@
         {/if}
 
         {if $configuration.voucher_enabled && !$configuration.is_catalog}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="discounts-link" href="{$urls.pages.discount}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="discounts-link" href="{$urls.pages.discount}">
             <span class="link-item">
-              <i class="material-icons">content_cut</i>
+              <i class="fa-solid fa-tag"></i>
               <div class="history-content">
                 <p class="title">{l s='Vouchers' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Discover the discounted vouchers we have for you.' d='Shop.Theme.Customeraccount'}</p>
@@ -57,9 +57,9 @@
         {/if}
 
         {if !$configuration.is_catalog}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="order-slips-link" href="{$urls.pages.order_slip}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="order-slips-link" href="{$urls.pages.order_slip}">
             <span class="link-item">
-              <i class="material-icons">&#xE8B0;</i>
+              <i class="fa-solid fa-file-invoice"></i>
               <div class="history-content">
                 <p class="title">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Realizar seguimiento, devolución de productos, repetir pedidos o solicitar facturas.' d='Shop.Theme.Customeraccount'}</p>
@@ -69,9 +69,9 @@
         {/if}
 
         {if $configuration.return_enabled && !$configuration.is_catalog}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="returns-link" href="{$urls.pages.order_follow}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="returns-link" href="{$urls.pages.order_follow}">
             <span class="link-item">
-              <i class="material-icons">&#xE860;</i>
+              <i class="fa-solid fa-arrow-rotate-left"></i>
               <div class="history-content">
                 <p class="title">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Realizar seguimiento, devolución de productos, repetir pedidos o solicitar facturas.' d='Shop.Theme.Customeraccount'}</p>
@@ -81,9 +81,9 @@
         {/if}
 
         <p class="subtitle col-md-12 col-xs-12">{l s='Account summary' d='Shop.Theme.Customeraccount'}</p>
-        <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="identity-link" href="{$urls.pages.identity}">
+        <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="identity-link" href="{$urls.pages.identity}">
           <span class="link-item">
-            <i class="material-icons">account_box</i>
+            <i class="fa-solid fa-address-book"></i>
             <div class="history-content">
               <p class="title">{l s='Personal information' d='Shop.Theme.Customeraccount'}</p>
               <p class="desc">{l s='Edit your personal data such as name, password, email ...' d='Shop.Theme.Customeraccount'}</p>
@@ -92,9 +92,9 @@
         </a>
 
         {if $customer.addresses|count}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="addresses-link" href="{$urls.pages.addresses}">
             <span class="link-item">
-              <i class="material-icons">location_on</i>
+              <i class="fa-solid fa-location-dot"></i>
               <div class="history-content">
                 <p class="title">{l s='Addresses' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Edit, create or delete your shipping and billing addresses.' d='Shop.Theme.Customeraccount'}</p>
@@ -102,9 +102,9 @@
             </span>
           </a>
         {else}
-          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address}">
+          <a class="col-lg-6 col-md-6 col-sm-6 col-xs-12 link_item" id="address-link" href="{$urls.pages.address}">
             <span class="link-item">
-              <i class="material-icons">location_on</i>
+              <i class="fa-solid fa-location-dot"></i>
               <div class="history-content">
                 <p class="title">{l s='Add first address' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='Edit, create or delete your shipping and billing addresses.' d='Shop.Theme.Customeraccount'}</p>
@@ -113,15 +113,10 @@
           </a>
         {/if}
 
-        <p class="subtitle col-md-12 col-xs-12">{l s='Others' d='Shop.Theme.Customeraccount'}</p>
-        {block name='display_customer_account'}
-          {hook h='displayCustomerAccount'}
-        {/block}
-
         <p class="subtitle col-md-12 col-xs-12">{l s='Contact' d='Shop.Theme.Customeraccount'}</p>
-        <a class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="link_contact" href="{$urls.pages.contact}">
+        <a class="col-lg-12 col-md-12 col-sm-12 col-xs-12 link_item" id="link_contact" href="{$urls.pages.contact}">
             <span class="link-item">
-              <i class="material-icons">email</i>
+              <i class="fa-solid fa-envelope"></i>
               <div class="history-content">
                 <p class="title">{l s='Contact Form' d='Shop.Theme.Customeraccount'}</p>
                 <p class="desc">{l s='For any questions, contact our customer service team' d='Shop.Theme.Customeraccount'}</p>
@@ -129,6 +124,11 @@
               <span class="btn_contact">{l s='Contact' d='Shop.Theme.Customeraccount'}</span>
             </span>
         </a>
+
+        <p class="subtitle col-md-12 col-xs-12">{l s='Others' d='Shop.Theme.Customeraccount'}</p>
+        {block name='display_customer_account'}
+          {hook h='displayCustomerAccount'}
+        {/block}
 
       </div>
 

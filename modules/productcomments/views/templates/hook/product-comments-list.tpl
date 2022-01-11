@@ -27,33 +27,44 @@
   var productCommentAbuseReportErrorMessage = '{l|escape:'javascript' s='Sorry, your abuse report cannot be sent.' d='Modules.Productcomments.Shop'}';
 </script>
 
+<div class="full_width comment_full">
+  <div class="container">
+    <p class="title_comment">{l s='Opiniones del producto' d='Modules.Productcomments.Shop'}</p>
+    <div class="db_list_comments_products">
+      {if $nb_comments != 0}
+        <div class="product-comments-list-left">
+            <div class="nb_totalcomments">
+              <span class="average_grade">{$average_grade|round:1|string_format:"%.1f"}</span>
+              {include file='module:productcomments/views/templates/hook/average-grade-stars.tpl' grade=$average_grade}
+              <span class="nb_comments">{$nb_comments} {l s='Comments' d='Modules.Productcomments.Shop'}</span>
+            </div>
 
-<div class="db_list_comments_products">
-  {if $nb_comments != 0}
-    <div class="product-comments-list-left">
-        <div class="nb_totalcomments">
-          <span class="average_grade">{$average_grade|round:1|string_format:"%.1f"}</span>
-          {include file='module:productcomments/views/templates/hook/average-grade-stars.tpl' grade=$average_grade}
-          <span class="nb_comments">{$nb_comments} {l s='Comments' d='Modules.Productcomments.Shop'}</span>
+          {if $post_allowed}
+            <button class="btn btn-comment-inverse btn-comment post-product-comment">
+              {l s='Write your review' d='Modules.Productcomments.Shop'}
+            </button>
+          {/if}
         </div>
+        {include file='module:productcomments/views/templates/hook/product-comment-item-prototype.tpl' assign="comment_prototype"}
+        <div class="product-comments-list-right">
+          <div class="product-comments-list"
+               id="product-comments-list"
+               data-list-comments-url="{$list_comments_url nofilter}"
+               data-update-comment-usefulness-url="{$update_comment_usefulness_url nofilter}"
+               data-report-comment-url="{$report_comment_url nofilter}"
+               data-comment-item-prototype="{$comment_prototype|escape:'html_attr'}">
+          </div>
+          <div id="product-comments-list-pagination"></div>
+      {else}
+            {if $post_allowed}
+                <button class="btn btn-comment-inverse btn-comment post-product-comment">
+                    {l s='Write your review' d='Modules.Productcomments.Shop'}
+                </button>
+            {/if}
+      {/if}
+      {if $nb_comments != 0}</div>{/if}
     </div>
-    {include file='module:productcomments/views/templates/hook/product-comment-item-prototype.tpl' assign="comment_prototype"}
-    <div class="product-comments-list-right">
-      <div class="product-comments-list"
-           id="product-comments-list"
-           data-list-comments-url="{$list_comments_url nofilter}"
-           data-update-comment-usefulness-url="{$update_comment_usefulness_url nofilter}"
-           data-report-comment-url="{$report_comment_url nofilter}"
-           data-comment-item-prototype="{$comment_prototype|escape:'html_attr'}">
-      </div>
-      <div id="product-comments-list-pagination"></div>
-  {/if}
-  {if $post_allowed}
-    <button class="btn btn-comment-inverse btn-comment-big post-product-comment">
-      {l s='Write your review' d='Modules.Productcomments.Shop'}
-    </button>
-  {/if}
-  {if $nb_comments != 0}</div>{/if}
+  </div>
 </div>
 
 {* Appreciation post error modal *}

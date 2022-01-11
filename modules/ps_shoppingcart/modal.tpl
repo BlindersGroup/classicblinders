@@ -27,10 +27,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="{l s='Close' d='Shop.Theme.Global'}">
-          <span aria-hidden="true"><i class="material-icons">close</i></span>
+          <span aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
         </button>
         <h4 class="modal-title h6" id="myModalLabel">
-          <i class="material-icons shopping-cart">shopping_cart</i>
+          <i class="fa-solid fa-cart-shopping"></i>
           {l s='Mi carrito' d='Shop.Theme.Checkout'}
           (<span class="total_products">{$cart.products_count}</span>)
         </h4>
@@ -57,15 +57,15 @@
                       </div>
                     {/foreach}
                   </div>
-                  <div class="delete_product" data-idproduct="{$product.id}" data-idattribute="{$product.id_product_attribute}"><i class="material-icons">delete</i></div>
+                  <div class="delete_product" data-idproduct="{$product.id}" data-idattribute="{$product.id_product_attribute}"><i class="fa-regular fa-trash-can"></i></div>
                   <div class="product_action">
                     <div class="input-group bootstrap-touchspin">
                       <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
                       <input type="number" name="qty" id="quantity_wanted" value="{$product.cart_quantity}" class="input-group form-control qty_{$product.id}_{$product.id_product_attribute}" min="1" aria-label="Cantidad" style="display: block;" disabled>
                       <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                       <span class="input-group-btn-vertical" data-idproduct="{$product.id}" data-idattribute="{$product.id_product_attribute}" data-idcustomization="{$product.id_customization}">
-                        <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button" data-qty="up"><i class="material-icons touchspin-up"></i></button>
-                        <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button" data-qty="down"><i class="material-icons touchspin-down"></i></button>
+                        <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button" data-qty="up"><i class="fa-solid fa-plus"></i></button>
+                        <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button" data-qty="down"><i class="fa-solid fa-minus"></i></button>
                       </span>
                     </div>
                     <span class="product-price">{$product.price}</span>
@@ -77,7 +77,10 @@
         </div>
         <div class="modal_totals">
           <div class="cart-content">
-            <p class="subtotals_modal"><span class="label">{l s='Subtotal:' d='Shop.Theme.Checkout'}</span>&nbsp;<span class="value">{$cart.subtotals.products.value}</span></p>
+            <p class="subtotals_modal">
+              <span class="label">{l s='Subtotal:' d='Shop.Theme.Checkout'}</span>&nbsp;
+              <span class="value">{$cart.subtotals.products.value}</span>
+            </p>
             {if $cart.subtotals.shipping.value}
               <p class="subtotals_shipping"><span>{l s='Shipping:' d='Shop.Theme.Checkout'}</span>&nbsp;<span class="value">{$cart.subtotals.shipping.value} {hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</span></p>
             {/if}

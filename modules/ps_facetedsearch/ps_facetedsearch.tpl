@@ -40,7 +40,7 @@
                         <div id="search_filter_controls">
                             <span id="_mobile_search_filters_clear_all"></span>
                             <button class="btn btn-secondary ok" data-dismiss="modal" aria-label="Close">
-                                <i class="material-icons">done</i>
+                                <i class="fa-solid fa-check"></i>
                                 {l s='Filter' d='Shop.Theme.Actions'}
                             </button>
                         </div>

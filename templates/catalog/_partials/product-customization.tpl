@@ -24,8 +24,8 @@
  *}
 <section class="product-customization">
   {if !$configuration.is_catalog}
-    <div class="card card-block">
-      <p class="h4 card-title">{l s='Product customization' d='Shop.Theme.Catalog'}</p>
+    <div class="card">
+      <p class="h4 card-title"><i class="fa-solid fa-pen"></i> {l s='Product customization' d='Shop.Theme.Catalog'}</p>
       {l s='Don\'t forget to save your customization to be able to add to cart' d='Shop.Forms.Help'}
 
       {block name='product_customization_form'}
@@ -59,7 +59,7 @@
             {/foreach}
           </ul>
           <div class="clearfix">
-            <button class="btn btn-primary float-xs-right" type="submit" name="submitCustomizedData">{l s='Save Customization' d='Shop.Theme.Actions'}</button>
+            <button class="btn btn-primary btn_personalizacion" type="submit" name="submitCustomizedData">{l s='Save Customization' d='Shop.Theme.Actions'}</button>
           </div>
         </form>
       {/block}

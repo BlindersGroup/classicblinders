@@ -41,7 +41,7 @@
             <p class="h3 card-title">{$store.name}</p>
             <address>{$store.address.formatted nofilter}</address>
             {if $store.note || $store.phone || $store.fax || $store.email}
-              <a data-toggle="collapse" href="#about-{$store.id}" aria-expanded="false" aria-controls="about-{$store.id}"><strong>{l s='About and Contact' d='Shop.Theme.Global'}</strong><i class="material-icons">&#xE409;</i></a>
+              <a data-toggle="collapse" href="#about-{$store.id}" aria-expanded="false" aria-controls="about-{$store.id}"><strong>{l s='About and Contact' d='Shop.Theme.Global'}</strong><i class="fa-solid fa-angle-right"></i></a>
             {/if}
           </div>
           <div class="col-md-4 col-sm-5 col-xs-12 divide-left">
@@ -70,13 +70,13 @@
             {/if}
             <ul class="card-block">
               {if $store.phone}
-                <li><i class="material-icons">&#xE0B0;</i>{$store.phone}</li>
+                <li><i class="fa-solid fa-phone"></i>{$store.phone}</li>
               {/if}
               {if $store.fax}
-                <li><i class="material-icons">&#xE8AD;</i>{$store.fax}</li>
+                <li><i class="fa-solid fa-fax"></i>{$store.fax}</li>
               {/if}
               {if $store.email}
-                <li><i class="material-icons">&#xE0BE;</i>{$store.email}</li>
+                <li><i class="fa-solid fa-envelope"></i>{$store.email}</li>
               {/if}
             </ul>
           </div>

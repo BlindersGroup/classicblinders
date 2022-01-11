@@ -85,17 +85,17 @@
 
     <div class="tab-content">
       <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-login-form" role="tabpanel" {if !$show_login_form}aria-hidden="true"{/if}>
-        <p class="type_form">{l s="Sign in" d='Shop.Theme.Actions'}</p>
+        {*<p class="type_form">{l s="Sign in" d='Shop.Theme.Actions'}</p>*}
         {render file='checkout/_partials/login-form.tpl' ui=$login_form}
       </div>
       <div class="tab-pane {if $show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
-        <p class="type_form">
+        {*<p class="type_form">
           {if $guest_allowed}
             {l s='Order as a guest' d='Shop.Theme.Checkout'}
           {else}
             {l s='Create an account' d='Shop.Theme.Customeraccount'}
           {/if}
-        </p>
+        </p>*}
         {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
       </div>
     </div>
