@@ -45,7 +45,7 @@
     .carousel .carousel-control .icon-prev:hover i {
       color: var(--primary_color); }
     .carousel .carousel-control .icon-prev {
-      left: 1rem; }
+      left: 2rem; }
     .carousel .carousel-control .icon-next {
       right: 2rem; }
     .carousel .carousel-control.left, .carousel .carousel-control.right {
@@ -98,7 +98,7 @@
         }*/ }
         .carousel .direction .carousel-control .icon-prev {
           left: 0;
-          margin-left: 0; }
+          margin-left: 0.78rem; }
         .carousel .direction .carousel-control .icon-next {
           right: 0;
           margin-right: 0.78rem; }

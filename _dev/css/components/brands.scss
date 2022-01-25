@@ -56,6 +56,7 @@
       justify-content: space-between;
       background-color: inherit;
       padding: 0;
+      background: var(--background) !important;
 
       .manufacturer-cover {
         margin-left: auto;
@@ -123,7 +124,7 @@
         flex-direction: column;
         align-content: center;
         padding: 1.25rem;
-        background-color: $white;
+        //background-color: $white;
 
         > * {
           width: 100%;

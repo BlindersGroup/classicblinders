@@ -132,6 +132,7 @@
 
       .displayTopCenter {
         min-width: 50%;
+        width: 55%;
       }
 
       .displayTop {
@@ -246,6 +247,7 @@
       border-bottom: 0;
       margin-bottom: 0;
       padding: 0;
+      display: none;
 
       .mobile {
         display: flex;
@@ -309,7 +311,9 @@
 
       .header__flex {
         .displayTopCenter {
+          /*
           width: 55%;
+          */
           min-width: inherit;
 
           .search-widget form button[type="submit"] {
@@ -366,10 +370,15 @@
 
       .container {
         padding: 10px 15px;
+        width: auto;
       }
 
       .header__flex {
         align-items: center;
+
+        .displayTopCenter{
+          width: 50%;
+        }
       }
     }
   }
@@ -394,7 +403,6 @@
         background: var(--header_bk);
         color: var(--header_color);
       }
-
     }
   }
 }

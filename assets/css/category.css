@@ -292,7 +292,7 @@
   display: inline-block;
   width: 100%;
   color: var(--color_font);
-  background: #fff !important;
+  background: var(--background);
   padding: 5px;
   cursor: pointer;
   max-width: 200px;
@@ -390,7 +390,9 @@
         text-align: left;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        /*
+      flex-wrap: wrap;
+      */
         justify-content: flex-start;
         align-content: center; }
         #search_filters .facet li .facet-label a,
@@ -406,7 +408,9 @@
           color: var(--color_font);
           font-size: 15px;
           line-height: 15px;
-          white-space: nowrap;
+          /*
+        white-space: nowrap;
+        */
           display: flex;
           flex-direction: row;
           align-items: center; }

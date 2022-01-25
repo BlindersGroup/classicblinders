@@ -464,7 +464,7 @@
       //border-bottom: 1px solid rgba(0, 0, 0, 0.125);
       color: #FFF;
       background: #666666;
-      width: calc(25% - 10px);
+      //width: calc(25% - 10px);
       margin-right: 10px;
 
       &:first-child {
@@ -833,7 +833,9 @@
       .history_buttons {
         width: 100%;
         display: flex;
+        /*
         flex-direction: column;
+        */
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;

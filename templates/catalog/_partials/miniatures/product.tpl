@@ -82,7 +82,10 @@
 
                 <div class="prices_flex">
                   <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">
+                      <span>Antes</span>
+                      <span class="block-regular-price">{$product.regular_price}</span>
+                  </span>
                 </div>
                 {if $product.discount_type === 'percentage'}
                   <span class="discount-percentage discount-product">{$product.discount_percentage}</span>

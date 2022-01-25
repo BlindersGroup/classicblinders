@@ -105,6 +105,7 @@ $product-description-height: 70px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    min-height: 41px;
 
     .discount-product {
       font-size: 13px;
@@ -113,6 +114,10 @@ $product-description-height: 70px;
       padding: 5px 10px;
       background-color: #C81D25;
       color: #FFF;
+    }
+    .prices_flex {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -235,9 +240,26 @@ $product-description-height: 70px;
         min-height: 1.875rem;
         font-weight: 600;
 
-        /*&.online-only {
-          top: 13.1rem;
-        }*/
+        &.on-sale{
+          background: #FABC2A;
+        }
+
+        &.online-only {
+          /*top: 13.1rem;*/
+          background: #3E92CC ;
+        }
+
+        &.new{
+          background: #179942;
+        }
+
+        &.pack{
+          background: #000000;
+        }
+
+        &.out_of_stock{
+          background: #E0E0E0;
+        }
       }
     }
 
@@ -256,8 +278,14 @@ $product-description-height: 70px;
     font-size: 13px;
     line-height: 17px;
     color: var(--color_font);
+    /*
     text-decoration: line-through;
+    */
     font-weight: 400;
+
+    .block-regular-price{
+      text-decoration: line-through;
+    }
   }
 
   .count {
@@ -355,6 +383,23 @@ $product-description-height: 70px;
       margin-top: 0 !important;
       text-align: center;
       background: $brand-secondary;
+    }
+
+    &.online-only {
+      /*top: 13.1rem;*/
+      background: #3E92CC ;
+    }
+
+    &.new{
+      background: #179942;
+    }
+
+    &.pack{
+      background: #000000;
+    }
+
+    &.out_of_stock{
+      background: #E0E0E0;
     }
   }
 }
@@ -457,7 +502,9 @@ $product-description-height: 70px;
     display: inline-block;
     width: 100%;
     color: var(--color_font);
+    /*
     background: #fff !important;
+    */
     padding: 5px;
     cursor: pointer;
     max-width: 200px;
@@ -525,13 +572,13 @@ $product-description-height: 70px;
       width: 100%;
     }
   }
-
+/*
   .product-price-and-shipping {
     .prices_flex {
       display: flex;
       flex-direction: column;
     }
-  }
+  }*/
 }
 
 @include media-breakpoint-down(sm) {
