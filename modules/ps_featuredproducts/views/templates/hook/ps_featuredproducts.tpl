@@ -22,8 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="featured-products clearfix mt-3">
-  <p class="h3 products-section-title">
+<section class="featured-products clearfix --mt-16">
+  <p class="h1 products-section-title">
     {l s='Popular Products' d='Shop.Theme.Catalog'}
   </p>
 

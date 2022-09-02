@@ -1,4 +1,10 @@
 #notifications {
+  background-color: $background_color;
+
+  .alert {
+    margin: 20px 0;
+  }
+
   ul {
     margin-bottom: 0;
   }

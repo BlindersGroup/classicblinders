@@ -15,13 +15,14 @@
     padding: 1rem;
     margin: 0 auto;
     overflow: auto;
-    font-size: $font-size-sm;
+    font-size: $font-size-detalle;
+    line-height: $line-height-detalle;
     color: $gray;
     background: $white;
 
     h4 {
       margin: 0.5rem 0 1rem;
-      font-size: $base-font-size;
+      font-size: $font-size-base;
       font-weight: 700;
     }
 

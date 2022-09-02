@@ -26,8 +26,8 @@
 
 {block name='page_content'}
 
-      <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
-      <p>{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Customeraccount'}</p>
+      <h2>{l s='Order history' d='Shop.Theme.Customeraccount'}</h2>
+      <p class="p2">{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Customeraccount'}</p>
 
       {if $orders}
         <div class="orders_history">
@@ -52,12 +52,12 @@
                 </div>
               </div>
               <div class="history_buttons">
-                <a href="{$order.details.details_url}">{l s='Order detail' d='Shop.Theme.Actions'}</a>
-                <a href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
+                <a class="btn btn-primary" href="{$order.details.details_url}">{l s='Order detail' d='Shop.Theme.Actions'}</a>
+                <a class="btn btn-secondary" href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
                 {if $order.details.invoice_url}
-                  <a href="{$order.details.invoice_url}">{l s='Download invoice' d='Shop.Theme.Actions'}</a>
+                  <a class="btn btn-secondary" href="{$order.details.invoice_url}">{l s='Download invoice' d='Shop.Theme.Actions'}</a>
                 {/if}
-                <a href="{$order.details.details_url}#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
+                <a class="btn btn-secondary" href="{$order.details.details_url}#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
               </div>
             </div>
           {/foreach}

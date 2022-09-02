@@ -26,11 +26,11 @@
 
 {block name='page_content'}
 
-  <h1 class="h1">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</h1>
+  <h2 class="h2">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</h2>
 
   {if $ordersReturn && count($ordersReturn)}
 
-    <h6>{l s='Here is a list of pending merchandise returns' d='Shop.Theme.Customeraccount'}</h6>
+    <p class="p2">{l s='Here is a list of pending merchandise returns' d='Shop.Theme.Customeraccount'}</p>
 
     <table class="table table-striped table-bordered hidden-sm-down">
       <thead class="thead-default">

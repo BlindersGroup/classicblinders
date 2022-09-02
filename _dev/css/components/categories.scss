@@ -19,6 +19,8 @@
         margin-bottom: 0;
         color: var(--color_font);
         word-break: break-word;
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
 
         &:first-child {
           margin-bottom: $medium-space;
@@ -62,7 +64,8 @@
     &,
     .sort-by,
     .select-title {
-      font-size: 0.875rem;
+      font-size: $font-size-minimo;
+      line-height: $line-height-minimo;
 
       i {
         height: inherit;
@@ -194,7 +197,7 @@
 
   a {
     font-weight: 600;
-    color: #000;
+    color: $negro;
 
     &:not(.previous):not(.next) {
       letter-spacing: 0.125rem;
@@ -215,7 +218,7 @@
 
   .current a {
     font-size: 1.25rem;
-    color: $brand-primary;
+    color: $primary-color;
     text-decoration: none;
   }
 }
@@ -240,14 +243,16 @@
     padding: 0.625rem;
     margin-right: $small-space;
     margin-bottom: $small-space;
-    font-size: $font-size-xs;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
     color: $gray-darker;
     background: $white;
 
     .close {
       margin-top: 0.1875rem;
       margin-left: 0.3125rem;
-      font-size: $font-size-lg;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
       color: $gray-darker;
       opacity: 1;
     }
@@ -260,8 +265,9 @@
   background: $white;
 
   .h6 {
-    font-size: .9375rem;
-    font-weight: 700;
+    font-size: $font-size-h4;
+    line-height: $line-height-h4;
+    font-weight: 500;
   }
   .category-top-menu {
     margin-bottom: 0;
@@ -270,7 +276,8 @@
     margin-top: .625rem;
 
     .category-sub-link {
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
     }
 
     li {
@@ -287,7 +294,8 @@
       width: 100%;
       display: inline-block;
       padding-bottom: .4875rem;
-      font-size: 14px;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
       color: var(--color_font);
 
       &:hover {
@@ -343,7 +351,8 @@
     .arrow-right,
     .arrow-down {
       margin-left: 2px;
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
       cursor: pointer;
 
       &:hover {
@@ -369,12 +378,12 @@
   hr {
     margin-bottom: 0;
     border: 0;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid $gris_300;
   }
 }
 
 .facets-title {
-  color: $gray-darker;
+  color: $color-font;
 }
 
 .advertising-block {
@@ -385,8 +394,35 @@
   }
 }
 
-.dbcomments_category .info_comment a {
-  color: var(--color_font) !important;
+.dbproductcomments .dbcomments_category {
+  .info_total {
+    .num_comments {
+      font-size: $font-size-h4;
+      line-height: $line-height-h4;
+      font-weight: 500;
+    }
+
+    .media_comments {
+      font-size: $font-size-h1;
+      line-height: $line-height-h1;
+    }
+
+    .category {
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
+    }
+  }
+
+  .info_comment {
+    .date_comment {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+    }
+
+    a {
+      color: $color-font !important;
+    }
+  }
 }
 
 /*** Responsive part ***/
@@ -442,6 +478,11 @@
   float: right;
   height: auto!important;
   font-size: 1rem;
+}
+
+#full-column .dbcategorydesc p {
+  font-size: $font-size-p2;
+  line-height: $line-height-p2;
 }
 
 @include media-breakpoint-down(xs) {

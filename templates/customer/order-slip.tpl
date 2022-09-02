@@ -25,8 +25,8 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_content'}
-  <h1 class="h1">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</h1>
-  <h6>{l s='Credit slips you have received after canceled orders.' d='Shop.Theme.Customeraccount'}</h6>
+  <h2 class="h2">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</h2>
+  <p class="p2">{l s='Credit slips you have received after canceled orders.' d='Shop.Theme.Customeraccount'}</p>
   {if $credit_slips}
     <table class="table table-striped table-bordered hidden-sm-down">
       <thead class="thead-default">

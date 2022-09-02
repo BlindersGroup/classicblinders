@@ -4,8 +4,9 @@
   width: 100%;
   max-width: 50rem;
   margin: auto;
-  margin-bottom: 0.625rem;
-  font-size: $font-size-sm;
+  margin-bottom: 0;
+  font-size: $font-size-detalle;
+  line-height: $line-height-detalle;
   background: var(--prefooter_bk);
 
   #block-newsletter-label {
@@ -22,6 +23,10 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+
+      .btn {
+        margin-left: -1px;
+      }
     }
 
     .row {
@@ -41,16 +46,19 @@
 
     input[type="email"] {
       padding: 11px;
-      margin-right: .5rem;
       width: 65%;
       max-width: 500px;
-      border: 1px solid #464545;
+      border: 1px solid $negro;
 
       &:focus {
         outline: 0;
-        color: var(--color_font);
+        color: $color-font;
         background: #fff;
-        border-color: var(--primary_color);
+        border-color: $primary-color;
+
+        &::placeholder {
+          color: $primary-color;
+        }
       }
     }
 
@@ -86,8 +94,12 @@
 
 #footer {
   .block_newsletter {
-    p {
-      padding-top: $small-space;
+
+    .minimo {
+      font-size: $font-size-minimo;
+      line-height: $line-height-minimo;
+      padding-top: $espacio_8;
+      padding-bottom: $espacio_4;
     }
 
     #block-newsletter-label {

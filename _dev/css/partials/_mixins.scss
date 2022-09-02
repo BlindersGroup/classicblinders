@@ -3,13 +3,15 @@
     position: relative;
 
     input[type="text"] {
-      padding: 9px 10px;
+      padding: 8px 16px;
       width: 100%;
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
       border: 1px solid var(--seach_color);
       border-radius: 50px;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
 
       &:focus {
         outline: 0;
@@ -17,9 +19,13 @@
         background-color: var(--search_bk);
         border-color: var(--primary_color);
 
-        + button .search {
+        + button i {
           color: var(--primary_color);
         }
+      }
+
+      &::placeholder {
+        color: $gris_400;
       }
     }
 
@@ -31,7 +37,7 @@
       top: 0;
       right: 0;
       bottom: 0;
-      padding: 0 10px;
+      padding: 0 20px 0 0;
       color: var(--color_font);
 
       .search:hover {

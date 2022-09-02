@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 1.6.0
+version: 2.0.0
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -187,6 +187,7 @@ dependencies:
     - dbthemecustom
     - dbmenu
     - dbsearchbar
+    - dbwishlist
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
@@ -214,6 +215,7 @@ global_settings:
       - dbthemecustom
       - dbmenu
       - dbsearchbar
+      - dbwishlist
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
@@ -226,6 +228,8 @@ global_settings:
       - gamification
       - ps_mainmenu
       - ps_searchbar
+      - productcomments
+      - blockwishlist
   hooks:
     custom_hooks:
       - name: displayNavCenter
@@ -275,6 +279,7 @@ global_settings:
         - dbproductcomments
       displayTop:
         - dbcontactinfo
+        - blockwishlist
         - ps_customersignin
         - ps_shoppingcart
       displayTopCenter:

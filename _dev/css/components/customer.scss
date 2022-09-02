@@ -6,7 +6,8 @@
 
 @mixin customer-area-box {
   //@include customer-area-base-box();
-  font-size: $font-size-sm;
+  font-size: $font-size-detalle;
+  line-height: $line-height-detalle;
   color: var(--color_font);
 }
 
@@ -96,20 +97,27 @@
     .forgot-password {
       padding-bottom: 0.9375rem;
       margin-top: 1rem;
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
       text-align: center;
     }
 
     .no-account {
-      font-size: $base-font-size;
+      font-size: $font-size-base;
       text-align: center;
     }
   }
 }
 .card.card_account {
-  padding: 1rem;
+  padding: 20px;
   margin-left: -15px;
   margin-right: -15px;
+
+  .form-footer {
+    .btn {
+      margin-top: 8px;
+    }
+  }
 }
 
 /*** Login page ***/
@@ -126,13 +134,14 @@
       padding-bottom: 0.9375rem;
 
       .secure-connection {
-        font-size: 13px;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
         float: right;
-        color: #00b22d;
+        color: $verde;
 
         > i {
-          color: #00b22d;
-          font-size: 15px;
+          color: $verde;
+          font-size: $font-size-small;
         }
       }
     }
@@ -158,7 +167,8 @@
 .page-addresses {
   .address {
     margin-bottom: 1.875rem;
-    font-size: $font-size-sm;
+    font-size: $font-size-detalle;
+    line-height: $line-height-detalle;
     color: $gray-darker;
     background: $white;
 
@@ -166,12 +176,14 @@
       padding: 1rem;
 
       h4 {
-        font-size: $base-font-size;
+        font-size: $font-size-base;
         font-weight: 700;
       }
 
       address {
         min-height: 9rem;
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
       }
     }
 
@@ -195,7 +207,8 @@
         }
 
         span {
-          font-size: 16px;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
           vertical-align: middle;
         }
       }
@@ -206,20 +219,9 @@
     margin: 0 0.9375rem;
 
     a {
-      color: var(--color_font);
-      font-weight: 600;
-
-      &:hover {
-        color: var(--primary_color);
-      }
-
-      i {
-        font-size: $base-font-size;
-      }
-
       span {
         margin-top: $small-space;
-        font-size: $base-font-size;
+        font-size: $font-size-base;
         vertical-align: middle;
       }
     }
@@ -233,7 +235,8 @@
 /*** Order details page ***/
 .page-order-detail {
   #content {
-    font-size: 0.875rem;
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
   }
 
   .box {
@@ -243,10 +246,7 @@
 
   h3 {
     margin-bottom: 1rem;
-    font-size: $base-font-size;
-    font-weight: 700;
     color: var(--color_font);
-    text-transform: uppercase;
   }
 
   #order-infos {
@@ -280,7 +280,7 @@
     margin: 0 -0.9375rem;
 
     h4 {
-      font-size: $base-font-size;
+      font-size: $font-size-base;
       font-weight: 700;
     }
   }
@@ -329,9 +329,8 @@
     background-color: var(--background);
 
     .order-item {
-      padding: 1rem 1rem 0;
-      //border-bottom: 1px solid $gray-lighter;
-      margin-bottom: 0.5rem;
+      padding: 16px 16px 0;
+      margin-bottom: 16px;
       background-color: #FFF;
 
       .checkbox {
@@ -353,15 +352,22 @@
           float: left;
           width: 45px;
           height: auto;
-          margin-right: 10px;
+          margin-right: 16px;
         }
         .name {
-          font-weight: 700;
+          font-weight: 500;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
+        }
+        .quantity, .ref {
+          font-weight: 400;
+          font-size: $font-size-p2;
+          line-height: $line-height-p2;
         }
       }
 
       .qty {
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
 
         .q {
           margin-bottom: 0.25rem;
@@ -397,6 +403,8 @@
 #order-detail {
   .order_info {
     margin-bottom: 0.5rem;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
 
     .state {
       float: right;
@@ -406,11 +414,12 @@
   .order_resume {
     .btn-link {
       width: 100%;
-      padding: 0 0 0.5rem;
+      padding: 0 0 8px;
       text-align: left;
       font-weight: 600;
-      color: var(--color_font);
-      font-size: 0.875rem;
+      color: $color_font;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
 
       &:focus,
       &:hover {
@@ -434,16 +443,19 @@
 
       .value {
         float: right;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        font-weight: 400;
       }
     }
 
     .line-total {
-      border-top: 1px solid rgba(0, 0, 0, 0.125);
+      border-top: 1px solid $gris_300;
       margin-top: 0.5rem;
       padding-top: 0.5rem;
 
       span {
-        font-size: 1rem;
+        font-size: 16px;
         font-weight: 600;
       }
     }
@@ -458,22 +470,16 @@
     text-align: center;
 
     .oaction {
-      padding: 0.5rem 1rem;
-      //border-right: 1px solid rgba(0, 0, 0, 0.125);
-      //border-top: 1px solid rgba(0, 0, 0, 0.125);
-      //border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-      color: #FFF;
-      background: #666666;
-      //width: calc(25% - 10px);
+      //padding: 0.5rem 1rem;
+      //color: $blanco;
+      //background: $gris_500;
       margin-right: 10px;
-
-      &:first-child {
-        //border-left: 1px solid rgba(0, 0, 0, 0.125);
-      }
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
 
       &:hover {
-        background-color: var(--primary_color);
-        color: #FFF;
+        background-color: $primary-color;
+        color: $blanco;
       }
     }
   }
@@ -533,7 +539,7 @@
         display: inline-block;
         padding: 0 0.9375rem;
         margin-bottom: 1.875rem;
-        font-size: $base-font-size;
+        font-size: $font-size-base;
         font-weight: 700;
         color: var(--color_font);
         text-align: center;
@@ -607,20 +613,33 @@
       margin-right: 10px;
     }
 
+    > svg {
+      width: 35px !important;
+      font-size: 30px;
+      color: var(--primary_color);
+      margin: 0 25px 0 0 !important;
+
+      path {
+        fill: var(--primary_color);
+      }
+    }
+
     > .history-content {
       width: 80%;
 
       .title {
-        font-weight: 600;
         color: var(--color_font);
         margin-bottom: 0.5rem;
-        font-size: 18px;
+        font-size: $font-size-h4;
+        line-height: $line-height-h4;
+        font-weight: 500;
       }
 
       .desc {
         margin: 0;
         color: var(--color_font);
-        font-size: 15px;
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
         font-weight: 400;
       }
     }
@@ -689,38 +708,27 @@
 
     .title {
       font-weight: 400;
-      font-size: 13px;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
     }
     .value {
       font-weight: 400;
-      font-size: 16px;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
     }
   }
 
   .history_buttons {
-    //border-radius: 10px;
-    //border: 1px solid rgba(0, 0, 0, 0.125);
     display: table;
     margin: 0 auto;
     padding: 0.5rem 0;
 
     > a {
-      padding: 0.5rem 1rem;
-      width: calc(25% - 10px);
-      //border-right: 1px solid rgba(0, 0, 0, 0.125);
       text-align: center;
       margin: 0 5px;
-      background-color: #666666;
-      color: #FFF;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
 
-      &:hover {
-        color: #FFF;
-        background-color: var(--primary_color);
-      }
-
-      &:last-child {
-        border: 0;
-      }
     }
   }
 }
@@ -731,89 +739,16 @@
     margin-right: 1rem;
 
     i {
-      font-size: $base-font-size;
+      font-size: $font-size-base;
     }
 
     span {
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
       vertical-align: middle;
     }
   }
 }
-
-/*** SIDEBAR ***/
-.navigation_account {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #fff;
-  margin-bottom: 0.5rem;
-  padding: 1rem;
-
-  > * {
-    padding: 0.5rem 0;
-  }
-
-  .title {
-    color: var(--color_font);
-    font-weight: 600;
-  }
-
-  .item {
-    font-weight: 400;
-    color: var(--color_font);
-    font-size: 0.9rem;
-
-    &:hover {
-      color: var(--color_hover);
-    }
-  }
-}
-/*** Navigation mobile ***/
-.navigation_mobile {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 3px;
-  margin-bottom: 1rem;
-  background-color: #FFF;
-
-  .btn-link {
-    padding: 0.5rem;
-    width: 100%;
-    text-align: left;
-    color: var(--color_font);
-    outline: 0;
-    font-weight: 600;
-
-    i {
-      float: right;
-      font-size: 20px;
-    }
-
-    &:focus {
-      outline: 0;
-      text-decoration: none;
-    }
-  }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-
-    > * {
-      padding: 0.5rem;
-      color: var(--color_font);
-      font-size: 0.9rem;
-    }
-
-    .active {
-      background-color: var(--background);
-      color: var(--primary_color)
-    }
-  }
-}
-
 
 @include media-breakpoint-down(md) {
   #wrapper #left-column {
@@ -833,9 +768,6 @@
       .history_buttons {
         width: 100%;
         display: flex;
-        /*
-        flex-direction: column;
-        */
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;

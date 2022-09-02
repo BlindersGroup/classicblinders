@@ -24,7 +24,7 @@
  *}
 
 <div class="block_newsletter" id="blockEmailSubscription_{$hookName}">
-    <p id="block-newsletter-label" class="title_newsletter">
+    <p id="block-newsletter-label" class="title_newsletter h1">
       {l s='Subscribe to the best offers' d='Shop.Theme.Global'}
     </p>
     <div class="form_newsletter">
@@ -41,7 +41,7 @@
                     required
                   >
                   <input
-                      class="btn btn-primary"
+                      class="btn btn-special"
                       name="submitNewsletter"
                       type="submit"
                       value="{l s='Subscribe' d='Shop.Theme.Actions'}"
@@ -53,7 +53,7 @@
           </div>
           <div class="msg_newsletter">
               {if $conditions}
-                <p>{$conditions nofilter}</p>
+                <p class="minimo">{$conditions nofilter}</p>
               {/if}
               {if $msg}
                 <p class="alert {if $nw_error}alert-danger{else}alert-success{/if}">

@@ -76,7 +76,7 @@
             {block name='product_pack'}
                 {if $packItems}
                     <section class="product-pack">
-                        <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
+                        <p class="p2">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
                         {foreach from=$packItems item="product_pack"}
                             {block name='product_miniature'}
                                 {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
@@ -126,14 +126,15 @@
                         <h1 class="h1 product_name" >{block name='page_title'}{$product.name}{/block}</h1>
                     {/block}
                 {/block}
-                <div class="displayProductCenterColumn">
-                    {hook h='displayProductCenterColumn' product=$product}
-                </div>
             {/if}
 
             {block name='product_prices'}
                 {include file='catalog/_partials/product-prices.tpl'}
             {/block}
+
+            <div class="displayProductCenterColumn">
+                {hook h='displayProductCenterColumn' product=$product}
+            </div>
 
             {if Context::getContext()->isMobile() == 0}
                 {block name='product_description_short'}

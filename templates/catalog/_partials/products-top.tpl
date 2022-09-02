@@ -25,9 +25,9 @@
 <div id="js-product-list-top" class="row products-selection">
   <div class="col-md-6 hidden-sm-down total-products">
     {if $listing.pagination.total_items > 1}
-      <p>{l s='Mostrando %product_count% productos' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.pagination.total_items]}</p>
+      <p class="minimo">{l s='Mostrando %product_count% productos' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.pagination.total_items]}</p>
     {elseif $listing.pagination.total_items > 0}
-      <p>{l s='Mostrando 1 producto' d='Shop.Theme.Catalog'}</p>
+      <p class="minimo">{l s='Mostrando 1 producto' d='Shop.Theme.Catalog'}</p>
     {/if}
   </div>
   <div class="col-md-6">
@@ -47,10 +47,12 @@
     </div>
   </div>
   <div class="col-sm-12 hidden-md-up text-sm-center showing">
-    {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=[
-    '%from%' => $listing.pagination.items_shown_from ,
-    '%to%' => $listing.pagination.items_shown_to,
-    '%total%' => $listing.pagination.total_items
-    ]}
+      <p class="minimo">
+        {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=[
+        '%from%' => $listing.pagination.items_shown_from ,
+        '%to%' => $listing.pagination.items_shown_to,
+        '%total%' => $listing.pagination.total_items
+        ]}
+      </p>
   </div>
 </div>

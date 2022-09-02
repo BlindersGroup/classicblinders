@@ -29,7 +29,7 @@
       <p class="account_guest">
         <span class="font-weight-bold">{l s='Create an account' d='Shop.Theme.Checkout'}</span> <span class="font-italic">{l s='(optional)' d='Shop.Theme.Checkout'}</span>
         <br>
-        <span>{l s='And save time on your next order!' d='Shop.Theme.Checkout'}</span>
+        <span class="text_small">{l s='And save time on your next order!' d='Shop.Theme.Checkout'}</span>
       </p>
       {$smarty.block.parent}
   {else}

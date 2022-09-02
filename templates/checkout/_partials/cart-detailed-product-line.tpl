@@ -121,6 +121,9 @@
         {/if}
     </a>
     <span class="product-totalprice">
+        {if $product.has_discount}
+            <span class="old_price">{$product.regular_price}</span>
+        {/if}
         {if isset($product.is_gift) && $product.is_gift}
             <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
         {else}

@@ -26,7 +26,7 @@
   <div class="row">
   {foreach $linkBlocks as $linkBlock}
     <div class="col-md-12 wrapper">
-      <p class="h3 hidden-sm-down">{$linkBlock.title}</p>
+      <p class="h4 hidden-sm-down">{$linkBlock.title}</p>
       {assign var=_expand_id value=10|mt_rand:100000}
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$_expand_id}" data-toggle="collapse">
         <span class="h3">{$linkBlock.title}</span>

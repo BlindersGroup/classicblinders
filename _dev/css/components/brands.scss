@@ -61,6 +61,12 @@
       .manufacturer-cover {
         margin-left: auto;
       }
+
+      p {
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
+      }
+
     }
   }
 
@@ -80,9 +86,14 @@
   width: 100%;
   margin-top: 1.5rem;
 
+  p {
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
+  }
+
   .title {
-    font-size: 26px;
-    line-height: 40px;
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
     font-weight: 700;
     text-align: center;
   }

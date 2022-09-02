@@ -24,6 +24,10 @@
  *}
 {extends file='page.tpl'}
 
+{block name='head_seo' prepend}
+  <link rel="canonical" href="{$link->getCMSLink($cms.id, null, true, $id_lang)}">
+{/block}
+
 {block name='page_title'}
   {$cms.meta_title}
 {/block}

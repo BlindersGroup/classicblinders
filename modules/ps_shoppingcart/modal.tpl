@@ -32,7 +32,7 @@
         <h4 class="modal-title h6" id="myModalLabel">
           <i class="fa-solid fa-cart-shopping"></i>
           {l s='Mi carrito' d='Shop.Theme.Checkout'}
-          (<span class="total_products">{$cart.products_count}</span>)
+          <span class="total_products">({$cart.summary_string})</span>
         </h4>
       </div>
       <div class="modal-body">
@@ -98,7 +98,7 @@
 
             <div class="cart-content-btn">
               <a href="{$urls.pages.order}" class="btn btn-primary">{l s='Checkout' d='Shop.Theme.Actions'}</a>
-              <a href="{$cart_url}" class="btn btn-secundary btn-view-cart">{l s='View cart' d='Shop.Theme.Actions'}</a>
+              <a href="{$cart_url}" class="btn btn-tertiary btn-view-cart">{l s='View cart' d='Shop.Theme.Actions'}</a>
             </div>
           </div>
         </div>

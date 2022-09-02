@@ -27,8 +27,8 @@
 {block name='page_content'}
 
 {*      <h1>{l s='Your account' d='Shop.Theme.Customeraccount'}</h1>*}
-      <h1>{l s='Hi %customerName%' sprintf=['%customerName%' => {$customer.firstname}] d='Shop.Theme.Customeraccount'}:</h1>
-      <p>{l s='In the "My account" section you can edit your personal data, addresses and review your latest orders.' d='Shop.Theme.Customeraccount'}</p>
+      <h2>{l s='Hi %customerName%' sprintf=['%customerName%' => {$customer.firstname}] d='Shop.Theme.Customeraccount'}:</h2>
+      <p class="p2">{l s='In the "My account" section you can edit your personal data, addresses and review your latest orders.' d='Shop.Theme.Customeraccount'}</p>
 
       <div class="row">
         <p class="subtitle col-md-12 col-xs-12">{l s='Orders' d='Shop.Theme.Customeraccount'}</p>

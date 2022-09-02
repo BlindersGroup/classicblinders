@@ -26,7 +26,7 @@
 
 {block name='page_content'}
 
-      <h1>{l s='Your vouchers' d='Shop.Theme.Customeraccount'}</h1>
+      <h2>{l s='Your vouchers' d='Shop.Theme.Customeraccount'}</h2>
 
       {if $cart_rules}
         <table class="table table-striped table-bordered hidden-sm-down">

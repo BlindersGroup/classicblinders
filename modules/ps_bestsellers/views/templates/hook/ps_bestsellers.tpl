@@ -24,7 +24,7 @@
  *}
 
 {if $products|count > 0}
-<section class="featured-products clearfix mt-3">
+<section class="featured-products clearfix --mt-16">
   <p class="h3 products-section-title">
     {l s='Best Sellers' d='Shop.Theme.Catalog'}
   </p>

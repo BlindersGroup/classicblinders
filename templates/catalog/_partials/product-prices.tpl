@@ -105,9 +105,9 @@
                         {if $product.availability == 'available'}
                             <i class="fa-regular fa-circle-check"></i>
                         {elseif $product.availability == 'last_remaining_items'}
-                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <i class="fa-solid fa-arrow-trend-down"></i>
                         {else}
-                            <i class="fa-solid fa-xmark"></i>
+                            <i class="fa-solid fa-circle-info"></i>
                         {/if}
                         {$product.availability_message}
                     {/if}

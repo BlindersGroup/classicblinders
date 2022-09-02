@@ -22,7 +22,8 @@
 
       ul {
         margin-bottom: 0;
-        font-size: $font-size-lg;
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
       }
 
       .divide-left {
@@ -42,7 +43,7 @@
       }
 
       .store-description {
-        font-size: $base-font-size;
+        font-size: $font-size-base;
       }
     }
 
@@ -62,7 +63,7 @@
 
       i.material-icons {
         margin-right: $small-space;
-        font-size: $base-font-size;
+        font-size: $font-size-base;
         color: $gray;
       }
 

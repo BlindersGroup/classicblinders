@@ -30,7 +30,7 @@
 
 {block name='page_content'}
 
-  <h1>{l s='Order details' d='Shop.Theme.Customeraccount'}</h1>
+  <h2>{l s='Order details' d='Shop.Theme.Customeraccount'}</h2>
   {block name='order_infos'}
 
     <div class="order_info">
@@ -136,13 +136,13 @@
 
     <div class="order_actions">
       <div class="oactions">
-        <a class="oaction" href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
-        <a class="oaction" href="#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
+        <a class="oaction btn btn-secondary" href="{$order.details.reorder_url}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
+        <a class="oaction btn btn-secondary" href="#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
         {if $order.details.is_returnable}
-          <a class="oaction" href="#order-return-form">{l s='Make a refund' d='Shop.Theme.Actions'}</a>
+          <a class="oaction btn btn-secondary" href="#order-return-form">{l s='Make a refund' d='Shop.Theme.Actions'}</a>
         {/if}
         {if $order.details.invoice_url}
-          <a class="oaction" href="{$order.details.invoice_url}">{l s='Download invoice' d='Shop.Theme.Actions'}</a>
+          <a class="oaction btn btn-secondary" href="{$order.details.invoice_url}">{l s='Download invoice' d='Shop.Theme.Actions'}</a>
         {/if}
       </div>
     </div>

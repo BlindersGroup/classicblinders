@@ -43,7 +43,8 @@
     strong,
     i {
       color: var(--topbar_color);
-      font-size: 13px;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
     }
 
     .headernav_flex {
@@ -105,10 +106,31 @@
       margin-left: 0.9375rem;
       white-space: nowrap;
     }
+
+    .dbcontactinfo_nav {
+
+      .block_dbcontactinfo {
+        p, span, strong {
+          font-size: $font-size-p2;
+          line-height: $line-height-p2;
+        }
+
+        .horario {
+          font-size: $font-size-small;
+          line-height: $line-height-small;
+        }
+      }
+
+      .open_contact {
+        padding: 4px 8px;
+      }
+
+    }
+
   }
 
   .header-top {
-    padding: 18px 0;
+    padding: 20px 0 8px;
 
     &.notdisplaynav {
       padding: 44px 0 20px;
@@ -144,7 +166,7 @@
         min-height: 40px;
 
         #_desktop_user_info {
-          margin: 0 15px;
+          margin: 0 16px;
 
           .userinfo_header {
             display: flex;
@@ -167,7 +189,7 @@
           }
 
           i {
-            color: var(--header_color);
+            color: var(--color_icons_header);
           }
 
           .cart-products-count {
@@ -175,7 +197,7 @@
             top: -3px;
             right: 10px;
             padding: 0;
-            background-color: var(--primary_color);
+            background-color: var(--second_color);
             color: #FFF;
             border-radius: 50%;
             font-size: 12px;
@@ -195,13 +217,14 @@
 
         i {
           font-size: 21px;
+          color: var(--color_icons_header);
         }
 
         .icon_name {
-          font-size: 12px;
+          font-size: $font-size-minimo;
+          line-height: $line-height-minimo;
           font-weight: 400;
-          line-height: 12px;
-          margin-top: 5px;
+          margin-top: 4px;
         }
       }
     }
@@ -233,8 +256,12 @@
 
   .dbmenu {
     background-color: inherit;
-    border-top: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
+    border-top: 1px solid $gris_300;
+    border-bottom: 1px solid $gris_300;
+
+    .dbmenu_navigation {
+      padding: 8px 16px;
+    }
   }
 
 }

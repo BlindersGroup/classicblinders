@@ -24,10 +24,6 @@
  *}
 {extends file=$layout}
 
-{block name='head_seo' prepend}
-  <link rel="canonical" href="{$product.canonical_url}">
-{/block}
-
 {block name='head' append}
   <meta property="og:type" content="product">
   <meta property="og:url" content="{$urls.current_url}">
@@ -76,7 +72,7 @@
     {block name='product_accessories'}
       {if $accessories}
         <section class="product-accessories clearfix mt-3">
-            <p class="h3 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
+            <p class="h1 products-section-title">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
             <div id="splide_productaccessories" class="splide">
               <div class="splide__track">
                   <div class="splide__list products">

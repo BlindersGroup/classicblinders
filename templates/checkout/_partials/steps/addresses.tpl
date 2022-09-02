@@ -37,11 +37,11 @@
       {/if}
 
       {if $use_same_address && !$cart.is_virtual}
-        <p>
+        <p class="p2">
           {l s='The selected address will be used both as your personal address (for invoice) and as your delivery address.' d='Shop.Theme.Checkout'}
         </p>
       {elseif $use_same_address && $cart.is_virtual}
-        <p>
+        <p class="p2">
           {l s='The selected address will be used as your personal address (for invoice).' d='Shop.Theme.Checkout'}
         </p>
       {/if}
@@ -73,12 +73,12 @@
         {/if}
 
         <p class="add-address">
-          <a href="{$new_address_delivery_url}"><i class="fa-solid fa-plus"></i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+          <a class="btn btn-tertiary" href="{$new_address_delivery_url}"><i class="fa-solid fa-plus"></i>{l s='add new address' d='Shop.Theme.Actions'}</a>
         </p>
 
         {if $use_same_address && !$cart.is_virtual}
           <p>
-            <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
+            <a class="text_small" data-link-action="different-invoice-address" href="{$use_different_address_url}">
               {l s='Billing address differs from shipping address' d='Shop.Theme.Checkout'}
             </a>
           </p>

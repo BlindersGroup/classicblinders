@@ -5,7 +5,7 @@
 
   {if $customer.is_logged && !$customer.is_guest}
 
-    <p class="identity">
+    <p class="identity p2">
       {* [1][/1] is for a HTML tag. *}
       {l s='Connected as [1]%firstname% %lastname%[/1].'
         d='Shop.Theme.Customeraccount'
@@ -17,7 +17,7 @@
         ]
       }
     </p>
-    <p>
+    <p class="p2">
       {* [1][/1] is for a HTML tag. *}
       {l
         s='Not you? [1]Log out[/1]'
@@ -29,7 +29,7 @@
       }
     </p>
     {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
+      <p class="p2">{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
     {/if}
 
     <div class="clearfix">

@@ -7,6 +7,11 @@
         <target>ANTES</target>
         <note>Line: </note>
       </trans-unit>
+      <trans-unit id="03de921a8ea82897e13d33d66c28b4db">
+        <source>Online only</source>
+        <target>Solo online</target>
+        <note>Line: </note>
+      </trans-unit>
     </body>
   </file>
 </xliff>

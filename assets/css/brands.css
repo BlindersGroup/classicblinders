@@ -9,7 +9,7 @@
     padding: 10px;
     margin: 5px;
     text-align: center;
-    background: #fff;
+    background: #FFFFFF;
     transition: 0.4s ease-out; }
     #manufacturer #main ul .brand-infos a {
       display: inline-block; }
@@ -29,7 +29,6 @@
         width: 100%;
         height: 100%;
         content: ""; }
-
 #manufacturer #main .manufacturer_short_desc {
   display: flex;
   flex-direction: row;
@@ -40,7 +39,9 @@
   background: var(--background) !important; }
   #manufacturer #main .manufacturer_short_desc .manufacturer-cover {
     margin-left: auto; }
-
+  #manufacturer #main .manufacturer_short_desc p {
+    font-size: 15px;
+    line-height: 24px; }
 #manufacturer .dbproductcomments {
   display: table;
   background-color: #FFF;
@@ -50,9 +51,12 @@
   display: table;
   width: 100%;
   margin-top: 1.5rem; }
+  #manufacturer-description p {
+    font-size: 15px;
+    line-height: 24px; }
   #manufacturer-description .title {
     font-size: 26px;
-    line-height: 40px;
+    line-height: 34px;
     font-weight: 700;
     text-align: center; }
 
@@ -62,7 +66,6 @@
 @media (max-width: 1199px) {
   #manufacturer-description {
     margin-top: 1.25rem; } }
-
 @media (max-width: 991px) {
   #js-product-list-top {
     display: flex;
@@ -72,6 +75,7 @@
     margin: 1rem 0; }
     #js-product-list-top > div {
       width: 50%; }
+
   #manufacturer #main ul {
     display: flex;
     flex-wrap: wrap;
@@ -86,3 +90,5 @@
     #manufacturer #main .manufacturer_short_desc .manufacturer-cover img {
       display: block;
       margin: 0 auto; } }
+
+/*# sourceMappingURL=brands.css.map */

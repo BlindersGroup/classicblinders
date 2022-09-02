@@ -24,6 +24,13 @@ body#checkout {
           max-height: 49px;
           width: auto;
         }
+
+        .text_contactinfo {
+          .hidden-md-down {
+            font-size: $font-size-detalle;
+            line-height: $line-height-detalle;
+          }
+        }
       }
 
       #_desktop_contact_link {
@@ -53,17 +60,20 @@ body#checkout {
         margin-top: 0.5rem;
 
         .label {
-          font-size: 24px;
+          font-size: $font-size-h2;
+          line-height: $line-height-h2;
           font-weight: 700;
 
           > span {
             font-weight: 400;
-            font-size: 13px;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
           }
         }
 
         .value {
-          font-size: 24px;
+          font-size: $font-size-h2;
+          line-height: $line-height-h2;
           font-weight: 700;
         }
       }
@@ -79,21 +89,26 @@ body#checkout {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          font-size: 13px;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
           font-weight: 400;
 
           .label {
-            font-size: 13px;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
             font-weight: 400;
+            margin-bottom: 0;
           }
 
           .value {
-            font-size: 13px;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
             font-weight: 400;
           }
 
           span {
-            font-size: 13px;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
             font-weight: 400;
           }
 
@@ -103,10 +118,10 @@ body#checkout {
 
           &.promo-name {
             span {
-              font-weight: 600;
+              font-weight: 500;
             }
             a {
-              color: var(--font_color);
+              color: $color-font;
             }
           }
         }
@@ -115,12 +130,14 @@ body#checkout {
       .cart-summary_header {
         background-color: var(--background);
         //border-bottom: 1px solid #f1f1f1;
-        font-weight: 600;
+        font-weight: 500;
         padding: 1rem;
-        font-size: 20px;
+        font-size: $font-size-h3;
+        line-height: $line-height-h3;
 
         span {
-          font-size: 12px;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
           font-weight: 400;
         }
       }
@@ -160,6 +177,11 @@ body#checkout {
                 vertical-align: middle;
                 width: 100%;
 
+                .product-name {
+                  font-size: $font-size-small;
+                  line-height: $line-height-small;
+                }
+
                 .product-quantity {
                   display: flex;
                   margin-top: 0;
@@ -168,6 +190,15 @@ body#checkout {
                 .product-price {
                   color: var(--color_font);
                 }
+
+                .product-line-info {
+                  span {
+                    font-size: $font-size-minimo;
+                    line-height: $line-height-minimo;
+                    color: $color-font;
+                  }
+                }
+
               }
 
               &:last-child {
@@ -179,6 +210,10 @@ body#checkout {
           }
         }
       }
+    }
+
+    .blockreassurance_product {
+      padding: 0 20px;
     }
 
   }
@@ -227,12 +262,12 @@ body#checkout {
       align-items: center;
       flex-direction: row;
       flex-wrap: wrap;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: $font-size-h3;
+      line-height: $line-height-h3;
+      font-weight: 500;
 
       span {
-        font-size: 20px;
-        font-weight: 700;
+        font-weight: 500;
         margin-left: 10px;
       }
 
@@ -242,9 +277,10 @@ body#checkout {
 
       .secure_payment {
         margin-left: auto;
-        font-size: 15px;
-        font-weight: 600;
-        color: #179942;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        font-weight: 400;
+        color: $verde;
 
         > i {
           margin-right: 5px;
@@ -278,14 +314,18 @@ body#checkout {
         .nav-link {
           text-align: center;
           padding-bottom: 0.5rem;
-          border-bottom: 4px solid #d2d2d2;
+          border-bottom: 4px solid $gris_300;
           width: 100%;
-          font-size: 20px;
-          font-weight: 400;
+          font-size: $font-size-h3;
+          line-height: $line-height-h3;
+          font-weight: 500;
+
+          &:hover {
+            color: $color-font;
+          }
 
           &.active {
             border-bottom: 4px solid var(--primary_color);
-            font-weight: 700;
           }
         }
       }
@@ -307,13 +347,14 @@ body#checkout {
       }
 
       .secure-connection {
-        font-size: 13px;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
         float: right;
-        color: #00b22d;
+        color: $verde;
 
         > i {
-          color: #00b22d;
-          font-size: 15px;
+          color: $verde;
+          font-size: $font-size-small;
         }
       }
     }
@@ -328,10 +369,10 @@ body#checkout {
     &.-complete:first-of-type {
       .step-title {
         padding-top: 0;
-        align-items: flex-end;
 
         span {
-          font-size: 14px;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
           font-weight: 400;
         }
       }
@@ -346,7 +387,7 @@ body#checkout {
       text-transform: lowercase;
 
       .edit {
-        font-size: $base-font-size;
+        font-size: $font-size-base;
       }
     }
 
@@ -398,8 +439,9 @@ body#checkout {
         background-color: inherit;
         padding: 0;
         margin-right: 0.5rem;
-        font-weight: 700;
-        font-size: 20px;
+        font-weight: 500;
+        font-size: $font-size-h3;
+        line-height: $line-height-h3;
         margin-left: 10px;
       }
     }
@@ -421,7 +463,8 @@ body#checkout {
           color: var(--color_font) !important;
           margin-left: auto;
           justify-content: flex-end;
-          font-size: 13px;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
           font-weight: 400;
 
           > i {
@@ -482,6 +525,18 @@ body#checkout {
 
     #conditions-to-approve {
       padding-top: 1rem;
+
+      > ul > li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .js-terms {
+        font-size: $font-size-minimo;
+        line-height: $line-height-minimo;
+        margin-bottom: 0;
+      }
     }
 
     .payment-options .payment-option  {
@@ -534,14 +589,14 @@ body#checkout {
     .address-alias {
       display: inline-block;
       margin-bottom: 0.625rem;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .address {
       margin-left: 1.563rem;
       font-weight: 500;
-      font-size: 15px;
-      line-height: 22px;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
     }
 
     .radio-block {
@@ -565,7 +620,7 @@ body#checkout {
 
       .delete,
       .edit {
-        font-size: $base-font-size;
+        font-size: $font-size-base;
       }
     }
 
@@ -604,13 +659,10 @@ body#checkout {
       margin-top: 1.25rem;
 
       a {
-        color: var(--color_font);
-        font-size: 16px;
-        font-weight: 600;
-
         i {
-          font-size: $font-size-lg;
-          margin-right: 5px;
+          //font-size: $font-size-p2;
+          //line-height: $line-height-p2;
+          margin-right: 4px;
         }
       }
     }
@@ -691,7 +743,8 @@ body#checkout {
     }
 
     .sign-in {
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
     }
 
   }
@@ -699,13 +752,16 @@ body#checkout {
   .additional-information {
     margin-top: 1.25rem;
     //margin-left: 2.875rem;
-    font-size: $font-size-sm;
+    font-size: $font-size-detalle;
+    line-height: $line-height-detalle;
+
+    p {
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
+    }
   }
 
   .condition-label {
-    padding-left: 1.625rem;
-    margin-top: 0.625rem;
-
     label {
       text-align: inherit;
     }
@@ -724,7 +780,8 @@ body#checkout {
   }
 
   #cart-summary-product-list {
-    font-size: $font-size-sm;
+    font-size: $font-size-detalle;
+    line-height: $line-height-detalle;
 
     img {
       width: 3.125rem;
@@ -833,14 +890,19 @@ body#checkout {
 
     .simple_footer {
       padding: 1rem;
-      font-size: 14px;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
       font-weight: 400;
     }
   }
 
   #delivery {
+    margin-top: $espacio_16;
+
     > label {
       text-align: left;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
     }
   }
 
@@ -956,6 +1018,13 @@ body#checkout {
     width: 50%;
     margin: 0 auto 1rem;
   }
+
+  .page-order-confirmation {
+    p, li, span, dd, dt, strong, a {
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
+    }
+  }
 }
 
 .title_confirmation {
@@ -969,8 +1038,8 @@ body#checkout {
   .h1.card-title {
     margin-bottom: 0;
     color: #179942;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
     font-weight: 700;
     margin-right: 20px;
 
@@ -981,8 +1050,9 @@ body#checkout {
   }
 
   > span {
-    font-size: 18px;
-    line-height: 18px;
+    font-size: $font-size-h4;
+    line-height: $line-height-h4;
+    font-weight: 500;
   }
 
   > a {
@@ -1131,7 +1201,7 @@ body#checkout {
   margin-top: 0.5rem;
 
   .promo-code {
-    padding: 0 1rem 1rem;
+    padding: 0 0 1rem;
 
     .alert-danger {
       position: relative;
@@ -1159,19 +1229,35 @@ body#checkout {
   }
 
   .promo-input {
-    width: calc(100% - 105px);
-    height: 2.5rem;
+    width: calc(100% - 100px);
     margin-right: 0;
-    color: var(--color_font);
-    text-indent: 0.625rem;
-    border: 1px solid #E0E0E0;
+    color: $color-font;
+    border: 1px solid $color-font;
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
+    padding: 0.5rem 1rem;
+    float: left;
+
+    &:focus-visible {
+      outline: 0;
+      border-color: var(--primary_color);
+    }
 
     + button {
       text-transform: capitalize;
       border: 0;
       width: 100px;
-      height: 2.5rem;
-      background-color: #3E92CC;
+      background-color: $azul;
+      margin-left: -1px;
+      padding: 8px 16px;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: 500;
+
+      &:focus-visible,
+      &:focus {
+        outline: 0;
+      }
     }
   }
 
@@ -1229,9 +1315,9 @@ body#checkout {
 
     .collapse-button {
       color: var(--font_color);
-      font-size: 15px;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
       font-weight: 400;
-      line-height: 15px;
 
       > i {
         float: right;
@@ -1252,29 +1338,27 @@ body#checkout {
 
 .separator {
   border-top: 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid $gris_300;
 }
 
 #payment-confirmation {
-  .btn-primary {
+  .btn {
     display: block;
     margin: 0 auto;
   }
 }
 
 .promo-discounts {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
   margin-bottom: 0;
   text-align: left;
+  padding: 0;
 
   .cart-summary-line {
-    padding: 8px;
-    border: 1px solid #e0e0e0;
-    margin-bottom: 0.5rem;
+    padding: 4px 20px;
+    border: 1px solid $gris_300;
+    margin-bottom: 8px;
 
     .label {
-      font-size: 1rem;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -1282,7 +1366,8 @@ body#checkout {
       font-weight: 400;
       white-space: inherit;
       color: var(--color_font);
-      font-size: 13px;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
 
       .code {
         cursor: pointer;
@@ -1291,6 +1376,8 @@ body#checkout {
 
       > i {
         margin-left: auto;
+        font-size: $font-size-h4;
+        line-height: $line-height-h4;
       }
     }
 
@@ -1332,6 +1419,8 @@ body#checkout {
   }
 
 }
+
+
 
 @include media-breakpoint-down(xs) {
   body#checkout {

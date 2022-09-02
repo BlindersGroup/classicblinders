@@ -24,7 +24,7 @@
  *}
 
 <section class="featured-products clearfix mt-3">
-  <h2 class="h2 products-section-title text-uppercase">
+  <h2 class="h1 products-section-title">
     {l s='On sale' d='Shop.Theme.Catalog'}
   </h2>
   {include file="catalog/_partials/productlist.tpl" products=$products}

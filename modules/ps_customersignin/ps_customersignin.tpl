@@ -87,7 +87,7 @@
                         {l s='My Addresses' d='Shop.Theme.Customeraccount'}
                     </a>
                 </div>
-                <a class="close_session" href="{$logout_url}">{l s='Sign off' d='Shop.Theme.Customeraccount'}</a>
+                <a class="btn btn-secondary close_session" href="{$logout_url}">{l s='Sign off' d='Shop.Theme.Customeraccount'}</a>
             </div>
         </div>
     </div>

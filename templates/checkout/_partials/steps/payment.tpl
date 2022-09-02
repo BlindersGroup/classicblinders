@@ -130,11 +130,11 @@
   <div id="payment-confirmation">
     <div class="ps-shown-by-js {_PS_VERSION_}">
       {if version_compare(_PS_VERSION_, '1.7.8.0', '>=')}
-        <button type="submit" class="btn btn-primary center-block{if !$selected_payment_option} disabled{/if}">
+        <button type="submit" class="btn btn-special center-block{if !$selected_payment_option} disabled{/if}">
           {l s='Place order' d='Shop.Theme.Checkout'}
         </button>
       {else}
-        <button type="submit" class="btn btn-primary center-block" {if !$selected_payment_option} disabled{/if}>
+        <button type="submit" class="btn btn-special center-block" {if !$selected_payment_option} disabled{/if}>
           {l s='Place order' d='Shop.Theme.Checkout'}
         </button>
       {/if}

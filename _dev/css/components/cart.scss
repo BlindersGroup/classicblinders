@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1rem;
+  padding: 16px;
   border-bottom: 0;
-  background-color: $white;
+  background-color: $blanco;
   margin-bottom: 1rem;
 
   &:last-child {
@@ -20,8 +20,8 @@
   }
 
   .product-image {
-    width: calc(15% - 15px);
-    margin-right: 15px;
+    width: calc(15% - 16px);
+    margin-right: 16px;
 
     img {
       max-width: 100%;
@@ -33,18 +33,23 @@
 
     a {
       color: var(--color_font);
-      font-size: 0.875rem;
+      font-size: $font-size-h4;
+      line-height: $line-height-h4;
+      font-weight: 500;
     }
 
     .product-attributes {
-      .value {
-        font-size: 0.875rem;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
+      p, span {
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
       }
     }
   }
 
   .cart__product-qty {
-    width: 35%;
+    width: 100px;
     text-align: center;
 
 
@@ -64,6 +69,8 @@
         border-top: 0.8px solid var(--color_font);
         border-bottom: 0.8px solid var(--color_font);
         border-right: 0;
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
       }
     }
 
@@ -129,7 +136,7 @@
     text-align: right;
 
     .remove-from-cart {
-      color: var(--color_font);
+      color: $color-font;
       text-decoration: underline;
       font-size: 14px;
       margin-bottom: 10px;
@@ -140,15 +147,25 @@
     }
 
     .product-totalprice {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--color_font);
+      font-size: $font-size-h3;
+      line-height: $line-height-h3;
+      font-weight: 500;
+      color: $color-font;
+
+      .old_price {
+        font-size: $font-size-detalle;
+        line-height: $line-height-detalle;
+        font-weight: 400;
+        color: $gris_400;
+        margin-right: 12px;
+      }
     }
 
     .product-price {
-      font-size: 13px;
-      margin-top: 8px;
-      color: var(--color_font);
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      margin-top: 4px;
+      color: $color-font;
     }
   }
 }
@@ -157,7 +174,7 @@
 
   &.checkout {
     padding-top: 0;
-    padding-bottom: 1.75rem;
+    padding-bottom: 20px;
 
     .btn-primary {
       width: 100%;
@@ -259,7 +276,8 @@
 
     h1 {
       margin-bottom: 0;
-      font-size: 1.5rem;
+      font-size: $font-size-h2;
+      line-height: $line-height-h2;
     }
   }
 
@@ -276,9 +294,10 @@
     .cart-summary_header {
       padding: 1rem 0;
       background-color: var(--background);
-      font-weight: 600;
       border-bottom: 0;
-      font-size: 20px;
+      font-size: $font-size-h3;
+      line-height: $line-height-h3;
+      font-weight: 500;
     }
 
     .cart-detailed-totals {
@@ -292,14 +311,16 @@
           padding-left: 0;
           font-weight: 400;
           white-space: inherit;
-          color: var(--color_font);
-          font-size: 13px;
+          color: $color-font;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
         }
         .value {
-          color: var(--color_font);
+          color: $color-font;
           float: right;
-          font-size: 13px;
           font-weight: 400;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
         }
       }
     }
@@ -314,17 +335,20 @@
         margin-top: 0.5rem;
 
         .label {
-          font-size: 1.3rem;
+          font-size: $font-size-h2;
+          line-height: $line-height-h2;
           font-weight: 700;
 
           > span {
             font-weight: 400;
-            font-size: 0.85rem;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
           }
         }
 
         .value {
-          font-size: 1.125rem;
+          font-size: $font-size-h2;
+          line-height: $line-height-h2;
           font-weight: 700;
         }
       }
@@ -339,16 +363,17 @@
     text-align: left;
 
     .cart-summary-line {
-      padding: 8px;
-      border: 1px solid #e0e0e0;
-      margin-bottom: 0.5rem;
+      padding: 4px 20px;
+      border: 1px solid $gris_300;
+      margin-bottom: 8px;
 
       .label {
-        font-size: 1rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        font-size: $font-size-detalle;
+        line-height: $line-height-detalle;
 
         .code {
           cursor: pointer;
@@ -357,6 +382,8 @@
 
         > i {
           margin-left: auto;
+          font-size: $font-size-h4;
+          line-height: $line-height-h4;
         }
       }
 
@@ -378,6 +405,11 @@
       }
     }
   }
+
+  .blockreassurance_product {
+    padding: 0 20px;
+  }
+
 }
 
 .separator {
@@ -415,8 +447,8 @@
       position: relative;
       display: none;
       margin-top: 1.25rem;
-      color: $white;
-      background: $brand-danger;
+      color: $color-font;
+      background: $blanco;
 
       &::after {
         position: absolute;
@@ -429,7 +461,13 @@
         content: " ";
         border: solid transparent;
         border-width: 10px;
-        border-bottom-color: $brand-danger;
+        border-bottom-color: $rojo;
+      }
+
+      .js-error-text {
+        padding: 4px 8px;
+        font-size: $font-size-minimo;
+        line-height: $line-height-minimo;
       }
     }
 
@@ -439,19 +477,35 @@
   }
 
   .promo-input {
-    width: calc(100% - 105px);
-    height: 2.5rem;
+    width: calc(100% - 100px);
     margin-right: 0;
-    color: var(--color_font);
-    text-indent: 0.625rem;
-    border: 1px solid #E0E0E0;
+    color: $color-font;
+    border: 1px solid $color-font;
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
+    padding: 0.5rem 1rem;
+    float: left;
+
+    &:focus-visible {
+      outline: 0;
+      border-color: var(--primary_color);
+    }
 
     + button {
       text-transform: capitalize;
       border: 0;
       width: 100px;
-      height: 2.5rem;
-      background-color: #3E92CC;
+      background-color: $azul;
+      margin-left: -1px;
+      padding: 8px 16px;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: 500;
+
+      &:focus-visible,
+      &:focus {
+        outline: 0;
+      }
     }
   }
 
@@ -509,9 +563,9 @@
 
     .collapse-button {
       color: var(--font_color);
-      font-size: 15px;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
       font-weight: 400;
-      line-height: 15px;
 
       > i {
         float: right;

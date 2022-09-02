@@ -26,7 +26,7 @@
 
 {block name='page_content'}
 
-      <h1>{l s='Your addresses' d='Shop.Theme.Customeraccount'}</h1>
+      <h2>{l s='Your addresses' d='Shop.Theme.Customeraccount'}</h2>
       {foreach $customer.addresses as $address}
         <div class="col-lg-4 col-md-6 col-sm-6 card_address">
         {block name='customer_address'}
@@ -36,7 +36,7 @@
       {/foreach}
       <div class="clearfix"></div>
       <div class="addresses-footer">
-        <a href="{$urls.pages.address}" data-link-action="add-address">
+        <a class="btn btn-secondary" href="{$urls.pages.address}" data-link-action="add-address">
             <i class="fa-solid fa-plus"></i>
           <span>{l s='Create new address' d='Shop.Theme.Actions'}</span>
         </a>

@@ -25,7 +25,8 @@
     .data {
       width: auto;
       overflow: hidden;
-      font-size: $font-size-sm;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
       color: var(--color_font);
 
       &.email {
@@ -52,11 +53,31 @@
 
   h3 {
     color: var(--color_font);
-    text-transform: uppercase;
+  }
+
+  .title_contactform {
+    margin-bottom: 0;
   }
 
   .gdpr_consent {
     padding: 0 15px;
+  }
+}
+
+#contact {
+  .dbcontactinfo_sidebar {
+    .block_icon {
+      p {
+        font-size: $font-size-detalle;
+        line-height: $line-height-detalle;
+      }
+
+      .blockicon_content {
+        .value {
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 
