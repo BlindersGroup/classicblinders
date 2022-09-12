@@ -30,7 +30,7 @@
       <ul>
         {foreach from=$social_share_links item='social_share_link'}
           <li class="icon-gray">
-            <a href="{$social_share_link.url}" title="{$social_share_link.label}" target="_blank">
+            <span class="datatext" datatext="{$social_share_link.url|base64_encode}" datatarget="_blank">
               {if $social_share_link.class == 'facebook'}
                 <i class="fa-brands fa-facebook-f"></i>
               {/if}
@@ -40,7 +40,7 @@
               {if $social_share_link.class == 'pinterest'}
                 <i class="fa-brands fa-pinterest"></i>
               {/if}
-            </a>
+            </span>
           </li>
         {/foreach}
       </ul>

@@ -4,9 +4,10 @@ body#checkout {
     max-height: none;
     border: none;
     margin-bottom: 0;
-    background-color: var(--topbar_bk); }
+    background-color: var(--topbar_bk);
+    display: inherit; }
     body#checkout #header .header-nav.simple_header {
-      padding: 1.3rem;
+      padding: 32px 8px;
       background-color: var(--background); }
     body#checkout #header .header-nav .header_checkout {
       display: flex;
@@ -125,7 +126,7 @@ body#checkout {
               body#checkout .cart-grid-right .card .card-block-products .cart-summary-products #cart-summary-product-list li.media .media-body .product-line-info span {
                 font-size: 12px;
                 line-height: 19px;
-                color: var(--color_font); }
+                color: #939393; }
             body#checkout .cart-grid-right .card .card-block-products .cart-summary-products #cart-summary-product-list li.media:last-child {
               margin-bottom: 0;
               padding-bottom: 0;
@@ -147,10 +148,12 @@ body#checkout {
     margin-bottom: 1.563rem; }
   body#checkout .container {
     min-height: 100%; }
+  body#checkout #checkout-personal-information-step .content {
+    margin-top: 16px; }
   body#checkout section.checkout-step {
     background-color: #FFFFFF;
-    padding: 0.9375rem;
-    margin-bottom: 0.5rem;
+    padding: 24px;
+    margin-bottom: 16px;
     /*&.-current + .checkout-step {
       .step-title {
         padding-top: 1.25rem;
@@ -223,7 +226,8 @@ body#checkout {
         color: #179942; }
         body#checkout section.checkout-step .forgot-password .secure-connection > i {
           color: #179942;
-          font-size: 13px; }
+          font-size: 13px;
+          margin-right: 4px; }
     body#checkout section.checkout-step.-complete:first-of-type .step-title {
       padding-top: 0; }
       body#checkout section.checkout-step.-complete:first-of-type .step-title span {
@@ -828,8 +832,9 @@ body#checkout {
         margin-left: 5px; }
       .promo-discounts .cart-summary-line .label > i {
         margin-left: auto;
-        font-size: 18px;
-        line-height: 29px; }
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 400; }
     .promo-discounts .cart-summary-line:last-child {
       margin-bottom: 1rem; }
 

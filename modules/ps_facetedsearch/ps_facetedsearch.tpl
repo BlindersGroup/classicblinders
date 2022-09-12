@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-{if Context::getContext()->isMobile() == 1 || Context::getContext()->isTablet() == 1}
+{if Context::getContext()->getDevice() == 4}
     {if isset($listing.rendered_facets)}
 
         <div class="modal fade right" id="filters_category" tabindex="-1" role="dialog" aria-labelledby="filters_category_Label" aria-hidden="true">

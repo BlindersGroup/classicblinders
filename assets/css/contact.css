@@ -40,6 +40,8 @@
     margin-bottom: 0; }
   .contact-form .gdpr_consent {
     padding: 0 15px; }
+  .contact-form .btn.btn-primary {
+    padding: 8px 24px; }
 
 #contact .dbcontactinfo_sidebar .block_icon p {
   font-size: 14px;

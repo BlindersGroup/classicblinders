@@ -188,6 +188,7 @@
 
         .modal-header {
           height: 50px;
+          border-bottom: 0;
         }
 
         .modal-body {
@@ -239,7 +240,7 @@
       #search_filters {
         padding: 0;
         margin-bottom: 20px;
-        border-top: 1px solid $gray-lighter;
+        border-top: 1px solid $gris_300;
         box-shadow: none;
 
         .ui-slider-horizontal {
@@ -248,13 +249,14 @@
 
         .facet {
           padding-top: 0;
-          border-bottom: 1px solid $gray-lighter;
-          margin-bottom: 0.5rem;
+          border-bottom: 1px solid $gris_300;
+          margin-bottom: 8px;
+          padding-bottom: 8px;
 
           .title {
             align-items: center;
             cursor: pointer;
-            background-color: var(--background);
+            background-color: $blanco;
 
             .collapse-icons .remove {
               display: none;
@@ -279,7 +281,7 @@
             margin-right: 0 !important;
             padding: 0.625rem;
             margin-bottom: 0 !important;
-            background-color: var(--background);
+            background-color: $blanco;
           }
 
           .h6 {

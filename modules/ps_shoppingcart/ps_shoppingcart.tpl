@@ -32,7 +32,7 @@
             {if $cart.products_count > 0}
                 <span class="cart-products-count"></span>
             {/if}
-        <span class="icon_name">{l s='Carrito' mod='ps_shoppingcart'} ({$cart.products_count})</span>
+        <span class="icon_name">{l s='Carrito' d='Modules.Shoppingcart.Shop'} ({$cart.products_count})</span>
       {if $cart.products_count > 0}
         </a>
       {/if}

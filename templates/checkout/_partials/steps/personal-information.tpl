@@ -5,31 +5,19 @@
 
   {if $customer.is_logged && !$customer.is_guest}
 
-    <p class="identity p2">
-      {* [1][/1] is for a HTML tag. *}
-      {l s='Connected as [1]%firstname% %lastname%[/1].'
-        d='Shop.Theme.Customeraccount'
-        sprintf=[
-          '[1]' => "<a href='{$urls.pages.identity}'>",
-          '[/1]' => "</a>",
-          '%firstname%' => $customer.firstname,
-          '%lastname%' => $customer.lastname
-        ]
-      }
-    </p>
     <p class="p2">
       {* [1][/1] is for a HTML tag. *}
       {l
         s='Not you? [1]Log out[/1]'
         d='Shop.Theme.Customeraccount'
         sprintf=[
-        '[1]' => "<a href='{$urls.actions.logout}'>",
+        '[1]' => "<a class='underline_link' href='{$urls.actions.logout}'>",
         '[/1]' => "</a>"
         ]
       }
     </p>
     {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p class="p2">{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
+      <p class="p2 color_rojo">{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
     {/if}
 
     <div class="clearfix">

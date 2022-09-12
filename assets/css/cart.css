@@ -42,7 +42,7 @@
       z-index: 1000; }
       .cart-item .cart__product-qty .input-group .js-cart-line-product-quantity {
         height: 38px !important;
-        left: 29px;
+        left: 31px;
         width: 35px;
         text-align: center;
         line-height: 24px;
@@ -85,9 +85,10 @@
         .cart-item .cart__product-qty .bootstrap-touchspin .input-group-btn-vertical .btn.bootstrap-touchspin-down {
           left: -47px;
           margin: 0;
-          border-color: var(--color_font); }
+          border-color: var(--color_font);
+          border-right: 0; }
         .cart-item .cart__product-qty .bootstrap-touchspin .input-group-btn-vertical .btn.bootstrap-touchspin-up {
-          left: 30px;
+          left: 32px;
           border-color: var(--color_font);
           border-left: 0; }
   .cart-item .cart__product-price {
@@ -112,7 +113,8 @@
         line-height: 23px;
         font-weight: 400;
         color: #939393;
-        margin-right: 12px; }
+        margin-right: 12px;
+        text-decoration: line-through; }
     .cart-item .cart__product-price .product-price {
       font-size: 13px;
       line-height: 21px;
@@ -248,8 +250,9 @@
         margin-left: 5px; }
       .cart-grid-right .promo-discounts .cart-summary-line .label > i {
         margin-left: auto;
-        font-size: 18px;
-        line-height: 29px; }
+        font-size: 14px;
+        line-height: 23px;
+        font-weight: 400; }
     .cart-grid-right .promo-discounts .cart-summary-line:last-child {
       margin-bottom: 1rem; }
 .cart-grid-right .cart-summary-line.cart-subtotal-products .label,

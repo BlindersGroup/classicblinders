@@ -50,8 +50,7 @@
 
 
 .alert {
-  padding: 12px 0 12px 46px;
-  padding: .75rem 0 .75rem 2.875rem;
+  padding: 12px 12px 12px 58px;
   background-color: $blanco;
   position: relative;
   color: #363a41;
@@ -67,8 +66,6 @@
   font-family: 'Font Awesome';
   font-weight: 800;
   font-style: normal;
-  font-size: 24px;
-  font-size: 1.5rem;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -87,11 +84,9 @@
   bottom: 0;
   left: 0;
   width: 46px;
-  width: 2.875rem;
   height: 100%;
   text-align: center;
-  font-size: 25.008px;
-  font-size: 1.563rem;
+  font-size: 24px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -101,10 +96,9 @@
 }
 .alert p, .alert ul {
   font-size: 14px;
-  font-size: .875rem;
   margin: 0;
   padding: 0 .625rem;
-  margin-left: 1.5rem;
+  margin-left: 8px;
 }
 .alert ul {
   list-style-type: disc;

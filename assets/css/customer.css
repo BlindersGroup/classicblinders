@@ -68,7 +68,7 @@
     margin-top: 15px;
   }*/ }
   .page-authentication #content {
-    padding: 1rem;
+    padding: 32px;
     background: #FFFFFF;
     max-width: 640px;
     margin: 0 auto; }
@@ -84,7 +84,8 @@
         color: #179942; }
         .page-authentication #content .forgot-password .secure-connection > i {
           color: #179942;
-          font-size: 13px; }
+          font-size: 13px;
+          margin-right: 4px; }
     .page-authentication #content hr {
       margin-top: 1rem;
       margin-bottom: 1rem;
@@ -140,7 +141,7 @@
   font-size: 15px;
   line-height: 24px; }
 .page-order-detail .box {
-  padding: 1rem;
+  padding: 32px;
   background: #FFFFFF;
   margin-bottom: 1rem; }
 .page-order-detail h3 {
@@ -322,7 +323,7 @@
     .page-my-account #content .links a span.link-item {
       display: block;
       height: 100%;
-      padding: 1rem;
+      padding: 32px;
       background: #FFFFFF; }
     .page-my-account #content .links a i {
       display: block;
@@ -342,19 +343,20 @@
   font-weight: 600;
   color: var(--color_font);
   display: table; }
-#my-account .link_item:nth-child(2n) {
-  clear: both; }
+#my-account .link_item > .link-item {
+  min-height: 135px; }
 #my-account .link-item {
   background-color: #FFF;
-  padding: 1rem;
+  padding: 24px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid #FFF;
   margin-bottom: 1rem;
   color: var(--color_font);
-  font-size: 0.9rem; }
+  font-size: 15px;
+  line-height: 24px; }
   #my-account .link-item:hover {
     border-color: var(--primary_color); }
   #my-account .link-item > i {
@@ -389,8 +391,8 @@
   color: var(--button_p_color);
   background-color: var(--button_p_bk);
   display: table;
-  margin: 1rem auto;
-  font-size: 1rem; }
+  font-size: 1rem;
+  margin-left: auto; }
 
 /*** History page ***/
 #history .orders {
@@ -472,10 +474,7 @@
     border: 0; }
     #history .order_history .history_buttons > a {
       width: 100%;
-      border: 1px solid rgba(0, 0, 0, 0.125);
       margin-bottom: 10px; }
-      #history .order_history .history_buttons > a:last-child {
-        border: 1px solid rgba(0, 0, 0, 0.125); }
 
   #order-detail .order_info {
     display: flex;
@@ -494,6 +493,26 @@
     width: auto; }
   #order-detail.page-order-detail .order-items .order-item {
     padding: 1rem; } }
+@media (max-width: 767px) {
+  .card.card_account {
+    margin-left: 0;
+    margin-right: 0; }
+
+  #link_contact .link-item {
+    flex-direction: column;
+    flex-wrap: wrap; }
+
+  #link_contact .link-item .btn_contact {
+    margin-left: inherit;
+    margin-top: 12px; }
+
+  #my-account #link_contact .link-item > i {
+    margin-bottom: 12px;
+    margin-right: 0;
+    width: auto; }
+
+  #my-account #link_contact .link-item > .history-content {
+    text-align: center; } }
 .forgotten-password {
   padding: 4px; }
   .forgotten-password .form-fields .center-email-fields {

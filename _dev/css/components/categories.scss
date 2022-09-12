@@ -455,8 +455,13 @@
     }
 
     .showing {
-      padding-top: 1rem !important;
-      margin-bottom: 1rem;
+      padding-top: 16px !important;
+      margin-bottom: 0;
+
+      .minimo {
+        margin-bottom: 0;
+        text-align: center;
+      }
     }
   }
 
@@ -548,9 +553,13 @@
         overflow: auto;
         white-space: nowrap;
 
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
         > li {
           max-width: 100%;
-          padding: 1rem 2rem;
+          padding: 16px;
 
           .subcategory-name {
             padding: 0;
@@ -563,5 +572,11 @@
   .dbcategorydesc {
     padding: 1.25rem;
     background-color: #fff;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #category #subcategories > ul > li {
+    max-width: 30%;
   }
 }

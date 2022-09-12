@@ -29,7 +29,7 @@
       <table id="order-products" class="table table-bordered return">
         <thead class="thead-default">
           <tr>
-            <th class="head-checkbox"><input type="checkbox"/></th>
+            <th class="head-checkbox"></th>
             <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
             <th>{l s='Quantity' d='Shop.Theme.Catalog'}</th>
             <th>{l s='Returned' d='Shop.Theme.Customeraccount'}</th>

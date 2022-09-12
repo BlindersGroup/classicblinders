@@ -1,6 +1,6 @@
 /*** SOME GENERIC STYLES ***/
 @mixin customer-area-base-box {
-  padding: 1rem;
+  padding: 32px;
   background: $white;
 }
 
@@ -142,6 +142,7 @@
         > i {
           color: $verde;
           font-size: $font-size-small;
+          margin-right: 4px;
         }
       }
     }
@@ -582,21 +583,26 @@
     display: table;
   }
 
-  .link_item:nth-child(2n) {
-    clear: both;
+  //.link_item:nth-child(2n) {
+  //  clear: both;
+  //}
+
+  .link_item > .link-item {
+    min-height: 135px;
   }
 
   .link-item {
     background-color: #FFF;
-    padding: 1rem;
+    padding: 24px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border: 1px solid #FFF;
     margin-bottom: 1rem;
     color: var(--color_font);
-    font-size: 0.9rem;
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
 
     &:hover {
       border-color: var(--primary_color);
@@ -650,8 +656,8 @@
   color: var(--button_p_color);
   background-color: var(--button_p_bk);
   display: table;
-  margin: 1rem auto;
   font-size: 1rem;
+  margin-left: auto;
 }
 
 /*** History page ***/
@@ -777,12 +783,8 @@
 
         > a {
           width: 100%;
-          border: 1px solid rgba(0, 0, 0, 0.125);
           margin-bottom: 10px;
 
-          &:last-child {
-            border: 1px solid rgba(0, 0, 0, 0.125);
-          }
         }
       }
     }
@@ -820,4 +822,27 @@
 
   }
 
+}
+
+@include media-breakpoint-down(sm) {
+  .card.card_account {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #link_contact .link-item {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #link_contact .link-item .btn_contact {
+    margin-left: inherit;
+    margin-top: 12px
+  }
+  #my-account #link_contact .link-item > i {
+    margin-bottom: 12px;
+    margin-right: 0;
+    width: auto;
+  }
+  #my-account #link_contact .link-item > .history-content {
+    text-align: center;
+  }
 }

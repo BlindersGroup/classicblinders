@@ -326,6 +326,8 @@ global_settings:
         - dbcontactinfo
       displayBlockLeftFooter:
         - ps_sharebuttons
+      displayShoppingCart:
+        - dbfreeshipping
 
   image_types:
     cart_default:

@@ -74,5 +74,9 @@
     display: block;
     overflow: auto;
     white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

@@ -36,7 +36,7 @@
       text-shadow: none;
 
       span {
-        font-size: $font-size-base;
+        font-size: 24px;
         line-height: $line-height-base;
         font-weight: 500;
         color: $blanco !important;
@@ -56,12 +56,12 @@
     margin-bottom: 16px;
 
     > * {
-      padding: 8px 16px;
+      padding: 16px;
     }
 
     .title {
       font-weight: 500;
-      color: $color-font;
+      color: $gris_400 !important;
       font-size: $font-size-base;
       line-height: $line-height-base;
     }
@@ -73,8 +73,9 @@
       line-height: $line-height-detalle;
 
       > i {
-        font-size: $font-size-detalle;
+        font-size: $font-size-detalle !important;
         line-height: $line-height-detalle;
+        margin-right: 4px;
       }
 
       &:hover {

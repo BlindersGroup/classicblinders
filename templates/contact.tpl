@@ -24,6 +24,10 @@
  *}
 {extends file='page.tpl'}
 
+{block name='head_seo' prepend}
+  <link rel="canonical" href="{$link->getPageLink('contact', true)}">
+{/block}
+
 {block name='page_header_container'}{/block}
 
 {if $layout === 'layouts/layout-left-column.tpl'}

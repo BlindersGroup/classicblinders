@@ -57,7 +57,7 @@
                 {if $order.details.invoice_url}
                   <a class="btn btn-secondary" href="{$order.details.invoice_url}">{l s='Download invoice' d='Shop.Theme.Actions'}</a>
                 {/if}
-                <a class="btn btn-secondary" href="{$order.details.details_url}#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
+                <a class="btn btn-tertiary" href="{$order.details.details_url}#order-message">{l s='Report incident' d='Shop.Theme.Actions'}</a>
               </div>
             </div>
           {/foreach}

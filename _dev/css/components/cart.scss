@@ -61,7 +61,7 @@
 
       .js-cart-line-product-quantity {
         height: 38px !important;
-        left: 29px;
+        left: 31px;
         width: 35px;
         text-align: center;
         line-height: 24px;
@@ -116,10 +116,11 @@
             left: -47px;
             margin: 0;
             border-color: var(--color_font);
+            border-right: 0;
           }
 
           &.bootstrap-touchspin-up {
-            left: 30px;
+            left: 32px;
             border-color: var(--color_font);
             border-left: 0;
           }
@@ -158,6 +159,7 @@
         font-weight: 400;
         color: $gris_400;
         margin-right: 12px;
+        text-decoration: line-through;
       }
     }
 
@@ -382,8 +384,9 @@
 
         > i {
           margin-left: auto;
-          font-size: $font-size-h4;
-          line-height: $line-height-h4;
+          font-size: $font-size-detalle;
+          line-height: $line-height-detalle;
+          font-weight: 400;
         }
       }
 

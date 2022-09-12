@@ -46,11 +46,13 @@
   display: table;
   background-color: #FFF;
   padding: 25px; }
+  #manufacturer .dbproductcomments .dbcomments_category .info_comment a {
+    color: var(--color_font); }
 
 #manufacturer-description {
   display: table;
   width: 100%;
-  margin-top: 1.5rem; }
+  margin-top: 48px; }
   #manufacturer-description p {
     font-size: 15px;
     line-height: 24px; }

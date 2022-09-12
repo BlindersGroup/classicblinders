@@ -23,53 +23,63 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 <section class="featured-products clearfix --mt-16">
-  <p class="h1 products-section-title">
-    {*{if $products|@count == 1}
-      {l s='%s producto de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
-    {else}
-      {l s='%s productos de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
-    {/if}*}
-    {l s='Productos que quizás te interesen' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
-  </p>
-  <div id="splide_categoryproducts" class="splide">
-    <div class="splide__track">
-      <div class="splide__list">
-        {foreach from=$products item="product" key="position"}
-          <div class="splide__slide">
-            {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
-          </div>
-        {/foreach}
-      </div>
+    <p class="h1 products-section-title">
+        {*{if $products|@count == 1}
+          {l s='%s producto de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
+        {else}
+          {l s='%s productos de la misma categoria' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
+        {/if}*}
+        {l s='Productos que quizás te interesen' sprintf=[$products|@count] d='Shop.Theme.Catalog'}
+    </p>
+    <div id="splide_categoryproducts" class="splide">
+        <div class="splide__track">
+            <div class="splide__list">
+                {foreach from=$products item="product" key="position"}
+                    <div class="splide__slide">
+                        {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+                    </div>
+                {/foreach}
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener( 'DOMContentLoaded', function () {
-      new Splide( '#splide_categoryproducts', {
-        perPage     : 5,
-        pagination: false,
-        lazyLoad: 'sequential',
-        arrows: true,
-        breakpoints: {
-          600: {
-            perPage: 2,
-            padding: {
-              right: '2rem',
-            },
-            arrows: false,
-          },
-          800: {
-            perPage: 2,
-            padding: {
-              right: '2rem',
-            },
-            arrows: false,
-          },
-          1200: {
-            perPage: 4,
-          }
-        },
-      } ).mount();
-    } );
-  </script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#splide_categoryproducts', {
+                perPage     : 5,
+                pagination: false,
+                lazyLoad: 'sequential',
+                arrows: true,
+                breakpoints: {
+                    575: {
+                        perPage: 1,
+                        padding: {
+                            right: '30%',
+                        },
+                        arrows: false,
+                        gap: '16px',
+                    },
+                    767: {
+                        perPage: 2,
+                        padding: {
+                            right: '15%',
+                        },
+                        arrows: false,
+                        gap: '16px',
+                    },
+                    992: {
+                        perPage: 3,
+                        padding: {
+                            right: '10%',
+                        },
+                        arrows: false,
+                        gap: '16px',
+                    },
+                    1200: {
+                        perPage: 5,
+                    }
+                },
+            } ).mount();
+        } );
+    </script>
 </section>

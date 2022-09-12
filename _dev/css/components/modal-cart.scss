@@ -37,7 +37,7 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: calc(100% - 59px);
     max-height: calc(100vh - 59px);
@@ -131,8 +131,9 @@
   .modal_totals {
     width: 100%;
     max-height: 275px;
-    padding: 15px;
+    padding: 16px;
     border-top: 1px solid $gris_300;
+    margin-top: auto;
 
     .cart-content {
       padding: 0;
@@ -190,9 +191,8 @@
     font-weight: 500;
     color: $blanco;
 
-    i.material-icons {
-      margin-right: 10px;
-      color: $blanco;
+    i {
+      margin-right: 8px;
     }
 
     .total_products {
@@ -327,6 +327,11 @@
         height: 30px !important;
         padding: 0 5px !important;
 
+        &:focus-visible,
+        &:focus {
+          outline: 0;
+        }
+
         &.bootstrap-touchspin-down {
           left: -47px;
           margin-top: 0;
@@ -341,6 +346,10 @@
           border-bottom: 0.8px solid $color-font;
           border-right: 0.8px solid $color-font;
           left: 21px;
+
+          > i {
+            font-size: 11px !important;
+          }
         }
 
         i {

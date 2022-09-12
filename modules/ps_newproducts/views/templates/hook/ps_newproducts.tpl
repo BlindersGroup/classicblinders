@@ -24,53 +24,63 @@
  *}
 
 {if $products|count > 0}
-<section class="featured-products clearfix --mt-16">
-  <p class="h1 products-section-title">
-    {l s='New products' d='Shop.Theme.Catalog'}
-  </p>
+    <section class="featured-products clearfix --mt-16">
+        <p class="h1 products-section-title">
+            {l s='New products' d='Shop.Theme.Catalog'}
+        </p>
 
-  <div id="splide_newproducts" class="splide">
-    <div class="splide__track">
-      <div class="splide__list">
-        {foreach from=$products item=product}
-          <div class="splide__slide">
-            {include file="catalog/_partials/miniatures/product.tpl" product=$product}
-          </div>
-        {/foreach}
-      </div>
-    </div>
-  </div>
+        <div id="splide_newproducts" class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    {foreach from=$products item=product}
+                        <div class="splide__slide">
+                            {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+                        </div>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
 
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function () {
-            new Splide( '#splide_newproducts', {
-                perPage     : 5,
-                pagination: false,
-                lazyLoad: 'sequential',
-                arrows: true,
-                breakpoints: {
-                    600: {
-                        perPage: 2,
-                        padding: {
-                          right: '2rem',
+        <script>
+            document.addEventListener( 'DOMContentLoaded', function () {
+                new Splide( '#splide_newproducts', {
+                    perPage     : 5,
+                    pagination: false,
+                    lazyLoad: 'sequential',
+                    arrows: true,
+                    breakpoints: {
+                        575: {
+                            perPage: 1,
+                            padding: {
+                                right: '30%',
+                            },
+                            arrows: false,
+                            gap: '16px',
                         },
-                        arrows: false,
-                    },
-                    800: {
-                        perPage: 2,
-                        padding: {
-                          right: '2rem',
+                        767: {
+                            perPage: 2,
+                            padding: {
+                                right: '15%',
+                            },
+                            arrows: false,
+                            gap: '16px',
                         },
-                        arrows: false,
-                    },
-                    1200: {
-                        perPage: 4,
+                        992: {
+                            perPage: 3,
+                            padding: {
+                                right: '10%',
+                            },
+                            arrows: false,
+                            gap: '16px',
+                        },
+                        1200: {
+                            perPage: 5,
+                        }
                     }
-                }
-            } ).mount();
-        } );
-    </script>
+                } ).mount();
+            } );
+        </script>
 
-</section>
+    </section>
 {/if}
 

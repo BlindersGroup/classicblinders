@@ -26,10 +26,14 @@
     margin-left: 10px;
 }
 .psgdprinfo17 {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
     background: #FFFFFF;
-    padding: 20px;
+    padding: 32px;
+}
+.psgdprinfo17 p {
+    font-size: 15px;
+    line-height: 24px;
 }
 .psgdprgetdatabtn17 {
     float: right;
@@ -40,7 +44,7 @@
 }
 .psgdprgetdatabtn16{
     float: right;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .navigation_account {
@@ -69,4 +73,19 @@
 
 .item:hover{
     color: var(--dbmenu_color_hover);
+}
+
+@media (max-width: 991px) {
+    #content-wrapper {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #module-psgdpr-gdpr .page-content .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #exportDataToCsv {
+        margin-bottom: 16px;
+    }
 }

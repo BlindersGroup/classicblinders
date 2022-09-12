@@ -53,19 +53,19 @@
         <div class="copyright_content">
             <ul class="imgs_payment">
                 {if $custom_generic.visa == 1}
-                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-visa.svg" width="75" height="50" loading="lazy"></li>
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-visa.svg" width="75" height="50" loading="lazy" alt="visa"></li>
                 {/if}
                 {if $custom_generic.mastercard == 1}
-                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-mastercard.svg" width="75" height="50" loading="lazy"></li>
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-mastercard.svg" width="75" height="50" loading="lazy" alt="mastercard"></li>
                 {/if}
                 {if $custom_generic.maestro == 1}
-                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-maestro.svg" width="75" height="50" loading="lazy"></li>
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-maestro.svg" width="75" height="50" loading="lazy" alt="maestro"></li>
                 {/if}
                 {if $custom_generic.paypal == 1}
-                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-paypal.svg" width="75" height="50" loading="lazy"></li>
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-paypal.svg" width="75" height="50" loading="lazy" alt="paypal"></li>
                 {/if}
                 {if $custom_generic.bizum == 1}
-                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-bizum.svg" width="75" height="50" loading="lazy"></li>
+                    <li><img src="{$js_custom_vars.prestashop.urls.theme_assets}../../classicblinders/assets/img/icons/ico-bizum.svg" width="75" height="50" loading="lazy" alt="bizum"></li>
                 {/if}
             </ul>
             <p class="text_copyright">

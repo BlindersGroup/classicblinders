@@ -202,7 +202,7 @@ $(document).on('click', '.pack_dto', function(e) {
 });
 
 // imagenes productos
-if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
+if(typeof(show_product_imgs) != "undefined" && is_mobile == false && show_product_imgs == 1) {
   $(document).ready(function () {
     prestashop.on(
         'updatedProduct',
@@ -234,7 +234,7 @@ if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 1) {
         }
     );
   });
-} else if(typeof(show_product_imgs) != "undefined" && show_product_imgs == 2) {
+} else if(typeof(show_product_imgs) != "undefined" && is_mobile == false && show_product_imgs == 2) {
   $(document).ready(function () {
     prestashop.on(
         'updatedProduct',

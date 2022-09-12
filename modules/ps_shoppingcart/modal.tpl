@@ -36,6 +36,7 @@
         </h4>
       </div>
       <div class="modal-body">
+        {hook h='displayShoppingCart'}
         <div class="modal_products">
           {foreach from=$cart.products item=product}
             <div class="modal_product modal_product_{$product.id}_{$product.id_product_attribute}">
@@ -98,7 +99,7 @@
 
             <div class="cart-content-btn">
               <a href="{$urls.pages.order}" class="btn btn-primary">{l s='Checkout' d='Shop.Theme.Actions'}</a>
-              <a href="{$cart_url}" class="btn btn-tertiary btn-view-cart">{l s='View cart' d='Shop.Theme.Actions'}</a>
+              <a href="{$cart_url}" class="btn btn-secondary btn-view-cart">{l s='View cart' d='Shop.Theme.Actions'}</a>
             </div>
           </div>
         </div>

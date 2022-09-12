@@ -9,9 +9,10 @@ body#checkout {
       border: none;
       margin-bottom: 0;
       background-color: var(--topbar_bk);
+      display: inherit;
 
       &.simple_header {
-        padding: 1.3rem;
+        padding: 32px 8px;
         background-color: var(--background);
       }
       .header_checkout {
@@ -195,7 +196,7 @@ body#checkout {
                   span {
                     font-size: $font-size-minimo;
                     line-height: $line-height-minimo;
-                    color: $color-font;
+                    color: $gris_400;
                   }
                 }
 
@@ -246,11 +247,15 @@ body#checkout {
     min-height: 100%;
   }
 
+  #checkout-personal-information-step .content {
+    margin-top: 16px;
+  }
+
   section.checkout-step {
     background-color: $white;
     //border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    padding: 0.9375rem;
-    margin-bottom: 0.5rem;
+    padding: 24px;
+    margin-bottom: 16px;
 
     &:last-child {
       border: 0;
@@ -355,6 +360,7 @@ body#checkout {
         > i {
           color: $verde;
           font-size: $font-size-small;
+          margin-right: 4px;
         }
       }
     }
@@ -1376,8 +1382,9 @@ body#checkout {
 
       > i {
         margin-left: auto;
-        font-size: $font-size-h4;
-        line-height: $line-height-h4;
+        font-size: $font-size-detalle;
+        line-height: $line-height-detalle;
+        font-weight: 400;
       }
     }
 

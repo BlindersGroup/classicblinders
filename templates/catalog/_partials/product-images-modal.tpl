@@ -31,7 +31,11 @@
             <img
                 class="js-modal-product-cover product-cover-modal"
                 src="{$product.images[0].bySize.large_default.url}"
-                alt="{$product.images[0].legend}"
+                {if $product.images[0].legend}
+                    alt="{$product.images[0].legend}"
+                {else}
+                    alt="{$product.name}"
+                {/if}
                 title="{$product.images[0].legend}"
                 itemprop="image"
                 loading="lazy"
@@ -49,7 +53,11 @@
                         data-image-large-src="{$image.large.url}"
                         class="thumb js-modal-thumb"
                         src="{$image.medium.url}"
-                        alt="{$image.legend}"
+                        {if $image.legend}
+                            alt="{$image.legend}"
+                        {else}
+                            alt="{$product.name}"
+                        {/if}
                         title="{$image.legend}"
                         width="{$image.medium.width}"
                         height="{$image.medium.height}"

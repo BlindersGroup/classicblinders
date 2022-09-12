@@ -249,7 +249,7 @@ function updateProductListDOM(data) {
 // Desplegable orden categorias
 $(document).on('change', '#selectProductSort', function(e) {
   var url = $(this).val();
-  window.location.href = url;
+  window.location.href = b64_to_utf8(url);
 });
 
 // Clic nombre filtros

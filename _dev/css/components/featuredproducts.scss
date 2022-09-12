@@ -20,7 +20,7 @@ $product-description-height: 70px;
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-bottom: 1.563rem;
+    margin-bottom: 16px;
     overflow: hidden;
     background: $white;
 
@@ -245,7 +245,7 @@ $product-description-height: 70px;
   }
 
   .product-miniature {
-    margin: 0 0.8125rem;
+    margin: 0 8px;
 
     .product-flags {
       li.product-flag {
@@ -286,14 +286,14 @@ $product-description-height: 70px;
     display: inline-block;
     font-size: $font-size-small;
     line-height: $line-height-small;
-    color: var(--color_font);
+    color: $gris_400;
     /*
     text-decoration: line-through;
     */
     font-weight: 400;
 
     .block-regular-price{
-      //text-decoration: line-through;
+      text-decoration: line-through;
     }
   }
 
@@ -426,6 +426,8 @@ $product-description-height: 70px;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    margin-left: -8px;
+    margin-right: -8px;
 
     > div {
       width: 25%;
@@ -465,8 +467,8 @@ $product-description-height: 70px;
 }
 
 #js-product-list-top {
-  margin: 2rem 0;
-  padding: 5px 0;
+  margin: 32px 0;
+  padding: 8px 0;
   border-top: 1px solid $gris_300;
   border-bottom: 1px solid $gris_300;
   display: flex;
@@ -490,6 +492,7 @@ $product-description-height: 70px;
     font-size: $font-size-minimo;
     line-height: $line-height-minimo;
     z-index: 999;
+    background-color: transparent;
   }
 
   .total-products p {
@@ -523,13 +526,13 @@ $product-description-height: 70px;
   }
 
   #products .products {
-    padding: 0 5px;
+    //padding: 0 5px;
+    padding: 0;
   }
 
-  #products .product-miniature,
   .featured-products .product-miniature,
   .splide__slide .product-miniature {
-    margin: 0 10px;
+    margin: 0;
   }
 
   .splide .splide__track {
@@ -559,6 +562,12 @@ $product-description-height: 70px;
   }*/
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #js-product-list-top > div {
+    width: 50%;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   .featured-products {
     .products {
@@ -573,18 +582,18 @@ $product-description-height: 70px;
   }
 
   #products .products {
-    padding: 0 8px;
+    //padding: 0 8px;
+    padding: 0;
   }
 
-  #products .product-miniature,
   .featured-products .product-miniature,
   .splide__slide .product-miniature {
-    margin: 0 7px;
+    margin: 0;
   }
 
   .splide .splide__track {
-    margin-left: -7px;
-    margin-right: -7px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #products {

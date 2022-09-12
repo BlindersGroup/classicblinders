@@ -38,7 +38,11 @@
                                     <img
                                             class="js-qv-product-cover"
                                             src="{$image.bySize.medium_default.url}"
-                                            alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                             title="{$image.legend}"
                                             itemprop="image"
                                             loading="lazy"
@@ -68,7 +72,11 @@
                                             data-image-medium-src="{$image.bySize.medium_default.url}"
                                             data-image-large-src="{$image.bySize.large_default.url}"
                                             src="{$image.bySize.home_default.url}"
-                                            alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                             title="{$image.legend}"
                                             itemprop="image"
                                             loading="lazy"
@@ -121,7 +129,11 @@
                                         <img
                                                 class="js-qv-product-cover"
                                                 src="{$image.bySize.medium_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -144,8 +156,8 @@
                         document.addEventListener( 'DOMContentLoaded', function () {
                             new Splide( '#splide_images_product', {
                                 perPage     : 1,
-                                pagination: true,
-                                arrows: false,
+                                pagination: false,
+                                arrows: true,
                             } ).mount();
                         } );
                     </script>
@@ -161,7 +173,11 @@
                                                 data-image-medium-src="{$image.bySize.medium_default.url}"
                                                 data-image-large-src="{$image.bySize.large_default.url}"
                                                 src="{$image.bySize.home_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -185,7 +201,11 @@
                                         <img
                                                 class="js-qv-product-cover"
                                                 src="{$image.bySize.medium_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -247,7 +267,11 @@
                                     <img
                                         class="js-qv-product-cover"
                                         src="{$image.bySize.medium_default.url}"
-                                        alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                         title="{$image.legend}"
                                         itemprop="image"
                                         loading="lazy"
@@ -283,7 +307,11 @@
                     <img
                             class="js-qv-product-cover"
                             src="{$image.bySize.medium_default.url}"
-                            alt="{$image.legend}"
+                            {if $image.legend}
+                                alt="{$image.legend}"
+                            {else}
+                                alt="{$product.name}"
+                            {/if}
                             title="{$image.legend}"
                             itemprop="image"
                             loading="lazy"

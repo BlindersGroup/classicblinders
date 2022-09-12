@@ -23,76 +23,98 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='header_banner'}
-  <div class="header-banner">
-    {hook h='displayBanner'}
-  </div>
+    <div class="header-banner">
+        {hook h='displayBanner'}
+    </div>
 {/block}
 
 {block name='header_nav'}
-  {if $custom_generic.show_displaynav == 1}
-  <nav class="header-nav {if $custom_generic.width_header == 1}full_width_generic{/if}">
-    <div class="container">
-      <div class="headernav_flex">
+    {if $custom_generic.show_displaynav == 1}
         {if Context::getContext()->getDevice() < 4}
-          <div class="displayNav1">
-            {hook h='displayNav1'}
-          </div>
-          <div class="displayNavCenter">
-            {hook h='displayNavCenter'}
-          </div>
-          <div class="displayNav2">
-            {hook h='displayNav2'}
-          </div>
+            <nav class="header-nav {if $custom_generic.width_header == 1}full_width_generic{/if}">
+                <div class="container">
+                    <div class="headernav_flex">
+
+                        <div class="displayNav1">
+                            {hook h='displayNav1'}
+                        </div>
+                        <div class="displayNavCenter">
+                            {hook h='displayNavCenter'}
+                        </div>
+                        <div class="displayNav2">
+                            {hook h='displayNav2'}
+                        </div>
+
+                        {* Cabecera en Mobile *}
+                        <div class="hidden-md-up text-sm-center mobile">
+                            <div class="top-logo" id="_mobile_logo"></div>
+                            <div id="_mobile_user_info"></div>
+                            <div id="_mobile_cart"></div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
         {/if}
-        {* Cabecera en Mobile *}
-        <div class="hidden-md-up text-sm-center mobile">
-          <div class="top-logo" id="_mobile_logo"></div>
-          <div id="_mobile_user_info"></div>
-          <div id="_mobile_cart"></div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  {/if}
+    {/if}
 {/block}
 
 {block name='header_top'}
-  <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if} {if $custom_generic.show_displaynav == 0}notdisplaynav{/if}">
-    <div class="container">
-      <div class="header__flex">
-        {if Context::getContext()->getDevice() > 1}
-          <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
-            <i class="fa-solid fa-bars d-inline"></i>
-          </div>
-        {/if}
-        <div class="displayLogo hidden-sm-down" id="_desktop_logo">
-          {if $page.page_name == 'index'}
-            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
-          {else}
-            <a href="{$urls.pages.index}">
-              <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
-            </a>
-          {/if}
+    <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if} {if $custom_generic.show_displaynav == 0}notdisplaynav{/if}">
+        <div class="container">
+            {if Context::getContext()->getDevice() < 4}
+                <div class="header__flex">
+                    <div class="displayLogo hidden-sm-down" id="_desktop_logo">
+                        {if $page.page_name == 'index'}
+                            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                        {else}
+                            <a href="{$urls.pages.index}">
+                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                            </a>
+                        {/if}
+                    </div>
+                    <div class="displayTopCenter">
+                        {hook h='displayTopCenter'}
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="position-static displayTop">
+                        {hook h='displayTop'}
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            {else}
+                <div class="header__flex mobile">
+                    <div class="mobile_top">
+                        <div class="displayLogo" id="_desktop_logo">
+                            {if $page.page_name == 'index'}
+                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                            {else}
+                                <a href="{$urls.pages.index}">
+                                    <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                                </a>
+                            {/if}
+                        </div>
+                        <div class="position-static displayTop">
+                            {hook h='displayTop'}
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                    <div class="mobile_middle">
+                        <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
+                            <i class="fa-solid fa-bars d-inline"></i>
+                        </div>
+                        <div class="displayTopCenter">
+                            {hook h='displayTopCenter'}
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+            {/if}
+
         </div>
-        <div class="displayTopCenter">
-          {hook h='displayTopCenter'}
-          <div class="clearfix"></div>
-        </div>
-        <div class="position-static displayTop">
-          {hook h='displayTop'}
-          <div class="clearfix"></div>
-        </div>
-      </div>
-      <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
-        <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
-        <div class="js-top-menu-bottom">
-          <div id="_mobile_currency_selector"></div>
-          <div id="_mobile_language_selector"></div>
-          <div id="_mobile_contact_link"></div>
-        </div>
-      </div>
     </div>
-  </div>
-  {hook h='displayNavFullWidth'}
+    {hook h='displayNavFullWidth'}
 {/block}

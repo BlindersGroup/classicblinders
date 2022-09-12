@@ -62,7 +62,7 @@
               <i class="fa-solid fa-file-invoice"></i>
               <div class="history-content">
                 <p class="title">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</p>
-                <p class="desc">{l s='Realizar seguimiento, devolución de productos, repetir pedidos o solicitar facturas.' d='Shop.Theme.Customeraccount'}</p>
+                <p class="desc">{l s='Accede y descarga las facturas de devoluciones recibidas por devoluciones o cancelaciones de pedidos.' d='Shop.Theme.Customeraccount'}</p>
               </div>
             </span>
           </a>
@@ -74,7 +74,7 @@
               <i class="fa-solid fa-arrow-rotate-left"></i>
               <div class="history-content">
                 <p class="title">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</p>
-                <p class="desc">{l s='Realizar seguimiento, devolución de productos, repetir pedidos o solicitar facturas.' d='Shop.Theme.Customeraccount'}</p>
+                <p class="desc">{l s='Seguimiento del estado de sus devoluciones y albaranes de envío.' d='Shop.Theme.Customeraccount'}</p>
               </div>
             </span>
           </a>
