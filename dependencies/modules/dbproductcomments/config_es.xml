@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>dbproductcomments</name>
+    <displayName><![CDATA[DB Product Comments]]></displayName>
+    <version><![CDATA[2.0.0]]></version>
+    <description><![CDATA[Comentarios de productos]]></description>
+    <author><![CDATA[DevBlinders]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

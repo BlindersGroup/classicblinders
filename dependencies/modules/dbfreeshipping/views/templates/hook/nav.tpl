@@ -1,0 +1,1 @@
+<p class="dbfreeshipping">{l s='Envios gratis a partir de'} {$free}</p>

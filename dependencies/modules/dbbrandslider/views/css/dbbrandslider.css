@@ -1,0 +1,58 @@
+/**
+* 2007-2021 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2021 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+
+.dbbrandslide {
+    background-color: #fff;
+    padding: 32px;
+}
+
+.dbbrandslide .title {
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 26px;
+    margin-top: 0;
+}
+
+.dbbrandslide .splide__slide > a,
+.dbbrandslide .splide__slide img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.dbbrandslide .splide__arrow {
+    top: -37px;
+}
+
+@media (max-width: 991px) {
+    .dbbrandslide {
+        padding: 20px 5px;
+    }
+}
