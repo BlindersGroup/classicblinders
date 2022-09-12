@@ -1,225 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="5a95a425f74314a96f13a2f136992178">
-        <source>Share</source>
-        <target>Compartir</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="cbe55e77ffa67d13322eb1ce7d22f1ba">
-        <source>Choose file</source>
-        <target>Elija el archivo</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="94966d90747b97d1f0f206c98a8b1ac3">
-        <source>Send</source>
-        <target>Enviar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="6ff063fbc860a79759a7369ac32cee22">
-        <source>Checkout</source>
-        <target>Verificar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="57c1fee9db05c07a96c99d9260d38d6d">
-        <source>View cart</source>
-        <target>Ver carrito</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="4de8cf7f71c90bd5276f3eeb67da1803">
-        <source>remove from cart</source>
-        <target>eliminar del carrito</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="1063e38cb53d94d386f21227fcd84717">
-        <source>Remove</source>
-        <target>Eliminar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b26917587d98330d93f87808fc9d7267">
-        <source>Subscribe</source>
-        <target>Suscribirme</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="e0aa021e21dddbd6d8cecec71e9cf564">
-        <source>OK</source>
-        <target>OK</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="2d0f6b8300be19cf35e89e66f0677f95">
-        <source>Add to cart</source>
-        <target>Añadir a la cesta</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="d7778d0c64b6ba21494c97f77a66885a">
-        <source>Filter</source>
-        <target>Filtrar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="f73cc399b5ce12735a57f03414f09ef9">
-        <source>Subcategories</source>
-        <target>Subcategorías</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="81aa2078d1eceede831b2976dbf32e62">
-        <source>Clear all</source>
-        <target>Borrar todo</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b24344b6a2c4a94c9b0d0ebd4602aeca">
-        <source>View more</source>
-        <target>Ver más</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="c61ab4204f572e9b3aa84a040e0dab31">
-        <source>View products</source>
-        <target>Ver productos</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="fc35ec973f5b3a16f0d4b009834f39a6">
-        <source>Remove Image</source>
-        <target>Eliminar imagen</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="f346acd7aed7508df8fec4da8353c81e">
-        <source>Save Customization</source>
-        <target>Guardar personalización</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="5015f5f6af450ad9492bc74f1059244b">
-        <source>Filter By</source>
-        <target>Filtrar por</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="694e8d1f2ee056f98ee488bdc4982d73">
-        <source>Quantity</source>
-        <target>Cantidad</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="300225ee958b6350abc51805dab83c24">
-        <source>Continue shopping</source>
-        <target>Seguir comprando</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
-        <source>Save</source>
-        <target>Guardar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="ea4788705e6873b424c65e91c2846b19">
-        <source>Cancel</source>
-        <target>Cancelar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="a0bfb8e59e6c13fc8d990781f77694fe">
-        <source>Continue</source>
-        <target>Continuar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="961f2247a2070bedff9f9cd8d64e2650">
-        <source>Choose</source>
-        <target>Elegir</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="7dce122004969d56ae2e0245cb754d35">
-        <source>Edit</source>
-        <target>Editar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="9b2e929c12895ebb018864f07f31b665">
-        <source>Pago online seguro</source>
-        <target>Pago online seguro</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="5298e744134c8a32acca75f6f6fb502d">
-        <source>I am already a customer</source>
-        <target>Soy cliente</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="e512598333dceaaaf22889038b89a4a4">
-        <source>add new address</source>
-        <target>agregar nueva dirección</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="de95b43bceeb4b998aed4aed5cef1ae7">
-        <source>edit</source>
-        <target>editar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="ec211f7c20af43e742bf2570c3cb84f9">
-        <source>Add</source>
-        <target>Añadir</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="bffe9a3c9a7e00ba00a11749e022d911">
-        <source>Log in</source>
-        <target>Iniciar sesión</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="f2a6c498fb90ee345d997f888fce3b18">
-        <source>Delete</source>
-        <target>Borrar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="733ae3eecadd5777cea5ce9a32379d7a">
-        <source>Send reset link</source>
-        <target>Enviar enlace de reinicio</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="463e58c1d35fb5a4a8d717c99a60d257">
-        <source>Back to login</source>
-        <target>Volver al login</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="c87aacf5673fada1108c9f809d354311">
-        <source>Sign out</source>
-        <target>Desconectar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="06933067aafd48425d67bcb01bba5cb6">
-        <source>Update</source>
-        <target>Actualizar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="332c80b1838dc515f5031e09da3b7f3f">
-        <source>Reorder</source>
-        <target>Volver a pedir</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b6d4223e60986fa4c9af77ee5f7149c5">
-        <source>Sign in</source>
-        <target>Iniciar sesión</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="daf51d7d9e10e6a469434ae548d9a173">
-        <source>Print out</source>
-        <target>Imprimir</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="8f1e77e0d2be21da93cd4d9a939148f7">
-        <source>Change Password</source>
-        <target>Cambia la contraseña</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="95e6faaba5e8b016e5f9bcf5ea6c8270">
-        <source>Back to Login</source>
-        <target>Volver al login</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="f21369b767ee4ec07862050783c33c7c">
-        <source>Download invoice</source>
-        <target>Descargar factura</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="fbea857431ef9a3b3164302204588d77">
-        <source>Report incident</source>
-        <target>Reportar incidente</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="63059bd7ead52adb8df8109e587ee519">
-        <source>Make a refund</source>
-        <target>Devolver</target>
+      <trans-unit id="1ed94d36d645c22f77807b47707e309b">
+        <source>Order detail</source>
+        <target>Detalle del pedido</target>
         <note>Line: </note>
       </trans-unit>
       <trans-unit id="5144a9adfce5a7d475bb8194a4a310a5">
@@ -227,9 +12,224 @@
         <target>Crear nueva dirección</target>
         <note>Line: </note>
       </trans-unit>
-      <trans-unit id="1ed94d36d645c22f77807b47707e309b">
-        <source>Order detail</source>
-        <target>Detalle del pedido</target>
+      <trans-unit id="63059bd7ead52adb8df8109e587ee519">
+        <source>Make a refund</source>
+        <target>Devolver</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fbea857431ef9a3b3164302204588d77">
+        <source>Report incident</source>
+        <target>Reportar incidente</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f21369b767ee4ec07862050783c33c7c">
+        <source>Download invoice</source>
+        <target>Descargar factura</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="95e6faaba5e8b016e5f9bcf5ea6c8270">
+        <source>Back to Login</source>
+        <target>Volver al login</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="8f1e77e0d2be21da93cd4d9a939148f7">
+        <source>Change Password</source>
+        <target>Cambia la contraseña</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="daf51d7d9e10e6a469434ae548d9a173">
+        <source>Print out</source>
+        <target>Imprimir</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b6d4223e60986fa4c9af77ee5f7149c5">
+        <source>Sign in</source>
+        <target>Iniciar sesión</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="332c80b1838dc515f5031e09da3b7f3f">
+        <source>Reorder</source>
+        <target>Volver a pedir</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="06933067aafd48425d67bcb01bba5cb6">
+        <source>Update</source>
+        <target>Actualizar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c87aacf5673fada1108c9f809d354311">
+        <source>Sign out</source>
+        <target>Desconectar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="463e58c1d35fb5a4a8d717c99a60d257">
+        <source>Back to login</source>
+        <target>Volver al login</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="733ae3eecadd5777cea5ce9a32379d7a">
+        <source>Send reset link</source>
+        <target>Enviar enlace de reinicio</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f2a6c498fb90ee345d997f888fce3b18">
+        <source>Delete</source>
+        <target>Borrar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bffe9a3c9a7e00ba00a11749e022d911">
+        <source>Log in</source>
+        <target>Iniciar sesión</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ec211f7c20af43e742bf2570c3cb84f9">
+        <source>Add</source>
+        <target>Añadir</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="de95b43bceeb4b998aed4aed5cef1ae7">
+        <source>edit</source>
+        <target>editar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e512598333dceaaaf22889038b89a4a4">
+        <source>add new address</source>
+        <target>agregar nueva dirección</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5298e744134c8a32acca75f6f6fb502d">
+        <source>I am already a customer</source>
+        <target>Soy cliente</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9b2e929c12895ebb018864f07f31b665">
+        <source>Pago online seguro</source>
+        <target>Pago online seguro</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7dce122004969d56ae2e0245cb754d35">
+        <source>Edit</source>
+        <target>Editar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="961f2247a2070bedff9f9cd8d64e2650">
+        <source>Choose</source>
+        <target>Elegir</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a0bfb8e59e6c13fc8d990781f77694fe">
+        <source>Continue</source>
+        <target>Continuar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ea4788705e6873b424c65e91c2846b19">
+        <source>Cancel</source>
+        <target>Cancelar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
+        <source>Save</source>
+        <target>Guardar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="300225ee958b6350abc51805dab83c24">
+        <source>Continue shopping</source>
+        <target>Seguir comprando</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="694e8d1f2ee056f98ee488bdc4982d73">
+        <source>Quantity</source>
+        <target>Cantidad</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5015f5f6af450ad9492bc74f1059244b">
+        <source>Filter By</source>
+        <target>Filtrar por</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f346acd7aed7508df8fec4da8353c81e">
+        <source>Save Customization</source>
+        <target>Guardar personalización</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fc35ec973f5b3a16f0d4b009834f39a6">
+        <source>Remove Image</source>
+        <target>Eliminar imagen</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c61ab4204f572e9b3aa84a040e0dab31">
+        <source>View products</source>
+        <target>Ver productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b24344b6a2c4a94c9b0d0ebd4602aeca">
+        <source>View more</source>
+        <target>Ver más</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="81aa2078d1eceede831b2976dbf32e62">
+        <source>Clear all</source>
+        <target>Borrar todo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f73cc399b5ce12735a57f03414f09ef9">
+        <source>Subcategories</source>
+        <target>Subcategorías</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d7778d0c64b6ba21494c97f77a66885a">
+        <source>Filter</source>
+        <target>Filtrar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2d0f6b8300be19cf35e89e66f0677f95">
+        <source>Add to cart</source>
+        <target>Añadir a la cesta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e0aa021e21dddbd6d8cecec71e9cf564">
+        <source>OK</source>
+        <target>OK</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b26917587d98330d93f87808fc9d7267">
+        <source>Subscribe</source>
+        <target>Suscribirme</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1063e38cb53d94d386f21227fcd84717">
+        <source>Remove</source>
+        <target>Eliminar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4de8cf7f71c90bd5276f3eeb67da1803">
+        <source>remove from cart</source>
+        <target>eliminar del carrito</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="57c1fee9db05c07a96c99d9260d38d6d">
+        <source>View cart</source>
+        <target>Ver carrito</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6ff063fbc860a79759a7369ac32cee22">
+        <source>Checkout</source>
+        <target>Verificar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="94966d90747b97d1f0f206c98a8b1ac3">
+        <source>Send</source>
+        <target>Enviar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="cbe55e77ffa67d13322eb1ce7d22f1ba">
+        <source>Choose file</source>
+        <target>Elija el archivo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5a95a425f74314a96f13a2f136992178">
+        <source>Share</source>
+        <target>Compartir</target>
         <note>Line: </note>
       </trans-unit>
     </body>

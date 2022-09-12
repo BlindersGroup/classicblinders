@@ -1,130 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="bafd7322c6e97d25b6299b5d6fe8920b">
-        <source>No</source>
-        <target>No</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="93cba07454f06a4a960172bbd6e2a435">
-        <source>Yes</source>
-        <target>Si</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="e16d68660fd4cb4137bc754becfcb5e9">
-        <source>verified opinion</source>
-        <target>opinión verificada</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="28b3b1e564a00f572c5d4e21da986d49">
-        <source>Report abuse</source>
-        <target>Reportar abuso</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="926d083c719119e1a02ccab444ebb2bc">
-        <source>Sorry, your review appreciation cannot be sent.</source>
-        <target>Lo sentimos, no se puede enviar su apreciación de revisión.</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="9a2fa15ec74c5fdad04227a184425637">
-        <source>Sorry, your abuse report cannot be sent.</source>
-        <target>Lo sentimos, no se puede enviar su informe de abuso.</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="7e11390c7fb0e40d22e5e1e7177648b2">
-        <source>Opiniones del producto</source>
-        <target>Opiniones del producto</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="8413c683b4b27cc3f4dbd4c90329d8ba">
-        <source>Comments</source>
-        <target>Comentarios</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="7966126831926ad29c528b239d69f855">
-        <source>Write your review</source>
-        <target>Escribe tu reseña</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="71e8650db4e9d91dedc7ddf8b0dd2c21">
-        <source>Your review appreciation cannot be sent</source>
-        <target>No se puede enviar su apreciación de revisión</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="49e1ec421718259de522cdd347e5bba6">
-        <source>Report comment</source>
-        <target>Reportar comentario</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="ab51a81c76d95ddc762194d58ec5db63">
-        <source>Are you sure that you want to report this comment?</source>
-        <target>¿Estás seguro de que quieres denunciar este comentario?</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="1e1669fa3b08541f2e785fb96309df65">
-        <source>Report sent</source>
-        <target>Reporte enviado</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="2b15bb3a34368bc47f59833e7e6ef09b">
-        <source>Your report has been submitted and will be considered by a moderator.</source>
-        <target>Su informe ha sido enviado y será considerado por un moderador.</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="40273f71e8d680ae64c2ac1d6026d8b3">
-        <source>Your report cannot be sent</source>
-        <target>Su informe no puede ser enviado</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="101d699ab80f40c7110be34095759b08">
-        <source>Sorry, your review cannot be posted.</source>
-        <target>Lo sentimos, tu reseña no puede ser publicada.</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b78a3223503896721cca1303f776159b">
-        <source>Title</source>
-        <target>Título</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="221e705c06e231636fdbccfdd14f4d5c">
-        <source>Your name</source>
-        <target>Su nombre</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="457dd55184faedb7885afd4009d70163">
-        <source>Review</source>
-        <target>Revisar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="70397c4b252a5168c5ec003931cea215">
-        <source>Required fields</source>
-        <target>Campos requeridos</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="ea4788705e6873b424c65e91c2846b19">
-        <source>Cancel</source>
-        <target>Cancelar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="94966d90747b97d1f0f206c98a8b1ac3">
-        <source>Send</source>
-        <target>Enviar</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b20968d9aecd2d075519992e9e2f1ffe">
-        <source>Your comment has been submitted and will be available once approved by a moderator.</source>
-        <target>Su comentario ha sido enviado y estará disponible una vez que sea aprobado por un moderador.</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="9a2ccd41653469a8bd94fbb84b271a14">
-        <source>Your comment has been added!</source>
-        <target>¡Tu comentario ha sido agregado!</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b0e34b92ce3d4073d645119d68c5d551">
-        <source>Review sent</source>
-        <target>Reseña enviada</target>
+      <trans-unit id="e0aa021e21dddbd6d8cecec71e9cf564">
+        <source>OK</source>
+        <target>OK</target>
         <note>Line: </note>
       </trans-unit>
       <trans-unit id="ffe435d2d09dddbaa6927987bc8466a7">
@@ -132,9 +12,129 @@
         <target>Tu reseña no puede ser enviada</target>
         <note>Line: </note>
       </trans-unit>
-      <trans-unit id="e0aa021e21dddbd6d8cecec71e9cf564">
-        <source>OK</source>
-        <target>OK</target>
+      <trans-unit id="b0e34b92ce3d4073d645119d68c5d551">
+        <source>Review sent</source>
+        <target>Reseña enviada</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9a2ccd41653469a8bd94fbb84b271a14">
+        <source>Your comment has been added!</source>
+        <target>¡Tu comentario ha sido agregado!</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b20968d9aecd2d075519992e9e2f1ffe">
+        <source>Your comment has been submitted and will be available once approved by a moderator.</source>
+        <target>Su comentario ha sido enviado y estará disponible una vez que sea aprobado por un moderador.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="94966d90747b97d1f0f206c98a8b1ac3">
+        <source>Send</source>
+        <target>Enviar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ea4788705e6873b424c65e91c2846b19">
+        <source>Cancel</source>
+        <target>Cancelar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="70397c4b252a5168c5ec003931cea215">
+        <source>Required fields</source>
+        <target>Campos requeridos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="457dd55184faedb7885afd4009d70163">
+        <source>Review</source>
+        <target>Revisar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="221e705c06e231636fdbccfdd14f4d5c">
+        <source>Your name</source>
+        <target>Su nombre</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b78a3223503896721cca1303f776159b">
+        <source>Title</source>
+        <target>Título</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="101d699ab80f40c7110be34095759b08">
+        <source>Sorry, your review cannot be posted.</source>
+        <target>Lo sentimos, tu reseña no puede ser publicada.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="40273f71e8d680ae64c2ac1d6026d8b3">
+        <source>Your report cannot be sent</source>
+        <target>Su informe no puede ser enviado</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2b15bb3a34368bc47f59833e7e6ef09b">
+        <source>Your report has been submitted and will be considered by a moderator.</source>
+        <target>Su informe ha sido enviado y será considerado por un moderador.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1e1669fa3b08541f2e785fb96309df65">
+        <source>Report sent</source>
+        <target>Reporte enviado</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ab51a81c76d95ddc762194d58ec5db63">
+        <source>Are you sure that you want to report this comment?</source>
+        <target>¿Estás seguro de que quieres denunciar este comentario?</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="49e1ec421718259de522cdd347e5bba6">
+        <source>Report comment</source>
+        <target>Reportar comentario</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="71e8650db4e9d91dedc7ddf8b0dd2c21">
+        <source>Your review appreciation cannot be sent</source>
+        <target>No se puede enviar su apreciación de revisión</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7966126831926ad29c528b239d69f855">
+        <source>Write your review</source>
+        <target>Escribe tu reseña</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="8413c683b4b27cc3f4dbd4c90329d8ba">
+        <source>Comments</source>
+        <target>Comentarios</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7e11390c7fb0e40d22e5e1e7177648b2">
+        <source>Opiniones del producto</source>
+        <target>Opiniones del producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9a2fa15ec74c5fdad04227a184425637">
+        <source>Sorry, your abuse report cannot be sent.</source>
+        <target>Lo sentimos, no se puede enviar su informe de abuso.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="926d083c719119e1a02ccab444ebb2bc">
+        <source>Sorry, your review appreciation cannot be sent.</source>
+        <target>Lo sentimos, no se puede enviar su apreciación de revisión.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="28b3b1e564a00f572c5d4e21da986d49">
+        <source>Report abuse</source>
+        <target>Reportar abuso</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e16d68660fd4cb4137bc754becfcb5e9">
+        <source>verified opinion</source>
+        <target>opinión verificada</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="93cba07454f06a4a960172bbd6e2a435">
+        <source>Yes</source>
+        <target>Si</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bafd7322c6e97d25b6299b5d6fe8920b">
+        <source>No</source>
+        <target>No</target>
         <note>Line: </note>
       </trans-unit>
     </body>
