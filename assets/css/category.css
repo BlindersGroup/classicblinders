@@ -322,9 +322,14 @@
   height: auto !important;
   font-size: 1rem; }
 
-#full-column .dbcategorydesc p {
-  font-size: 15px;
-  line-height: 24px; }
+#full-column .dbcategorydesc {
+  background-color: inherit !important; }
+  #full-column .dbcategorydesc .title {
+    font-size: 26px;
+    line-height: 34px; }
+  #full-column .dbcategorydesc p {
+    font-size: 15px;
+    line-height: 24px; }
 
 @media (max-width: 575px) {
   .products-selection .filter-button {

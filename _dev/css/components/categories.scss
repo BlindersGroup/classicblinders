@@ -485,9 +485,18 @@
   font-size: 1rem;
 }
 
-#full-column .dbcategorydesc p {
-  font-size: $font-size-p2;
-  line-height: $line-height-p2;
+#full-column .dbcategorydesc {
+  background-color: inherit !important;
+
+  .title {
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
+  }
+
+  p {
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
+  }
 }
 
 @include media-breakpoint-down(xs) {

@@ -24,6 +24,6 @@
 *}
 
 <div class="dbcategorydesc mt-50">
-    <p class="h4 title">{l s='Más información sobre' d='Modules.Dbcategorydesc.Shop'} {$category}</p>
+    <p class="h3 title">{l s='Más información sobre' d='Modules.Dbcategorydesc.Shop'} {$category}</p>
     {$large_desc nofilter}
 </div>
