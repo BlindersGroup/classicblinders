@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="bbaff12800505b22a853e8b7f4eb6a22">
+        <source>Contact</source>
+        <target>Contact</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ed82be43bd725fba3ec93d5ead1909c9">
+        <source>Datos personales</source>
+        <target>Datos personales</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="38b1e8c14563b36dd98f59f02db594ce">
+        <source>Direcciones</source>
+        <target>Direcciones</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="54fdad34ca87af3574893b8a49712f99">
+        <source>Mis pedidos</source>
+        <target>Mis pedidos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9213e8710abf1c313845a9d18d90a95f">
+        <source>Mi cuenta</source>
+        <target>Mi cuenta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4d1159b637730361abc7f2b0a3a9e368">
+        <source>Personal area</source>
+        <target>Personal area</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="aa966585d8fb96a833fcbcfe0121bf21">
+        <source>Categorias</source>
+        <target>Categorias</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d93d49eca56d63c3c684f4c38ec04bf5">
+        <source>Bienvenido</source>
+        <target>Bienvenido</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3618942fc64b05d026766deb89fbcdba">
+        <source>Nuestro catálogo</source>
+        <target>Nuestro catálogo</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
