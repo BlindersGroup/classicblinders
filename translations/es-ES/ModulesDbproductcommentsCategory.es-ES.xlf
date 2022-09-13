@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="41a9cee9d7611bab66407a136de6d2b4">
-        <source>opiniones verificadas</source>
-        <target>opiniones verificadas</target>
-        <note>Line: </note>
-      </trans-unit>
       <trans-unit id="9cfefed8fb9497baa5cd519d7d2bb5d7">
         <source>en</source>
         <target>en</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="41a9cee9d7611bab66407a136de6d2b4">
+        <source>opiniones verificadas</source>
+        <target>opiniones verificadas</target>
         <note>Line: </note>
       </trans-unit>
     </body>

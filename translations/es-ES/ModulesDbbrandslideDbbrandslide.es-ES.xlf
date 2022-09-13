@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="769c43cf14f57c35eb369baf90a71d25">
-        <source>Principales marcas</source>
-        <target>Principales marcas</target>
-        <note>Line: </note>
-      </trans-unit>
       <trans-unit id="115dbd02b7df53197a36fd3489031acd">
         <source>Nuestras marcas</source>
         <target>Nuestras marcas</target>

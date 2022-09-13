@@ -1,75 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="c7892ebbb139886662c6f2fc8c450710">
-        <source>Subject</source>
-        <target>Asunto</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="b357b524e740bc85b9790a0712d84a30">
-        <source>Email address</source>
-        <target>Dirección de correo electrónico</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="5d4710f9a8250b13164a82c94d5b00d1">
-        <source>Order reference</source>
-        <target>Referencia</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="e9cb217697088a98b1937d111d936281">
-        <source>Attachment</source>
-        <target>Archivo adjunto</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="4c2a8fe7eaf24721cc7a9f0175115bd4">
-        <source>Message</source>
-        <target>Mensaje</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="198584454b0ce1101ff5b50323325aa8">
-        <source>Your email address</source>
-        <target>Su dirección de correo electrónico</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="1625e29c02062efe5dbc42c3efeeebc4">
-        <source>-- please choose --</source>
-        <target>-- seleccionar opción --</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="93332134fd11cffbe680dd8afaa521fc">
-        <source>-- day --</source>
-        <target>-- día --</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="9180b4d5ab8103f244c2d4fd661934e2">
-        <source>-- month --</source>
-        <target>-- mes --</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="ae1cc541ba45ce670ea7e0e3a30e3205">
-        <source>-- year --</source>
-        <target>-- año --</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="deb10517653c255364175796ace3553f">
-        <source>Product</source>
-        <target>Producto</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="63c193f613dd3d9d6c16da7678efda2a">
-        <source>Order Reference:</source>
-        <target>Referencia:</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="6a1e265f92087bb6dd18194833fe946b">
-        <source>Email:</source>
-        <target>Email:</target>
-        <note>Line: </note>
-      </trans-unit>
-      <trans-unit id="3544848f820b9d94a3f3871a382cf138">
-        <source>New password</source>
-        <target>Nueva contraseña</target>
+      <trans-unit id="3b6bf3c0c07b89dc86f415117a1f0b80">
+        <source>Set your password:</source>
+        <target>Establece tu contraseña:</target>
         <note>Line: </note>
       </trans-unit>
       <trans-unit id="f4d1ea475eaa85102e2b4e6d95da84bd">
@@ -77,9 +12,74 @@
         <target>Confirmación</target>
         <note>Line: </note>
       </trans-unit>
-      <trans-unit id="3b6bf3c0c07b89dc86f415117a1f0b80">
-        <source>Set your password:</source>
-        <target>Establece tu contraseña:</target>
+      <trans-unit id="3544848f820b9d94a3f3871a382cf138">
+        <source>New password</source>
+        <target>Nueva contraseña</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6a1e265f92087bb6dd18194833fe946b">
+        <source>Email:</source>
+        <target>Email:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="63c193f613dd3d9d6c16da7678efda2a">
+        <source>Order Reference:</source>
+        <target>Referencia:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="deb10517653c255364175796ace3553f">
+        <source>Product</source>
+        <target>Producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ae1cc541ba45ce670ea7e0e3a30e3205">
+        <source>-- year --</source>
+        <target>-- año --</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9180b4d5ab8103f244c2d4fd661934e2">
+        <source>-- month --</source>
+        <target>-- mes --</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="93332134fd11cffbe680dd8afaa521fc">
+        <source>-- day --</source>
+        <target>-- día --</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1625e29c02062efe5dbc42c3efeeebc4">
+        <source>-- please choose --</source>
+        <target>-- seleccionar opción --</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="198584454b0ce1101ff5b50323325aa8">
+        <source>Your email address</source>
+        <target>Su dirección de correo electrónico</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4c2a8fe7eaf24721cc7a9f0175115bd4">
+        <source>Message</source>
+        <target>Mensaje</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e9cb217697088a98b1937d111d936281">
+        <source>Attachment</source>
+        <target>Archivo adjunto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5d4710f9a8250b13164a82c94d5b00d1">
+        <source>Order reference</source>
+        <target>Referencia</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b357b524e740bc85b9790a0712d84a30">
+        <source>Email address</source>
+        <target>Dirección de correo electrónico</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c7892ebbb139886662c6f2fc8c450710">
+        <source>Subject</source>
+        <target>Asunto</target>
         <note>Line: </note>
       </trans-unit>
     </body>

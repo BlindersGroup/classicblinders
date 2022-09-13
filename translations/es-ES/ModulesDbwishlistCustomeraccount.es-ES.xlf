@@ -2,9 +2,9 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="61b70de75a8183d40cb19762921259c2">
-        <source>Más información sobre</source>
-        <target>Más información sobre</target>
+      <trans-unit id="d7af6473070641b7dab2a16d309065ca">
+        <source>Mis favoritos</source>
+        <target>Mis favoritos</target>
         <note>Line: </note>
       </trans-unit>
     </body>

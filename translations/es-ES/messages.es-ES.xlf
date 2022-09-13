@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="fa2e30761ed9ed25070ee4496b8eb71e">
+        <source>Mis opiniones</source>
+        <target>Mis opiniones</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9a636c834b1031d163331fd7e8c0c8fb">
+        <source>Envios gratis a partir de</source>
+        <target>Envios gratis a partir de</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4df397632379c07b8f8f1a3eed05aacd">
+        <source>producto(s)</source>
+        <target>producto(s)</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5f02f0889301fd7be1ac972c11bf3e7d">
+        <source>de</source>
+        <target>de</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2da756ea97c252ba94f860e539a2f8f9">
+        <source>Resultados:</source>
+        <target>Resultados:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b803aaf9488002165f333f9753f9705e">
+        <source>Teléfono de contacto:</source>
+        <target>Teléfono de contacto:</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
