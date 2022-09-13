@@ -2,6 +2,11 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
+      <trans-unit id="010725dd136c913eed2ec1e23476fd13">
+        <source>Categorías</source>
+        <target>Categorías</target>
+        <note>Line: </note>
+      </trans-unit>
       <trans-unit id="bbaff12800505b22a853e8b7f4eb6a22">
         <source>Contact</source>
         <target>Contact</target>

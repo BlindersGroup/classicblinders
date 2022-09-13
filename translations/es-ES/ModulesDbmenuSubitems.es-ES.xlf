@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
       <trans-unit id="b711da45c8a1db46980c80a63b37103c">
         <source>Ver todos</source>

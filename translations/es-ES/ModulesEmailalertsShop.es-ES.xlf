@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="546e02eaa9a986c83cc347e273269f2c">
-        <source>Notify me when available</source>
-        <target>Avisarme cuando esté disponible</target>
-        <note>Line: </note>
-      </trans-unit>
       <trans-unit id="67135a14d3ac4f1369633dd006d6efec">
         <source>your@email.com</source>
         <target>your@email.com</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="546e02eaa9a986c83cc347e273269f2c">
+        <source>Notify me when available</source>
+        <target>Avisarme cuando esté disponible</target>
         <note>Line: </note>
       </trans-unit>
     </body>
