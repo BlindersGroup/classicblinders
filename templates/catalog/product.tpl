@@ -94,22 +94,32 @@
                         lazyLoad: 'sequential',
                         arrows: true,
                         breakpoints: {
-                            600: {
-                                perPage: 2,
+                            575: {
+                                perPage: 1,
                                 padding: {
-                                    right: '2rem',
+                                    right: '30%',
                                 },
                                 arrows: false,
+                                gap: '16px',
                             },
-                            800: {
+                            767: {
                                 perPage: 2,
                                 padding: {
-                                    right: '2rem',
+                                    right: '15%',
                                 },
                                 arrows: false,
+                                gap: '16px',
+                            },
+                            992: {
+                                perPage: 3,
+                                padding: {
+                                    right: '10%',
+                                },
+                                arrows: false,
+                                gap: '16px',
                             },
                             1200: {
-                                perPage: 4,
+                                perPage: 5,
                             }
                         },
                     } ).mount();
