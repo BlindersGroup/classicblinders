@@ -108,6 +108,19 @@ ul {
   list-style: none;
 }
 
+.page-cms .page-content,
+.product-description,
+#category-description,
+.dbcategorydesc,
+#manufacturer-short_description,
+#manufacturer-description,
+#custom-text {
+  ul {
+    padding-left: 30px;
+    list-style: disc;
+  }
+}
+
 a {
   color: var(--color_link);
 

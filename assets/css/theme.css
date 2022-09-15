@@ -304,6 +304,16 @@ ul {
   padding-left: 0;
   list-style: none; }
 
+.page-cms .page-content ul,
+.product-description ul,
+#category-description ul,
+.dbcategorydesc ul,
+#manufacturer-short_description ul,
+#manufacturer-description ul,
+#custom-text ul {
+  padding-left: 30px;
+  list-style: disc; }
+
 a {
   color: var(--color_link); }
   a:hover {
