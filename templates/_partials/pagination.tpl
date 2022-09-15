@@ -33,7 +33,12 @@
             <div class="progress-bar" role="progressbar" style="width: {$pagination.items_shown_to * 100 / $pagination.total_items}%" aria-valuenow="{$pagination.items_shown_to * 100 / $pagination.total_items}" aria-valuemin="0" aria-valuemax="100"></div>
         </div>*}
         {if ($pagination.items_shown_to * 100 / $pagination.total_items) < 100}
-            <div id="btn_inifinitescroll" class="btn btn-secondary btn_inifinitescroll" data-pag="2">
+            {if isset($smarty.get.page)}
+                {assign var="data_pag" value=$smarty.get.page+1}
+            {else}
+                {assign var="data_pag" value=2}
+            {/if}
+            <div id="btn_inifinitescroll" class="btn btn-secondary btn_inifinitescroll" data-pag="{$data_pag}">
                 <span class="text">{l s='Cargar más' d='Shop.Theme.Catalog'}</span>
             </div>
         {/if}
