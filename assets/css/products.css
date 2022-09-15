@@ -263,7 +263,7 @@
   content: "\e15b"; }
 .bootstrap-touchspin #quantity_wanted,
 .bootstrap-touchspin #quantity_wanted_miniature {
-  left: 26px;
+  left: 25px;
   width: 50px;
   height: 44px !important;
   padding: 0;
@@ -289,7 +289,7 @@
     border-top: 1px solid var(--color_font);
     border-bottom: 1px solid var(--color_font);
     border-right: 1px solid var(--color_font);
-    left: 27px; }
+    left: 26px; }
     .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up > i {
       font-size: 13px !important; }
 
