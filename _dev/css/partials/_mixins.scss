@@ -8,10 +8,10 @@
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
-      border: 1px solid var(--seach_color);
+      border: 1px solid $gris_300;
       border-radius: 50px;
-      font-size: $font-size-p2;
-      line-height: $line-height-p2;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
 
       &:focus {
         outline: 0;

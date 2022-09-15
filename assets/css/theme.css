@@ -2454,10 +2454,10 @@ table {
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
-      border: 1px solid var(--seach_color);
+      border: 1px solid #E0E0E0;
       border-radius: 50px;
-      font-size: 15px;
-      line-height: 24px; }
+      font-size: 13px;
+      line-height: 21px; }
       .block_newsletter > form input[type="text"]:focus {
         outline: 0;
         color: var(--color_font);
@@ -2552,10 +2552,10 @@ table {
       min-width: inherit;
       color: var(--seach_color);
       background-color: var(--search_bk);
-      border: 1px solid var(--seach_color);
+      border: 1px solid #E0E0E0;
       border-radius: 50px;
-      font-size: 15px;
-      line-height: 24px; }
+      font-size: 13px;
+      line-height: 21px; }
       .search-widget > form input[type="text"]:focus {
         outline: 0;
         color: var(--color_font);
