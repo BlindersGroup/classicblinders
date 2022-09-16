@@ -1263,6 +1263,14 @@ table {
   text-align: center;
 }
 
+.dbcategories .cat_home {
+  color: $color_font;
+}
+
+.dbcategories .cat_home:hover {
+  color: $primary-color;
+}
+
 /*** Navigation My Account ***/
 .navigation_account {
   display: flex;

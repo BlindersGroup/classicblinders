@@ -1098,6 +1098,12 @@ table {
   margin-bottom: 0;
   text-align: center; }
 
+.dbcategories .cat_home {
+  color: var(--color_font); }
+
+.dbcategories .cat_home:hover {
+  color: var(--primary_color); }
+
 /*** Navigation My Account ***/
 .navigation_account {
   display: flex;
