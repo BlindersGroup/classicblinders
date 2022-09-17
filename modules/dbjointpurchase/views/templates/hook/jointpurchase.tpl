@@ -19,7 +19,7 @@
 
 <div class="dbjointpurchase_product product_card">
     <div class="dbjointpurchase_header">
-        <span class="h3">{l s='Comprados juntos habitualmente' mod='dbjointpurchase'}</span>
+        <p class="h3 title">{l s='Comprados juntos habitualmente' mod='dbjointpurchase'}</p>
     </div>
     <div class="dbjointpurchase">
         <div class="dbjointpurchase_products">

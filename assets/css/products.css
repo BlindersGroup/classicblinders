@@ -1066,6 +1066,49 @@
     .product_packs_dto .pack_dto.checked > span {
       color: var(--primary_color); }
 
+#product .dbjointpurchase_product .dbjointpurchase {
+  margin-top: 0; }
+  #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products {
+    margin-left: -12px;
+    margin-right: -12px;
+    width: calc(100% + 24px); }
+    #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product {
+      margin: 0 12px;
+      width: calc(25% - 38px);
+      border: 0;
+      border-radius: 0;
+      padding: 16px; }
+      #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .name_product {
+        font-weight: 500; }
+        #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .name_product a {
+          font-weight: 500;
+          color: var(--color_font); }
+          #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .name_product a:hover {
+            text-decoration: none;
+            color: var(--primary_color); }
+      #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .product_prices .price_product {
+        font-size: 20px;
+        line-height: 32px; }
+      #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .product_prices .old_price {
+        color: #939393;
+        font-size: 13px;
+        line-height: 21px; }
+      #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product .product_prices .discount {
+        color: #C81D25;
+        font-size: 13px;
+        line-height: 21px; }
+    #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .icon_more_purchase i {
+      font-size: 20px;
+      padding: 5px 6px;
+      line-height: 20px; }
+  #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_footer .regular_price {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700; }
+  #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_footer .iva {
+    font-size: 13px;
+    line-height: 21px; }
+
 @media (max-width: 1199px) {
   .product-quantity {
     flex-direction: row; }
@@ -1174,7 +1217,15 @@
     flex-direction: row; }
     .product-quantity .qty,
     .product-quantity .add {
-      justify-content: flex-start; } }
+      justify-content: flex-start; }
+
+  #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+    #product .dbjointpurchase_product .dbjointpurchase .dbjointpurchase_products .dbjointpurchase_product {
+      width: 100%;
+      margin: 12px 0; } }
 @media (max-width: 767px) {
   #blockcart-modal .divide-right {
     border-right: none; }

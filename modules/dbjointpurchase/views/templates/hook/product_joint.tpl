@@ -26,7 +26,7 @@
                         <input id="checkjoint" type="checkbox" name="joint[]" value="{$producto.id_product}" checked="">
                         {if $premium == 1}
                         <span class="ps-shown-by-js">
-                            <i class="fa-solid fa-check rtl-no-flip checkbox-checked"></i>
+                            <i class="material-icons rtl-no-flip checkbox-checked"></i>
                         </span>
                         {/if}
                     </span>
@@ -56,7 +56,7 @@
     {if $premium == 1}
         <span class="change_product" data-key="{$i}" data-idproduct="{$producto.id_product}" data-idcategory="{$producto.id_category_default}">
             {l s='Cambiar' mod='dbjointpurchase'}
-            <i class="fa-solid fa-arrow-rotate-right"></i>
+            <i class="material-icons">refresh</i>
         </span>
     {/if}
 {/foreach}
