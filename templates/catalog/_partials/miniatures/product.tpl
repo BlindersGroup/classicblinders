@@ -27,10 +27,10 @@
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
       {block name='product_thumbnail'}
-          <a href="{$product.url}" class="thumbnail product-thumbnail {if $product.images.1 && $custom_generic.second_img == true}multiple_img{/if}">
+          <a href="{$product.url}" class="thumbnail product-thumbnail {if count($product.images) > 1 && $custom_generic.second_img == true}multiple_img{/if}">
           {if $product.cover}
             <img
-                {if $product.images.1 && $custom_generic.second_img == true}
+                {if count($product.images) > 1 && $custom_generic.second_img == true}
                     class="first_img"
                 {/if}
               src="{$product.cover.bySize.home_default.url}"
@@ -41,7 +41,7 @@
               height="{$product.cover.bySize.home_default.height}"
               />
 
-              {if $product.images.1 && $custom_generic.second_img == true}
+              {if count($product.images) > 1 && $custom_generic.second_img == true}
                   <img
                           class="second_img"
                           src="{$product.images.1.bySize.home_default.url}"
