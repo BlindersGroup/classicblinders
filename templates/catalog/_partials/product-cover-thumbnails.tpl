@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="images-container {if $show_product_imgs == 2 && Context::getContext()->isMobile() != 1}images_lateral{/if}">
+<div class="images-container {if $show_product_imgs == 2 && Context::getContext()->isMobile() != 1}images_lateral{/if}" data-numimgs="{count($product.images)}">
 
     {block name='product_cover'}
 

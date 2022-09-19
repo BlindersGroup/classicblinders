@@ -202,89 +202,86 @@ $(document).on('click', '.pack_dto', function(e) {
 });
 
 // imagenes productos
-if(typeof(show_product_imgs) != "undefined" && is_mobile == false && show_product_imgs == 1) {
-  $(document).ready(function () {
-    prestashop.on(
-        'updatedProduct',
-        function (event) {
-          var secondarySlider = new Splide('#splide_images_product_secundary', {
-            fixedWidth: 70,
-            height: 70,
-            gap: 10,
-            cover: true,
-            isNavigation: true,
-            focus: 'left',
-            pagination: false,
-            arrows: false,
-            breakpoints: {
-              '991': {
-                fixedWidth: 50,
-                height: 50,
-              }
-            },
-          }).mount();
+var numimgs = $('.images-container ').data('numimgs');
+if(numimgs > 1) {
+  if (typeof (show_product_imgs) != "undefined" && show_product_imgs == 1) {
+    $(document).ready(function () {
+      prestashop.on(
+          'updatedProduct',
+          function (event) {
+            var secondarySlider = new Splide('#splide_images_product_secundary', {
+              fixedWidth: 70,
+              height: 70,
+              gap: 10,
+              cover: true,
+              isNavigation: true,
+              focus: 'left',
+              pagination: false,
+              arrows: false,
+              breakpoints: {
+                '991': {
+                  fixedWidth: 50,
+                  height: 50,
+                }
+              },
+            }).mount();
 
-          var primarySlider = new Splide('#splide_images_product_miniature', {
-            perPage: 1,
-            pagination: false,
-            arrows: true,
-          });
+            var primarySlider = new Splide('#splide_images_product_miniature', {
+              perPage: 1,
+              pagination: false,
+              arrows: true,
+            });
 
-          primarySlider.sync(secondarySlider).mount();
-        }
-    );
-  });
-} else if(typeof(show_product_imgs) != "undefined" && is_mobile == false && show_product_imgs == 2) {
-  $(document).ready(function () {
-    prestashop.on(
-        'updatedProduct',
-        function (event) {
-          var secondarySlider = new Splide( '#splide_images_product_secundary_lateral', {
-            direction: 'ttb',
-            height   : '310px',
-            perPage     : 4,
-            pagination: false,
-            arrows: false,
-            gap         : 10,
-            cover       : true,
-            isNavigation: true,
-            fixedWidth  : 70,
-            breakpoints : {
-              '991': {
-                fixedWidth: 50,
-                height   : '245px',
-              }
-            },
-          } ).mount();
+            primarySlider.sync(secondarySlider).mount();
+          }
+      );
+    });
+  } else if (typeof (show_product_imgs) != "undefined" && is_mobile == false && show_product_imgs == 2) {
+    $(document).ready(function () {
+      prestashop.on(
+          'updatedProduct',
+          function (event) {
+            var secondarySlider = new Splide('#splide_images_product_secundary_lateral', {
+              direction: 'ttb',
+              height: '310px',
+              perPage: 4,
+              pagination: false,
+              arrows: false,
+              gap: 10,
+              cover: true,
+              isNavigation: true,
+              fixedWidth: 70,
+              breakpoints: {
+                '991': {
+                  fixedWidth: 50,
+                  height: '245px',
+                }
+              },
+            }).mount();
 
-          var primarySlider = new Splide( '#splide_images_product_miniature_lateral', {
-            perPage     : 1,
-            pagination: false,
-            arrows: true,
-          } ).mount();
+            var primarySlider = new Splide('#splide_images_product_miniature_lateral', {
+              perPage: 1,
+              pagination: false,
+              arrows: true,
+            }).mount();
 
-          primarySlider.sync( secondarySlider ).mount();
-
-          new Splide( '#splide_images_product', {
-            perPage     : 1,
-            pagination: false,
-            arrows: true,
-          } ).mount();
-        }
-    );
-  });
-} else {
-  $(document).ready(function () {
-    prestashop.on(
-        'updatedProduct',
-        function (event) {
-          new Splide('#splide_images_product', {
-            perPage: 1,
-            pagination: false,
-            lazyLoad: 'sequential',
-            arrows: true,
-          }).mount();
-        }
-    );
-  });
+            primarySlider.sync(secondarySlider).mount();
+          }
+      );
+    });
+  } else {
+    $(document).ready(function () {
+      prestashop.on(
+          'updatedProduct',
+          function (event) {
+            new Splide('#splide_images_product', {
+              perPage: 1,
+              pagination: false,
+              lazyLoad: 'sequential',
+              arrows: true,
+            }).mount();
+          }
+      );
+    });
+  }
 }
