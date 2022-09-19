@@ -188,6 +188,13 @@ dependencies:
     - dbmenu
     - dbsearchbar
     - dbwishlist
+    - dbjointpurchase
+    - dbaboutus
+    - dbrecomendation
+    - dbcategories
+    - dbnewproducts
+    - dbbestseller
+    - dbbrandproducts
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
@@ -216,10 +223,16 @@ global_settings:
       - dbmenu
       - dbsearchbar
       - dbwishlist
+      - dbjointpurchase
+      - dbaboutus
+      - dbrecomendation
+      - dbcategories
+      - dbnewproducts
+      - dbbestseller
+      - dbbrandproducts
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
-      - ps_bestsellers
     to_disable:
       - ps_banner
       - ps_specials
@@ -279,11 +292,12 @@ global_settings:
         - dbproductcomments
       displayTop:
         - dbcontactinfo
-        - blockwishlist
+        - dbwishlist
         - ps_customersignin
         - ps_shoppingcart
       displayTopCenter:
         - dbsearchbar
+        - dbcontactinfo
       displayHome:
         - ps_imageslider
         - dbhomecategories
@@ -292,6 +306,7 @@ global_settings:
         - ps_newproducts
         - ps_featuredproducts
         - ps_customtext
+        - dbcategories
       displayFooterBefore:
         - ps_emailsubscription
       displayFooter:
@@ -310,6 +325,7 @@ global_settings:
       displayReassurance:
         - blockreassurance
       displayOrderConfirmation2:
+        - dbcontactinfo
         - ps_featuredproducts
       displayCrossSellingShoppingCart:
         - ps_featuredproducts
@@ -321,13 +337,19 @@ global_settings:
       displayTopCheckout:
         - dbcontactinfo
       displayFooterCategory:
+        - dbproductcomments
+        - dbbestseller
+        - dbnewproducts
         - dbcategorydesc
+        - dbcategories
       displaySidebarContact:
         - dbcontactinfo
       displayBlockLeftFooter:
         - ps_sharebuttons
       displayShoppingCart:
         - dbfreeshipping
+      displayProductFullWidth:
+        - dbjointpurchase
 
   image_types:
     cart_default:
