@@ -127,7 +127,6 @@ $(document).ready(function () {
 
     // Remove products in modal cart
   $(document).on("click", '#blockcart-modal .delete_product', function () {
-      console.log('ent4ra');
       var id_product = $(this).attr('data-idproduct');
       var id_product_attribute = $(this).attr('data-idattribute');
       var token = prestashop.static_token;
