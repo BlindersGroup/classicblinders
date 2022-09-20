@@ -16,6 +16,9 @@
       left: 90px;
       max-width: 340px;
       color: #FFFFFF; }
+      .carousel .carousel-item .caption p, .carousel .carousel-item .caption .page-content.page-cms ul, .page-content.page-cms .carousel .carousel-item .caption ul {
+        font-size: 1rem;
+        color: #FFFFFF; }
       .carousel .carousel-item .caption .caption-description p, .carousel .carousel-item .caption .caption-description .page-content.page-cms ul, .page-content.page-cms .carousel .carousel-item .caption .caption-description ul {
         font-size: 1rem;
         color: #FFFFFF; }
