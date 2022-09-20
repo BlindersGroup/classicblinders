@@ -187,13 +187,19 @@
         background-color: #fff;
 
         .modal-header {
-          height: 50px;
           border-bottom: 0;
+          background-color: $negro;
+          padding: 16px;
+
+          .modal-title {
+            color: $blanco;
+            font-weight: 500;
+          }
         }
 
         .modal-body {
           padding: 0;
-          height: calc(100% - 50px);
+          height: calc(100% - 92px);
         }
       }
     }
@@ -242,6 +248,7 @@
         margin-bottom: 20px;
         border-top: 1px solid $gris_300;
         box-shadow: none;
+        margin-left: 1px;
 
         .ui-slider-horizontal {
           margin-bottom: 20px;

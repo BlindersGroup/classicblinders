@@ -596,11 +596,15 @@
       border-radius: 0;
       background-color: #fff; }
       #filters_category .modal-dialog .modal-content .modal-header {
-        height: 50px;
-        border-bottom: 0; }
+        border-bottom: 0;
+        background-color: #1F1F1F;
+        padding: 16px; }
+        #filters_category .modal-dialog .modal-content .modal-header .modal-title {
+          color: #FFFFFF;
+          font-weight: 500; }
       #filters_category .modal-dialog .modal-content .modal-body {
         padding: 0;
-        height: calc(100% - 50px); }
+        height: calc(100% - 92px); }
   #filters_category #search_filters {
     border: 0;
     max-height: calc(100% - 65px);
@@ -627,7 +631,8 @@
     padding: 0;
     margin-bottom: 20px;
     border-top: 1px solid #E0E0E0;
-    box-shadow: none; }
+    box-shadow: none;
+    margin-left: 1px; }
     #category #left-column #search_filters .ui-slider-horizontal {
       margin-bottom: 20px; }
     #category #left-column #search_filters .facet {
