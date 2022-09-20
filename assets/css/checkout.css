@@ -656,9 +656,7 @@ body#checkout {
     padding-left: 0; } }
 @media (max-width: 767px) {
   body#checkout section.checkout-step.-reachable.-complete h1 .step-edit {
-    float: none;
-    margin-top: 0.25rem;
-    margin-left: 1.25rem; }
+    float: none; }
 
   body#checkout #header .header-nav {
     max-height: none;

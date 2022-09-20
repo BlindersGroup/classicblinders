@@ -1115,8 +1115,6 @@ body#checkout {
 @include media-breakpoint-down(sm) {
   body#checkout section.checkout-step.-reachable.-complete h1 .step-edit {
     float: none;
-    margin-top: 0.25rem;
-    margin-left: $medium-space;
   }
 
   body#checkout {
