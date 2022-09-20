@@ -92,5 +92,11 @@
     #manufacturer #main .manufacturer_short_desc .manufacturer-cover img {
       display: block;
       margin: 0 auto; } }
+@media (max-width: 767px) {
+  #manufacturer #main ul .brand {
+    width: calc(50% - 10px);
+    min-width: auto; }
+    #manufacturer #main ul .brand .brand-img {
+      width: 100%; } }
 
 /*# sourceMappingURL=brands.css.map */
