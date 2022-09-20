@@ -71,6 +71,8 @@
     margin-left: -50vw;
     background-color: #f6f6f6;
     box-shadow: none; }
+    .carousel .carousel-indicators {
+      bottom: -8px; }
     .carousel .carousel-item .caption {
       position: static;
       margin: 1.275rem auto 2.5rem;

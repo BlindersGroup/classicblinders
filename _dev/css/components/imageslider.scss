@@ -134,6 +134,10 @@
     background-color: $gray-light;
     box-shadow: none;
 
+    .carousel-indicators {
+      bottom: -8px;
+    }
+
     .carousel-item {
       .caption {
         position: static;
