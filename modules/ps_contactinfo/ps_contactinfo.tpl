@@ -41,9 +41,9 @@
                 <i class="fa-solid fa-envelope"></i>
                 <div class="data_contact">
                     <span class="text_min">{l s='Enviar un email' d='Shop.Theme.Global'}</span>
-                    <a class="value" href="mailto:{$contact_infos.email}">
+                    <span class="value">
                         {$contact_infos.email}
-                    </a>
+                    </span>
                 </div>
             </div>
             {if $contact_infos.phone}
