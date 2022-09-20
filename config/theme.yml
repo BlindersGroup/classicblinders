@@ -350,6 +350,19 @@ global_settings:
         - dbfreeshipping
       displayProductFullWidth:
         - dbjointpurchase
+      displayProductListReviews:
+        - dbproductcomments
+        - dbwishlist
+      displayFooterProduct:
+        - dbrecomendation
+        - dbproductcomments
+        - dbbrandproducts
+        - dbcategories
+      displayCustomerAccount:
+        - dbproductcomments
+        - dbwishlist
+      displayProductActions:
+        - dbwishlist
 
   image_types:
     cart_default:
