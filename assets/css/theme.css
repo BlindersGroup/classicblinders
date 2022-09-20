@@ -1224,10 +1224,6 @@ table {
   .full_width {
     width: 100vw !important; }
 
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.5rem 0.5rem; }
-
   #full-column {
     padding-top: 25px; } }
 #main .page-header {
