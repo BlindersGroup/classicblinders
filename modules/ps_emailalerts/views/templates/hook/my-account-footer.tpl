@@ -23,8 +23,10 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
+{assign var="url_alert" value="{$urls.base_url}module/ps_emailalerts/account"}
 <li>
-  <a href="{url entity='module' name='ps_emailalerts' controller='account'}" title="{l s='My alerts' d='Shop.Theme.Catalog'}">
-    {l s='My alerts' d='Shop.Theme.Catalog'}
-  </a>
+    <span class="item datatext" datatext="{$url_alert|base64_encode}">
+        <i class="fa-solid fa-bell"></i>
+        {l s='My alerts' d='Shop.Theme.Catalog'}
+    </span>
 </li>
