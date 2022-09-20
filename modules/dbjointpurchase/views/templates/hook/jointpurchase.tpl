@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="productjoint_img">
-                    <img src="{$product.cover.bySize.home_default.url}" loading="lazy" width="{$product.cover.bySize.home_default.width}" height="{$product.cover.bySize.home_default.height}">
+                    <img src="{$product.cover.bySize.home_default.url}" alt="{$product.name}" loading="lazy" width="{$product.cover.bySize.home_default.width}" height="{$product.cover.bySize.home_default.height}">
                 </div>
             </div>
             <div class="icon_more_purchase">

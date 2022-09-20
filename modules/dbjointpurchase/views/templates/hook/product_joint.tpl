@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="productjoint_img">
-        <img src="{$producto.cover.bySize.home_default.url}" loading="lazy" width="{$product.cover.bySize.home_default.width}" height="{$product.cover.bySize.home_default.height}">
+        <img src="{$producto.cover.bySize.home_default.url}" alt="{$producto.name}" loading="lazy" width="{$product.cover.bySize.home_default.width}" height="{$product.cover.bySize.home_default.height}">
     </div>
     {if $premium == 1}
         <span class="change_product" data-key="{$i}" data-idproduct="{$producto.id_product}" data-idcategory="{$producto.id_category_default}">
