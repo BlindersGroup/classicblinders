@@ -24,13 +24,13 @@
  *}
 {block name='brand_miniature_item'}
   <li class="brand">
-    <div class="brand-img"><a href="{$brand.url}"><img src="{$brand.image}" alt="{$brand.name}" loading="lazy"></a></div>
+    <div class="brand-img"><span class="datatext" datatext="{$brand.url|base64_encode}"><img src="{$brand.image}" alt="{$brand.name}" loading="lazy"></span></div>
     <div class="brand-infos">
       <p><a href="{$brand.url}">{$brand.name}</a></p>
     </div>
-    <div class="brand-products">
+    {*<div class="brand-products">
       <a href="{$brand.url}">{$brand.nb_products}</a>
       <a href="{$brand.url}">{l s='View products' d='Shop.Theme.Actions'}</a>
-    </div>
+    </div>*}
   </li>
 {/block}
