@@ -199,9 +199,10 @@ global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
     PS_LABEL_IN_STOCK_PRODUCTS: En stock
-    PS_LABEL_OOS_PRODUCTS_BOA: Fuera de stock
+    PS_LABEL_OOS_PRODUCTS_BOA: En stock
     PS_LABEL_OOS_PRODUCTS_BOD: Fuera de stock
-    PS_LABEL_DELIVERY_TIME_AVAILABLE: 24 - 48 H
+    PS_LABEL_DELIVERY_TIME_AVAILABLE: 24 - 48 h
+    PS_LABEL_DELIVERY_TIME_OOSBOA: 48 - 72 h
     BLOCKSOCIAL_FACEBOOK: https://www.facebook.com/
     BLOCKSOCIAL_TWITTER: https://twitter.com/
     BLOCKSOCIAL_RSS: index.php
