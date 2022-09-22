@@ -220,11 +220,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-right: 15px;
+    margin-right: 16px;
 }
 .dbcontactinfo_top .dbcontactinfo_top_phone .icon,
 .dbcontactinfo_top .dbcontactinfo_top_phone i {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 .dbcontactinfo_top .dbcontactinfo_top_phone .phone_data {
     display: flex;
@@ -233,11 +233,14 @@
 }
 .dbcontactinfo_top .dbcontactinfo_top_phone .phone_data .text {
     font-size: 12px;
+    line-height: 19px;
+    font-weight: 400;
     color: var(--color_font);
 }
 .dbcontactinfo_top .dbcontactinfo_top_phone .phone_data .phone {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
     color: var(--color_font);
 }
 .dbcontactinfo_top .link_wishlist {

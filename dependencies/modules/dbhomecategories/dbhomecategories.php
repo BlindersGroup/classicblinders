@@ -86,7 +86,10 @@ class Dbhomecategories extends Module
             $this->postProcess();
         }
 
-        return $this->renderForm();
+        $iframe = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe.tpl');
+        $iframe_bottom = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe_bottom.tpl');
+
+        return $iframe.$this->renderForm().$iframe_bottom;
     }
 
     /**

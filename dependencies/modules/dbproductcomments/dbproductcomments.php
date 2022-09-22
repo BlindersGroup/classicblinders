@@ -85,6 +85,7 @@ class Dbproductcomments extends Module
             $this->registerHook('displayFooterProduct') &&
             $this->registerHook('displayFooterCategory') &&
             $this->registerHook('actionOrderStatusPostUpdate') &&
+            $this->registerHook('displayCustomerAccount') &&
             $this->registerHook('ModuleRoutes');
 
     }

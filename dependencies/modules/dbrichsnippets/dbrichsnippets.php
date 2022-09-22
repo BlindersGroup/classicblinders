@@ -82,15 +82,10 @@ class Dbrichsnippets extends Module
             $this->postProcess();
         }
 
+        $iframe = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe.tpl');
+        $iframe_bottom = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe_bottom.tpl');
 
-        /*$this->context->smarty->assign(array(
-            'module_dir' => $this->context->link->getBaseLink() . 'modules/dbsitemap/dbsitemap-cron.php',
-            'sitemap' => $this->context->link->getBaseLink() . 'sitemap.xml',
-        ));
-
-        $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');*/
-
-        return $this->renderForm();
+        return $iframe.$this->renderForm().$iframe_bottom;
     }
 
     /**
@@ -279,7 +274,8 @@ class Dbrichsnippets extends Module
     public function hookDisplayHeader()
     {
         $sectionType = Tools::getValue('controller');
-        $id_lang = $this->context->language->id;
+        $context = Context::getContext();
+        $id_lang = $context->language->id;
         $link = new Link();
         $json = '';
 
@@ -432,7 +428,7 @@ class Dbrichsnippets extends Module
 
             $id_producto = (int)Tools::getValue('id_product');
             if($id_producto > 0) {
-                $product = new Product($id_producto, true, $this->context->language->id);
+                $product = new Product($id_producto, true, $id_lang);
                 $valoracion = '';
 
                 // Url del producto
@@ -440,12 +436,12 @@ class Dbrichsnippets extends Module
                 $product_url = $link->getProductLink((int)$id_producto);
 
                 // Categoria del producto
-                $category = new Category($product->id_category_default, $this->context->language->id);
+                $category = new Category($product->id_category_default, $id_lang);
                 $categoria = $category->name;
 
                 // Breadcrumb
                 $categorias = $this->getProductPathForCrumbs((int)$product->id_category_default,
-                    $product->name[$this->context->language->id], true);
+                    $product->name[$id_lang], true);
                 $json .= '
                 <script type="application/ld+json">{
                     "@context":"https://schema.org",
@@ -462,7 +458,7 @@ class Dbrichsnippets extends Module
                     ';
 
                 $categorias = $this->getbreadbrumbcategories($product->id_category_default,
-                    $product->name[$this->context->language->id], 1);
+                    $product->name[$id_lang], 1);
                 $json .= $categorias['json'];
                 $json .= '
                                 {
@@ -480,7 +476,7 @@ class Dbrichsnippets extends Module
                 // Imagen producto
                 $protocol_http = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 || $_SERVER['HTTP_X_FORWARDED_PORT'] == 443) ? "https://" : "http://";
                 $images = [];
-                $imagenes = $product->getImages($this->context->languages->id);
+                $imagenes = $product->getImages($id_lang);
                 foreach($imagenes as $img) {
                     $images[] = $protocol_http.$link->getImageLink(isset($product->link_rewrite) ? $product->link_rewrite : $product->name,
                         (int)$img['id_image'], 'large_default');
@@ -564,7 +560,7 @@ class Dbrichsnippets extends Module
                         "offers": {    		
                             "@type": "offer",
                             "price": "' . $price . '",
-                            "priceCurrency": "' . $this->context->currency->iso_code . '", 
+                            "priceCurrency": "' . $context->currency->iso_code . '", 
                             "itemOffered": "' . str_replace('"', "'", $product->name) . '",
                             "availability": "'.$available.'", 
                             "priceValidUntil": "'.$date_upd.'",

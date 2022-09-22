@@ -4,7 +4,7 @@
         <i class="fa-solid fa-angle-down"></i>
     </span>
     <div class="block_dbcontactinfo">
-        <img src="{$dir_module}views/img/imagen_modal.png" width="120" height="143" loading="lazy">
+        <img src="{$dir_module}views/img/imagen_modal.png" alt="{l s='Contactar' mod='dbcontactinfo'}" width="120" height="143" loading="lazy">
         <div class="data_dbcontactinfo">
             <div class="data_email">
 {*                <i class="fa-solid fa-envelope"></i>*}

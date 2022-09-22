@@ -62,7 +62,7 @@
                     {* Items primarios *}
                     <div class="dbmenu_primary">
                         <div class="dbmenu_category">
-                            <span class="title">{l s='Categorías' mod='dbmenu'}</span>
+                            <span class="title">{l s='Categorias' mod='dbmenu'}</span>
                             {foreach from=$menus item=$menu}
                                 <div class="item">
 

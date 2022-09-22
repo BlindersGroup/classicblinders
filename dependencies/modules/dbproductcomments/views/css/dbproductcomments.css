@@ -303,6 +303,7 @@
     font-weight: 700;
     color: #E0E0E0;
     margin-bottom: 0;
+    text-align: center;
 }
 .row_opinions {
     display: flex;
@@ -614,6 +615,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     max-height: inherit;
+    padding: 0;
 }
 .products_con .product {
     display: flex;
@@ -926,6 +928,9 @@
 }
 #CommentModal .modal-body {
     padding: 48px;
+}
+#CommentModal.modalgeneric .modal-body {
+    padding: 16px;
 }
 #CommentModal .modal-body .close {
     top: 24px;

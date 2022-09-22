@@ -197,7 +197,7 @@ class Dbcontactinfo extends Module
                         'label' => $this->l('Datos de contacto'),
                         'name' => 'DBCONTACTINFO_DISPLAYTOP',
                         'is_bool' => true,
-                        'desc' => $this->l('¿Mostrar telefono y horario en cabecera?'),
+                        'desc' => $this->l('¿Mostrar telefono y horario debajo del buscador?'),
                         'values' => array(
                             array(
                                 'id' => 'active_on',

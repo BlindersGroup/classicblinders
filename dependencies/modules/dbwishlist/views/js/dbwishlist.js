@@ -27,9 +27,13 @@
 */
 
 function saveWishlist(id_product) {
-    var active = $('.dbwishlist_checkbox').is(":checked");
+    if ($('.dbwishlist_checkbox').is(":checked")) {
+        active = 1;
+    } else {
+        active = 0;
+    }
 
-    requestData = {
+        requestData = {
         id_product: id_product,
         active: active,
         action: 'saveWishlist',

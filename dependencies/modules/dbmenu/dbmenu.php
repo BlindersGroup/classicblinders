@@ -44,7 +44,7 @@ class Dbmenu extends Module
 
         $this->name = 'dbmenu';
         $this->tab = 'front_office_features';
-        $this->version = '1.1.1';
+        $this->version = '1.1.3';
         $this->author = 'DevBlinders';
         $this->need_instance = 0;
 

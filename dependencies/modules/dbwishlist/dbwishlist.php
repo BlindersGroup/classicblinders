@@ -94,7 +94,10 @@ class Dbwishlist extends Module
             $this->postProcess();
         }
 
-        return $this->renderForm();
+        $iframe = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe.tpl');
+        $iframe_bottom = $this->context->smarty->fetch($this->local_path.'views/templates/admin/iframe_bottom.tpl');
+
+        return $iframe.$this->renderForm().$iframe_bottom;
     }
 
     /**
@@ -271,6 +274,8 @@ class Dbwishlist extends Module
             $text = $this->l('Debe de estar logueado para poder añadir a favoritos');
         } elseif($action == 'save_wishlist'){
             $text = $this->l('Se ha añadido correctamente a favoritos');
+        } elseif($action == 'delete_wishlist'){
+            $text = $this->l('Se ha eliminado correctamente de favoritos');
         }
 
         $this->smarty->assign(array(
@@ -282,15 +287,16 @@ class Dbwishlist extends Module
 
     public function renderWishlistModal($id_product, $id_customer, $active)
     {
-        if($active == 'false' || $active == 0) {
+        if($active === 'false' || $active == 0) {
             $sql = "DELETE FROM "._DB_PREFIX_."dbwishlist WHERE id_customer = '$id_customer' AND id_product = '$id_product'";
-        } elseif($active == 'true' || $active == 1) {
+            $action = 'delete_wishlist';
+        } elseif($active === 'true' || $active == 1) {
             $sql = "INSERT INTO "._DB_PREFIX_."dbwishlist (id_customer, id_product) VALUES ('$id_customer', '$id_product')";
+            $action = 'save_wishlist';
         }
-
         Db::getInstance()->execute($sql);
 
-        return $this->renderGenericModal('save_wishlist');
+        return $this->renderGenericModal($action);
     }
 
     public function removeWishlist($id_product, $id_customer)
