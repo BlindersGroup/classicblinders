@@ -27,11 +27,18 @@
 {block name='notifications'}{/block}
 
 {block name="left_column"}
-  {include file='customer/_partials/sidebar.tpl'}
+    {if $page.page_name != 'my-account'}
+        {include file='customer/_partials/sidebar.tpl'}
+    {/if}
 {/block}
 
 {block name='content_wrapper'}
-  <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-12 col-lg-9">
+    {if $page.page_name == 'my-account'}
+        <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    {else}
+        <div id="content-wrapper" class="left-column col-xs-12 col-sm-12 col-md-12 col-lg-9">
+    {/if}
+
     {block name='page_content_container'}
       <section id="content" class="page-content">
         {block name='page_content_top'}

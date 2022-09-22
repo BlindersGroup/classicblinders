@@ -1,7 +1,7 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_content'}
-  <h1 class="h1">{l s='Return details' d='Shop.Theme.Customeraccount'}</h1>
+  <h2 class="h2">{l s='Return details' d='Shop.Theme.Customeraccount'}</h2>
   {block name='order_return_infos'}
     <div id="order-return-infos" class="card">
       <div class="card-block">
@@ -12,12 +12,12 @@
             sprintf=['%number%' => $return.return_number, '%date%' => $return.return_date]}
           </strong>
         </p>
-        <p>{l s='We have logged your return request.' d='Shop.Theme.Customeraccount'}</p>
-        <p>{l
+        <p class="p2">{l s='We have logged your return request.' d='Shop.Theme.Customeraccount'}</p>
+        <p class="p2">{l
           s='Your package must be returned to us within %number% days of receiving your order.'
           d='Shop.Theme.Customeraccount'
           sprintf=['%number%' => $configuration.number_of_days_for_return]}</p>
-        <p>
+        <p class="p2">
           {* [1][/1] is for a HTML tag. *}
           {l
             s='The current status of your merchandise return is: [1] %status% [/1]'
@@ -29,7 +29,7 @@
             ]
           }
         </p>
-        <p>{l s='List of items to be returned:' d='Shop.Theme.Customeraccount'}</p>
+        <p class="p2">{l s='List of items to be returned:' d='Shop.Theme.Customeraccount'}</p>
         <table class="table table-striped table-bordered">
           <thead class="thead-default">
             <tr>
@@ -101,7 +101,7 @@
     <section class="card">
       <div class="card-block">
         <h3 class="card-title h3">{l s='Reminder' d='Shop.Theme.Customeraccount'}</h3>
-        <p class="card-text">
+        <p class="card-text p2">
           {l
             s='All merchandise must be returned in its original packaging and in its original state.'
             d='Shop.Theme.Customeraccount'
@@ -126,7 +126,7 @@
             ]
           }
         </p>
-        <p class="card-text">
+        <p class="card-text p2">
           {l
             s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.'
             d='Shop.Theme.Customeraccount'

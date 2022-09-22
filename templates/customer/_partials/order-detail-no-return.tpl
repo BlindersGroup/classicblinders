@@ -71,7 +71,7 @@
                 <span class="value">{$product.total}</span>
               </div>
               <div class="col-xs-4 col-md-4">
-                <a href="{$urls.pages.cart}?add=1&id_product={$product.product_id}&id_product_attribute={$product.product_attribute_id}&token={$static_token}" class="product_reorder"><i class="material-icons">cached</i> {l s='Reorder' d='Shop.Theme.Actions'}</a>
+                <a href="{$urls.pages.cart}?add=1&id_product={$product.product_id}&id_product_attribute={$product.product_attribute_id}&token={$static_token}" class="product_reorder"><i class="fa-solid fa-rotate-right"></i> {l s='Reorder' d='Shop.Theme.Actions'}</a>
               </div>
             </div>
           </div>

@@ -25,6 +25,11 @@
       max-width: 340px;
       color: $white;
 
+      p {
+        font-size: 1rem;
+        color: $blanco;
+      }
+
       .caption-description {
         p {
           font-size: 1rem;
@@ -68,7 +73,7 @@
       }
 
       i {
-        font-size: 3.125rem;
+        font-size: 2rem;
         color: $white;
       }
 
@@ -80,7 +85,7 @@
     }
 
     .icon-prev {
-      left: 1rem;
+      left: 2rem;
     }
 
     .icon-next {
@@ -124,10 +129,14 @@
   .carousel {
     left: 50%;
     width: 100vw;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
     margin-left: -50vw;
     background-color: $gray-light;
     box-shadow: none;
+
+    .carousel-indicators {
+      bottom: -8px;
+    }
 
     .carousel-item {
       .caption {
@@ -162,7 +171,7 @@
       .carousel-control {
         .icon-prev {
           left: 0;
-          margin-left: 0;
+          margin-left: 0.78rem;
         }
 
         .icon-next {
@@ -170,9 +179,9 @@
           margin-right: 0.78rem;
         }
 
-        i {
+        /*i {
           background: rgba(122, 122, 122, 0.5);
-        }
+        }*/
       }
     }
   }

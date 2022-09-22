@@ -39,11 +39,19 @@
   margin-top: 20px !important;
 
   .block-title {
-    font-size: 0.85rem;
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
     margin-bottom: 0;
 
-    .title {
-      font-weight: 600;
+    span {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+    }
+
+    span.title {
+      font-weight: 500;
+      font-size: $font-size-p2;
+      line-height: $line-height-p2;
     }
   }
 }

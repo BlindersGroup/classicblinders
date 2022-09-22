@@ -41,15 +41,14 @@
 
         <div class="add">
           <button
-            class="btn btn-primary add-to-cart"
+            class="btn btn-special add-to-cart"
             data-button-action="add-to-cart"
             type="submit"
             {if !$product.add_to_cart_url}
               disabled
             {/if}
           >
-            <i class="material-icons">add_shopping_cart</i>
-            {l s='Add' d='Shop.Theme.Actions'}
+            {l s='Add to cart' d='Shop.Theme.Actions'}
           </button>
         </div>
 

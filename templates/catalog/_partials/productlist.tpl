@@ -25,7 +25,7 @@
 <div class="products{if !empty($cssClass)} {$cssClass}{/if}">
     {foreach from=$products item="product" key="position"}
         {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
-        {if $products|count > 8 && $position == 7 && ($smarty.get.page == 1 || empty($smarty.get.page))}
+        {if $products|count > 8 && $position == 7 && isset($smarty.get.page) && ($smarty.get.page == 1 || empty($smarty.get.page))}
             {hook h='displayBannerProductList'}
         {/if}
     {/foreach}

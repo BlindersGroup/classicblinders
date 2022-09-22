@@ -28,7 +28,7 @@
     <div class="language-selector dropdown js-dropdown">
       <button data-toggle="dropdown" class="hidden-sm-down btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
         <span class="expand-more">{$current_language.name_simple}</span>
-        <i class="material-icons expand-more">&#xE5C5;</i>
+          <i class="fa-solid fa-angle-down expand-more"></i>
       </button>
       <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
         {foreach from=$languages item=language}

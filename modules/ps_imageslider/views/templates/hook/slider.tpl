@@ -38,7 +38,7 @@
               <img src="{$slide.image_url}" alt="{$slide.legend|escape}" width="360" height="110">
               {if $slide.title || $slide.description}
                 <figcaption class="caption">
-                  <h2 class="display-1 text-uppercase">{$slide.title}</h2>
+                  <p class="h2 display-1 text-uppercase">{$slide.title}</p>
                   <div class="caption-description">{$slide.description nofilter}</div>
                 </figcaption>
               {/if}
@@ -48,16 +48,16 @@
       {/foreach}
     </ul>
     <div class="direction" aria-label="{l s='Carousel buttons' d='Shop.Theme.Global'}">
-      <a class="left carousel-control" href="#carousel" role="button" data-slide="prev" aria-label="{l s='Previous' d='Shop.Theme.Global'}">
+      <span class="left carousel-control" href="#carousel" role="button" data-slide="prev" aria-label="{l s='Previous' d='Shop.Theme.Global'}">
         <span class="icon-prev hidden-xs" aria-hidden="true">
-          <i class="material-icons">&#xE5CB;</i>
+          <i class="fa-solid fa-angle-left"></i>
         </span>
-      </a>
-      <a class="right carousel-control" href="#carousel" role="button" data-slide="next" aria-label="{l s='Next' d='Shop.Theme.Global'}">
+      </span>
+      <span class="right carousel-control" href="#carousel" role="button" data-slide="next" aria-label="{l s='Next' d='Shop.Theme.Global'}">
         <span class="icon-next" aria-hidden="true">
-          <i class="material-icons">&#xE5CC;</i>
+          <i class="fa-solid fa-angle-right"></i>
         </span>
-      </a>
+      </span>
     </div>
   </div>
 {/if}

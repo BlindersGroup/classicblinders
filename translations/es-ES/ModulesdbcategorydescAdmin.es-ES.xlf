@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="af4655568d470da3fe3d8baa30ba7487">
+        <source>o ponerse en contacto con nosotros en info@devblinders.com</source>
+        <target>o ponerse en contacto con nosotros en info@devblinders.com</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ad6e3524d4f80e60ab8fd73eb9924973">
+        <source>este tutorial</source>
+        <target>este tutorial</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ee6743ade94d5cfec81a998381ba02d0">
+        <source>Si no sabe como realizarlo puede seguir</source>
+        <target>Si no sabe como realizarlo puede seguir</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="23f795e75e756b608db50e7926e9fbff">
+        <source>en su plantilla para visualizar la descripción</source>
+        <target>en su plantilla para visualizar la descripción</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5f4c9febadf9693cdf2e3c9c17e66b34">
+        <source>Debe de incluir el hook llamado</source>
+        <target>Debe de incluir el hook llamado</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5572309537bbeef2b19665ed3c70a062">
+        <source>Si no le aparece la descripción larga dentro de la página pública de las categorias (versiones anteriores a la 1.7.7.0) es debido a que en su plantilla no está incluido el hook necesario</source>
+        <target>Si no le aparece la descripción larga dentro de la página pública de las categorias (versiones anteriores a la 1.7.7.0) es debido a que en su plantilla no está incluido el hook necesario</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d5d60527cd64f9b9095aa79b93e02b52">
+        <source>Puede configurar la descripción larga de los productos desde la página de cada categoría</source>
+        <target>Puede configurar la descripción larga de los productos desde la página de cada categoría</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a1420688c629cb4bac7dfbe1b180fb42">
+        <source>Documentación</source>
+        <target>Documentación</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

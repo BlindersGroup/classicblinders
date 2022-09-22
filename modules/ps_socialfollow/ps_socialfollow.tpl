@@ -24,11 +24,19 @@
  *}
 
 {block name='block_social'}
-  <div class="block-social col-lg-4 col-md-12 col-sm-12 col-xs-12">
-      <p class="blocksocial_title">{l s='Follow us on rrss!' d='Shop.Theme.Global'}</p>
+  <div class="block-social">
+      <p class="blocksocial_title">{l s='¡Síguenos!' d='Shop.Theme.Global'}</p>
       <ul>
           {foreach from=$social_links item='social_link'}
-            <li class="{$social_link.class}"><a href="{$social_link.url}" target="_blank" rel="noopener noreferrer">{$social_link.label}</a></li>
+            <li class="icon_{$social_link.class}">
+                <a href="{$social_link.url}" target="_blank" rel="noopener noreferrer">
+                    {if $social_link.class == 'rss'}
+                        <i class="fa-solid fa-rss"></i>
+                    {else}
+                        <i class="fa-brands fa-{$social_link.class}"></i>
+                    {/if}
+                </a>
+            </li>
           {/foreach}
       </ul>
   </div>

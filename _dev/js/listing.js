@@ -94,8 +94,8 @@ $(document).ready(() => {
     }
     qv.find(prestashop.selectors.quantityWanted).TouchSpin({
       verticalbuttons: true,
-      verticalupclass: 'material-icons touchspin-up',
-      verticaldownclass: 'material-icons touchspin-down',
+      verticalupclass: 'fa-regular fa-plus',
+      verticaldownclass: 'fa-solid fa-minus',
       buttondown_class: 'btn btn-touchspin js-touchspin',
       buttonup_class: 'btn btn-touchspin js-touchspin',
       min: 1,
@@ -249,7 +249,7 @@ function updateProductListDOM(data) {
 // Desplegable orden categorias
 $(document).on('change', '#selectProductSort', function(e) {
   var url = $(this).val();
-  window.location.href = url;
+  window.location.href = b64_to_utf8(url);
 });
 
 // Clic nombre filtros

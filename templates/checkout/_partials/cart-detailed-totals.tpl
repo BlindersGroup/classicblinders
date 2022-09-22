@@ -58,6 +58,24 @@
               </div>
           {/if}
       {/block}
+
+      {if $cart.vouchers.added}
+          {block name='cart_voucher_list'}
+              <ul class="promo-name">
+                  {foreach from=$cart.vouchers.added item=voucher}
+                      <li class="cart-summary-line">
+                          <span class="label">{$voucher.name}</span>
+                          <div class="float-xs-right">
+                              <span>{$voucher.reduction_formatted}</span>
+                              {if isset($voucher.code) && $voucher.code !== ''}
+                                  <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="fa-regular fa-trash-can"></i></a>
+                              {/if}
+                          </div>
+                      </li>
+                  {/foreach}
+              </ul>
+          {/block}
+      {/if}
   </div>
 
   {block name='cart_summary_totals'}

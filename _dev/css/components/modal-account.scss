@@ -14,7 +14,7 @@
     margin: 0;
     border: 0;
     border-radius: 0;
-    background-color: #fafafa;
+    background-color: $background-color;
     max-width: 320px;
     min-width: 320px;
     float: right;
@@ -22,58 +22,74 @@
 
   .modal-header {
     border: 0;
+    background-color: $negro;
+    padding: 16px;
 
     .modal-title {
-      font-weight: 600;
-      color: var(--color_font);
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: 500;
+      color: $blanco !important;
+    }
+    .close {
+      opacity: 1;
+      text-shadow: none;
+
+      span {
+        font-size: 24px;
+        line-height: $line-height-base;
+        font-weight: 500;
+        color: $blanco !important;
+      }
     }
   }
 
   .modal-body {
-    padding: 0 0.5rem 0.5rem;
+    padding: 0;
   }
 
   .modal_item {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #fff;
-    margin-bottom: 0.5rem;
+    background-color: $blanco;
+    margin-bottom: 16px;
 
     > * {
-      padding: 0.5rem;
+      padding: 16px;
     }
 
     .title {
-      font-weight: 600;
-      color: var(--primary_color);
-      font-size: 0.9rem;
+      font-weight: 500;
+      color: $gris_400 !important;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
     }
 
     .item {
       font-weight: 400;
-      color: var(--color_font);
-      font-size: 0.9rem;
+      color: $color-font;
+      font-size: $font-size-detalle;
+      line-height: $line-height-detalle;
+
+      > i {
+        font-size: $font-size-detalle !important;
+        line-height: $line-height-detalle;
+        margin-right: 4px;
+      }
 
       &:hover {
-        text-decoration: underline;
+        color: $primary-color;
+
+        > i {
+          color: $primary-color;
+        }
       }
     }
   }
 
   .close_session {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--button_p_bk);
-    background-color: var(--button_p_bk);
-    color: var(--button_p_color);
     display: table;
     margin: 1rem auto;
-    font-weight: 600;
-
-    &:hover {
-      border: 1px solid var(--button_p_bk_hover);
-      background-color: var(--button_p_bk_hover);
-      color: var(--button_p_bk_hover);
-    }
   }
 }

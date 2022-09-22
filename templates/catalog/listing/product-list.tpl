@@ -48,7 +48,7 @@
 
           {if isset($smarty.get.page) && $smarty.get.page > 1}
               <div class="prev_pagination">
-                <a class="btn btn-primary btn_volver" href="?page={$smarty.get.page - 1}">{l s='Cargar lo anterior' d='Shop.Theme.Catalog'}</a>
+                <a class="btn btn-secondary btn_volver" href="?page={$smarty.get.page - 1}">{l s='Cargar lo anterior' d='Shop.Theme.Catalog'}</a>
               </div>
           {/if}
 
@@ -81,6 +81,9 @@
 {block name='content_after'}
     {hook h="displayFooterCategory"}
     {if $page.page_name == 'manufacturer' && !empty($manufacturer.description)}
-        <div id="manufacturer-description">{$manufacturer.description nofilter}</div>
+        <div id="manufacturer-description">
+            <p class="title">{l s='Más información sobre %brand_name%' sprintf=['%brand_name%' => $manufacturer.name] d='Shop.Theme.Catalog'}</p>
+            <div>{$manufacturer.description nofilter}</div>
+        </div>
     {/if}
 {/block}

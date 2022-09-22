@@ -29,7 +29,19 @@
       <span>{l s='Share' d='Shop.Theme.Actions'}</span>
       <ul>
         {foreach from=$social_share_links item='social_share_link'}
-          <li class="{$social_share_link.class} icon-gray"><a href="{$social_share_link.url}" class="text-hide" title="{$social_share_link.label}" target="_blank">{$social_share_link.label}</a></li>
+          <li class="icon-gray">
+            <span class="datatext" datatext="{$social_share_link.url|base64_encode}" datatarget="_blank">
+              {if $social_share_link.class == 'facebook'}
+                <i class="fa-brands fa-facebook-f"></i>
+              {/if}
+              {if $social_share_link.class == 'twitter'}
+                <i class="fa-brands fa-twitter"></i>
+              {/if}
+              {if $social_share_link.class == 'pinterest'}
+                <i class="fa-brands fa-pinterest"></i>
+              {/if}
+            </span>
+          </li>
         {/foreach}
       </ul>
     </div>

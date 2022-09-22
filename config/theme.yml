@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 1.5.9
+version: 2.0.0
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -187,13 +187,22 @@ dependencies:
     - dbthemecustom
     - dbmenu
     - dbsearchbar
+    - dbwishlist
+    - dbjointpurchase
+    - dbaboutus
+    - dbrecomendation
+    - dbcategories
+    - dbnewproducts
+    - dbbestseller
+    - dbbrandproducts
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
     PS_LABEL_IN_STOCK_PRODUCTS: En stock
-    PS_LABEL_OOS_PRODUCTS_BOA: Fuera de stock
+    PS_LABEL_OOS_PRODUCTS_BOA: En stock
     PS_LABEL_OOS_PRODUCTS_BOD: Fuera de stock
-    PS_LABEL_DELIVERY_TIME_AVAILABLE: 24 - 48 H
+    PS_LABEL_DELIVERY_TIME_AVAILABLE: 24 - 48 h
+    PS_LABEL_DELIVERY_TIME_OOSBOA: 48 - 72 h
     BLOCKSOCIAL_FACEBOOK: https://www.facebook.com/
     BLOCKSOCIAL_TWITTER: https://twitter.com/
     BLOCKSOCIAL_RSS: index.php
@@ -214,10 +223,17 @@ global_settings:
       - dbthemecustom
       - dbmenu
       - dbsearchbar
+      - dbwishlist
+      - dbjointpurchase
+      - dbaboutus
+      - dbrecomendation
+      - dbcategories
+      - dbnewproducts
+      - dbbestseller
+      - dbbrandproducts
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
-      - ps_bestsellers
     to_disable:
       - ps_banner
       - ps_specials
@@ -226,6 +242,8 @@ global_settings:
       - gamification
       - ps_mainmenu
       - ps_searchbar
+      - productcomments
+      - blockwishlist
   hooks:
     custom_hooks:
       - name: displayNavCenter
@@ -259,6 +277,10 @@ global_settings:
         title: displayProductFullWidth
       - name: displaySidebarContact
         title: displaySidebarContact
+      - name: displayBlockLeftFooter
+        title: displayBlockLeftFooter
+      - name: displayFooterCopyright
+        title: displayFooterCopyright
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:
@@ -266,29 +288,33 @@ global_settings:
       displayNav1:
         - dbcontactinfo
       displayNavCenter:
-        - dbproductcomments
-      displayNav2:
         - dbfreeshipping
+      displayNav2:
+        - dbproductcomments
       displayTop:
         - dbcontactinfo
+        - dbwishlist
         - ps_customersignin
         - ps_shoppingcart
       displayTopCenter:
         - dbsearchbar
+        - dbcontactinfo
       displayHome:
         - ps_imageslider
         - dbhomecategories
-        - ps_bestsellers
         - dbbrandslider
+        - ps_bestsellers
         - ps_newproducts
         - ps_featuredproducts
         - ps_customtext
+        - dbcategories
       displayFooterBefore:
         - ps_emailsubscription
       displayFooter:
         - ps_linklist
         - ps_customeraccountlinks
         - ps_contactinfo
+      displayFooterCopyright:
         - ps_socialfollow
       displayFooterAfter:
       displayLeftColumn:
@@ -296,11 +322,11 @@ global_settings:
         - ps_facetedsearch
       displaySearch:
       displayProductAdditionalInfo:
-        - ps_sharebuttons
         - dbfreeshipping
       displayReassurance:
         - blockreassurance
       displayOrderConfirmation2:
+        - dbcontactinfo
         - ps_featuredproducts
       displayCrossSellingShoppingCart:
         - ps_featuredproducts
@@ -312,9 +338,32 @@ global_settings:
       displayTopCheckout:
         - dbcontactinfo
       displayFooterCategory:
+        - dbproductcomments
+        - dbbestseller
+        - dbnewproducts
         - dbcategorydesc
+        - dbcategories
       displaySidebarContact:
         - dbcontactinfo
+      displayBlockLeftFooter:
+        - ps_sharebuttons
+      displayShoppingCart:
+        - dbfreeshipping
+      displayProductFullWidth:
+        - dbjointpurchase
+      displayProductListReviews:
+        - dbproductcomments
+        - dbwishlist
+      displayFooterProduct:
+        - dbrecomendation
+        - dbproductcomments
+        - dbbrandproducts
+        - dbcategories
+      displayCustomerAccount:
+        - dbproductcomments
+        - dbwishlist
+      displayProductActions:
+        - dbwishlist
 
   image_types:
     cart_default:
@@ -345,6 +394,10 @@ global_settings:
       width: 170
       height: 115
       scope: [stores]
+    brand_home:
+      width: 180
+      height: 90
+      scope: [ manufacturers ]
 
 theme_settings:
   default_layout: layout-full-width

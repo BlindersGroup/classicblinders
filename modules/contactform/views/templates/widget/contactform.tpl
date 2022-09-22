@@ -40,7 +40,7 @@
 
         <div class="form-group row">
           <div class="col-md-9 col-md-offset-3">
-            <h3>{l s='Contact us' d='Shop.Theme.Global'}</h3>
+            <p class="h2 title_contactform">{l s='Contact us' d='Shop.Theme.Global'}</p>
           </div>
         </div>
 
@@ -89,7 +89,7 @@
           <div class="form-group row">
             <div class="col-md-12">
               <label class="form-control-label has_value">{l s='Attachment' d='Shop.Forms.Labels'}</label>
-              <input type="file" name="fileUpload" class="filestyle" data-buttonText="<i class='material-icons'>upload_file</i>{l s='Choose file' d='Shop.Theme.Actions'}">
+              <input type="file" name="fileUpload" class="filestyle" data-buttonText="<i class='fa-solid fa-arrow-up-from-bracket'></i> {l s='Choose file' d='Shop.Theme.Actions'}">
             </div>
             <span class="col-md-3 form-control-comment">
               {l s='optional' d='Shop.Forms.Help'}
@@ -119,7 +119,7 @@
 
       </section>
 
-      <footer class="form-footer text-sm-right">
+      <footer class="form-footer text-sm-center">
         <style>
           input[name=url] {
             display: none !important;

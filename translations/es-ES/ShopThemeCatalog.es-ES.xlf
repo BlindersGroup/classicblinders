@@ -1,10 +1,300 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+  <file original="/home/site-ampa/sites/themedevblinderscomdev/public/Backoffice" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="c137501129ee17118ce6a851a971cddf">
-        <source>OLD PRICE</source>
-        <target>ANTES</target>
+      <trans-unit id="0eede552438475bdfe820c13f24c9399">
+        <source>Total price</source>
+        <target>Precio total</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6c957f72dc8cdacc75762f2cbdcdfaf2">
+        <source>Unit price</source>
+        <target>Precio unitario</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="deb10517653c255364175796ace3553f">
+        <source>Product</source>
+        <target>Producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4c5c40c99a89125e22218cb62335c60a">
+        <source>List of products by supplier %s</source>
+        <target>Lista de productos por proveedor %s</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e264b55c542ab61fa5ddc6b7ee5537c7">
+        <source>Más información sobre %brand_name%</source>
+        <target>Más información sobre %brand_name%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d3b78a80389f2ef56c5ab45bb3e41467">
+        <source>Cargar lo anterior</source>
+        <target>Cargar lo anterior</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3767d4f3efe17bd95a1bc7cf4194bb93">
+        <source>You might also like</source>
+        <target>También podría gustarte</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6d57e16bf94ffe0b1155491879189cf4">
+        <source>Somos de confianza:</source>
+        <target>Somos de confianza:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="56e11b516943cb38a57c9a53219a8370">
+        <source>This pack contains</source>
+        <target>This pack contains</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="eddb1a38cdcc0dcc8e4c7beddc052164">
+        <source>Información adicional</source>
+        <target>Información adicional</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fcebe56087b9373f15514831184fa572">
+        <source>In stock</source>
+        <target>In stock</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="63d5049791d9d79d86e9a108b0a999ca">
+        <source>Reference</source>
+        <target>Reference</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ea732feebdc930b07670aebf0b2df07f">
+        <source>Información del producto</source>
+        <target>Información del producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="23fa6819946e486822e88ee599d61170">
+        <source>de DTO.</source>
+        <target>de DTO.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6382ab0743afc713095ba418097c782e">
+        <source>uds.</source>
+        <target>uds.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e418785806520b72163d3d0c97ca06b5">
+        <source>Packs descuento</source>
+        <target>Packs descuento</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5d1190edfb16f1dcaaecc56570c864be">
+        <source>Your customization:</source>
+        <target>Su personalización:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="54c02ba7929b1fda4847991a45b58a48">
+        <source>Product customization</source>
+        <target>Personalización del producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4d8adffdc001189e0202c01ac529a3a9">
+        <source>Regular price</source>
+        <target>Precio regular</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="3601146c4e948c32b6424d2c0a7f0118">
+        <source>Price</source>
+        <target>Precio</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9e2941b3c81256fac10392aaca4ccfde">
+        <source>Condition</source>
+        <target>Condición</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ea254ced8be4adb6c4a2750e84087da6">
+        <source>Availability date:</source>
+        <target>Fecha disponible:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="70ecca993178df65884d0e76a7c6d93a">
+        <source>Mostrando 1 producto</source>
+        <target>Mostrando 1 producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0efe92a2baa5b74cb3c4ebbf4c9225d0">
+        <source>Mostrando %product_count% productos</source>
+        <target>Mostrando %product_count% productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a134618182b99ff9151d7e0b6b92410a">
+        <source>(not impacted by the discount)</source>
+        <target>(No afectado por el descuento)</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a72a454b308052ed277f7b69ab307caa">
+        <source>Instead of %price%</source>
+        <target>En lugar de %price%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e532954941a2469e3b3ae35ce44885d6">
+        <source>%price% tax excl.</source>
+        <target>%price% IVA excl.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9fe98d3f73ef6d5b775a634fcd82b6ba">
+        <source>Precio %unit_price%</source>
+        <target>Precio %unit_price%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6f3455d187a23443796efdcbe044096b">
+        <source>No tax</source>
+        <target>Sin impuestos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="734346d44245de59214137842ab17744">
+        <source>%1$s:</source>
+        <target>%1$s:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f59d1bfc515cb81756b8bee89188a9f5">
+        <source>Cargar más</source>
+        <target>Cargar más</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="de1852b18a4b935a388bdeecd0d16921">
+        <source>Has visto %to% de %total% productos</source>
+        <target>Has visto %to% de %total% productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d7b2933ba512ada478c97fa43dd7ebe6">
+        <source>Best Sellers</source>
+        <target>Los más vendidos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9ff0635f5737513b1a6f559ac2bff745">
+        <source>New products</source>
+        <target>Nuevos productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="e18a22d145b38e4fff582663b5b4ec1e">
+        <source>All brands</source>
+        <target>Todas las marcas</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="8e41eae149ff3fa38cc9c4fde945f2c3">
+        <source>No brand</source>
+        <target>Sin marca</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="84be54bb4bd1b755a27d86388700d097">
+        <source>Brands</source>
+        <target>Marcas</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ecf253735ac0cba84a9d2eeff1f1b87c">
+        <source>All suppliers</source>
+        <target>Todos los proveedores</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="496689fbd342f80d30f1f266d060415a">
+        <source>No supplier</source>
+        <target>Sin proveedor</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1814d65a76028fdfbadab64a5a8076df">
+        <source>Suppliers</source>
+        <target>Proveedores</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4edfd10d0bb5f51e0fd2327df608b5a8">
+        <source>My alerts</source>
+        <target>Mis alertas</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="13348442cc6a27032d2b4aa28b75a5d3">
+        <source>Search</source>
+        <target>Búsqueda</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5bdba1fc0fba1010d61ce253c2e57da8">
+        <source>Search our catalog</source>
+        <target>Busca en nuestro catálogo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="694e8d1f2ee056f98ee488bdc4982d73">
+        <source>Quantity</source>
+        <target>Cantidad</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="160b4798999cb85c815beeb40ac268cc">
+        <source>Last time this product was added to a cart: %date_last_cart%</source>
+        <target>Última vez que se agregó este producto a un carrito: %date_last_cart%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="247f15e3dc0e7906ab9573685423899f">
+        <source>Last time this product was bought: %date_last_order%</source>
+        <target>Última vez que se compró este producto: %date_last_order%</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c24cf2abae9286b8f69a8ccdf7ed8d5e">
+        <source>%nb_people% people are currently watching this product.</source>
+        <target>%nb_people% personas están viendo este producto actualmente.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="035749e4c50392a661c0f1b220ae0516">
+        <source>1 person is currently watching this product.</source>
+        <target>1 persona está viendo este producto actualmente.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="10fd25dcd3353c0ba3731d4a23657f2e">
+        <source>No RSS feed added</source>
+        <target>No se agregó ninguna fuente RSS</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f473acb18ebcd825235ca5624203f31a">
+        <source>Popular Products</source>
+        <target>Productos destacados</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6e6cbbb7e3342bef6f5e596527480292">
+        <source>Productos que quizás te interesen</source>
+        <target>Productos que quizás te interesen</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f95ceb82c51c99dc9b9e5678b291c44b">
+        <source>All sale products</source>
+        <target>Todos los productos de venta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="588907ab2d492aca0b07b5bf9c931eea">
+        <source>On sale</source>
+        <target>En venta</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="838d4b236e78fb3006a9e8c5763ab8bf">
+        <source>Productos relacionados</source>
+        <target>Productos relacionados</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="43560641f91e63dc83682bc598892fa1">
+        <source>Viewed products</source>
+        <target>Productos vistos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a814c5a3f97d00cc0a3ae02f4f9c95c7">
+        <source>Favoritos</source>
+        <target>Favoritos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5b9b86420489d60c146fb7e4e007180a">
+        <source>Opiniones de producto</source>
+        <target>Opiniones de producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fb526aaa0add86e4e124263db50438c8">
+        <source>Showing %from%-%to% of %total% item(s)</source>
+        <target>Showing %from%-%to% of %total% item(s)</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="98508b5a9b590896cc627beb46d86b96">
+        <source>Including %amount% for ecotax</source>
+        <target>Including %amount% for ecotax</target>
         <note>Line: </note>
       </trans-unit>
     </body>

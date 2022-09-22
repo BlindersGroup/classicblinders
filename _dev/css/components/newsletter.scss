@@ -4,8 +4,9 @@
   width: 100%;
   max-width: 50rem;
   margin: auto;
-  margin-bottom: 0.625rem;
-  font-size: $font-size-sm;
+  margin-bottom: 0;
+  font-size: $font-size-detalle;
+  line-height: $line-height-detalle;
   background: var(--prefooter_bk);
 
   #block-newsletter-label {
@@ -22,6 +23,10 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+
+      .btn {
+        margin-left: -1px;
+      }
     }
 
     .row {
@@ -41,15 +46,19 @@
 
     input[type="email"] {
       padding: 11px;
-      margin-right: .5rem;
       width: 65%;
       max-width: 500px;
-      border: 1px solid $border-gray;
+      border: 0;
 
       &:focus {
-        outline: 1px solid var(--primary_color);
-        color: var(--color_font);
+        outline: 0;
+        color: $color-font;
         background: #fff;
+        border-color: $primary-color;
+
+        &::placeholder {
+          color: $primary-color;
+        }
       }
     }
 
@@ -65,13 +74,32 @@
       margin-bottom: 0;
       font-size: .8rem;
     }
+
+    .psgdpr_consent_icon {
+      color: #FFF !important;
+      font-size: 14px !important;
+    }
+
+    .psgdpr_consent_message {
+      text-align: center;
+    }
+  }
+}
+
+#gdpr_consent{
+  .custom-checkbox{
+    justify-content: center;
   }
 }
 
 #footer {
   .block_newsletter {
-    p {
-      padding-top: $small-space;
+
+    .minimo {
+      font-size: $font-size-minimo;
+      line-height: $line-height-minimo;
+      padding-top: $espacio_8;
+      padding-bottom: $espacio_4;
     }
 
     #block-newsletter-label {

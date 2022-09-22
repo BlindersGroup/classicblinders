@@ -29,7 +29,7 @@
       <table id="order-products" class="table table-bordered return">
         <thead class="thead-default">
           <tr>
-            <th class="head-checkbox"><input type="checkbox"/></th>
+            <th class="head-checkbox"></th>
             <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
             <th>{l s='Quantity' d='Shop.Theme.Catalog'}</th>
             <th>{l s='Returned' d='Shop.Theme.Customeraccount'}</th>
@@ -206,7 +206,7 @@
     <div class="box">
       <header>
         <h3>{l s='Merchandise return' d='Shop.Theme.Customeraccount'}</h3>
-        <p>{l s='If you wish to return one or more products, please mark the corresponding boxes and provide an explanation for the return. When complete, click the button below.' d='Shop.Theme.Customeraccount'}</p>
+        <p class="p2">{l s='If you wish to return one or more products, please mark the corresponding boxes and provide an explanation for the return. When complete, click the button below.' d='Shop.Theme.Customeraccount'}</p>
       </header>
       <section class="form-fields">
         <div class="form-group">

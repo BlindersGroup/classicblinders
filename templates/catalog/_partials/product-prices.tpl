@@ -34,14 +34,20 @@
 
                 <span class="price_with_tax price_pvp" content="{$product.price_tax_exc}">{$product.price}</span>
 
+                {if !$configuration.taxes_enabled}
+                  <span class="price_tax">{l s='No tax' d='Shop.Theme.Catalog'}</span>
+                {elseif $configuration.display_taxes_label}
+                  <span class="price_tax">{$product.labels.tax_long}</span>
+                {/if}
+
               {if $product.has_discount}
-                  <span class="show_discount">
-                    <span class="title">{l s='OLD PRICE' d='Shop.Theme.Catalog'}</span>
+                  <span class="show_pvp">
+{*                    <span class="title">{l s='OLD PRICE' d='Shop.Theme.Catalog'}</span>*}
                     <span class="old_price">{$product.regular_price}</span>
                   </span>
 
                   <span class="show_discount">
-                      <span class="title">{l s='DTO.' d='Shop.Theme.Catalog'}</span>
+{*                      <span class="title">{l s='DTO.' d='Shop.Theme.Catalog'}</span>*}
                     {if $product.discount_type === 'percentage'}
                       <span class="discount discount-percentage">
                           {$product.discount_percentage_absolute}
@@ -57,7 +63,7 @@
 
             {block name='product_unit_price'}
               {if $displayUnitPrice}
-                <p class="product-unit-price sub">{l s='(%unit_price%) IVA Incl.' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
+                <p class="product-unit-price sub">{l s='Precio %unit_price%' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>
               {/if}
             {/block}
           </div>
@@ -88,11 +94,7 @@
         {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
         <div class="tax-shipping-delivery-label">
-          {*{if !$configuration.taxes_enabled}
-            {l s='No tax' d='Shop.Theme.Catalog'}
-          {elseif $configuration.display_taxes_label}
-            {$product.labels.tax_long}
-          {/if}*}
+
           {hook h='displayProductPriceBlock' product=$product type="price"}
           {hook h='displayProductPriceBlock' product=$product type="after_price"}
 
@@ -101,11 +103,11 @@
                 <span id="product-availability">
                     {if $product.show_availability && $product.availability_message}
                         {if $product.availability == 'available'}
-                            <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i>
+                            <i class="fa-regular fa-circle-check"></i>
                         {elseif $product.availability == 'last_remaining_items'}
-                            <i class="material-icons product-last-items">&#xE002;</i>
+                            <i class="fa-solid fa-arrow-trend-down"></i>
                         {else}
-                            <i class="material-icons product-unavailable">&#xE14B;</i>
+                            <i class="fa-solid fa-circle-info"></i>
                         {/if}
                         {$product.availability_message}
                     {/if}
@@ -125,15 +127,6 @@
             {/if}
           </div>
         </div>
-
-          {block name='product_quantities'}
-              {if $product.show_quantities}
-                  <div class="product-quantities">
-                      <label class="label">{l s='In stock' d='Shop.Theme.Catalog'}</label>
-                      <span data-stock="{$product.quantity}" data-allow-oosp="{$product.allow_oosp}">{$product.quantity} {$product.quantity_label}</span>
-                  </div>
-              {/if}
-          {/block}
 
       </div>
   </div>

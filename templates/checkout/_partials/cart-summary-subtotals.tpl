@@ -40,5 +40,20 @@
     {/if}
   {/foreach}
 
+  {if $cart.vouchers.added}
+    {block name='cart_voucher_list'}
+        {foreach from=$cart.vouchers.added item=voucher}
+          <div class="cart-summary-line promo-name">
+            <span class="label">{$voucher.name}</span>
+            <span class="value">{$voucher.reduction_formatted}
+              {if isset($voucher.code) && $voucher.code !== ''}
+                <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="fa-regular fa-trash-can"></i></a>
+              {/if}
+            </span>
+          </div>
+        {/foreach}
+    {/block}
+  {/if}
+
 </div>
 

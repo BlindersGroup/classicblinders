@@ -24,12 +24,15 @@
  *}
 <div id="_desktop_cart">
   <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
-    <div class="header">
+    <div class="header blockcart_header">
       {if $cart.products_count > 0}
         <a rel="nofollow" href="{$cart_url}">
       {/if}
-        <i class="material-icons shopping-cart">shopping_basket</i>
-        <span class="cart-products-count">{$cart.products_count}</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+            {if $cart.products_count > 0}
+                <span class="cart-products-count"></span>
+            {/if}
+        <span class="icon_name">{l s='Carrito' d='Modules.Shoppingcart.Shop'} ({$cart.products_count})</span>
       {if $cart.products_count > 0}
         </a>
       {/if}

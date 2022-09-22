@@ -24,48 +24,55 @@
  *}
 
 {* ACORDEON *}
-<div class="col-md-12">
-    <div class="product-information">
-        <div id="accordion">
-            {block name='product_tabs'}
-                {if $product.description}
-                    <div class="card">
-                        <div id="description-info">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#description" aria-expanded="true" aria-controls="description">
-                                {l s='Description' d='Shop.Theme.Catalog'}
-                                <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                                <i class="material-icons collapse_up">keyboard_arrow_up</i>
-                            </button>
-                        </div>
+<div class="product-information">
+    <p class="title_info_product">{l s='Información del producto' d='Shop.Theme.Catalog'}</p>
+    <div class="card card_product_info">
+        {block name='product_tabs'}
+            {if $product.description}
+                <div id="description" class="info_content">
+                    {block name='product_description'}
+                        <div class="product-description">{$product.description nofilter}</div>
+                    {/block}
 
-                        <div id="description" class="info_content collapse {if $product.description}show in{/if}" aria-labelledby="description-info" data-parent="#accordion">
-                            {block name='product_description'}
-                                <div class="product-description">{$product.description nofilter}</div>
-                            {/block}
-                        </div>
-                    </div>
-                {/if}
-                <div class="card">
-                    <div id="product-details-info">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#product-details" aria-expanded="false" aria-controls="product-details">
-                            {l s='Product Details' d='Shop.Theme.Catalog'}
-                            <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                            <i class="material-icons collapse_up">keyboard_arrow_up</i>
-                        </button>
-                    </div>
-                    <div id="product-details" class="info_content collapse {if !$product.description}show in{/if}" aria-labelledby="product-details-info" data-parent="#accordion">
-                        {block name='product_details'}
-                            {include file='catalog/_partials/product-details.tpl'}
-                        {/block}
-                    </div>
+                    {block name='product_reference'}
+                        {if isset($product.reference_to_display) && $product.reference_to_display neq ''}
+                            <div class="product-reference">
+                                <label class="label">{l s='Reference' d='Shop.Theme.Catalog'} </label>
+                                <span itemprop="sku">{$product.reference_to_display}</span>
+                            </div>
+                        {/if}
+                    {/block}
+                    {block name='product_quantities'}
+                        {if $product.show_quantities}
+                            <div class="product-quantities">
+                                <label class="label">{l s='In stock' d='Shop.Theme.Catalog'}</label>
+                                <span data-stock="{$product.quantity}" data-allow-oosp="{$product.allow_oosp}">{$product.quantity} {$product.quantity_label}</span>
+                            </div>
+                        {/if}
+                    {/block}
                 </div>
+            {/if}
+            <div id="accordion">
+                <div id="product-details-info">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#product-details" aria-expanded="false" aria-controls="product-details">
+                        {l s='Información adicional' d='Shop.Theme.Catalog'}
+                        <i class="fa-solid fa-angle-down collapse_down"></i>
+                        <i class="fa-solid fa-angle-up collapse_up"></i>
+                    </button>
+                </div>
+                <div id="product-details" class="info_content collapse {if !$product.description}show in{/if}" aria-labelledby="product-details-info" data-parent="#accordion">
+                    {block name='product_details'}
+                        {include file='catalog/_partials/product-details.tpl'}
+                    {/block}
+                </div>
+
                 {foreach from=$product.extraContent item=extra key=extraKey}
                     <div class="card">
                         <div id="extra-info-{$extraKey}">
                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#extra-{$extraKey}" aria-expanded="false" aria-controls="extra-{$extraKey}">
                                 {$extra.title}
-                                <i class="material-icons collapse_down">keyboard_arrow_down</i>
-                                <i class="material-icons collapse_up">keyboard_arrow_up</i>
+                                <i class="fa-solid fa-angle-down collapse_down"></i>
+                                <i class="fa-solid fa-angle-up collapse_up"></i>
                             </button>
                         </div>
                         <div id="extra-{$extraKey}" class="info_content collapse" aria-labelledby="extra-info-{$extraKey}" data-parent="#accordion">
@@ -73,9 +80,10 @@
                         </div>
                     </div>
                 {/foreach}
+            </div>
 
-            {/block}
-        </div>
+        {/block}
     </div>
+
 </div>
 {* ACORDEON *}

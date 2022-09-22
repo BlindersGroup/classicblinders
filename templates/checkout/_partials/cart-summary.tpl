@@ -39,7 +39,7 @@
         <p>
           <a href="#" data-toggle="collapse" data-target="#cart-summary-product-list">
             {l s='show details' d='Shop.Theme.Actions'}
-            <i class="material-icons">expand_more</i>
+            <i class="fa-solid fa-angle-down"></i>
           </a>
         </p>*}
 
@@ -55,13 +55,13 @@
       </div>
     {/block}
 
-  {block name='cart_summary_subtotals'}
-    {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
-  {/block}
-
     {block name='cart_summary_voucher'}
       {include file='checkout/_partials/cart-voucher.tpl'}
     {/block}
+
+  {block name='cart_summary_subtotals'}
+    {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
+  {/block}
 
   </div>
 

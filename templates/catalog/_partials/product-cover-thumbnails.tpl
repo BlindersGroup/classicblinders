@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="images-container {if $show_product_imgs == 2 && Context::getContext()->isMobile() != 1}images_lateral{/if}">
+<div class="images-container {if $show_product_imgs == 2 && Context::getContext()->isMobile() != 1}images_lateral{/if}" data-numimgs="{count($product.images)}">
 
     {block name='product_cover'}
 
@@ -38,7 +38,11 @@
                                     <img
                                             class="js-qv-product-cover"
                                             src="{$image.bySize.medium_default.url}"
-                                            alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                             title="{$image.legend}"
                                             itemprop="image"
                                             loading="lazy"
@@ -46,11 +50,15 @@
                                             height="{$image.bySize.medium_default.height}"
                                     >
                                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                        <i class="material-icons zoom-in">search</i>
+                                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                     </div>
                                 </div>
                             {/foreach}
                         </div>
+                    </div>
+
+                    <div class="product_flags">
+                        {include file='catalog/_partials/product-flags.tpl'}
                     </div>
                 </div>
 
@@ -64,7 +72,11 @@
                                             data-image-medium-src="{$image.bySize.medium_default.url}"
                                             data-image-large-src="{$image.bySize.large_default.url}"
                                             src="{$image.bySize.home_default.url}"
-                                            alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                             title="{$image.legend}"
                                             itemprop="image"
                                             loading="lazy"
@@ -117,7 +129,11 @@
                                         <img
                                                 class="js-qv-product-cover"
                                                 src="{$image.bySize.medium_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -125,11 +141,15 @@
                                                 height="{$image.bySize.medium_default.height}"
                                         >
                                         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                            <i class="material-icons zoom-in">search</i>
+                                            <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                         </div>
                                     </div>
                                 {/foreach}
                             </div>
+                        </div>
+
+                        <div class="product_flags">
+                            {include file='catalog/_partials/product-flags.tpl'}
                         </div>
                     </div>
                     <script>
@@ -153,7 +173,11 @@
                                                 data-image-medium-src="{$image.bySize.medium_default.url}"
                                                 data-image-large-src="{$image.bySize.large_default.url}"
                                                 src="{$image.bySize.home_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -177,7 +201,11 @@
                                         <img
                                                 class="js-qv-product-cover"
                                                 src="{$image.bySize.medium_default.url}"
-                                                alt="{$image.legend}"
+                                                {if $image.legend}
+                                                    alt="{$image.legend}"
+                                                {else}
+                                                    alt="{$product.name}"
+                                                {/if}
                                                 title="{$image.legend}"
                                                 itemprop="image"
                                                 loading="lazy"
@@ -185,11 +213,15 @@
                                                 height="{$image.bySize.medium_default.height}"
                                         >
                                         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                            <i class="material-icons zoom-in">search</i>
+                                            <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                         </div>
                                     </div>
                                 {/foreach}
                             </div>
+                        </div>
+
+                        <div class="product_flags">
+                            {include file='catalog/_partials/product-flags.tpl'}
                         </div>
                     </div>
 
@@ -235,7 +267,11 @@
                                     <img
                                         class="js-qv-product-cover"
                                         src="{$image.bySize.medium_default.url}"
-                                        alt="{$image.legend}"
+                                            {if $image.legend}
+                                                alt="{$image.legend}"
+                                            {else}
+                                                alt="{$product.name}"
+                                            {/if}
                                         title="{$image.legend}"
                                         itemprop="image"
                                         loading="lazy"
@@ -243,11 +279,15 @@
                                         height="{$image.bySize.medium_default.height}"
                                     >
                                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                        <i class="material-icons zoom-in">search</i>
+                                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                                     </div>
                                 </div>
                             {/foreach}
                         </div>
+                    </div>
+
+                    <div class="product_flags">
+                        {include file='catalog/_partials/product-flags.tpl'}
                     </div>
                 </div>
                 <script>
@@ -267,7 +307,11 @@
                     <img
                             class="js-qv-product-cover"
                             src="{$image.bySize.medium_default.url}"
-                            alt="{$image.legend}"
+                            {if $image.legend}
+                                alt="{$image.legend}"
+                            {else}
+                                alt="{$product.name}"
+                            {/if}
                             title="{$image.legend}"
                             itemprop="image"
                             loading="lazy"
@@ -275,7 +319,7 @@
                             height="{$image.bySize.medium_default.height}"
                     >
                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                        <i class="material-icons zoom-in">search</i>
+                        <i class="fa-solid fa-magnifying-glass zoom-in"></i>
                     </div>
                 </div>
             {/foreach}

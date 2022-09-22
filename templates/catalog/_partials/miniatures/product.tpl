@@ -27,9 +27,12 @@
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
       {block name='product_thumbnail'}
-        <a href="{$product.url}" class="thumbnail product-thumbnail">
+          <a href="{$product.url}" class="thumbnail product-thumbnail {if count($product.images) > 1 && $custom_generic.second_img == true}multiple_img{/if}">
           {if $product.cover}
             <img
+                {if count($product.images) > 1 && $custom_generic.second_img == true}
+                    class="first_img"
+                {/if}
               src="{$product.cover.bySize.home_default.url}"
               alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name}{/if}"
               data-full-size-image-url="{$product.cover.large.url}"
@@ -37,6 +40,18 @@
               width="{$product.cover.bySize.home_default.width}"
               height="{$product.cover.bySize.home_default.height}"
               />
+
+              {if count($product.images) > 1 && $custom_generic.second_img == true}
+                  <img
+                          class="second_img"
+                          src="{$product.images.1.bySize.home_default.url}"
+                          alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name}{/if}"
+                          data-full-size-image-url="{$product.cover.large.url}"
+                          loading="lazy"
+                          width="{$product.images.1.bySize.home_default.width}"
+                          height="{$product.images.1.bySize.home_default.height}"
+                  />
+              {/if}
           {else}
             <img
                 src="{$urls.no_picture_image.bySize.home_default.url}"
@@ -54,22 +69,32 @@
 
       <div class="product-description">
 
+          {block name='product_reviews'}
+              {hook h='displayProductListReviews' product=$product}
+          {/block}
 
         {block name='product_price_and_shipping'}
           {if $product.show_price}
             <div class="product-price-and-shipping">
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
-
               {if $product.has_discount}
                 {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
-                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
+                <div class="prices_flex">
+                  <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
+                  <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">
+                      <span>Antes</span>
+                      <span class="block-regular-price">{$product.regular_price}</span>
+                  </span>
+                </div>
                 {if $product.discount_type === 'percentage'}
                   <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
                 {elseif $product.discount_type === 'amount'}
                   <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
                 {/if}
+
+              {else}
+                  <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">{$product.price}</span>
               {/if}
 
               {hook h='displayProductPriceBlock' product=$product type="before_price"}
@@ -79,10 +104,6 @@
               {hook h='displayProductPriceBlock' product=$product type='weight'}
             </div>
           {/if}
-        {/block}
-
-        {block name='product_reviews'}
-          {hook h='displayProductListReviews' product=$product}
         {/block}
 
           {if $custom_generic.button_buy == 1}
@@ -106,8 +127,7 @@
                                       disabled
                                   {/if}
                           >
-                              <i class="material-icons">add_shopping_cart</i>
-                              {l s='Add' d='Shop.Theme.Actions'}
+                              {l s='Add to cart' d='Shop.Theme.Actions'}
                           </button>
                       </div>
                   </form>

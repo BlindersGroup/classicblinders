@@ -64,6 +64,9 @@ $(document).on('click', '.btn_inifinitescroll', function(e) {
             // Cambiamos la url
             history.pushState({}, null, url_uri);
 
+            // Recargamos las estrellas antiguas
+            //loadProductsData();
+
         },
 
         // código a ejecutar si la petición falla;

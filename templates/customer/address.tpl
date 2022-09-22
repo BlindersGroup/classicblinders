@@ -26,13 +26,13 @@
 
 {block name='page_content'}
     <div class="card card_account">
-        <h1>
+        <h2>
           {if $editing}
             {l s='Update your address' d='Shop.Theme.Customeraccount'}
           {else}
             {l s='New address' d='Shop.Theme.Customeraccount'}
           {/if}
-        </h1>
+        </h2>
         <div class="address-form">
           {render template="customer/_partials/address-form.tpl" ui=$address_form}
         </div>

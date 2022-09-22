@@ -81,13 +81,13 @@
           <div class="order-options">
             <div id="delivery">
               <label for="delivery_message">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Checkout'}</label>
-              <textarea rows="2" cols="120" id="delivery_message" name="delivery_message">{$delivery_message}</textarea>
+              <textarea rows="5" cols="120" id="delivery_message" name="delivery_message">{$delivery_message}</textarea>
             </div>
 
             {if $recyclablePackAllowed}
               <span class="custom-checkbox">
                 <input type="checkbox" id="input_recyclable" name="recyclable" value="1" {if $recyclable} checked {/if}>
-                <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                <span><i class="fa-solid fa-check rtl-no-flip checkbox-checked"></i></span>
                 <label for="input_recyclable">{l s='I would like to receive my order in recycled packaging.' d='Shop.Theme.Checkout'}</label>
               </span>
             {/if}
@@ -95,7 +95,7 @@
             {if $gift.allowed}
               <span class="custom-checkbox">
                 <input class="js-gift-checkbox" id="input_gift" name="gift" type="checkbox" value="1" {if $gift.isGift}checked="checked"{/if}>
-                <span><i class="material-icons rtl-no-flip checkbox-checked">&#xE5CA;</i></span>
+                <span><i class="fa-solid fa-check rtl-no-flip checkbox-checked"></i></span>
                 <label for="input_gift">{$gift.label}</label >
               </span>
 
@@ -107,7 +107,7 @@
 
           </div>
         </div>
-        <button type="submit" class="continue btn btn-primary float-xs-right" name="confirmDeliveryOption" value="1">
+        <button type="submit" class="continue btn btn-primary" name="confirmDeliveryOption" value="1">
           {l s='Continue' d='Shop.Theme.Actions'}
         </button>
       </form>

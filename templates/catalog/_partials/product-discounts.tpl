@@ -24,7 +24,7 @@
  *}
 <section class="product-discounts">
   {if $product.quantity_discounts}
-    <p class="h6 product-discounts-title"><i class="material-icons">dashboard_customize</i> {l s='Packs descuento' d='Shop.Theme.Catalog'}</p>
+    <p class="detalle product-discounts-title"><i class="fa-solid fa-gift"></i> {l s='Packs descuento' d='Shop.Theme.Catalog'}</p>
     <div class="product_packs_dto">
       {foreach from=$product.quantity_discounts item='quantity_discount' name='quantity_discounts'}
         {*{if !$configuration.taxes_enabled}
@@ -39,9 +39,9 @@
           {math assign="unit_price" equation="x - y" x=$precio_discount y=$quantity_discount.reduction}
         {/if}*}
         <div class="pack_dto" data-qty="{$quantity_discount.quantity}">
-          <span class="qty"><strong>{$quantity_discount.quantity} {l s='unidades' d='Shop.Theme.Catalog'}</strong></span>
+          <span class="qty"><strong>{$quantity_discount.quantity} {l s='uds.' d='Shop.Theme.Catalog'}</strong></span>
 {*          <span class="price">{Tools::displayPrice($unit_price)}/{l s='unidad' d='Shop.Theme.Catalog'}</span>*}
-          <span class="price">{$quantity_discount.discount} {l s='descuento' d='Shop.Theme.Catalog'}</span>
+          <span class="price">{$quantity_discount.discount} {l s='de DTO.' d='Shop.Theme.Catalog'}</span>
         </div>
       {/foreach}
     </div>

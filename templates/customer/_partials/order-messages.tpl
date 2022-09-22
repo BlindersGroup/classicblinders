@@ -47,7 +47,7 @@
 
       <header>
         <h3>{l s='Add a message' d='Shop.Theme.Customeraccount'}</h3>
-        <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Customeraccount'}</p>
+        <p class="p2">{l s='If you would like to add a comment about your order, please write it in the field below.' d='Shop.Theme.Customeraccount'}</p>
       </header>
 
       <section class="form-fields">

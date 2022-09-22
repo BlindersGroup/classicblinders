@@ -5,31 +5,19 @@
 
   {if $customer.is_logged && !$customer.is_guest}
 
-    <p class="identity">
-      {* [1][/1] is for a HTML tag. *}
-      {l s='Connected as [1]%firstname% %lastname%[/1].'
-        d='Shop.Theme.Customeraccount'
-        sprintf=[
-          '[1]' => "<a href='{$urls.pages.identity}'>",
-          '[/1]' => "</a>",
-          '%firstname%' => $customer.firstname,
-          '%lastname%' => $customer.lastname
-        ]
-      }
-    </p>
-    <p>
+    <p class="p2">
       {* [1][/1] is for a HTML tag. *}
       {l
         s='Not you? [1]Log out[/1]'
         d='Shop.Theme.Customeraccount'
         sprintf=[
-        '[1]' => "<a href='{$urls.actions.logout}'>",
+        '[1]' => "<a class='underline_link' href='{$urls.actions.logout}'>",
         '[/1]' => "</a>"
         ]
       }
     </p>
     {if !isset($empty_cart_on_logout) || $empty_cart_on_logout}
-      <p>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
+      <p class="p2 color_rojo">{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</p>
     {/if}
 
     <div class="clearfix">
@@ -85,17 +73,17 @@
 
     <div class="tab-content">
       <div class="tab-pane {if !$show_login_form}active{/if}" id="checkout-login-form" role="tabpanel" {if !$show_login_form}aria-hidden="true"{/if}>
-        <p class="type_form">{l s="Sign in" d='Shop.Theme.Actions'}</p>
+        {*<p class="type_form">{l s="Sign in" d='Shop.Theme.Actions'}</p>*}
         {render file='checkout/_partials/login-form.tpl' ui=$login_form}
       </div>
       <div class="tab-pane {if $show_login_form}active{/if}" id="checkout-guest-form" role="tabpanel" {if $show_login_form}aria-hidden="true"{/if}>
-        <p class="type_form">
+        {*<p class="type_form">
           {if $guest_allowed}
             {l s='Order as a guest' d='Shop.Theme.Checkout'}
           {else}
             {l s='Create an account' d='Shop.Theme.Customeraccount'}
           {/if}
-        </p>
+        </p>*}
         {render file='checkout/_partials/customer-form.tpl' ui=$register_form guest_allowed=$guest_allowed}
       </div>
     </div>

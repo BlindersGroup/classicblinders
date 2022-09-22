@@ -9,11 +9,21 @@
   }
 
   .modal-header {
-    background: $white;
-    height: 55px;
+    background: $negro;
+    height: 59px;
+    color: $blanco;
+    padding: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
 
     .close {
       opacity: 1;
+      color: $blanco;
+      text-shadow: none;
+      font-size: $font-size-base;
+      margin-left: auto;
 
       .material-icons {
         color: var(--color_font);
@@ -22,15 +32,15 @@
   }
 
   .modal-body {
-    background: $white;
-    padding: 15px;
+    background: $blanco;
+    padding: 0;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    height: calc(100% - 50px);
-    max-height: calc(100vh - 55px);
+    height: calc(100% - 59px);
+    max-height: calc(100vh - 59px);
 
     .divide-right span {
       display: inline-block;
@@ -44,11 +54,12 @@
 
     .modal_products {
       overflow-y: auto;
+      padding: 16px;
 
       .modal_product {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $gris_300;
 
         &:last-child {
           margin-bottom: 0;
@@ -61,6 +72,7 @@
 
         .modal_products_image {
           padding-right: 0;
+          padding-left: 0;
 
           .product-image {
             width: 100%;
@@ -72,16 +84,22 @@
 
         .modal_products_info {
           position: relative;
+          padding-left: 16px;
+          padding-right: 0;
 
           .product-name {
             color: var(--color_font);
-            font-size: 1rem;
-            max-width: 85%;
-            margin-bottom: 5px;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
+            font-weight: 500;
+            max-width: calc(100% - 24px);
+            margin-bottom: 4px;
 
             .product-attributes {
-              .value {
-                font-size: 0.875rem;
+              .value, .label {
+                font-size: $font-size-minimo;
+                line-height: $line-height-minimo;
+                font-weight: 400;
               }
             }
           }
@@ -94,11 +112,12 @@
           }
 
           .product-price {
-            color: #363a42;
+            color: $color-font;
             display: block;
             float: right;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: $font-size-base;
+            line-height: $line-height-base;
             width: initial;
             padding: initial;
             margin: initial;
@@ -112,10 +131,19 @@
   .modal_totals {
     width: 100%;
     max-height: 275px;
+    padding: 16px;
+    border-top: 1px solid $gris_300;
+    margin-top: auto;
 
     .cart-content {
-      padding: 10px 0 0 0;
-      border-top: 2px solid #777;
+      padding: 0;
+      border-top: 0;
+
+      p, span {
+        font-weight: 400;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+      }
 
       .page-content.page-cms ul, p, ul {
         color: var(--color_font);
@@ -125,10 +153,13 @@
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        padding: 0 0.5rem;
+        padding: 0;
+        margin-bottom: 5px;
 
-        .label, .value {
-          font-weight: 600;
+        .label, .value, p, span {
+          font-weight: 400;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
 
           .small, small {
             font-size: 80%;
@@ -155,13 +186,19 @@
   }
 
   .modal-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color_font);
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: 500;
+    color: $blanco;
 
-    i.material-icons {
-      margin-right: 10px;
-      color: var(--color_font);
+    i {
+      margin-right: 8px;
+    }
+
+    .total_products {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      font-weight: 500;
     }
   }
 
@@ -193,10 +230,26 @@
       display: flex;
       justify-content: space-between;
       padding: 0 0.5rem;
-      color: $gray-dark;
+      color: $color-font;
 
       &.product-total {
-        padding: 0.5rem;
+        padding: 0;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid $gris_300;
+        margin-bottom: 10px;
+
+        span.label,
+        span.value {
+          font-size: $font-size-base;
+          line-height: $line-height-base;
+          font-weight: 600 !important;
+
+          .small {
+            font-size: 70% !important;
+            font-weight: 400 !important;
+          }
+        }
       }
 
       &.cart-products-count {
@@ -205,10 +258,10 @@
         color: $btn-tertiary-color;
       }
 
-      &.product-tax {
-        display: inherit;
-        font-size: 0.875rem;
-      }
+      //&.product-tax {
+      //  display: inherit;
+      //  font-size: 0.875rem;
+      //}
 
       .label,
       .value {
@@ -231,19 +284,15 @@
         margin-bottom: 0;
 
         &.btn-view-cart {
-          color: var(--color_font);
           margin-top: 1rem;
 
-          &:hover {
-            background-color: var(--background);
-          }
         }
       }
     }
   }
 
   .divide-right {
-    border-right: 1px solid $gray-light-second;
+    border-right: 1px solid $gris_300;
   }
 
   .bootstrap-touchspin {
@@ -259,14 +308,14 @@
       text-align: center;
       line-height: 24px;
       border-left: 0;
-      border-top: 0.8px solid var(--primary_color);
-      border-bottom: 0.8px solid var(--primary_color);
+      border-top: 0.8px solid $color-font;
+      border-bottom: 0.8px solid $color-font;
       border-right: 0;
       left: 20px;
       width: 30px;
       height: 30px !important;
       background-color: inherit;
-      font-size: 15px;
+      font-size: $font-size-small;
     }
     .input-group-btn-vertical {
       display: flex;
@@ -278,20 +327,29 @@
         height: 30px !important;
         padding: 0 5px !important;
 
+        &:focus-visible,
+        &:focus {
+          outline: 0;
+        }
+
         &.bootstrap-touchspin-down {
-          left: -49px;
+          left: -47px;
           margin-top: 0;
-          border-left: 0.8px solid var(--primary_color);
-          border-top: 0.8px solid var(--primary_color);
-          border-bottom: 0.8px solid var(--primary_color);
+          border-left: 0.8px solid $color-font;
+          border-top: 0.8px solid $color-font;
+          border-bottom: 0.8px solid $color-font;
           border-right: 0;
         }
         &.bootstrap-touchspin-up {
           border-left: 0;
-          border-top: 0.8px solid var(--primary_color);
-          border-bottom: 0.8px solid var(--primary_color);
-          border-right: 0.8px solid var(--primary_color);
+          border-top: 0.8px solid $color-font;
+          border-bottom: 0.8px solid $color-font;
+          border-right: 0.8px solid $color-font;
           left: 21px;
+
+          > i {
+            font-size: 11px !important;
+          }
         }
 
         i {
@@ -299,7 +357,7 @@
           line-height: 1;
           top: 0;
           left: 0;
-          font-size: 0.6rem;
+          font-size: 1rem;
         }
       }
     }

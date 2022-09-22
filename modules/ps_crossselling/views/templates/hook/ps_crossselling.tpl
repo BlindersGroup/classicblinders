@@ -24,47 +24,57 @@
  *}
 
 <section class="featured-products clearfix mt-3">
-  <p class="h4">{l s='Productos relacionados' d='Shop.Theme.Catalog'}</p>
-  <div id="splide_crossselling" class="splide">
-    <div class="splide__track">
-      <div class="splide__list">
-        {foreach from=$products item=product}
-          <div class="splide__slide">
-            {include file="catalog/_partials/miniatures/product.tpl" product=$product}
-          </div>
-        {/foreach}
-      </div>
+    <p class="h4">{l s='Productos relacionados' d='Shop.Theme.Catalog'}</p>
+    <div id="splide_crossselling" class="splide">
+        <div class="splide__track">
+            <div class="splide__list">
+                {foreach from=$products item=product}
+                    <div class="splide__slide">
+                        {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+                    </div>
+                {/foreach}
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 
 <script>
-  document.addEventListener( 'DOMContentLoaded', function () {
-    new Splide( '#splide_crossselling', {
-      perPage     : 5,
-      pagination: false,
-      lazyLoad: 'sequential',
-      arrows: true,
-      breakpoints: {
-        600: {
-          perPage: 2,
-          padding: {
-            right: '2rem',
-          },
-          arrows: false,
-        },
-        800: {
-          perPage: 2,
-          padding: {
-            right: '2rem',
-          },
-          arrows: false,
-        },
-        1200: {
-          perPage: 4,
-        }
-      },
-    } ).mount();
-  } );
+    document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#splide_crossselling', {
+            perPage     : 5,
+            pagination: false,
+            lazyLoad: 'sequential',
+            arrows: true,
+            breakpoints: {
+                575: {
+                    perPage: 1,
+                    padding: {
+                        right: '30%',
+                    },
+                    arrows: false,
+                    gap: '16px',
+                },
+                767: {
+                    perPage: 2,
+                    padding: {
+                        right: '15%',
+                    },
+                    arrows: false,
+                    gap: '16px',
+                },
+                992: {
+                    perPage: 3,
+                    padding: {
+                        right: '10%',
+                    },
+                    arrows: false,
+                    gap: '16px',
+                },
+                1200: {
+                    perPage: 5,
+                }
+            },
+        } ).mount();
+    } );
 </script>

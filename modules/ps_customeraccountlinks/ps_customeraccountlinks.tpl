@@ -31,8 +31,8 @@
     <span class="h3">{l s='Your account' d='Shop.Theme.Customeraccount'}</span>
     <span class="float-xs-right">
       <span class="navbar-toggler collapse-icons">
-        <i class="material-icons add">&#xE313;</i>
-        <i class="material-icons remove">&#xE316;</i>
+        <i class="fa-solid fa-plus add"></i>
+        <i class="fa-solid fa-minus remove"></i>
       </span>
     </span>
   </div>
@@ -46,31 +46,31 @@
     {/foreach}*}
     <li>
       <span class="item datatext" datatext="{$urls.pages.my_account|base64_encode}">
-        <i class="material-icons">&#xE8B0;</i>
+        <i class="fa-solid fa-user"></i>
         {l s='My account' d='Shop.Theme.Customeraccount'}
       </span>
     </li>
     <li>
       <span class="item datatext" datatext="{$urls.pages.history|base64_encode}">
-        <i class="material-icons">widgets</i>
+        <i class="fa-solid fa-list-ul"></i>
         {l s='My orders' d='Shop.Theme.Customeraccount'}
       </span>
     </li>
     <li>
       <span class="item datatext" datatext="{$urls.pages.discount|base64_encode}">
-        <i class="material-icons">content_cut</i>
+        <i class="fa-solid fa-tag"></i>
         {l s='Discount coupons' d='Shop.Theme.Customeraccount'}
       </span>
     </li>
     <li>
       <span class="item datatext" datatext="{$urls.pages.identity|base64_encode}">
-        <i class="material-icons">account_box</i>
+        <i class="fa-solid fa-address-book"></i>
         {l s='Personal information' d='Shop.Theme.Customeraccount'}
       </span>
     </li>
     <li>
       <span class="item datatext" datatext="{$urls.pages.addresses|base64_encode}">
-        <i class="material-icons">location_on</i>
+        <i class="fa-solid fa-location-dot"></i>
         {l s='My Addresses' d='Shop.Theme.Customeraccount'}
       </span>
     </li>

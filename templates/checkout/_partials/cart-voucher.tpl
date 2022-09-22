@@ -26,28 +26,11 @@
   {block name='cart_voucher'}
     <div class="block-promo">
       <div class="cart-voucher">
-        {if $cart.vouchers.added}
-          {block name='cart_voucher_list'}
-            <ul class="promo-name card-block">
-              {foreach from=$cart.vouchers.added item=voucher}
-                <li class="cart-summary-line">
-                  <span class="label">{$voucher.name}</span>
-                  <div class="float-xs-right">
-                    <span>{$voucher.reduction_formatted}</span>
-                      {if isset($voucher.code) && $voucher.code !== ''}
-                        <a href="{$voucher.delete_url}" data-link-action="remove-voucher"><i class="material-icons">&#xE872;</i></a>
-                      {/if}
-                  </div>
-                </li>
-              {/foreach}
-            </ul>
-          {/block}
-        {/if}
 
-        <p class="promo-code-button display-promo{if $cart.discounts|count > 0} with-discounts{/if}">
+        <p class="promo-code-button {if $cart.discounts|count > 0} with-discounts{/if}">
           <a class="collapse-button" href="#promo-code">
               {l s='Have a promo code?' d='Shop.Theme.Checkout'}
-              <i class="material-icons">add</i>
+              <i class="fa-solid fa-angle-down"></i>
           </a>
         </p>
 
@@ -64,25 +47,27 @@
 
             {block name='cart_voucher_notifications'}
               <div class="alert alert-danger js-error" role="alert">
-                <i class="material-icons">&#xE001;</i><span class="ml-1 js-error-text"></span>
+                  <span class="ml-1 js-error-text"></span>
               </div>
             {/block}
 
-            <a class="collapse-button promo-code-button cancel-promo" role="button" data-toggle="collapse" data-target="#promo-code" aria-expanded="true" aria-controls="promo-code">
+            {*<a class="collapse-button promo-code-button cancel-promo" role="button" data-toggle="collapse" data-target="#promo-code" aria-expanded="true" aria-controls="promo-code">
               {l s='Close' d='Shop.Theme.Checkout'}
-            </a>
+            </a>*}
           </div>
         </div>
 
         {if $cart.discounts|count > 0}
-          <p class="block-promo promo-highlighted">
+          {*<p class="block-promo promo-highlighted">
             {l s='Take advantage of our exclusive offers:' d='Shop.Theme.Actions'}
-          </p>
+          </p>*}
           <ul class="js-discount card-block promo-discounts">
             {foreach from=$cart.discounts item=discount}
               <li class="cart-summary-line">
                 <span class="label">
-                  <span class="code">{$discount.code}</span> - {$discount.name}
+                    <span class="text">{$discount.name} {l s='Code' d='Shop.Theme.Checkout'}:</span>
+                    <span class="code">{$discount.code}</span>
+                    <i class="fa-solid fa-plus"></i>
                 </span>
               </li>
             {/foreach}
@@ -91,4 +76,6 @@
       </div>
     </div>
   {/block}
+
+    <hr class="separator separator_voucher">
 {/if}

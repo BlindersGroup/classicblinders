@@ -12,8 +12,9 @@
         padding: 10px;
         margin: 5px;
         text-align: center;
-        background: $white;
+        background: $blanco;
         transition: 0.4s ease-out;
+        border: 1px solid $blanco;
 
         &-infos {
           a {
@@ -22,7 +23,7 @@
         }
 
         &:hover {
-          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+          border-color: $primary_color;
         }
 
         &-products {
@@ -54,15 +55,54 @@
       flex-direction: row;
       -webkit-box-pack: justify;
       justify-content: space-between;
+      background-color: inherit;
+      padding: 0;
+      background: var(--background) !important;
+
+      .manufacturer-cover {
+        margin-left: auto;
+      }
+
+      p {
+        font-size: $font-size-p2;
+        line-height: $line-height-p2;
+      }
+
     }
   }
+
+  #products .products > div {
+    //width: 20%;
+  }
+
+  .dbproductcomments {
+    display: table;
+    background-color: #FFF;
+    padding: 25px;
+
+    .dbcomments_category .info_comment a {
+      color: $color_font;
+    }
+  }
+
 }
 
 #manufacturer-description {
   display: table;
-  background-color: #FFF;
-  padding: 1rem;
   width: 100%;
+  margin-top: 48px;
+
+  p {
+    font-size: $font-size-p2;
+    line-height: $line-height-p2;
+  }
+
+  .title {
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
+    font-weight: 700;
+    text-align: center;
+  }
 }
 
 #full-column {
@@ -101,7 +141,7 @@
         flex-direction: column;
         align-content: center;
         padding: 1.25rem;
-        background-color: $white;
+        //background-color: $white;
 
         > * {
           width: 100%;
@@ -115,4 +155,15 @@
     }
   }
 
+}
+
+@include media-breakpoint-down(sm) {
+  #manufacturer #main ul .brand {
+    width: calc(50% - 10px);
+    min-width: auto;
+
+    .brand-img {
+      width: 100%;
+    }
+  }
 }
