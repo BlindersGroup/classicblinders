@@ -35,7 +35,7 @@
     <div class="col-md-12{if ($field.type === 'radio-buttons')} form-control-valign{/if}">
 
       {if $field.type !== 'checkbox'}
-        <label class="form-control-label{if $field.required} required{/if} {if isset($field.availableValues.placeholder) || $field.type == 'select' || $field.type == 'countrySelect' || !empty($field.value)}has_value{/if}">
+        <label for="{$field.name}" class="form-control-label{if $field.required} required{/if} {if isset($field.availableValues.placeholder) || $field.type == 'select' || $field.type == 'countrySelect' || !empty($field.value)}has_value{/if}">
           {$field.label}
           {block name='form_field_comment'}
             {if ($field.required) && !in_array($field.type, ['radio-buttons', 'checkbox'])}
@@ -78,7 +78,7 @@
 
         {block name='form_field_item_radio'}
           {foreach from=$field.availableValues item="label" key="value"}
-            <label class="radio-inline">
+            <label class="radio-inline" for="{$field.name}">
               <span class="custom-radio">
                 <input
                   name="{$field.name}"
