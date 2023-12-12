@@ -124,7 +124,7 @@ class DbMenuList extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbmenu_list SET active = '$active' WHERE id_dbmenu_list = '$id_dbmenu_list'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',
@@ -143,7 +143,7 @@ class DbMenuList extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbmenu_list SET ofuscate = '$active' WHERE id_dbmenu_list = '$id_dbmenu_list'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',
@@ -194,6 +194,7 @@ class DbMenuList extends ObjectModel
             'id_parent' => $parent['id_parent'],
             'strong' => $parent['strong'],
             'color' => $parent['color'],
+            'type' => $parent['type'],
         );
 
         return $menu;

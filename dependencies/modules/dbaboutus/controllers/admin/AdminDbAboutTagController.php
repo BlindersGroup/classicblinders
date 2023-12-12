@@ -152,6 +152,16 @@ class AdminDbAboutTagController extends ModuleAdminController
             'title' => $this->trans('Save', array(), 'Admin.Actions'),
         );
 
+        $this->fields_form['buttons'] = array(
+            'save-and-stay' => array(
+                'title' => $this->trans('Guardar y permanecer', array(), 'Admin.Actions'),
+                'name' => 'submitAdd'.$this->table.'AndStay',
+                'type' => 'submit',
+                'class' => 'btn btn-default pull-right',
+                'icon' => 'process-icon-save'
+            )
+        );
+
         return parent::renderForm();
     }
 

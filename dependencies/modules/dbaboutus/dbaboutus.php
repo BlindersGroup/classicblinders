@@ -47,7 +47,7 @@ class Dbaboutus extends Module
 
         $this->name = 'dbaboutus';
         $this->tab = 'front_office_features';
-        $this->version = '1.3.0';
+        $this->version = '1.4.1';
         $this->author = 'DevBlinders';
         $this->need_instance = 0;
 
@@ -312,15 +312,6 @@ class Dbaboutus extends Module
                         'cols' => 40,
                         'lang'  => true,
                     ),
-                    array(
-                        'type' => 'textarea',
-                        'name' => 'DBABOUTUS_LARGE_DESC',
-                        'label' => $this->l('Descripción larga'),
-                        'autoload_rte' => true,
-                        'rows' => 5,
-                        'cols' => 40,
-                        'lang'  => true,
-                    ),
                 ),
                 'submit' => array(
                     'title' => $this->l('Save'),
@@ -428,6 +419,97 @@ class Dbaboutus extends Module
         );
 
         return $my_routes;
+    }
+
+    public function generateBreadcrumbJsonld($breadcrumb)
+    {
+        $itemListElement = [];
+        $position = 1;
+        foreach($breadcrumb['links'] as $bc) {
+            (object)$bread = new stdClass();
+            $bread->{'@type'} = 'ListItem';
+            $bread->position = $position;
+
+            (object)$item = new stdClass();
+            $item->name = $bc['title'];
+            $item->{'@id'} = $bc['url'];
+            $item->type = 'Thing';
+            $bread->item = $item;
+
+            $itemListElement[] = $bread;
+            $position++;
+        }
+
+        (object)$json = new stdClass();
+        $json->{'@context'} = 'https://schema.org';
+        $json->{'@type'} = 'BreadcrumbList';
+        $json->itemListElement = $itemListElement;
+
+        $json_ld = json_encode($json, JSON_UNESCAPED_UNICODE);
+        $script_json = '<script type="application/ld+json">'.$json_ld.'</script>';
+
+        return $script_json;
+    }
+
+    public function convertImageToWebP($source, $destination, $quality=80) {
+        $extension = pathinfo($source, PATHINFO_EXTENSION);
+        if ($extension == 'jpeg' || $extension == 'jpg') {
+            $image = imagecreatefromjpeg($source);
+        } elseif ($extension == 'gif') {
+            $image = imagecreatefromgif($source);
+        } elseif ($extension == 'png') {
+            $image = imagecreatefrompng($source);
+            imagepalettetotruecolor($image);
+        }
+        return imagewebp($image, $destination, $quality);
+    }
+
+    public function checkWebp() {
+        $gd_extensions = get_extension_funcs("gd");
+        if (in_array("imagewebp", $gd_extensions)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function getNewImg($img) {
+        $dir_img = dirname(__FILE__).'/views/img/author/';
+        $type = Tools::strtolower(Tools::substr(strrchr($img, '.'), 1));
+        $extensions = array('.jpg', '.gif', '.jpeg', '.png', '.webp');
+        $name_without_extension = str_replace($extensions, '', $img);
+        $img_small = $name_without_extension.'-small.'.$type;
+        $img_big = $name_without_extension.'-big.'.$type;
+        $img_small_webp = $img_small.'.webp';
+        $img_big_webp = $img_big.'.webp';
+
+        $image = [];
+        $image['webp_small'] = 0;
+        $image['webp_big'] = 0;
+        // Imagen small
+        if (file_exists($dir_img.$img_small_webp)) {
+            $image['small'] = $img_small;
+            $image['webp_small'] = 1;
+        } elseif(file_exists($dir_img.$img_small)) {
+            $image['small'] = $img_small;
+        } elseif(file_exists($dir_img.$img)) {
+            $image['small'] = $img;
+        } else {
+            $image['small'] = 'sin-imagen-small.jpg';
+        }
+        // Imagen big
+        if (file_exists($dir_img.$img_big_webp)) {
+            $image['big'] = $img_big;
+            $image['webp_big'] = 1;
+        } elseif(file_exists($dir_img.$img_big)) {
+            $image['big'] = $img_big;
+        } elseif(file_exists($dir_img.$img)) {
+            $image['big'] = $img;
+        } else {
+            $image['big'] = 'sin-imagen-big.jpg';
+        }
+
+        return $image;
     }
 
 }

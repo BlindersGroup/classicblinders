@@ -38,11 +38,11 @@ class AdminDbMenuAjaxController extends ModuleAdminController
                 DbMenuPremium::deleteCategory($delete);
                 DbMenuPremium::importCategory();
 
-                die(Tools::jsonEncode(array(
+                die(json_encode(array(
                     'success' => true,
                 )));
             }
-            die(Tools::jsonEncode(array(
+            die(json_encode(array(
                 'success' => false,
             )));
         }

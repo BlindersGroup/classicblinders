@@ -23,7 +23,7 @@ class dbproductcommentsajaxModuleFrontController extends ModuleFrontController
             } else {
                 $modal = $this->module->renderGenericModal('login');
             }
-            die(Tools::jsonEncode(array('modal' => $modal)));
+            die(json_encode(array('modal' => $modal)));
         }
 
         if($action === 'create_comment') {
@@ -67,7 +67,7 @@ class dbproductcommentsajaxModuleFrontController extends ModuleFrontController
             } else {
                 $modal = $this->module->renderGenericModal('login');
             }
-            die(Tools::jsonEncode(array('modal' => $modal)));
+            die(json_encode(array('modal' => $modal)));
         }
 
     }

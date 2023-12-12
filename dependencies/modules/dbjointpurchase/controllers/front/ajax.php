@@ -38,14 +38,14 @@ class DbJointPurchaseAjaxModuleFrontController extends ModuleFrontController
             $best_product = (int)Tools::getValue('best_product');
             $products = $this->module->getTopSellerByCategory($id_product);
             $modal = $this->module->renderJointModal($products, $key, $best_product, $id_product);
-            die(Tools::jsonEncode(array('modal' => $modal)));
+            die(json_encode(array('modal' => $modal)));
         }
 
         if ($action === 'change_product') {
             $id_product = (int)Tools::getValue('id_product');
             $key = (int)Tools::getValue('key');
             $product = $this->module->renderJointProduct($id_product, $key);
-            die(Tools::jsonEncode(array('product' => $product)));
+            die(json_encode(array('product' => $product)));
         }
     }
 }

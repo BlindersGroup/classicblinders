@@ -27,9 +27,21 @@ $(document).ready(function() {
     if ( opt == "category" ) {
         $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).show();
         $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).hide();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).show();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).show();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).show();
     } else if(opt == "url") {
         $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).hide();
         $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).show();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).show();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).show();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).show();
+    } else if(opt == "separator") {
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).hide();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).hide();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).hide();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).hide();
+        $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).hide();
     }
 
 
@@ -38,9 +50,21 @@ $(document).ready(function() {
         if ( opt == "category" ) {
             $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).show();
             $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).hide();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).show();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).show();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).show();
         } else if(opt == "url") {
             $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).hide();
             $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).show();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).show();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).show();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).show();
+        } else if(opt == "separator") {
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(4,5).hide();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(5,6).hide();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(6,7).hide();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(7,8).hide();
+            $('#fieldset_0 .form-wrapper').children('.form-group').slice(9,10).hide();
         }
     });
 

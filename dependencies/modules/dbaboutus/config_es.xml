@@ -2,7 +2,7 @@
 <module>
     <name>dbaboutus</name>
     <displayName><![CDATA[DB About Us]]></displayName>
-    <version><![CDATA[1.3.0]]></version>
+    <version><![CDATA[1.4.1]]></version>
     <description><![CDATA[Quienes somos con paginas de autores personalizada]]></description>
     <author><![CDATA[DevBlinders]]></author>
     <tab><![CDATA[front_office_features]]></tab>

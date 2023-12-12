@@ -331,6 +331,16 @@ class AdminDbAboutAuthorController extends ModuleAdminController
             'title' => $this->trans('Save', array(), 'Admin.Actions'),
         );
 
+        $this->fields_form['buttons'] = array(
+            'save-and-stay' => array(
+                'title' => $this->trans('Guardar y permanecer', array(), 'Admin.Actions'),
+                'name' => 'submitAdd'.$this->table.'AndStay',
+                'type' => 'submit',
+                'class' => 'btn btn-default pull-right',
+                'icon' => 'process-icon-save'
+            )
+        );
+
         return parent::renderForm();
     }
 
@@ -341,8 +351,11 @@ class AdminDbAboutAuthorController extends ModuleAdminController
             return;
         }
 
-        $specialities = implode(",", Tools::getValue('specialties'));
-        if(count($specialities) > 0 && !is_array($specialities)) {
+        $specialities = '';
+        if(!empty(Tools::getValue('specialties'))) {
+            $specialities = implode(",", Tools::getValue('specialties'));
+        }
+        if(!empty($specialities)) {
             $_POST['specialties'] = $specialities;
         } else {
             $_POST['specialties'] = '';
@@ -364,8 +377,11 @@ class AdminDbAboutAuthorController extends ModuleAdminController
             return;
         }
 
-        $specialities = implode(",", Tools::getValue('specialties'));
-        if(count($specialities) > 0 && !is_array($specialities)) {
+        $specialities = '';
+        if(!empty(Tools::getValue('specialties'))) {
+            $specialities = implode(",", Tools::getValue('specialties'));
+        }
+        if(!empty($specialities)) {
             $_POST['specialties'] = $specialities;
         } else {
             $_POST['specialties'] = '';
@@ -412,6 +428,28 @@ class AdminDbAboutAuthorController extends ModuleAdminController
                 $this->errors[] = $this->l('Error al subir la imagen');
                 return false;
             }
+
+            // redimensionamos las imagenes
+            $dir_img = dirname(__FILE__).'/../../views/img/author/';
+            $img_orig = $dir_img.$image_name;
+            $img_small = $dir_img.(int)$id_author.'-small.'.$type;
+            $img_big = $dir_img.(int)$id_author.'-big.'.$type;
+            list($originalWidth, $originalHeight) = getimagesize($img_orig);
+            $ratio = $originalWidth / $originalHeight;
+            $height_small = 100 / $ratio;
+            $height_big = 250 / $ratio;
+            ImageManager::resize($img_orig, $img_small, 100, $height_small);
+            ImageManager::resize($img_orig, $img_big, 250, $height_big);
+
+            // Generamos el webp
+            $checkWebp = $this->module->checkWebp();
+            if($checkWebp && $type != 'webp') {
+                $img_small_webp = $img_small.'.webp';
+                $img_big_webp = $img_big.'.webp';
+                $this->module->convertImageToWebP($img_small, $img_small_webp);
+                $this->module->convertImageToWebP($img_big, $img_big_webp);
+            }
+
             if (isset($temp_name)) {
                 @unlink($temp_name);
             }

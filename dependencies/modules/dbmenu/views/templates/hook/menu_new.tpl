@@ -64,24 +64,43 @@
                         <div class="dbmenu_category">
                             <span class="title">{l s='Categorias' mod='dbmenu'}</span>
                             {foreach from=$menus item=$menu}
-                                <div class="item">
 
-                                    {* Items principales *}
-                                    {if !isset($menu.childrens)}
-                                        {if $menu.ofuscate == 0}
-                                            <a href="{$menu.url}" class="item_primary" title="{$menu.alt}" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
-                                                {if $menu.img_menu != ''}
-                                                    <img class="img_menu" src="{$menu.img_menu}" alt="{$menu.title}" loading="lazy" height="25" width="25">
-                                                {/if}
-                                                {if $menu.strong == 1}<strong>{/if}
-                                                    {$menu.title}
-                                                    {if $menu.strong == 1}</strong>{/if}
-                                                {if isset($menu.childrens)}
-                                                    <i class="material-icons">keyboard_arrow_right</i>
-                                                {/if}
-                                            </a>
+                                {if $menu.type == 'separator'}
+                                    <span class="title separator" {if !empty($menu.color)}style="color:{$dropdown.color};"{/if}>
+                                        {$menu.title|truncate:50:'...'}
+                                    </span>
+                                {else}
+                                    <div class="item">
+
+                                        {* Items principales *}
+                                        {if !isset($menu.childrens)}
+                                            {if $menu.ofuscate == 0}
+                                                <a href="{$menu.url}" class="item_primary" title="{$menu.alt}" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
+                                                    {if $menu.img_menu != ''}
+                                                        <img class="img_menu" src="{$menu.img_menu}" alt="{$menu.title}" loading="lazy" height="25" width="25">
+                                                    {/if}
+                                                    {if $menu.strong == 1}<strong>{/if}
+                                                        {$menu.title}
+                                                        {if $menu.strong == 1}</strong>{/if}
+                                                    {if isset($menu.childrens)}
+                                                        <i class="material-icons">keyboard_arrow_right</i>
+                                                    {/if}
+                                                </a>
+                                            {else}
+                                                <span datatext="{$menu.url|base64_encode}" class="item_primary datatext" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
+                                                    {if $menu.img_menu != ''}
+                                                        <img class="img_menu" src="{$menu.img_menu}" alt="{$menu.title}" loading="lazy" height="25" width="25">
+                                                    {/if}
+                                                    {if $menu.strong == 1}<strong>{/if}
+                                                        {$menu.title}
+                                                        {if $menu.strong == 1}</strong>{/if}
+                                                    {if isset($menu.childrens)}
+                                                        <i class="material-icons">keyboard_arrow_right</i>
+                                                    {/if}
+                                                </span>
+                                            {/if}
                                         {else}
-                                            <span datatext="{$menu.url|base64_encode}" class="item_primary datatext" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
+                                            <span class="item_primary open_subitems" data-subitem="subitems_{$menu.id_dbmenu_list}" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
                                                 {if $menu.img_menu != ''}
                                                     <img class="img_menu" src="{$menu.img_menu}" alt="{$menu.title}" loading="lazy" height="25" width="25">
                                                 {/if}
@@ -93,22 +112,9 @@
                                                 {/if}
                                             </span>
                                         {/if}
-                                    {else}
-                                        <span class="item_primary open_subitems" data-subitem="subitems_{$menu.id_dbmenu_list}" {if !empty($menu.color)}style="color:{$menu.color};"{/if}>
-                                            {if $menu.img_menu != ''}
-                                                <img class="img_menu" src="{$menu.img_menu}" alt="{$menu.title}" loading="lazy" height="25" width="25">
-                                            {/if}
-                                            {if $menu.strong == 1}<strong>{/if}
-                                                {$menu.title}
-                                                {if $menu.strong == 1}</strong>{/if}
-                                            {if isset($menu.childrens)}
-                                                <i class="material-icons">keyboard_arrow_right</i>
-                                            {/if}
-                                        </span>
-                                    {/if}
 
-
-                                </div>
+                                    </div>
+                                {/if}
                             {/foreach}
                         </div>
 

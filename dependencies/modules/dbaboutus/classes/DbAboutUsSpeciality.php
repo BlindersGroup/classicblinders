@@ -24,6 +24,8 @@
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
+require_once _PS_MODULE_DIR_ . 'dbaboutus/dbaboutus.php';
+
 class DbAboutUsSpeciality extends ObjectModel
 {
 
@@ -48,7 +50,29 @@ class DbAboutUsSpeciality extends ObjectModel
         parent::__construct($id_dbaboutus_author, $id_lang, $id_shop);
     }
 
-    public function getSpecialities()
+    public  function add($autodate = true, $null_values = false)
+    {
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+
+        }
+        $ret = parent::add($autodate, $null_values);
+        return $ret;
+    }
+
+    public function update( $null_values = false ) {
+
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+        }
+        return parent::update( $null_values );
+    }
+
+    public static function getSpecialities()
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -65,7 +89,7 @@ class DbAboutUsSpeciality extends ObjectModel
         return $result;
     }
 
-    public function getSpecialitiesByAuthor($id_author)
+    public static function getSpecialitiesByAuthor($id_author)
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -73,6 +97,9 @@ class DbAboutUsSpeciality extends ObjectModel
         $sql = "SELECT specialties
             FROM "._DB_PREFIX_."dbaboutus_author WHERE id_dbaboutus_author = '$id_author'";
         $specs = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($sql);
+        if(empty($specs)) {
+            return [];
+        }
         
         $sql = "SELECT * 
             FROM "._DB_PREFIX_."dbaboutus_speciality t
@@ -96,7 +123,7 @@ class DbAboutUsSpeciality extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbaboutus_speciality SET active = '$active' WHERE id_dbaboutus_speciality = '$id_speciality'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',

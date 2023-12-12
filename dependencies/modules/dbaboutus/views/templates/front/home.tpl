@@ -24,23 +24,11 @@
 *}
 {extends file='page.tpl'}
 
+{block name='head_microdata'}
+{/block}
+
 {block name='hook_extra'}
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {foreach from=$breadcrumb.links item=path name=breadcrumb}
-            {
-                "@type": "ListItem",
-                "position": {$smarty.foreach.breadcrumb.iteration|escape:'htmlall':'UTF-8'},
-                "name": "{$path.title|escape:'htmlall':'UTF-8'}",
-                "item": "{$path.url|escape:'htmlall':'UTF-8'}"
-            }{if not $smarty.foreach.breadcrumb.last},{/if}
-            {/foreach}
-        ]
-    }
-    </script>
+    {$json_ld nofilter}
 {/block}
 
 {block name="content_wrapper"}
@@ -56,7 +44,15 @@
                     {foreach from=$authors item=author}
                         <li>
                             <a href="{DbAboutUsAuthor::getLink($author.link_rewrite|escape:'htmlall':'UTF-8')}" class="link_author">
-                                <img src="{$path_img|escape:'htmlall':'UTF-8'}{$author.id_dbaboutus_author|escape:'htmlall':'UTF-8'}.jpg" alt="{$author.name|escape:'htmlall':'UTF-8'}">
+                                {if $author.image.webp_big == 1}
+                                    <picture>
+                                        <source srcset="{$path_img}{$author.image.big}.webp" type="image/webp">
+                                        <source srcset="{$path_img}{$author.image.big}" type="image/jpeg">
+                                        <img src="{$path_img}{$author.image.big}" alt="{$author.name|escape:'htmlall':'UTF-8'}" loading="lazy" width="250" height="250">
+                                    </picture>
+                                {else}
+                                    <img src="{$path_img}{$author.image.big}" alt="{$author.name|escape:'htmlall':'UTF-8'}" loading="lazy" width="250" height="250">
+                                {/if}
                                 <div class="text_author">
                                     <span class="name">{$author.name|escape:'htmlall':'UTF-8'}</span>
                                     <span class="work">{$author.profession|escape:'htmlall':'UTF-8'}</span>

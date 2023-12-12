@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 2.0.0
+version: 2.1.0
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -176,25 +176,16 @@ assets:
 
 dependencies:
   modules:
-    - dbcontactinfo
     - dbhomecategories
-    - dbfreeshipping
     - dbbrandslider
     - dbproductcomments
-    - dbcategorydesc
     - dbrichsnippets
     - dbdatatext
     - dbthemecustom
     - dbmenu
-    - dbsearchbar
-    - dbwishlist
     - dbjointpurchase
     - dbaboutus
-    - dbrecomendation
-    - dbcategories
-    - dbnewproducts
-    - dbbestseller
-    - dbbrandproducts
+
 global_settings:
   configuration:
     PS_IMAGE_QUALITY: png
@@ -212,28 +203,19 @@ global_settings:
     BLOCKSOCIAL_INSTAGRAM: https://www.instagram.com/
   modules:
     to_enable:
-      - dbcontactinfo
       - dbhomecategories
-      - dbfreeshipping
       - dbbrandslider
       - dbproductcomments
-      - dbcategorydesc
       - dbrichsnippets
       - dbdatatext
       - dbthemecustom
       - dbmenu
-      - dbsearchbar
-      - dbwishlist
       - dbjointpurchase
       - dbaboutus
-      - dbrecomendation
-      - dbcategories
-      - dbnewproducts
-      - dbbestseller
-      - dbbrandproducts
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
+      - ps_searchbar
     to_disable:
       - ps_banner
       - ps_specials
@@ -241,7 +223,6 @@ global_settings:
       - ps_themecusto
       - gamification
       - ps_mainmenu
-      - ps_searchbar
       - productcomments
       - blockwishlist
   hooks:
@@ -275,30 +256,29 @@ global_settings:
         description: Footer category
       - name: displayProductFullWidth
         title: displayProductFullWidth
+        description: Product Full Width
       - name: displaySidebarContact
         title: displaySidebarContact
+        description: Sidebar Contact
       - name: displayBlockLeftFooter
         title: displayBlockLeftFooter
+        description: Block Left Column
       - name: displayFooterCopyright
         title: displayFooterCopyright
+        description: Footer Copyright
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:
         - dbmenu
       displayNav1:
-        - dbcontactinfo
       displayNavCenter:
-        - dbfreeshipping
       displayNav2:
         - dbproductcomments
       displayTop:
-        - dbcontactinfo
-        - dbwishlist
         - ps_customersignin
         - ps_shoppingcart
       displayTopCenter:
-        - dbsearchbar
-        - dbcontactinfo
+        - ps_searchbar
       displayHome:
         - ps_imageslider
         - dbhomecategories
@@ -307,7 +287,6 @@ global_settings:
         - ps_newproducts
         - ps_featuredproducts
         - ps_customtext
-        - dbcategories
       displayFooterBefore:
         - ps_emailsubscription
       displayFooter:
@@ -320,13 +299,10 @@ global_settings:
       displayLeftColumn:
         - ps_categorytree
         - ps_facetedsearch
-      displaySearch:
       displayProductAdditionalInfo:
-        - dbfreeshipping
       displayReassurance:
         - blockreassurance
       displayOrderConfirmation2:
-        - dbcontactinfo
         - ps_featuredproducts
       displayCrossSellingShoppingCart:
         - ps_featuredproducts
@@ -334,36 +310,21 @@ global_settings:
       displayProductCenterColumn:
         - dbproductcomments
       displayMenuInside:
-        - dbproductcomments
       displayTopCheckout:
-        - dbcontactinfo
       displayFooterCategory:
-        - dbproductcomments
-        - dbbestseller
-        - dbnewproducts
-        - dbcategorydesc
-        - dbcategories
       displaySidebarContact:
-        - dbcontactinfo
       displayBlockLeftFooter:
         - ps_sharebuttons
       displayShoppingCart:
-        - dbfreeshipping
       displayProductFullWidth:
         - dbjointpurchase
       displayProductListReviews:
         - dbproductcomments
-        - dbwishlist
       displayFooterProduct:
-        - dbrecomendation
         - dbproductcomments
-        - dbbrandproducts
-        - dbcategories
       displayCustomerAccount:
         - dbproductcomments
-        - dbwishlist
       displayProductActions:
-        - dbwishlist
 
   image_types:
     cart_default:

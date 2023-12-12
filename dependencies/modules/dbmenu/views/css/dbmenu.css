@@ -847,6 +847,11 @@ p.dbmobile__title_before:hover {
     color: var(--dbmenu_color);
 }
 
+.dbmenu_category .title.separator {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
 #header .dbmenu_category .item .item_primary,
 #header .dbmenu_personal .item {
     color: var(--dbmenu_color);
@@ -1001,6 +1006,20 @@ p.dbmobile__title_before:hover {
 #header .subitems .subitem:hover,
 #header .subitems .susubitem:hover {
     color: var(--dbmenu_color_hover);
+}
+
+#header .subitems .subitem.separator {
+    cursor: inherit;
+    border-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+}
+
+#header .subitems .subitem.separator:hover,
+#header .subitems .susubitem.separator:hover {
+    color: inherit;
 }
 
 #header .subitems .item_viewall:hover {

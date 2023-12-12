@@ -181,6 +181,10 @@ class AdminDbMenuListController extends ModuleAdminController
                 'id_type' => 'url',
                 'type' => 'url',
             ),
+            array(
+                'id_type' => 'separator',
+                'type' => 'Separador',
+            ),
         );
 
         // valores guardados

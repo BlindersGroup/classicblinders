@@ -37,12 +37,27 @@ class DbAboutUsHomeModuleFrontController extends ModuleFrontController
 
         parent::initContent();
 
+        // Detectamos en el caso de tener idiomas que la url tenga la url con el idioma
+        $languages = Language::getLanguages();
+        if (count($languages) > 1) {
+            $path_language = $_SERVER['REQUEST_URI'];
+            $iso_code = Language::getIsoById($this->context->language->id);
+            $route_prefix = $iso_code . '/';
+            if (strpos($path_language, $route_prefix) == false) {
+                header("HTTP/1.0 404 Not Found");
+                $this->setTemplate('errors/404.tpl');
+                return;
+            }
+        }
+
         $slug = Configuration::get('DBABOUTUS_URL', $id_lang);
         $title = Configuration::get('DBABOUTUS_TITLE', $id_lang);
         $short_desc = Configuration::get('DBABOUTUS_SHORT_DESC', $id_lang);
         $large_desc = Configuration::get('DBABOUTUS_LARGE_DESC', $id_lang);
 
         $authors = DbAboutUsAuthor::getAuthors();
+
+        $json_ld = $this->module->generateBreadcrumbJsonld($this->getBreadcrumbLinks());
 
         $this->context->smarty->assign(array(
             'slug'    => $slug,
@@ -51,6 +66,7 @@ class DbAboutUsHomeModuleFrontController extends ModuleFrontController
             'large_desc'    => $large_desc,
             'authors'    => $authors,
             'path_img' => _MODULE_DIR_.'dbaboutus/views/img/author/',
+            'json_ld'           => $json_ld,
         ));
 
         $this->setTemplate('module:dbaboutus/views/templates/front/home.tpl');
@@ -89,5 +105,24 @@ class DbAboutUsHomeModuleFrontController extends ModuleFrontController
         $page['meta']['robots'] = 'index';
 
         return $page;
+    }
+
+    public function getTemplateVarUrls()
+    {
+        $urls = parent::getTemplateVarUrls();
+
+        $languages = Language::getLanguages();
+        if (count($languages) > 1) {
+            foreach ($urls['alternative_langs'] as $locale => $href_lang) {
+                $id_lang = (int)Language::getIdByLocale($locale);
+                if ($id_lang > 0) {
+                    $url_quienes = Configuration::get('DBABOUTUS_URL', $id_lang);
+                    $iso_code = Language::getIsoById($id_lang);
+                    $urls['alternative_langs'][$locale] = $urls['base_url'].$iso_code.'/'.$url_quienes.'/';
+                }
+            }
+        }
+
+        return $urls;
     }
 }

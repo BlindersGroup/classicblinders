@@ -25,32 +25,27 @@
 
 {extends file='page.tpl'}
 
+{block name='head_microdata'}
+{/block}
+
 {block name='hook_extra'}
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {foreach from=$breadcrumb.links item=path name=breadcrumb}
-            {
-                "@type": "ListItem",
-                "position": {$smarty.foreach.breadcrumb.iteration|escape:'htmlall':'UTF-8'},
-                "name": "{$path.title|escape:'htmlall':'UTF-8'}",
-                "item": "{$path.url|escape:'htmlall':'UTF-8'}"
-            }{if not $smarty.foreach.breadcrumb.last},{/if}
-            {/foreach}
-        ]
-    }
-    </script>
-    {if $premium == 1}
-        {include file='module:dbaboutus/premium/ritch_snnipets.tpl'}
-    {/if}
+    {$json_ld nofilter}
 {/block}
 
 {block name="content_wrapper"}
     <div id="content-wrapper" class="content-only">
         <div class="author_shortinfo">
-            <div class="img_author"><img src="{$path_img|escape:'htmlall':'UTF-8'}{$author.id_dbaboutus_author|escape:'htmlall':'UTF-8'}.jpg" alt="{$author.name|escape:'htmlall':'UTF-8'}"></div>
+            <div class="img_author">
+                {if $author.image.webp_big == 1}
+                    <picture>
+                        <source srcset="{$path_img}{$author.image.big}.webp" type="image/webp">
+                        <source srcset="{$path_img}{$author.image.big}" type="image/jpeg">
+                        <img src="{$path_img}{$author.image.big}" alt="{$author.name|escape:'htmlall':'UTF-8'}" loading="lazy" width="250" height="250">
+                    </picture>
+                {else}
+                    <img src="{$path_img}{$author.image.big}" alt="{$author.name|escape:'htmlall':'UTF-8'}" loading="lazy" width="250" height="250">
+                {/if}
+            </div>
             <div class="short_info_author">
                 <div class="nameandrrss">
                     <h1 class="name">{$author.name|escape:'htmlall':'UTF-8'}</h1>
@@ -103,7 +98,7 @@
                     <span>{$author.profession|escape:'htmlall':'UTF-8'}</span>
                     {if !empty($author.number)}<span class="colegiado">{l s='Nº colegiado' mod='dbaboutus'} {$author.number|escape:'htmlall':'UTF-8'}</span>{/if}
                 </div>
-                {if !empty($tag) || count($total_opiniones) > 0}
+                {if !empty($tag) || $total_opiniones > 0}
                     <div class="additional">
                         {if !empty($tag)}
                             <span class="label">
@@ -111,8 +106,10 @@
                                 {$tag|escape:'htmlall':'UTF-8'}
                             </span>
                         {/if}
-                        {if !empty($total_opiniones) && count($total_opiniones) > 0}
-                            {if $c_active == true}{include file='module:dbaboutus/views/templates/front/_partials/comment_mini.tpl'}{/if}
+                        {if !empty($total_opiniones) && $total_opiniones > 0}
+                            {if $c_active == true}
+                                {include file='module:dbaboutus/views/templates/front/_partials/comment_mini.tpl'}
+                            {/if}
                         {/if}
                     </div>
                 {/if}
@@ -123,10 +120,10 @@
         </div>
 
         {if $premium == 1}
-            <div class="author_content row">
-                <div class="col-md-{if $posts_more_read|count > 0}8{else}12{/if}">
-                    <div class="body_author row">
-                        {if $specialities|count > 1}
+            <div class="author_content">
+                <div class="{if $posts_more_read|count > 0}content_left{else}content_total{/if}">
+                    <div class="body_author">
+                        {if $specialities|count >= 1}
                         <div class="specialties">
                             <h2 class="title">{l s='Especialidades' mod='dbaboutus'}</h2>
                             <ul class="tags">
@@ -150,41 +147,25 @@
                     </div>
 
                     {if $posts|count > 0}
-                        <h2 class="title">{l s='Últimos posts' mod='dbaboutus'}</h2>
-                        <div class="row posts_author">
-                            {foreach from=$posts item=post}
-                                <div class="col-md-6">
-                                    {include file='module:dbblog/views/templates/front/_partials/post_mini.tpl'}
-                                </div>
-                            {/foreach}
+                        <div class="posts_author">
+                            <span class="title_list">{l s='Últimos posts' mod='dbaboutus'}</span>
+                            <div class="dbblog_list">
+                                {foreach from=$posts item=post}
+                                    {include file='module:dbblog/views/templates/front/_partials/post_mini.tpl' large='l'}
+                                {/foreach}
+                            </div>
                         </div>
                     {/if}
 
-                    {if $c_active == true}{include file='module:dbaboutus/views/templates/front/_partials/comments.tpl'}{/if}
+                    {if $c_active == true}
+                        {include file='module:dbaboutus/views/templates/front/_partials/comments.tpl'}
+                    {/if}
 
                 </div>
 
                 {if $posts_more_read|count > 0}
-                    <div class="col-md-4">
-                        <div class="db_more_views_sidebar --card-blog">
-                            <span class="db_title_h4 bck_title">{l s='Artículos más leidos' mod='dbaboutus'}</span>
-                            <ul class="post_list_sidebar">
-                                {foreach from=$posts_more_read item=post}
-                                    <li>
-                                        <a href="{$post.url|escape:'htmlall':'UTF-8'}">
-                                            <img src="{$post.img|escape:'htmlall':'UTF-8'}" alt="{$post.title|escape:'htmlall':'UTF-8'}">
-                                        </a>
-                                        <div class="title">
-                                            <a href="{$post.url|escape:'htmlall':'UTF-8'}">{$post.title|escape:'htmlall':'UTF-8'}</a>
-                                            <div class="post-meta">
-                                                <span class="updated"><img class="visibilidad" src="{_MODULE_DIR_}dbblog/views/img/icons/visibilidad.svg" alt="{l s='Visualizaciones' mod='dbaboutus'}"> {if isset($post.views)}{$post.views|escape:'htmlall':'UTF-8'}{else}0{/if}</span> | <a href="{$post.url_category|escape:'htmlall':'UTF-8'}">{$post.title_category|escape:'htmlall':'UTF-8'}</a>
-                                            </div>
-                                        </div>
-                                        </a>
-                                    </li>
-                                {/foreach}
-                            </ul>
-                        </div>
+                    <div class="content_right">
+                        {include file='module:dbblog/views/templates/front/_partials/sidebar_more_views.tpl' more_views=$posts_more_read}
                     </div>
                 {/if}
 

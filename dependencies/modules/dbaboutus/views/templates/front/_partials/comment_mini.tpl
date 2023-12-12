@@ -24,6 +24,6 @@
 *}
 {if $total_opiniones > 0}
 <div class="valoracion_media">
-    <div class="Stars" style="--rating: {$media_opiniones|escape:'htmlall':'UTF-8'};"></div> <span class="valoraciones_totales">{$total_opiniones|escape:'htmlall':'UTF-8'} {if $total_opiniones > 1}{l s='valoriaciones' mod='dbaboutus'}{else}{l s='valoración' mod='dbaboutus'}{/if}</span>
+    <span class="valoraciones_totales">{$total_opiniones|escape:'htmlall':'UTF-8'} {if $total_opiniones > 1}{l s='comentarios' mod='dbaboutus'}{else}{l s='comentario' mod='dbaboutus'}{/if}</span>
 </div>
 {/if}

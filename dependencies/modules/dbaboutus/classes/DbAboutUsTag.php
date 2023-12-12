@@ -24,6 +24,8 @@
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
+require_once _PS_MODULE_DIR_ . 'dbaboutus/dbaboutus.php';
+
 class DbAboutUsTag extends ObjectModel
 {
 
@@ -48,7 +50,29 @@ class DbAboutUsTag extends ObjectModel
         parent::__construct($id_dbaboutus_author, $id_lang, $id_shop);
     }
 
-    public function getTags()
+    public  function add($autodate = true, $null_values = false)
+    {
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+
+        }
+        $ret = parent::add($autodate, $null_values);
+        return $ret;
+    }
+
+    public function update( $null_values = false ) {
+
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+        }
+        return parent::update( $null_values );
+    }
+
+    public static function getTags()
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -65,7 +89,7 @@ class DbAboutUsTag extends ObjectModel
         return $result;
     }
 
-    public function getTagByAuthor($id_author)
+    public static function getTagByAuthor($id_author)
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -93,7 +117,7 @@ class DbAboutUsTag extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbaboutus_tag SET active = '$active' WHERE id_dbaboutus_tag = '$id_tag'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',

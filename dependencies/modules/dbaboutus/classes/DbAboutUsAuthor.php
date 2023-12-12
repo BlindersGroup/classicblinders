@@ -24,6 +24,8 @@
  *  International Registered Trademark & Property of PrestaShop SA
  */
 
+require_once _PS_MODULE_DIR_ . 'dbaboutus/dbaboutus.php';
+
 class DbAboutUsAuthor extends ObjectModel
 {
 
@@ -89,8 +91,37 @@ class DbAboutUsAuthor extends ObjectModel
     public  function add($autodate = true, $null_values = false)
     {
         $this->position = DbAboutUsAuthor::getNewLastPosition();
+        $default_language_id = Configuration::get('PS_LANG_DEFAULT');
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+            if(empty($value)) {
+                $this->name[$k] = $this->name[$default_language_id];
+            }
+        }
+        foreach ( $this->link_rewrite as $k => $value ) {
+            if(empty($value)) {
+                $this->link_rewrite[$k] = Tools::link_rewrite($this->name[$k]);
+            }
+        }
         $ret = parent::add($autodate, $null_values);
         return $ret;
+    }
+
+    public function update( $null_values = false ) {
+
+        foreach ( $this->name as $k => $value ) {
+            if ( preg_match( '/^[1-9]\./', $value ) ) {
+                $this->name[ $k ] = '0' . $value;
+            }
+        }
+        foreach ( $this->link_rewrite as $k => $value ) {
+            if(empty($value)) {
+                $this->link_rewrite[$k] = Tools::link_rewrite($this->name[$k]);
+            }
+        }
+        return parent::update( $null_values );
     }
 
     public static function getNewLastPosition()
@@ -101,7 +132,7 @@ class DbAboutUsAuthor extends ObjectModel
         ));
     }
 
-    public function getAuthors()
+    public static function getAuthors()
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -113,12 +144,16 @@ class DbAboutUsAuthor extends ObjectModel
                     AND al.id_lang = '$id_lang' AND al.id_shop = '$id_shop'
             WHERE a.active = 1
             ORDER BY a.position ASC";
-        $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
+        $results = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
+        foreach($results as $key => $result) {
+            $image = $result['id_dbaboutus_author'].'.jpg';
+            $results[$key]['image'] = Dbaboutus::getNewImg($image);
+        }
 
-        return $result;
+        return $results;
     }
 
-    public function getAuthor($rewrite)
+    public static function getAuthor($rewrite)
     {
         $id_lang = (int)Context::getContext()->language->id;
         $id_shop = (int)Context::getContext()->shop->id;
@@ -130,6 +165,9 @@ class DbAboutUsAuthor extends ObjectModel
                     AND al.id_lang = '$id_lang' AND al.id_shop = '$id_shop'
             WHERE al.link_rewrite = '$rewrite'";
         $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow($sql);
+
+        $image = $result['id_dbaboutus_author'].'.jpg';
+        $result['image'] = Dbaboutus::getNewImg($image);
 
         return $result;
     }
@@ -150,7 +188,7 @@ class DbAboutUsAuthor extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbaboutus_author SET active = '$active' WHERE id_dbaboutus_author = '$id_author'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',
@@ -169,7 +207,7 @@ class DbAboutUsAuthor extends ObjectModel
             INNER JOIN "._DB_PREFIX_."dbblog_category_lang cl ON p.id_dbblog_category = cl.id_dbblog_category
             WHERE p.active = 1 AND p.author = '$id_author'
             GROUP BY p.id_dbblog_post
-            ORDER BY date_upd DESC
+            ORDER BY date_add DESC
             LIMIT ".$offset.",".$limit;
         $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
 
@@ -184,7 +222,7 @@ class DbAboutUsAuthor extends ObjectModel
 
             $posts[$row['id_dbblog_post']]['author'] = self::getAuthorById($row['author']);
             $posts[$row['id_dbblog_post']]['id'] = $row['id_dbblog_post'];
-            $posts[$row['id_dbblog_post']]['image'] = $row['image'];
+            $posts[$row['id_dbblog_post']]['image'] = Dbblog::getNewImg($row['image']);
             $posts[$row['id_dbblog_post']]['url'] = DbBlogPost::getLink($row['link_rewrite'], $id_lang);
             $posts[$row['id_dbblog_post']]['title'] = $row['title'];
             $posts[$row['id_dbblog_post']]['short_desc'] = $row['short_desc'];
@@ -223,16 +261,17 @@ class DbAboutUsAuthor extends ObjectModel
 
             $posts[$row['id_dbblog_post']]['author'] = self::getAuthorById($row['author']);
             $posts[$row['id_dbblog_post']]['id'] = $row['id_dbblog_post'];
-            $posts[$row['id_dbblog_post']]['image'] = $row['image'];
+            $posts[$row['id_dbblog_post']]['image'] = Dbblog::getNewImg($row['image']);
             $posts[$row['id_dbblog_post']]['url'] = DbBlogPost::getLink($row['link_rewrite'], $id_lang);
             $posts[$row['id_dbblog_post']]['title'] = $row['title'];
             $posts[$row['id_dbblog_post']]['short_desc'] = $row['short_desc'];
-            $posts[$row['id_dbblog_post']]['date'] = Tools::formatDateStr(date_create($row['date_upd']));
+            $posts[$row['id_dbblog_post']]['date'] =  date_format(date_create($row['date_upd']), 'd/m/Y');
             $posts[$row['id_dbblog_post']]['img'] = _MODULE_DIR_.'dbblog/views/img/post/'.$row['image'];
             $posts[$row['id_dbblog_post']]['title_category'] = $row['title_category'];
             $posts[$row['id_dbblog_post']]['url_category'] = DbBlogCategory::getLink($row['link_category'], $id_lang);
             $posts[$row['id_dbblog_post']]['total_comments'] = $comments['total'];
             $posts[$row['id_dbblog_post']]['rating'] = $rating;
+            $posts[$row['id_dbblog_post']]['views'] = $row['views'];
         }
         return $posts;
     }
@@ -255,7 +294,8 @@ class DbAboutUsAuthor extends ObjectModel
             FROM "._DB_PREFIX_."dbblog_comment c
             INNER JOIN "._DB_PREFIX_."dbblog_post p ON c.id_post = p.id_dbblog_post AND p.author = '$id_author'
             INNER JOIN "._DB_PREFIX_."dbblog_post_lang pl ON pl.id_dbblog_post = p.id_dbblog_post AND pl.id_lang = '$id_lang'
-            WHERE approved = 1
+            WHERE approved = 1 AND c.comment <> ''
+            GROUP BY c.id_post
             ORDER BY c.date_add DESC
             LIMIT $limit";
         $results = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
@@ -264,7 +304,7 @@ class DbAboutUsAuthor extends ObjectModel
             $result[$key]['id_dbblog_comment'] = $comment['id_dbblog_comment'];
             $result[$key]['id_post'] = $comment['id_post'];
             $result[$key]['name'] = $comment['name'];
-            $result[$key]['comment'] = $comment['comment'];
+            $result[$key]['comment'] = strip_tags($comment['comment']);
             $result[$key]['rating'] = $comment['rating'];
             $result[$key]['fecha'] = date('d-m-Y', strtotime($comment['fecha']));
             $result[$key]['title'] = $comment['title'];

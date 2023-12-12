@@ -23,30 +23,28 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {if $total_opiniones > 0}
-    <p class="title h2">{l s='Opiniones de sus posts' mod='dbaboutus'}</p>
-    <div class="valoraciones_author row">
-        <div class="valoraciones_resumen">
+    <div class="valoraciones_author">
+        <span class="title_list">{l s='Últimos comentarios de sus posts' mod='dbaboutus'}</span>
+        {*<div class="valoraciones_resumen">
             <div class="points">{$media_opiniones|escape:'htmlall':'UTF-8'}</div>
             <div class="desglose">
                 <div class="Stars" style="--rating: {$media_opiniones|escape:'htmlall':'UTF-8'};"></div>
                 <span class="valoraciones_totales">{$total_opiniones|escape:'htmlall':'UTF-8'} {if $total_opiniones > 1}{l s='valoriaciones' mod='dbaboutus'}{else}{l s='valoración' mod='dbaboutus'}{/if}</span>
             </div>
-        </div>
+        </div>*}
 
         {if $opiniones|count > 0}
             <section class="list_comments">
                 <div class="comentarios_users">
                     <div class="append_comments">
                         {foreach from=$opiniones item=comment}
-                            <div class='comentario --card-blog'>
-                                <div class="comment_info">
-                                    <div class="other_info">
-                                        <span class="name">{$comment.name|escape:'htmlall':'UTF-8'} <span class="name__in">{l s='en' mod='dbaboutus'}</span> <a href="{$comment.link_rewrite}" class="name__link">{$comment.title|escape:'htmlall':'UTF-8'|truncate:50:"...":true}</a></span>
-                                        <div class="Stars" style="--rating: {$comment.rating|escape:'htmlall':'UTF-8'};"></div>
-                                    </div>
-                                    <span><small>{$comment.fecha|escape:'htmlall':'UTF-8'}</small></span>
+                            <div class='comentario --card'>
+                                <a href="{$comment.link_rewrite}" class="name">{$comment.title|escape:'htmlall':'UTF-8'}</a>
+                                <div class="date">
+                                    <span>{$comment.name|escape:'htmlall':'UTF-8'}</span>
+                                    <span>{$comment.fecha|escape:'htmlall':'UTF-8'}</span>
                                 </div>
-                                <div class="comment_desc">
+                                <div class="text_comment">
                                     <p>{$comment.comment|escape:'htmlall':'UTF-8'}</p>
                                 </div>
                             </div>

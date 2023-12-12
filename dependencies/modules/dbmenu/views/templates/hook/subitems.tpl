@@ -49,6 +49,11 @@
                 {include file='module:dbmenu/views/templates/hook/subitems.tpl' linkback=$dropdown.title}
             {else}
 
+            {if $dropdown.type == 'separator'}
+                <span class="subitem separator" {if !empty($dropdown.color)}style="color:{$dropdown.color};"{/if}>
+                    <strong>{$dropdown.title|truncate:50:'...'}</strong>
+                </span>
+            {else}
                 {if $dropdown.ofuscate == 0}
                     <a class="subitem" href="{$dropdown.url}" title="{$dropdown.alt}" {if !empty($dropdown.color)}style="color:{$dropdown.color};"{/if}>
                         {if $dropdown.strong == 1}<strong>{/if}
@@ -62,6 +67,7 @@
                         {if $dropdown.strong == 1}</strong>{/if}
                     </span>
                 {/if}
+            {/if}
 
             {/if}
         {/foreach}

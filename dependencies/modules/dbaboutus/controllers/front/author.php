@@ -37,6 +37,19 @@ class DbAboutUsAuthorModuleFrontController extends ModuleFrontController
 
         parent::initContent();
 
+        // Detectamos en el caso de tener idiomas que la url tenga la url con el idioma
+        $languages = Language::getLanguages();
+        if (count($languages) > 1) {
+            $path_language = $_SERVER['REQUEST_URI'];
+            $iso_code = Language::getIsoById($this->context->language->id);
+            $route_prefix = $iso_code . '/';
+            if (strpos($path_language, $route_prefix) == false) {
+                header("HTTP/1.0 404 Not Found");
+                $this->setTemplate('errors/404.tpl');
+                return;
+            }
+        }
+
         $rewrite = Tools::getValue('rewrite');
         $author = DbAboutUsAuthor::getAuthor($rewrite);
 
@@ -58,17 +71,25 @@ class DbAboutUsAuthorModuleFrontController extends ModuleFrontController
         $opiniones = [];
         if($this->module->premium == 1) {
             $datos_blog = DbPremium::connectBlog($author, $id_lang);
-            $posts = $datos_blog['posts'];
-            $posts_more_read = $datos_blog['posts_more_read'];
-            $total_opiniones = $datos_blog['total_opiniones'];
-            $media_opiniones = $datos_blog['media_opiniones'];
-            $c_active = $datos_blog['c_active'];
-            $opiniones = $datos_blog['opiniones'];
+            if($datos_blog) {
+                $posts = $datos_blog['posts'];
+                $posts_more_read = $datos_blog['posts_more_read'];
+                $total_opiniones = $datos_blog['total_opiniones'];
+                $media_opiniones = $datos_blog['media_opiniones'];
+                $c_active = $datos_blog['c_active'];
+                $opiniones = $datos_blog['opiniones'];
+            }
+        }
+
+        $json_ld = $this->module->generateBreadcrumbJsonld($this->getBreadcrumbLinks());
+        if($this->module->premium == 1) {
+            $json_ld .= PHP_EOL.DbPremium::generateAuthorJsonld($author, $url_author);
         }
 
         $this->context->smarty->assign(array(
             'author'            => $author,
             'path_img'          => _MODULE_DIR_.'dbaboutus/views/img/author/',
+            'path_img_posts'    => _MODULE_DIR_.'dbblog/views/img/post/',
             'specialities'      => $specialities,
             'tag'               => $tag,
             'url_author'        => $url_author,
@@ -80,6 +101,7 @@ class DbAboutUsAuthorModuleFrontController extends ModuleFrontController
             'opiniones'         => $opiniones,
             'c_active'          => $c_active,
             'premium'           => $this->module->premium,
+            'json_ld'           => $json_ld,
         ));
 
         $this->setTemplate('module:dbaboutus/views/templates/front/author.tpl');
@@ -127,5 +149,33 @@ class DbAboutUsAuthorModuleFrontController extends ModuleFrontController
         $page['meta']['robots'] = 'index';
 
         return $page;
+    }
+
+    public function getTemplateVarUrls()
+    {
+        $urls = parent::getTemplateVarUrls();
+
+        $languages = Language::getLanguages();
+        if (count($languages) > 1) {
+            $rewrite = Tools::getValue('rewrite');
+            $author = DbAboutUsAuthor::getAuthor($rewrite);
+            $id_dbaboutus_author = $author['id_dbaboutus_author'];
+            foreach ($urls['alternative_langs'] as $locale => $href_lang) {
+                $id_lang = (int)Language::getIdByLocale($locale);
+                if ($id_lang > 0) {
+                    $sql = "SELECT link_rewrite
+                    FROM "._DB_PREFIX_."dbaboutus_author_lang al 
+                    WHERE al.id_lang = '$id_lang' AND al.id_dbaboutus_author = '$id_dbaboutus_author'";
+                    $link_rewrite = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($sql);
+
+                    $url_quienes = Configuration::get('DBABOUTUS_URL', $id_lang);
+                    $iso_code = Language::getIsoById($id_lang);
+                    $urls['alternative_langs'][$locale] = $urls['base_url'].$iso_code.'/'.$url_quienes.'/'.$link_rewrite.'.html';
+
+                }
+            }
+        }
+
+        return $urls;
     }
 }

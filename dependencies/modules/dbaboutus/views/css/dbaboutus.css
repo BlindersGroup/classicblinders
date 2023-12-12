@@ -27,6 +27,29 @@
 */
 
 /*** General ***/
+#module-dbaboutus-home #wrapper .breadcrumb,
+#module-dbaboutus-author #wrapper .breadcrumb {
+    padding: 0 0 16px;
+    margin: 0;
+    display: block !important;
+    overflow: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#module-dbaboutus-home #wrapper .breadcrumb::-webkit-scrollbar,
+#module-dbaboutus-author #wrapper .breadcrumb::-webkit-scrollbar  {
+    display: none;
+}
+#module-dbaboutus-home #wrapper .breadcrumb li a,
+#module-dbaboutus-home #wrapper .breadcrumb li span,
+#module-dbaboutus-home #wrapper .breadcrumb li::after,
+#module-dbaboutus-author #wrapper .breadcrumb li a,
+#module-dbaboutus-author #wrapper .breadcrumb li span,
+#module-dbaboutus-author #wrapper .breadcrumb li::after {
+    font-size: 12px;
+    line-height: 19px;
+}
 
 /*** Home ***/
 .authors {
@@ -46,6 +69,8 @@
 }
 .group_authors {
     margin-top: 20px;
+    display: block;
+    width: 100%;
 }
 .team_authors {
     display: flex;
@@ -130,6 +155,7 @@
 }
 .author_shortinfo .img_author img {
     max-width: 100%;
+    height: auto;
 }
 .author_shortinfo .nameandrrss {
     display: flex;
@@ -169,6 +195,7 @@
 }
 .author_shortinfo .additional {
     display: flex;
+    align-items: center;
 }
 .author_shortinfo .work span {
     font-weight: 500;
@@ -199,9 +226,11 @@
 .author_shortinfo .short_description {
     margin-top: 12px;
 }
-.author_shortinfo .short_description p {
-    font-size: 15px;
-    line-height: 24px;
+.author_shortinfo .short_description p,
+.author_shortinfo .short_description span,
+.author_shortinfo .short_description li {
+    font-size: 14px;
+    line-height: 21px;
 }
 
 .author_shortinfo .additional .valoracion_media {
@@ -211,53 +240,72 @@
 .author_content {
     margin-left: 0;
     margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 32px;
+}
+.author_content .content_left {
+    width: 66.66%;
+}
+.author_content .content_right {
+    width: calc(33.33% - 24px);
+    margin-left: auto;
+}
+.author_content .content_total {
+    width: 100%;
+    margin-bottom: 32px;
 }
 
 .author_content .specialties .title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
 }
 
 .author_content .specialties .tags {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 0;
 }
 
 .author_content .specialties .tags li {
-    border: 1px solid #d9d9d9;
-    color: #7a7a7a;
-    padding: 3px 8px;
-    border-radius: 24px;
+    border: 0;
+    background-color: #F6F6F6;
+    color: #666666;
+    padding: 8px 16px;
+    border-radius: 0;
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
-    margin: 0 3px 3px 0;
-}
-
-.author_content .col-md-4 {
-    padding-right: 0;
+    margin: 0 16px 16px 0;
 }
 
 .block_views {
     padding: 16px;
     background: rgba(242,240,249,.8);
-    border-radius: 8px;
+    border-radius: 0;
+    margin-top: 20px;
 }
-
 .block_views .title {
     font-weight: 600;
     color: #2f235b;
-    font-size: 1.1rem;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 16px;
 }
-
+.block_views p:last-child {
+    margin-bottom: 0;
+}
 .block_views ul>li {
     position: relative;
     padding-left: 24px;
     margin: 6px 0;
     font-size: 0.9rem;
 }
-
 .block_views ul>li:before {
     position: absolute;
     top: 2px;
@@ -274,6 +322,12 @@
     mask-size: cover;
     background: #856ddf;
 }
+.block_views p,
+.block_views li,
+.block_views span {
+    font-size: 14px;
+    line-height: 21px;
+}
 
 .block_views ul li a {
     color: #636363;
@@ -281,18 +335,25 @@
 
 .body_author {
     background-color: #FFF;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 32px;
+}
+.body_author .large_descripion p,
+.body_author .large_descripion span,
+.body_author .large_descripion li {
+    font-size: 14px;
+    line-height: 21px;
+}
+.body_author .large_descripion p:last-child {
+    margin-bottom: 0;
 }
 
 .posts_author {
-    background-color: #FFF;
-    padding: 20px 0;
-    margin-bottom: 20px;
+    margin-top: 32px;
 }
 
-.posts_author .title {
-    margin: 0 15px 15px;
+.posts_author .title_list {
+    margin-bottom: 16px;
+    display: block;
 }
 
 .posts_author .col-md-6:nth-child(2n+1) {
@@ -308,17 +369,6 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-}
-
-@media all and (max-width: 1024px) {
-    .author_shortinfo .additional .valoracion_media {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .author_shortinfo .short_info_author {
-        width: 100%;
-    }
 }
 
 /*** Stars ***/
@@ -346,20 +396,17 @@
 }
 
 .valoraciones_author {
-    background-color: #FFF;
-    padding: 15px 0;
-    margin-bottom: 20px;
+    margin-top: 32px;
+    margin-bottom: 24px;
 }
 
 .valoraciones_author .title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #232323;
 }
 
 .valoraciones_author .points {
     font-weight: 600;
-    color: #232323;
     padding: 2rem 0.5rem;
     display: inline-block;
     font-size: 5.5rem;
@@ -408,15 +455,6 @@
     .author_shortinfo .short_description {
         margin: 10px 0 0;
     }
-    #module-dbaboutus-author .list_comments {
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-    .author_content,
-    .author_shortinfo {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
     .author_shortinfo .additional {
         flex-direction: column;
     }
@@ -457,5 +495,27 @@
     .author_content, .author_shortinfo {
         margin-left: 0;
         margin-right: 0;
+    }
+}
+
+/*** TABLET ***/
+@media all and (max-width: 1023px) {
+    .author_shortinfo .additional .valoracion_media {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .author_shortinfo .short_info_author {
+        width: 100%;
+    }
+    .author_shortinfo .short_description {
+        text-align: center;
+    }
+    .author_content .content_left {
+        width: 100%;
+    }
+    .author_content .content_right {
+        width: 100%;
+        margin-bottom: 24px;
     }
 }
