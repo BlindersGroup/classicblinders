@@ -1,6 +1,6 @@
 name: classicblinders
 display_name: ClassicBlinders
-version: 2.1.0
+version: 2.2.0
 author:
   name: "DevBlinders"
   email: "info@devblinders.com"
@@ -8,8 +8,8 @@ author:
 
 meta:
   compatibility:
-      from: 1.7.0.0
-      to: ~
+    from: 1.7.0.0
+    to: ~
 
   available_layouts:
     layout-full-width:
@@ -176,15 +176,10 @@ assets:
 
 dependencies:
   modules:
-    - dbhomecategories
-    - dbbrandslider
+    - dbthemecustom
     - dbproductcomments
     - dbrichsnippets
     - dbdatatext
-    - dbthemecustom
-    - dbmenu
-    - dbjointpurchase
-    - dbaboutus
 
 global_settings:
   configuration:
@@ -203,28 +198,24 @@ global_settings:
     BLOCKSOCIAL_INSTAGRAM: https://www.instagram.com/
   modules:
     to_enable:
-      - dbhomecategories
-      - dbbrandslider
+      - dbthemecustom
       - dbproductcomments
       - dbrichsnippets
       - dbdatatext
-      - dbthemecustom
-      - dbmenu
-      - dbjointpurchase
-      - dbaboutus
       - ps_linklist
       - ps_bestsellers
       - ps_newproducts
       - ps_searchbar
+      - ps_mainmenu
+      - ps_imageslider
     to_disable:
       - ps_banner
       - ps_specials
-      - ps_sharebuttons
       - ps_themecusto
       - gamification
-      - ps_mainmenu
       - productcomments
       - blockwishlist
+      - ps_categorytree
   hooks:
     custom_hooks:
       - name: displayNavCenter
@@ -269,11 +260,10 @@ global_settings:
     modules_to_hook:
       displayAfterBodyOpeningTag:
       displayNavFullWidth:
-        - dbmenu
+        - ps_mainmenu
       displayNav1:
       displayNavCenter:
       displayNav2:
-        - dbproductcomments
       displayTop:
         - ps_customersignin
         - ps_shoppingcart
@@ -281,12 +271,9 @@ global_settings:
         - ps_searchbar
       displayHome:
         - ps_imageslider
-        - dbhomecategories
-        - dbbrandslider
         - ps_bestsellers
         - ps_newproducts
         - ps_featuredproducts
-        - ps_customtext
       displayFooterBefore:
         - ps_emailsubscription
       displayFooter:
@@ -297,7 +284,6 @@ global_settings:
         - ps_socialfollow
       displayFooterAfter:
       displayLeftColumn:
-        - ps_categorytree
         - ps_facetedsearch
       displayProductAdditionalInfo:
       displayReassurance:
@@ -317,13 +303,11 @@ global_settings:
         - ps_sharebuttons
       displayShoppingCart:
       displayProductFullWidth:
-        - dbjointpurchase
       displayProductListReviews:
         - dbproductcomments
       displayFooterProduct:
         - dbproductcomments
       displayCustomerAccount:
-        - dbproductcomments
       displayProductActions:
 
   image_types:

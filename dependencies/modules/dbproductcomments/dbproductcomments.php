@@ -461,23 +461,6 @@ class Dbproductcomments extends Module
         return;
     }
 
-    public function hookdisplayNav2($params)
-    {
-        $stars = $this->getMediaValoraciones();
-        $puntuacion = 0;
-        $porcent = 0;
-        if($stars['total'] > 0) {
-            $puntuacion = round($stars['grade'] / $stars['total'], 1);
-            $porcent = round($puntuacion * 100 / 5);
-        }
-
-        $this->smarty->assign(array(
-                                  'stars' => $puntuacion,
-                                  'porcent' => $porcent,
-                              ));
-        return $this->fetch('module:dbproductcomments/views/templates/hook/nav.tpl');
-    }
-
     public function hookdisplayCustomerAccount($params)
     {
         $this->smarty->assign(array(

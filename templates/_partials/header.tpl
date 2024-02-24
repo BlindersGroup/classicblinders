@@ -61,16 +61,19 @@
 {/block}
 
 {block name='header_top'}
-    <div class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if} {if $custom_generic.show_displaynav == 0}notdisplaynav{/if}">
+    <div
+        class="header-top {if $custom_generic.width_header == 1}full_width_generic{/if} {if $custom_generic.show_displaynav == 0}notdisplaynav{/if}">
         <div class="container">
             {if Context::getContext()->getDevice() < 4}
                 <div class="header__flex">
                     <div class="displayLogo hidden-sm-down" id="_desktop_logo">
                         {if $page.page_name == 'index'}
-                            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                            <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy"
+                                height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
                         {else}
                             <a href="{$urls.pages.index}">
-                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy"
+                                    height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
                             </a>
                         {/if}
                     </div>
@@ -88,10 +91,12 @@
                     <div class="mobile_top">
                         <div class="displayLogo" id="_desktop_logo">
                             {if $page.page_name == 'index'}
-                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                                <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy"
+                                    height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
                             {else}
                                 <a href="{$urls.pages.index}">
-                                    <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy" height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
+                                    <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}" loading="lazy"
+                                        height="{$custom_generic.logo_height}" width="{$custom_generic.logo_width}">
                                 </a>
                             {/if}
                         </div>
@@ -101,13 +106,28 @@
                         </div>
                     </div>
 
-                    <div class="mobile_middle">
-                        <div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
+                    <div class="mobile_middle mobile">
+                        {*<div id="mobile__menu" data-toggle="modal" data-target="#dbmenu_burger">
+                            <i class="fa-solid fa-bars d-inline"></i>
+                        </div>*}
+                        <div class="float-xs-left" id="menu-icon">
                             <i class="fa-solid fa-bars d-inline"></i>
                         </div>
+
+
+
                         <div class="displayTopCenter">
                             {hook h='displayTopCenter'}
                             <div class="clearfix"></div>
+                        </div>
+
+                        <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
+                            <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
+                            <div class="js-top-menu-bottom">
+                                <div id="_mobile_currency_selector"></div>
+                                <div id="_mobile_language_selector"></div>
+                                <div id="_mobile_contact_link"></div>
+                            </div>
                         </div>
                     </div>
 
