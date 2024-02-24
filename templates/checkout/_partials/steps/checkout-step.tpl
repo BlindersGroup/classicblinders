@@ -23,47 +23,38 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='step'}
-        <section  id    = "{$identifier}"
-                  class = "{[
+    <section id="{$identifier}" class="{[
                   'checkout-step'   => true,
                   '-current'        => $step_is_current,
                   '-reachable'      => $step_is_reachable,
                   '-complete'       => $step_is_complete,
                   'js-current-step' => $step_is_current
-                  ]|classnames}"
-        >
-            <h1 class="step-title h3">
-                <i class="fa-regular fa-circle-check rtl-no-flip done"></i>
-                {if $position > 1}
-                    <span class="step-number">{$position - 1}.</span>
-                {/if}
+                  ]|classnames}">
+        <h1 class="step-title h3">
+            <i class="fa-regular fa-circle-check rtl-no-flip done"></i>
+            {if $position > 1}
+                <span class="step-number">{$position - 1}.</span>
+            {/if}
 
-                {if $position == 1 && $customer.is_logged && !$customer.is_guest}
-                    {l s='Hi %firstname% [1]you can now complete your purchase[/1]'
-                    d='Shop.Theme.Customeraccount'
-                    sprintf=[
-                    '%firstname%' => $customer.firstname,
-                    '%lastname%' => $customer.lastname,
-                    '[1]' => "<span>",
-                    '[/1]' => "</span>"
-                    ]
-                    }
-                {else}
-                    {$title}
-                    <span class="step-edit text-muted"><i class="fa-solid fa-pen"></i> {l s='Edit' d='Shop.Theme.Actions'}</span>
-                {/if}
+            {if $position == 1 && $customer.is_logged && !$customer.is_guest}
+                {l s='Hi %firstname% [1]you can now complete your purchase[/1]'
+                            d='Shop.Theme.Customeraccount'
+                            sprintf=[
+                            '%firstname%' => $customer.firstname,
+                            '%lastname%' => $customer.lastname,
+                            '[1]' => "<span>",
+                            '[/1]' => "</span>"
+                            ]
+                            }
+            {else}
+                {$title}
+                <span class="step-edit text-muted"><i class="fa-solid fa-pen"></i> {l s='Edit' d='Shop.Theme.Actions'}</span>
+            {/if}
 
-                {if $position == 4}
-                    <span class="secure_payment">
-                        <i class="fa-solid fa-lock"></i>
-                        {l s='Pago online seguro' d='Shop.Theme.Actions'}
-                    </span>
-                {/if}
+        </h1>
 
-            </h1>
-
-            <div class="content">
-                {block name='step_content'}DUMMY STEP CONTENT{/block}
-            </div>
-        </section>
+        <div class="content">
+            {block name='step_content'}DUMMY STEP CONTENT{/block}
+        </div>
+    </section>
 {/block}

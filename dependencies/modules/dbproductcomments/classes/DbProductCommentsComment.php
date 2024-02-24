@@ -96,7 +96,7 @@ class DbProductCommentsComment extends ObjectModel
         $update = "UPDATE "._DB_PREFIX_."dbproductcomments SET validate = '$active' WHERE id_dbproductcomments = '$id'";
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($update);
 
-        die(Tools::jsonEncode(
+        die(json_encode(
             array(
                 'status' => true,
                 'message' => 'Actualizado correctamente',

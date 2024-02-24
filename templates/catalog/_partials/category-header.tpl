@@ -34,13 +34,9 @@
                 </div>
                 {if $category.image.bySize.category_default.url && $category_img == 1}
                     <div class="category-cover">
-                        <img
-                            src="{$category.image.bySize.category_default.url}"
+                        <img src="{$category.image.bySize.category_default.url}"
                             alt="{if !empty($category.image.legend)}{$category.image.legend}{else}{$category.name}{/if}"
-                            loading="lazy"
-                            width="141"
-                            height="180"
-                        >
+                            loading="lazy" width="141" height="180">
                     </div>
                 {/if}
             </div>
@@ -52,9 +48,12 @@
                 <ul class="clearfix">
                     {foreach from=$subcategories item=subcategory}
                         <li>
-                            <a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">
+                            <a class="subcategory-name"
+                                href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">
                                 {if $subcategory.image.bySize.category_default.url}
-                                    <img src="{$subcategory.image.bySize.small_default.url}" alt="{$subcategory.name}" width="{$subcategory.image.bySize.category_default.width}" height="{$subcategory.image.bySize.category_default.height}" loading="lazy">
+                                    <img src="{$subcategory.image.bySize.small_default.url}" alt="{$subcategory.name}"
+                                        width="{$subcategory.image.bySize.category_default.width}"
+                                        height="{$subcategory.image.bySize.category_default.height}" loading="lazy">
                                 {/if}
                                 {$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}
                             </a>
@@ -69,7 +68,8 @@
                     <ul class="clearfix">
                         {foreach from=$subcategories item=subcategory}
                             <li>
-                                <a class="subcategory-name" href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a>
+                                <a class="subcategory-name"
+                                    href="{$link->getCategoryLink($subcategory.id_category, $subcategory.link_rewrite)|escape:'html':'UTF-8'}">{$subcategory.name|truncate:25:'...'|escape:'html':'UTF-8'}</a>
                             </li>
                         {/foreach}
                     </ul>
