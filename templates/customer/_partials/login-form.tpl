@@ -42,10 +42,6 @@
         <a class="text_small" href="{$urls.pages.password}" rel="nofollow">
           {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
         </a>
-        <span class="secure-connection">
-          <i class="fa-solid fa-lock"></i>
-          {l s='Secure connection' d='Shop.Theme.Customeraccount'}
-        </span>
       </div>
     </section>
 
@@ -53,7 +49,8 @@
       <footer class="form-footer text-sm-center clearfix">
         <input type="hidden" name="submitLogin" value="1">
         {block name='form_buttons'}
-          <button id="submit-login" class="btn btn-primary" data-link-action="sign-in" type="submit" class="form-control-submit">
+          <button id="submit-login" class="btn btn-primary" data-link-action="sign-in" type="submit"
+            class="form-control-submit">
             {l s='Sign in' d='Shop.Theme.Actions'}
           </button>
         {/block}
